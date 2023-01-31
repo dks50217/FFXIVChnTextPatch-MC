@@ -193,16 +193,21 @@ public class TextPatchPanel extends JFrame implements ActionListener {
 			String dlang = Config.getProperty("DLanguage");
 			// added
 			String flang = Config.getProperty("FLanguage");
+			String rfont = Config.getProperty("ReplaFont");
+			String rtext = Config.getProperty("ReplaText");
 			
 			System.out.println("遊戲路徑：" + path);
 			System.out.println("原始語言：" + slang);
 			System.out.println("目標語言：" + dlang);
-			//added
 			System.out.println("檔案語言：" + flang);
+			System.out.println("替換字體：" + rfont);
+			System.out.println("替換文本：" + rtext);
 			log.config("遊戲路徑：" + path);
 			log.config("原始語言：" + slang);
 			log.config("目標語言：" + dlang);
 			log.config("檔案語言：" + flang);
+			log.config("替換字體：" + rfont);
+			log.config("替換文本：" + rtext);
 			
 			if (isFFXIVFloder(path)) {
 				// 備份原檔案
@@ -212,8 +217,9 @@ public class TextPatchPanel extends JFrame implements ActionListener {
 					File resourceFile = new File(resourceFolder + File.separator + resourceName);
 					if (resourceFile.exists() && resourceFile.isFile())
 						FileUtil.copyTo(resourceFile, "backup" + File.separator + resourceFile.getName()); 
-				} 
-				ReplaceThread replaceThread = new ReplaceThread(resourceFolder, this/*, this.updates*/);
+				}
+				
+				ReplaceThread replaceThread = new ReplaceThread(resourceFolder, this);
 				Thread replaceFileThread = new Thread((Runnable)replaceThread);
 				replaceFileThread.start();
 			} else {

@@ -1,33 +1,39 @@
-﻿key,0,1,2,3
-#,Class{Singular},,VoiceLine,Class{Plural}
-offset,12,0,8,4
-int32,str,str,uint32,str
-0,"","",0,""
-1,"Academician","ALPHINAUD",8202013,"學士"
-2,"Red Mage","ALISAIE",8202034,"赤魔導士"
-3,"Gunbreaker","THANCRED",8202055,"絕槍戰士"
-4,"Oracle of Light","MINFILIA",8202073,"光之巫女"
-5,"Astrologian","URIANGER",8202092,"占星術士"
-6,"Sorceress","Y'SHTOLA",8202109,"魔女"
-7,"Oracle of Light","RYNE",8202073,"光之巫女"
-8,"Guard Captain","LYNA",8202143,"衛兵團長"
-9,"All-Rounder","CRYSTAL EXARCH",8202130,"全才"
-10,"All-Rounder","G'RAHA TIA",8202346,"全才"
-11,"Sage","ALPHINAUD",8203013,"賢者"
-12,"Dragoon","ESTINIEN",8203064,"龍騎士"
-13,"Lithomancer","URIANGER",8202092,"秘石術師"
-14,"All-Rounder","VENAS",8203122,"全才"
-15,"The Third Seat","EMET-SELCH",8203219,"第三席"
-16,"Soulseer","HYTHLODAEUS",8203239,"望魂者"
-17,"Marauder","EAGER MARAUDER",0,"斧術師"
-18,"Lancer","EAGER LANCER",0,"槍術師"
-19,"Thaumaturge","EAGER THAUMATURGE",0,"咒術師"
-20,"Conjurer","EAGER CONJURER",0,"幻術師"
-21,"Marauder","SCION MARAUDER",0,"斧術師"
-22,"Lancer","SCION LANCER",0,"槍術師"
-23,"Thaumaturge","SCION THAUMATURGE",0,"咒術師"
-24,"Conjurer","SCION CONJURER",0,"幻術師"
-25,"Marauder","STORM MARAUDER",0,"斧術師"
-26,"Lancer","SERPENT LANCER",0,"槍術師"
-27,"Thaumaturge","FLAME THAUMATURGE",0,"咒術師"
-28,"Conjurer","SERPENT CONJURER",0,"幻術師"
+﻿key,0,1,3
+#,Class{Singular},,Class{Plural}
+offset,12,0,4
+int32,str,str,str
+0,,,
+1,Academician,阿爾菲諾,學士
+2,Red Mage,阿莉塞,赤魔法師
+3,Gunbreaker,桑克瑞德,絕槍戰士
+4,Oracle of Light,敏菲利亞,光之巫女
+5,Astrologian,於里昂熱,占星術士
+6,Sorceress,雅·修特拉,魔女
+7,Oracle of Light,琳,光之巫女
+8,Guard Captain,萊楠,衛兵團長
+9,All-Rounder,水晶公,全才
+10,All-Rounder,古·拉哈·提亞,全才
+11,Sage,阿爾菲諾,賢者
+12,Dragoon,埃斯蒂尼安,龍騎士
+13,Lithomancer,於里昂熱,秘石術師
+14,All-Rounder,維涅斯,全才
+15,The Third Seat,愛梅特賽爾克,第三席
+16,Soulseer,希斯拉德,望魂者
+17,Marauder,氣盛的斧術師,斧術師
+18,Lancer,氣盛的槍術師,槍術師
+19,Thaumaturge,氣盛的咒術師,咒術師
+20,Conjurer,氣盛的幻術師,幻術師
+21,Marauder,拂曉的斧術師,斧術師
+22,Lancer,拂曉的槍術師,槍術師
+23,Thaumaturge,拂曉的咒術師,咒術師
+24,Conjurer,拂曉的幻術師,幻術師
+25,Marauder,黑渦團斧術師,斧術師
+26,Lancer,雙蛇黨槍術師,槍術師
+27,Thaumaturge,恆輝隊咒術師,咒術師
+28,Conjurer,雙蛇黨幻術師,幻術師
+29,Satrap,瓦爾桑,太守
+30,Oracle of Frost,伊塞勒,冰之巫女
+31,Temple Knight,神殿騎士團騎士,神殿騎士
+32,Temple Banneret,神殿騎士團槍騎兵,槍騎兵
+33,Temple Chirurgeon,神殿騎士團醫師,醫師
+34,Chivalric Knight,奧爾什方,正騎士

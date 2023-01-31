@@ -1,22 +1,24 @@
-﻿key,0,1,2,3,4,5
-#,Quest,Text[Long],Text[Short],Text[Commentary],,Section
-offset,12,0,4,8,20,16
-int32,Quest,str,str,str,bit&01,DescriptionSection
-3604480,0,"","","",False,0
-3604481,0,"","","",False,0
-3604482,68737,"多瑪方城戰解說","MAHJONG","ドマ式麻雀解説",True,2
-3604483,0,"烈羽爭鋒","RIVAL WINGS","ライバルウィングズ解説",True,3
-3604484,0,"關於房屋","HOUSING","ハウジング解説",True,4
-3604485,0,"昔日重現模式","昔日重現模式解說","つよくてニューゲーム解説",True,2
-3604486,0,"紛爭前線","FRONTLINE","フロントライン解説",True,7
-3604487,0,"出海垂釣","OCEAN FISHING","オーシャンフィッシング解説",True,8
-3604488,0,"幻巧拼圖","FAUX HOLLOWS","ソーチョーの幻想盤解説",True,9
-3604489,0,"南方博茲雅戰線","THE BOZJAN SOUTHERN FRONT","南方ボズヤ戦線解説",True,10
-3604490,0,"義軍等級","RESISTANCE RANK","レジスタンスランク解説",True,11
-3604491,0,"失傳技能","LOST ACTION","ロストアクション解説",True,13
-3604492,0,"博茲雅晶簇","BOZJA CLUSTER","ボズヤクラスター解説",True,12
-3604493,0,"九宮幻卡錦標賽解說","CARD TOURNAMENT","トリプルトライアドトーナメント解説",True,14
-3604494,0,"","","",True,15
-3604495,0,"","","",True,16
-3604496,0,"義軍勳章","RESISTANCE HONORS","レジスタンス勲章解説",True,17
-3604497,0,"扎杜諾爾高原戰線","ZADNOR","ザトゥノル高原解説",True,18
+﻿key,2,3,4
+#,Text[Long],Text[Short],Text[Commentary]
+offset,0,4,8
+int32,str,str,str
+3604480,,,
+3604481,,,
+3604482,多瑪方城戰解說,MAHJONG,ドマ式麻雀解説
+3604483,烈羽爭鋒,RIVAL WINGS,ライバルウィングズ解説
+3604484,關於房屋,HOUSING,ハウジング解説
+3604485,昔日重現模式,昔日重現模式解說,つよくてニューゲーム解説
+3604486,紛爭前線,FRONTLINE,フロントライン解説
+3604487,出海垂釣,OCEAN FISHING,オーシャンフィッシング解説
+3604488,幻巧拼圖,FAUX HOLLOWS,ソーチョーの幻想盤解説
+3604489,南方博茲雅戰線,THE BOZJAN SOUTHERN FRONT,南方ボズヤ戦線解説
+3604490,義軍等級,RESISTANCE RANK,レジスタンスランク解説
+3604491,失傳技能,LOST ACTION,ロストアクション解説
+3604492,博茲雅晶簇,BOZJA CLUSTER,ボズヤクラスター解説
+3604493,九宮幻卡錦標賽解說,CARD TOURNAMENT,トリプルトライアドトーナメント解説
+3604494,,,
+3604495,,,
+3604496,義軍勳章,RESISTANCE HONORS,レジスタンス勲章解説
+3604497,扎杜諾爾高原戰線,ZADNOR,ザトゥノル高原解説
+3604498,玩家對戰,PvP,PvP解説
+3604499,水晶衝突,CRYSTALLINE CONFLICT,クリスタルコンフリクト解説

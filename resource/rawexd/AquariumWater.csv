@@ -1,7 +1,7 @@
-﻿key,0,1
-#,,Name
-offset,4,0
-int32,byte,str
-0,0,"無効"
-1,1,"淡水"
-2,2,"海水"
+﻿key,1
+#,Name
+offset,0
+int32,str
+0,無効
+1,淡水
+2,海水

@@ -45,6 +45,14 @@ public enum Language {
 		return "0";
 	}
 	
+	public static String getNameByLang(String lang) {
+		for (Language langs : values()) {
+			if (langs.lang.equals(lang))
+				return langs.name; 
+		} 
+		return "CSV";
+	}
+	
 	public static void main(String[] args) {
 		System.out.println(toLang("正體中文"));
 	}

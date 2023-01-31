@@ -2,4 +2,4 @@
 #,,
 offset,0,4
 int32,str,str
-0,"TEXT_AETHERYTERADZATHAN_STOP_000","寫著警示語……<hex:02100103>狀況穩定下來之前暫停使用。"
+0,TEXT_AETHERYTERADZATHAN_STOP_000,寫著警示語……<hex:02100103>狀況穩定下來之前暫停使用。

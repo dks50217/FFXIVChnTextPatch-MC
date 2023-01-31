@@ -2,4 +2,4 @@
 #,,
 offset,0,4
 int32,str,str
-0,"TEXT_CMNDEFPRISMBOX_00451_IS_REWARD_PROJECTION","無法使用，尚未開啟「武具投影」功能。"
+0,TEXT_CMNDEFPRISMBOX_00451_IS_REWARD_PROJECTION,無法使用，尚未開啟「武具投影」功能。

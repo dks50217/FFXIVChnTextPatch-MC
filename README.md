@@ -1,5 +1,5 @@
 # FFXIV Translation Patch Tool
-FFXIV的中文漢化器。適用於最新的6.X版本（1/4），並已套用中國服更新（3/16）。
+FFXIV的中文漢化器。適用於最新的6.X版本（1/11），並已套用中國服更新（12/20）。
 
 English description can be found in [Wiki pages](https://github.com/GpointChen/FFXIVChnTextPatch-GP/wiki).
 
@@ -68,7 +68,8 @@ English description can be found in [Wiki pages](https://github.com/GpointChen/F
 ## 編譯筆記
 [製作過程的筆記可以參考這裡。](https://hackmd.io/@GpointChen/SJi_gv-ad)
 
-如果你是使用MacOS，可能需要參考[這篇](https://github.com/GpointChen/FFXIVChnTextPatch-GP/blob/master/docs/MACOS_BUILD.md)。
+如果你是使用 MacOS，可能需要參考[這篇](https://github.com/GpointChen/FFXIVChnTextPatch-GP/blob/master/docs/MACOS_BUILD.md)。  
+如果你是使用 SteamOS（在 SteamDeck 上使用），可能需要參考[這篇](https://github.com/GpointChen/FFXIVChnTextPatch-GP/blob/master/docs/LINUX_BUILD.md)。 
 
 
 ## 更新註記

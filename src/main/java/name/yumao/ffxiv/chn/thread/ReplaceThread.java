@@ -20,6 +20,8 @@ public class ReplaceThread implements Runnable {
 	// private List<TeemoUpdateVo> updates;
 	private String slang;
 	private String flang;
+	private String rfont;
+	private String rtext;
 	
 	public ReplaceThread(String resourceFolder, TextPatchPanel textPatchPanel) {
 		this.resourceFolder = resourceFolder;
@@ -27,6 +29,8 @@ public class ReplaceThread implements Runnable {
 		// this.updates = updates;
 		this.slang = Config.getProperty("SLanguage");
 		this.flang = Config.getProperty("FLanguage");
+		this.rfont = Config.getProperty("ReplaFont");
+		this.rtext = Config.getProperty("ReplaText");
 	}
 	
 	public void run() {
@@ -43,16 +47,24 @@ public class ReplaceThread implements Runnable {
 			} 
 			*/
 			PercentPanel percentPanel = new PercentPanel("漢化進度");
-			new ReplaceFont(this.resourceFolder + File.separator + "000000.win32.index", "resource" + File.separator + "font", percentPanel).replace();
-			if ((this.flang.equals("CSV")) && (new File("resource" + File.separator + "rawexd" + File.separator + "Achievement.csv")).exists()) {
-				log.info("Start patching with CSV files.");
-				(new ReplaceEXDF(this.resourceFolder + File.separator + "0a0000.win32.index", "resource" + File.separator + "rawexd" + File.separator + "Achievement.csv", percentPanel)).replace();
-			} else if (!(this.flang.equals("CSV")) && (new File("resource" + File.separator + "text" + File.separator + "0a0000.win32.index")).exists()) {
-				log.info("Start patching with 0a0000 files.");
-				(new ReplaceEXDF(this.resourceFolder + File.separator + "0a0000.win32.index", "resource" + File.separator + "text" + File.separator + "0a0000.win32.index", percentPanel)).replace();
+			if (this.rfont.equals("1")) {
+				new ReplaceFont(this.resourceFolder + File.separator + "000000.win32.index", "resource" + File.separator + "font", percentPanel).replace();
 			} else {
-				System.out.println("No resource files detected!");
-				log.severe("No resource files detected!");
+				log.info("Skip replacing font files.");
+			}
+			if (this.rtext.equals("1")) {
+				if ((this.flang.equals("CSV")) && (new File("resource" + File.separator + "rawexd" + File.separator + "Achievement.csv")).exists()) {
+					log.info("Start patching with CSV files.");
+					(new ReplaceEXDF(this.resourceFolder + File.separator + "0a0000.win32.index", "resource" + File.separator + "rawexd" + File.separator + "Achievement.csv", percentPanel)).replace();
+				} else if (!(this.flang.equals("CSV")) && (new File("resource" + File.separator + "text" + File.separator + "0a0000.win32.index")).exists()) {
+					log.info("Start patching with 0a0000 files.");
+					(new ReplaceEXDF(this.resourceFolder + File.separator + "0a0000.win32.index", "resource" + File.separator + "text" + File.separator + "0a0000.win32.index", percentPanel)).replace();
+				} else {
+					System.out.println("No resource files detected!");
+					log.severe("No resource files detected!");
+				}
+			} else {
+				log.info("Skip replacing text.");
 			}
 			JOptionPane.showMessageDialog(null, "<html><body>漢化完畢</body></html>", "提示", -1);
 			log.info("Patch finished.");

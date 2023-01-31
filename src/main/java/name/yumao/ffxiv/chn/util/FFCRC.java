@@ -180,7 +180,7 @@ public class FFCRC {
 		
 		String[] testFiles = { "axis", "jupiter", "meidinger", "miedingermid", "trumpgothic" };
 		for (String testFile : testFiles) {
-			for (int i = 1; i < 201; i++) {
+			for (int i = 1; i < 401; i++) {
 				String realName = testFile + "_" + Integer.toString(i) + ".fdt";
 				int crc = ComputeCRC((realName).toLowerCase().getBytes());
 				System.out.println("File Name: " + realName);

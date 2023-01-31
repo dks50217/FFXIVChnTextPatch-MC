@@ -4,9 +4,17 @@ import java.io.BufferedReader;
 import java.io.CharArrayWriter;
 import java.io.File;
 import java.io.FileInputStream;
+import java.io.FileReader;
 import java.io.IOException;
 import java.io.InputStreamReader;
+import java.io.PrintWriter;
 import java.nio.charset.StandardCharsets;
+import java.nio.file.Files;
+import java.nio.file.Paths;
+import java.util.ArrayList;
+import java.util.List;
+import java.util.stream.Stream;
+
 import org.nlpcn.commons.lang.tire.GetWord;
 import org.nlpcn.commons.lang.tire.domain.Forest;
 import org.nlpcn.commons.lang.tire.domain.Value;
@@ -118,6 +126,25 @@ public class JianFan {
 	}
 	
 	public static void main(String[] args) {
-		System.out.println(getInstance().j2f("簡體中文"));
+		String targetPath = "D:\\FFXIV\\SaintCoinach\\SaintCoinach.Cmd\\bin\\Debug\\2022.12.07.0000.0000\\rawexd-chs-620\\";
+		String outputPath = "D:\\FFXIV\\SaintCoinach\\SaintCoinach.Cmd\\bin\\Debug\\2022.12.07.0000.0000\\rawexd-cht-620\\";
+		// System.out.println(getInstance().j2f("话语"));
+		try {
+			Files.walk(Paths.get(targetPath)).filter(Files::isRegularFile).forEach((path) -> {
+				String finalPath = outputPath + path.toString().replace(targetPath, "");
+				File file = new File(finalPath);
+				file.getParentFile().mkdirs();
+				try {
+					PrintWriter out = new PrintWriter(file);
+					try (Stream<String> stream = Files.lines(path)) {
+				        stream.forEach((line) -> {
+				        	out.println(getInstance().j2f(line));
+				        });
+				    out.close();
+					} catch (Exception e) {}
+				} catch (Exception e) {}
+	        });
+		} catch (Exception e){}
+		System.out.println(getInstance().j2f("结束！"));
 	}
 }

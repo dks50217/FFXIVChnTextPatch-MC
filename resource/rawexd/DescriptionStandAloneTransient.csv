@@ -1,12 +1,13 @@
-﻿key,0,1,2
-#,,,
-offset,8,0,4
-int32,uint32,str,str
-0,0,"",""
-1,0,"",""
-2,5,"檔案","- アーカイブ"
-3,6,"昔日重現模式解說","つよくてニューゲーム解説"
-4,13,"失傳技能解說","ロストアクション解説"
-5,21,"PORTRAIT LIST","ポートレート機能解説"
-6,22,"ADVENTURER PLATE","アドベンチャラープレート解説"
-
+﻿key,1,2
+#,,
+offset,0,4
+int32,str,str
+0,,
+1,,
+2,DATA,檔案
+3,NEW GAME+,昔日重現模式解說
+4,LOST ACTION,失傳技能解說
+5,PORTRAIT LIST,肖像解說
+6,ADVENTURER PLATE,冒險者銘牌解說
+7,ISLAND SANCTUARY,無人島開拓解說
+8,ISLEWORKS BEGINNER'S GUIDE,開拓工房入門手冊

@@ -68,14 +68,14 @@ int32,str,str
 63,飽食度,
 64,外層魔法障壁的耐久度,
 65,露琪亞等人的體力,
-66,,ContentGaugeMax_negative
+66,,
 67,中層魔法障壁的耐久度,
 68,內層魔法障壁的耐久度,
-69,,ContentGaugeMax_negative
-70,,ContentGaugeMax_negative
-71,,ContentGaugeMax_negative
-72,,ContentGaugeMax_negative
-73,,ContentGaugeMax_negative
+69,,
+70,,
+71,,
+72,,
+73,,
 74,,
 75,,
 

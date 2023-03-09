@@ -1,5 +1,5 @@
 # FFXIV Translation Patch Tool
-FFXIV的中文漢化器。適用於最新的6.X版本（1/11），並已套用中國服更新（12/20）。
+FFXIV的中文漢化器。更多資訊可參考[Wiki頁面](https://github.com/GpointChen/FFXIVChnTextPatch-GP/wiki)。
 
 English description can be found in [Wiki pages](https://github.com/GpointChen/FFXIVChnTextPatch-GP/wiki).
 
@@ -19,7 +19,7 @@ English description can be found in [Wiki pages](https://github.com/GpointChen/F
 
 
 
-請從release的地方下載：
+請從[release](https://github.com/GpointChen/FFXIVChnTextPatch-GP/releases)下載。
 
 <img src="https://github.com/GpointChen/FFXIVChnTextPatch-GP/blob/master/docs/fig1.png?raw=true" width="480px" />
 
@@ -39,30 +39,7 @@ English description can be found in [Wiki pages](https://github.com/GpointChen/F
 ![](https://i.imgur.com/RPim0G0.png)
 8. 點擊「漢化」
 
-
-### 如何使用中國服檔案進行漢化？
-0. 下載右邊的release版本或自行編譯
-1. 將中國服的0a0000三個檔案放至`resource/text`資料夾下
-2. 開啟EXE程式
-3. 點選「設置」
-4. 選擇FFXIV遊戲根目錄（例如：`D:\FFXIV\SquareEnix\FINAL FANTASY XIV - A Realm Reborn`）
-5. 「檔案語言」：如果是用中國服檔案，請選擇「簡體中文」
-6. 「原始語言」：想要覆蓋遊戲中的哪種語言（我自己是覆蓋日文，不保證覆蓋其他語言會不會有問題）
-7. 「目標語言」：想要漢化成簡體中文或繁體中文
-8. 點擊「確定」
-9. 點擊「漢化」
-
-### 如何使用別人已經漢化過的（0a0000等）檔案進行漢化？
-0. 下載右邊的release版本或自行編譯
-1. 將覆蓋檔的0a0000三個檔案放至`resource/text`資料夾下
-2. 開啟EXE程式
-3. 點選「設置」
-4. 選擇FFXIV遊戲根目錄（例如：`D:\FFXIV\SquareEnix\FINAL FANTASY XIV - A Realm Reborn`）
-5. 「檔案語言」：如果是用漢化過的覆蓋檔，請選擇該覆蓋檔當初覆蓋的語言。大多數覆蓋檔均為覆蓋日文
-6. 「原始語言」：想要覆蓋遊戲中的哪種語言（我自己是覆蓋日文，不保證覆蓋其他語言會不會有問題）
-7. 「目標語言」：想要漢化成簡體中文或繁體中文。請注意，如果原本覆蓋檔已經是繁體中文漢化，在此請選擇「簡體中文」避免多餘的簡繁轉換
-8. 點擊「確定」
-9. 點擊「漢化」
+其他漢化方法不保證100%可用，請參考[Wiki頁面](https://github.com/GpointChen/FFXIVChnTextPatch-GP/wiki)。
 
 
 ## 編譯筆記

@@ -3,6 +3,11 @@
 offset,0,4
 int32,str,str
 0,TEXT_REGYOK6ROPLI_00896_ROPLI_000,這裡是珠串萬貨街。<hex:02100103>可以算是為了這個地區成立的市場吧。<hex:02100103>如果你對這裡的商品感興趣的話，就隨便轉轉看看吧。
-1,TEXT_REGYOK6ROPLI_00896_ROPLI_010,珠串萬貨街就是這樣一串由不同的人和物穿成的項鏈。<hex:02100103>來賓店主各取所需，不僅顧客高興，商家也高興，<hex:02100103>大家的幸福和笑容，也能為整個萬貨街增光添彩。
+1,TEXT_REGYOK6ROPLI_00896_ROPLI_010,珠串萬貨街就是這樣一串由不同的人和物串成的項鏈。<hex:02100103>來賓店主各取所需，不僅顧客高興，商家也高興，<hex:02100103>大家的幸福和笑容，也能為整個萬貨街增光添彩。
 2,TEXT_REGYOK6ROPLI_00896_ROPLI_011,我相信有了你的協助，這份願景一定會實現的。<hex:02100103><hex:022903EB0203>，拜託你了。
 3,TEXT_REGYOK6ROPLI_00896_ROPLI_020,你真是太厲害了，<hex:022903EB0203>！<hex:02100103>你幫助遇到困難的店鋪解決了問題。<hex:02100103>真希望你這個工匠能夠一直待在我們市場這裡。
+4,TEXT_REGYOK6ROPLI_00896_ROPLI_025,
+5,TEXT_REGYOK6ROPLI_00896_ROPLI_026,
+6,TEXT_REGYOK6ROPLI_00896_ROPLI_027,
+7,TEXT_REGYOK6ROPLI_00896_ROPLI_030,
+8,TEXT_REGYOK6ROPLI_00896_ROPLI_031,

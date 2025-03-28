@@ -71,8 +71,8 @@ int32,str,str
 66,TEXT_COMDEFFREECOMPANY_00076_SYSTEM_000_48,請從部隊儲物櫃中取出所有道具和金幣後，<hex:02100103>再和所屬大國防聯軍的部隊管理負責人對話。
 67,TEXT_COMDEFFREECOMPANY_00076_SYSTEM_100_48,要想解散部隊，<hex:02100103>就必須要確保部隊擁有的土地已廢棄。
 68,TEXT_COMDEFFREECOMPANY_00076_SYSTEM_101_48,請在捨棄擁有的土地之後，<hex:02100103>再和所屬大國防聯軍的部隊管理負責人對話。
-69,TEXT_COMDEFFREECOMPANY_00076_SYSTEM_102_48,要想解散部隊，<hex:02100103>就必須要確保住宅區管理人那裡，<hex:02100103>沒有代為保管的已撤除的房屋裝潢配件。
-70,TEXT_COMDEFFREECOMPANY_00076_SYSTEM_103_48,請收回由住宅區管理人保管的已撤除的房屋裝潢配件後，<hex:02100103>再和所屬大國防聯軍的部隊管理負責人對話。
+69,TEXT_COMDEFFREECOMPANY_00076_SYSTEM_102_48,要想解散部隊，<hex:02100103>就必須要確保住宅區管理人那裡，<hex:02100103>沒有代為保管的已拆除的房屋裝潢配件。
+70,TEXT_COMDEFFREECOMPANY_00076_SYSTEM_103_48,請收回由住宅區管理人保管的已拆除的房屋裝潢配件後，<hex:02100103>再和所屬大國防聯軍的部隊管理負責人對話。
 71,TEXT_COMDEFFREECOMPANY_00076_FCSEAOFFICER_000_50,這份組建書不是由黑渦團發行的。<hex:02100103>請將組建書交給發行城邦的部隊管理負責人。
 72,TEXT_COMDEFFREECOMPANY_00076_FCFSTOFFICER_100_50,這份組建書不是由雙蛇黨發行的。<hex:02100103>請將組建書交給發行城邦的部隊管理負責人。
 73,TEXT_COMDEFFREECOMPANY_00076_FCWILOFFICER_200_50,這份組建書不是由恆輝隊發行的。<hex:02100103>請將組建書交給發行城邦的部隊管理負責人。

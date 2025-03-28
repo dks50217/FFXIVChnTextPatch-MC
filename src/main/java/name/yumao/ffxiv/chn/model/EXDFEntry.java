@@ -1,6 +1,8 @@
 package name.yumao.ffxiv.chn.model;
 
 import java.nio.ByteBuffer;
+import java.util.logging.Logger;
+
 import name.yumao.ffxiv.chn.util.ArrayUtil;
 
 public class EXDFEntry {
@@ -11,7 +13,15 @@ public class EXDFEntry {
 	private byte[] data;
 	
 	public EXDFEntry(byte[] data, int datasetChunkSize) {
+		Logger log = Logger.getLogger("GPLogger");
 		ByteBuffer buffer = ByteBuffer.wrap(data);
+		if (buffer.remaining() < datasetChunkSize) {
+			log.severe("Buffer position: " + buffer.position() + ", limit: " + buffer.limit() + ", remaining: " + buffer.remaining() + ", dataChunkSize: " + datasetChunkSize);
+	        this.chunk = new byte[0];  // empty array for chunk
+	        this.string = new byte[0]; // empty array for string
+	        this.data = new byte[0];   // empty array for combined data
+	        return;
+	    }
 		this.chunk = new byte[datasetChunkSize];
 		buffer.get(this.chunk);
 		this.string = new byte[data.length - datasetChunkSize];

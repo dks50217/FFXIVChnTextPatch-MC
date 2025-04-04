@@ -258,6 +258,11 @@ public class ReplaceEXDF {
 							// texhSE.getDatasetChunkSize() 是 row 的總大小
 							Integer listEntryIndex = listEntry.getKey();
 							EXDFEntry exdfEntryJA = new EXDFEntry(listEntry.getValue(), exhSE.getDatasetChunkSize());
+							if (exdfEntryJA.getData().length == 0) {
+							    log.severe("Data size was insufficient, bypass handling.");
+							    continue;
+							}
+							
 							EXDFEntry exdfEntryCN = null;
 							boolean cnEntryAvailable = true;
 							if (cnEXDFileAvailable) {

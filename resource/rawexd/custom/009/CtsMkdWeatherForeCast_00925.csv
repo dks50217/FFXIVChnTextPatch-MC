@@ -1,0 +1,13 @@
+﻿key,0,1
+#,,
+offset,0,4
+int32,str,str
+0,TEXT_CTSMKDWEATHERFORECAST_00925_WEATHERFORECAST_000_000,為助各位的冒險一臂之力，<hex:02100103>我們會調查本區域的天氣變化。<hex:02100103>接下來是目前天氣與接下來的預報。
+1,TEXT_CTSMKDWEATHERFORECAST_00925_WEATHERFORECAST_000_010,目前天氣為蜃景。
+2,TEXT_CTSMKDWEATHERFORECAST_00925_WEATHERFORECAST_000_020,請注意，天氣中稱作蜃景的現象，<hex:02100103>是無法預測的。
+3,TEXT_CTSMKDWEATHERFORECAST_00925_WEATHERFORECAST_000_030,<hex:02282CFF11>WeatherPlaceName<hex:FF17><hex:022813FF0E>TerritoryType<hex:E8020603><hex:0103>目前正處於蜃景天氣。<hex:02100103>蜃景何時散去尚不可知，<hex:02100103>若提早散去，則將轉為<hex:02280DFF08>Weather<hex:E8030203>，若持續時間較長，則將轉為<hex:02280DFF08>Weather<hex:E8040203>。<hex:02100103>之後會轉為<hex:02280DFF08>Weather<hex:E8050203>，<hex:02100103>而明日此時的天氣預計為<hex:02280DFF08>Weather<hex:E8060203>。
+4,TEXT_CTSMKDWEATHERFORECAST_00925_WEATHERFORECAST_000_035,<hex:02282CFF11>WeatherPlaceName<hex:FF17><hex:022813FF0E>TerritoryType<hex:E8020603><hex:0103>目前正處於蜃景天氣。<hex:02100103>蜃景何時散去尚不可知，<hex:02100103>散去後預計將轉為<hex:02280DFF08>Weather<hex:E8030203>。<hex:02100103>之後會轉為<hex:02280DFF08>Weather<hex:E8050203>，<hex:02100103>而明日此時的天氣預計為<hex:02280DFF08>Weather<hex:E8060203>。
+5,TEXT_CTSMKDWEATHERFORECAST_00925_WEATHERFORECAST_000_040,<hex:02282CFF11>WeatherPlaceName<hex:FF17><hex:022813FF0E>TerritoryType<hex:E8020603><hex:0103>目前正處於蜃景天氣。<hex:02100103>蜃景何時散去尚不可知，<hex:02100103>若提早散去，則將轉為<hex:02280DFF08>Weather<hex:E8030203>，若持續時間較長，則將轉為<hex:02280DFF08>Weather<hex:E8040203>。<hex:02100103>之後會有一段時間是<hex:02280DFF08>Weather<hex:E8050203>，<hex:02100103>而明日此時的天氣預計為<hex:02280DFF08>Weather<hex:E8060203>。
+6,TEXT_CTSMKDWEATHERFORECAST_00925_WEATHERFORECAST_000_045,<hex:02282CFF11>WeatherPlaceName<hex:FF17><hex:022813FF0E>TerritoryType<hex:E8020603><hex:0103>目前正處於蜃景天氣。<hex:02100103>蜃景何時散去尚不可知，<hex:02100103>散去後預計將轉為<hex:02280DFF08>Weather<hex:E8030203>。<hex:02100103>之後會有一段時間是<hex:02280DFF08>Weather<hex:E8050203>，<hex:02100103>而明日此時的天氣預計為<hex:02280DFF08>Weather<hex:E8060203>。
+7,TEXT_CTSMKDWEATHERFORECAST_00925_WEATHERFORECAST_000_050,<hex:02282CFF11>WeatherPlaceName<hex:FF17><hex:022813FF0E>TerritoryType<hex:E8020603><hex:0103>目前天氣為<hex:02280DFF08>Weather<hex:E8030203>。<hex:02100103>接下來天氣將轉為<hex:02280DFF08>Weather<hex:E8040203>，之後為<hex:02280DFF08>Weather<hex:E8050203>，<hex:02100103>而明日此時的天氣預計為<hex:02280DFF08>Weather<hex:E8060203>。
+8,TEXT_CTSMKDWEATHERFORECAST_00925_WEATHERFORECAST_000_060,<hex:02282CFF11>WeatherPlaceName<hex:FF17><hex:022813FF0E>TerritoryType<hex:E8020603><hex:0103>目前天氣為<hex:02280DFF08>Weather<hex:E8030203>。<hex:02100103>接下來將有一段時間是<hex:02280DFF08>Weather<hex:E8040203>，<hex:02100103>而明日此時的天氣預計為<hex:02280DFF08>Weather<hex:E8060203>。

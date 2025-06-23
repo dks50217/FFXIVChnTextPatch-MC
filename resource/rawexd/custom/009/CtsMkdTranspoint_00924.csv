@@ -1,0 +1,6 @@
+﻿key,0,1
+#,,
+offset,0,4
+int32,str,str
+0,TEXT_CTSMKDTRANSPOINT_00924_SYSTEM_000_000,與魔道通路產生共鳴，已開啟島內傳送網路！
+1,TEXT_CTSMKDTRANSPOINT_00924_SYSTEM_000_010,使用島內傳送網路后，<hex:02100103>可以在同一地圖內的魔道通路之間自由移動。<hex:02100103>看到魔道通路時，建議積極前往共鳴。

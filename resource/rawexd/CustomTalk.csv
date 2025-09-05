@@ -260,8 +260,8 @@ int32,str,str
 721151,CmnGscChocoboRaceDefaultA_00255,
 721152,CmnGscChocoboRaceDefaultB_00256,
 721153,CmnDefCompanyDraftingBoard_00257,
-721154,CmnDefCompanyCommanderBoard_00258,
-721155,CmnGscChocoboRaceShopCatalogTalk_00259,
+721154,CmnDefCompanyCommanderBoard_00258,管理飛空艇
+721155,CmnGscChocoboRaceShopCatalogTalk_00259,詢問競賽陸行鳥專用道具的用途
 721156,CmnDefMeister_00260,
 721157,CmnDefExpansionGuide1_00261,
 721158,,
@@ -449,7 +449,7 @@ int32,str,str
 721340,CmnDefBeastCurrencyGuide_00444,
 721341,RegHinCompanyMenmbers41_00445,
 721342,RegHinJenomis_00446,
-721343,HouFixCompanySubmarine_00447,
+721343,HouFixCompanySubmarine_00447,管理潛水艇
 721344,CtsErkEureka1GilShop_00448,商店
 721345,CtsErkEureka1LotteryExchangeShop_00449,商店
 721346,CtsErkEureka1SpWeapon_00450,禁地兵裝

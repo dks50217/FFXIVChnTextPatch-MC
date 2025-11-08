@@ -3,7 +3,7 @@
 **注意：本工具會修改客戶端檔案，可能違反官方規範，使用者須自行承擔風險。**
 
 ## 支援與相容性 (Compatibility)
-- 客戶端版本：國際服 7.38
+- 客戶端版本：國際服 7.3
 - 平台：Windows（SE/Steam 版）、SteamOS 未測試
 
 ## 使用 CSV 進行漢化 (Using CSV)
@@ -43,8 +43,9 @@ echo F | xcopy /Y "ffxiv\0a0000.win32.index2" "%backFolder%\0a0000.win32.index2"
 - `FFXIVChnTextPatchGP.exe`：漢化工具主程式（來自 FFXIVChnTextPatch-GP）
 
 以下內容為本專案原創或自行維護：
-- `resource/rawexd/`：以 **FFXIVChnTextPatch-Souma** 提供之簡體中文 CSV 為基礎，  
-  由本人進行繁體中文翻譯與在地化調整，使其更貼近台灣用語習慣。
+- `resource/rawexd/`:
+  * 以 **FFXIVChnTextPatch-Souma** 提供之簡體中文 CSV 為基礎，由本人進行繁體中文翻譯與在地化調整，使其更貼近台灣用語習慣。
+  * 後續自行以 SaintCoinach 匯出文本調整
 
 ---
 

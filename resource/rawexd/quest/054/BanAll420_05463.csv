@@ -1,7 +1,7 @@
 ﻿key,0,1
 #,,
 offset,0,4
-int32,str,str
+Int32,String,String
 0,,
 1,,
 2,,
@@ -211,3 +211,6 @@ int32,str,str
 206,,
 207,,
 208,,
+209,,
+210,,
+211,,

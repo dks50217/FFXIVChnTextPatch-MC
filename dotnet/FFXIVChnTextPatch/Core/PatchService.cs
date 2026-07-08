@@ -342,7 +342,7 @@ public class PatchService
         return (offsetMap, dataMap);
     }
 
-    private static List<string> InitFileList(string pathToIndex)
+    internal static List<string> InitFileList(string pathToIndex)
     {
         var index = new SqPackIndex(pathToIndex).ResolveIndex();
         int filePathCrc = FFCRC.ComputeCRC(Encoding.UTF8.GetBytes("exd"));
@@ -357,7 +357,7 @@ public class PatchService
         return fileList;
     }
 
-    private static byte[] ExtractFile(string pathToIndex, long dataOffset)
+    internal static byte[] ExtractFile(string pathToIndex, long dataOffset)
     {
         int datNum = (int)((dataOffset & 0xF) / 2);
         dataOffset -= dataOffset & 0xF;

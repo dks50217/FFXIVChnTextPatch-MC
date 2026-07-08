@@ -25,6 +25,18 @@ FFXIVChnTextPatch.exe --selftest   # 結果寫到 repo 根目錄 selftest.log
 
 包含：FFCRC 與 Java 原版輸出比對（6 組向量）、deflate round-trip、EXDF 建置/解析 round-trip、SqPack 區塊建置/解壓 round-trip、properties 路徑跳脫。
 
+## 翻譯維護工具
+
+```bash
+FFXIVChnTextPatch.exe --lint       # 報告寫到 repo 根目錄 lint-report.txt
+```
+
+（GUI 主畫面的「檢查翻譯 CSV」按鈕功能相同。）掃描 `resource/rawexd` 全部 CSV：
+
+- **錯誤**：會中斷漢化的問題（壞掉的 `<hex:>` 標籤——巢狀、缺冒號、非 16 進位或奇數長度、未關閉）、會讓整檔被跳過的問題（key／offset 不是整數、CSV 格式錯誤）、欄位數不足的資料列
+- **缺表清單**：遊戲中有字串欄位但 `rawexd` 沒有對應 CSV 的表（需 `GamePath` 有效）
+- **覆蓋率**：每張表的非空欄位比例，由低到高排序，缺譯一目瞭然
+
 ## 與 Java 版的差異
 
 - **僅支援 CSV 翻譯模式**（`FLanguage=CSV`，讀 `resource/rawexd/*.csv`）。舊的「CN 客戶端檔案」模式（`EXDFUtil`／`JianFan` 簡繁轉換／`transtable`／teemo.name 遠端下載）未移植，需要時再從 Java 版補。

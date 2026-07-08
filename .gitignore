@@ -12,6 +12,12 @@
 /test/
 debug.*
 selftest.log
+lint-report.txt
+
+# Visual Studio
+.vs/
+*.user
+*.suo
 *.bat
 *.jar
 *.rar

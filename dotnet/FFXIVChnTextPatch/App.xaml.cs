@@ -17,6 +17,13 @@ public partial class App : Application
             return;
         }
 
+        if (e.Args.Contains("--lint"))
+        {
+            LintTool.Run();
+            Shutdown();
+            return;
+        }
+
         base.OnStartup(e);
         new MainWindow().Show();
     }

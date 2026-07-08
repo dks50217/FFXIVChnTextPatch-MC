@@ -53,6 +53,10 @@ else
         <button class="big" disabled="@_busy" @onclick="() => { _message = null; _showConfig = true; }">設置</button>
     </div>
 
+    <div class="toolbar">
+        <button class="small" disabled="@_busy" @onclick="Lint">檢查翻譯 CSV</button>
+    </div>
+
     @if (_busy)
     {
         <div class="progress-area">
@@ -146,6 +150,27 @@ else
     private async Task Rollback()
     {
         await RunJob(p => Patcher.RollbackAsync(p), "還原完畢");
+    }
+
+    private async Task Lint()
+    {
+        _busy = true;
+        _message = null;
+        _percent = 0;
+        _action = "正在檢查翻譯……";
+        _detail = "";
+        var progress = new Progress<PatchProgress>(p =>
+        {
+            _percent = p.Percent;
+            _action = p.Action;
+            _detail = p.Detail;
+            InvokeAsync(StateHasChanged);
+        });
+        var result = await LintTool.RunAsync(progress);
+        _busy = false;
+        _isError = result.ErrorCount > 0;
+        _message = result.Summary;
+        StateHasChanged();
     }
 
     private async Task RunJob(Func<IProgress<PatchProgress>, Task<string?>> job, string successMessage)

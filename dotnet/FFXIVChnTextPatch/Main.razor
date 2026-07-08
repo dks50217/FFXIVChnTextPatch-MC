@@ -1,0 +1,171 @@
+@inject PatchService Patcher
+@inject Func<string?> PickFolder
+
+<div class="window">
+@if (_showConfig)
+{
+    <h1>漢化設置</h1>
+    <div class="form">
+        <label>遊戲路徑</label>
+        <div class="row">
+            <input value="@_gamePath" readonly />
+            <button class="small" @onclick="Browse">瀏覽…</button>
+        </div>
+
+        <label>檔案語言</label>
+        <div class="row"><span class="fixed-value">CSV（resource/rawexd）</span></div>
+
+        <label>原始語言</label>
+        <div class="row">
+            <select @bind="_sLang">
+                <option value="JA">日文</option>
+                <option value="EN">英文</option>
+                <option value="DE">德文</option>
+                <option value="FR">法文</option>
+                <option value="CHS">簡體中文</option>
+            </select>
+        </div>
+
+        <div class="row checks">
+            <label><input type="checkbox" @bind="_replaceFont" /> 替換字體</label>
+            <label><input type="checkbox" @bind="_replaceText" /> 替換文本</label>
+        </div>
+
+        @if (_message != null)
+        {
+            <p class="message error">@_message</p>
+        }
+
+        <div class="row buttons">
+            <button class="primary" @onclick="SaveConfig">確認</button>
+            <button @onclick="CancelConfig" disabled="@(!PatchService.IsFFXIVFolder(Config.Get("GamePath")))">返回</button>
+        </div>
+    </div>
+}
+else
+{
+    <h1>PatchTool <span class="by">by GPointChen</span></h1>
+    <div class="path" title="@Config.Get("GamePath")">@Config.Get("GamePath")</div>
+
+    <div class="actions">
+        <button class="big primary" disabled="@_busy" @onclick="Patch">漢化</button>
+        <button class="big" disabled="@_busy" @onclick="Rollback">還原</button>
+        <button class="big" disabled="@_busy" @onclick="() => { _message = null; _showConfig = true; }">設置</button>
+    </div>
+
+    @if (_busy)
+    {
+        <div class="progress-area">
+            <progress max="1" value="@_percent"></progress>
+            <div class="progress-text">@_action@_detail（@((_percent * 100).ToString("0"))%）</div>
+        </div>
+    }
+    @if (_message != null)
+    {
+        <p class="message @(_isError ? "error" : "ok")">@_message</p>
+    }
+}
+</div>
+
+@code {
+    private bool _showConfig;
+    private bool _busy;
+    private double _percent;
+    private string _action = "";
+    private string _detail = "";
+    private string? _message;
+    private bool _isError;
+
+    // config 表單狀態
+    private string _gamePath = "";
+    private string _sLang = "JA";
+    private bool _replaceFont;
+    private bool _replaceText = true;
+
+    protected override void OnInitialized()
+    {
+        _showConfig = !PatchService.IsFFXIVFolder(Config.Get("GamePath"));
+        LoadConfigForm();
+    }
+
+    private void LoadConfigForm()
+    {
+        _gamePath = Config.Get("GamePath") ?? "";
+        _sLang = Config.Get("SLanguage") ?? "JA";
+        _replaceFont = Config.Get("ReplaFont") == "1";
+        _replaceText = Config.Get("ReplaText") != "0";
+    }
+
+    private void Browse()
+    {
+        var path = PickFolder();
+        if (path == null) return;
+        if (PatchService.IsFFXIVFolder(path))
+        {
+            _gamePath = path;
+            _message = null;
+        }
+        else
+        {
+            _message = "請選擇正確的遊戲根目錄，目錄預設名為：FINAL FANTASY XIV ONLINE";
+        }
+    }
+
+    private void SaveConfig()
+    {
+        if (!PatchService.IsFFXIVFolder(_gamePath))
+        {
+            _message = "請選擇正確的遊戲根目錄，目錄預設名為：FINAL FANTASY XIV ONLINE";
+            return;
+        }
+        Config.Set("GamePath", _gamePath);
+        Config.Set("SLanguage", _sLang);
+        Config.Set("DLanguage", Config.Get("DLanguage") ?? "CHS");
+        Config.Set("FLanguage", "CSV");
+        Config.Set("ReplaFont", _replaceFont ? "1" : "0");
+        Config.Set("ReplaText", _replaceText ? "1" : "0");
+        Config.Set("SkipFiles", Config.Get("SkipFiles") ?? "");
+        Config.Set("TransMode", "0");
+        Config.Save();
+        _message = null;
+        _showConfig = false;
+    }
+
+    private void CancelConfig()
+    {
+        LoadConfigForm();
+        _message = null;
+        _showConfig = false;
+    }
+
+    private async Task Patch()
+    {
+        await RunJob(p => Patcher.PatchAsync(p), "漢化完畢");
+    }
+
+    private async Task Rollback()
+    {
+        await RunJob(p => Patcher.RollbackAsync(p), "還原完畢");
+    }
+
+    private async Task RunJob(Func<IProgress<PatchProgress>, Task<string?>> job, string successMessage)
+    {
+        _busy = true;
+        _message = null;
+        _percent = 0;
+        _action = "準備中……";
+        _detail = "";
+        var progress = new Progress<PatchProgress>(p =>
+        {
+            _percent = p.Percent;
+            _action = p.Action;
+            _detail = p.Detail;
+            InvokeAsync(StateHasChanged);
+        });
+        var error = await job(progress);
+        _busy = false;
+        _isError = error != null;
+        _message = error ?? successMessage;
+        StateHasChanged();
+    }
+}

@@ -7,6 +7,11 @@ English description can be found in [Wiki pages](https://github.com/GpointChen/F
 1. 針對5.5X以後版本修正中文字庫補丁。
 2. 新增使用CSV進行漢化的功能。CSV是使用修改過的SaintCoinach輸出。
 3. 刪除原版exe中與teemo連線的部分。
+4. 以 C#/.NET（WPF + Blazor Hybrid）重寫，程式碼在 [`dotnet/`](dotnet/README.md)。
+
+## 授權與溯源
+
+本專案以 [GNU GPLv3](LICENSE) 授權。.NET 版移植自 [GpointChen/FFXIVChnTextPatch-GP](https://github.com/GpointChen/FFXIVChnTextPatch-GP)（Java Swing 版，其前身為 yumao 的 FFXIVChnTextPatch，2019-09-01 開源），為其衍生著作，沿用 GPLv3。原 Java 原始碼已自工作目錄移除，可在本 repo 的 git 歷史（`dotnet10-upgrade` 分支之前的 `src/`）或上游專案取得。
 
 ## 使用
 目前可以使用CSV、中國服檔案或他人製作的漢化覆蓋檔進行漢化。
@@ -42,11 +47,17 @@ English description can be found in [Wiki pages](https://github.com/GpointChen/F
 其他漢化方法不保證100%可用，請參考[Wiki頁面](https://github.com/GpointChen/FFXIVChnTextPatch-GP/wiki)。
 
 
-## 編譯筆記
-[製作過程的筆記可以參考這裡。](https://hackmd.io/@GpointChen/SJi_gv-ad)
+## 編譯
 
-如果你是使用 MacOS，可能需要參考[這篇](https://github.com/GpointChen/FFXIVChnTextPatch-GP/blob/master/docs/MACOS_BUILD.md)。  
-如果你是使用 SteamOS（在 SteamDeck 上使用），可能需要參考[這篇](https://github.com/GpointChen/FFXIVChnTextPatch-GP/blob/master/docs/LINUX_BUILD.md)。 
+.NET 10 版（Windows）：見 [`dotnet/README.md`](dotnet/README.md)。
+
+```bash
+cd dotnet/FFXIVChnTextPatch
+dotnet build
+dotnet run
+```
+
+舊 Java 版的編譯筆記：[製作過程的筆記可以參考這裡](https://hackmd.io/@GpointChen/SJi_gv-ad)（原始碼在 git 歷史中）。
 
 
 ## 更新註記

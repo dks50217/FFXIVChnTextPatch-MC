@@ -1,0 +1,18 @@
+<Project Sdk="Microsoft.NET.Sdk.Razor">
+
+  <PropertyGroup>
+    <OutputType>WinExe</OutputType>
+    <TargetFramework>net10.0-windows10.0.17763.0</TargetFramework>
+    <UseWPF>true</UseWPF>
+    <Nullable>enable</Nullable>
+    <ImplicitUsings>enable</ImplicitUsings>
+    <RootNamespace>FFXIVChnTextPatch</RootNamespace>
+    <AssemblyName>FFXIVChnTextPatch</AssemblyName>
+  </PropertyGroup>
+
+  <ItemGroup>
+    <Using Include="System.IO" />
+    <PackageReference Include="Microsoft.AspNetCore.Components.WebView.Wpf" Version="10.0.80" />
+  </ItemGroup>
+
+</Project>

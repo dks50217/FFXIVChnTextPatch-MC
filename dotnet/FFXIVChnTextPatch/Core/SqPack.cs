@@ -125,7 +125,9 @@ public class SqPackDatFile : IDisposable
 
     public SqPackDatFile(string path)
     {
-        _fs = File.OpenRead(path);
+        // PatchService 進行中會以 ReadWrite 開著同一個 dat 檔追加資料，
+        // 這裡必須允許共享寫入，否則所有 ExtractFile 都會 sharing violation。
+        _fs = new FileStream(path, FileMode.Open, FileAccess.Read, FileShare.ReadWrite);
         _r = new BinaryReader(_fs);
     }
 

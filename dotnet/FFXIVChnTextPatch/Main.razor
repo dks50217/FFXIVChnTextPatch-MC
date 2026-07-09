@@ -46,6 +46,7 @@ else
 {
     <h1>PatchTool</h1>
     <div class="path" title="@Config.Get("GamePath")">@Config.Get("GamePath")</div>
+    <div class="status @(Status.Warn ? "warn" : "")">@Status.Text</div>
 
     <div class="actions">
         <button class="big primary" disabled="@_busy" @onclick="Patch">漢化</button>
@@ -72,6 +73,8 @@ else
 </div>
 
 @code {
+    private static (string Text, bool Warn) Status => PatchService.PatchStatus();
+
     private bool _showConfig;
     private bool _busy;
     private double _percent;

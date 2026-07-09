@@ -28,6 +28,27 @@ public class PatchService
     private static bool IsGameRunning() =>
         Process.GetProcessesByName("ffxiv_dx11").Length > 0;
 
+    /// <summary>讀 game/ffxivgame.ver 的遊戲版本，讀不到回傳 null。</summary>
+    public static string? GameVersion()
+    {
+        var gamePath = Config.Get("GamePath");
+        if (string.IsNullOrEmpty(gamePath)) return null;
+        var verFile = Path.Combine(gamePath, "game", "ffxivgame.ver");
+        try { return File.Exists(verFile) ? File.ReadAllText(verFile).Trim() : null; }
+        catch { return null; }
+    }
+
+    /// <summary>主畫面顯示的漢化狀態（依據上次漢化時記下的遊戲版本）。</summary>
+    public static (string Text, bool Warn) PatchStatus()
+    {
+        string? patched = Config.Get("PatchedVersion");
+        if (string.IsNullOrEmpty(patched)) return ("目前狀態：未漢化", false);
+        string? game = GameVersion();
+        if (game != null && game != patched)
+            return ($"⚠ 遊戲已從 {patched} 更新至 {game}，漢化已被覆蓋，請重新漢化", true);
+        return ($"目前狀態：已漢化（遊戲版本 {patched}）", false);
+    }
+
     /// <summary>執行漢化（含備份）。Ok=true 時 Message 是成功摘要，否則是錯誤訊息。</summary>
     public async Task<(bool Ok, string Message)> PatchAsync(IProgress<PatchProgress> progress)
     {
@@ -67,6 +88,8 @@ public class PatchService
                 }
             });
             AppEnv.Log("Patch finished. " + summary);
+            Config.Set("PatchedVersion", GameVersion() ?? "");
+            Config.Save();
             return (true, summary);
         }
         catch (Exception ex)
@@ -103,6 +126,8 @@ public class PatchService
                 }
                 AppEnv.Log("[Rollback] Rollback completed.");
             });
+            Config.Set("PatchedVersion", "");
+            Config.Save();
             return (true, "還原完畢");
         }
         catch (Exception ex)
@@ -167,6 +192,8 @@ public class PatchService
     private static string ReplaceExdf(string pathToIndex, IProgress<PatchProgress> progress)
     {
         int replaced = 0, noCsv = 0, failed = 0;
+        // 讀回驗證用：記下第一筆與最後一筆寫入（offset 為 index 內儲存的原始值）
+        (int Offset, byte[] Expected)? firstWrite = null, lastWrite = null;
         string slang = Config.Get("SLanguage") ?? "JA";
         var skipFiles = (Config.Get("SkipFiles") ?? "").ToLowerInvariant().Split('|').ToList();
 
@@ -278,11 +305,14 @@ public class PatchService
 
                 byte[] exdfFile = new EXDFBuilder(entries).BuildExdf();
                 byte[] exdfBlock = new BinaryBlockBuilder(exdfFile).BuildBlock();
+                int rawOffset = (int)(datLength / 8);
                 indexFs.Seek(exdIndexFile.Pt + 8, SeekOrigin.Begin);
-                indexWriter.Write((int)(datLength / 8));
+                indexWriter.Write(rawOffset);
                 datLength += exdfBlock.Length;
                 datFs.Write(exdfBlock);
                 wroteAnyPage = true;
+                firstWrite ??= (rawOffset, exdfFile);
+                lastWrite = (rawOffset, exdfFile);
             }
             if (wroteAnyPage) replaced++;
         }
@@ -291,6 +321,21 @@ public class PatchService
         if (replaced == 0)
             throw new InvalidOperationException(
                 $"沒有替換任何文本（失敗：{failed}，無 CSV：{noCsv}），詳見 debug.log");
+
+        // 讀回驗證：抽第一筆與最後一筆寫入，重新 extract 比對，確保資料真的落地
+        datFs.Flush();
+        foreach (var (offset, expected) in new[] { firstWrite!.Value, lastWrite!.Value }.DistinctBy(s => s.Offset))
+        {
+            byte[] readBack;
+            try { readBack = ExtractFile(pathToIndex, offset); }
+            catch (Exception ex)
+            {
+                throw new InvalidOperationException("漢化寫入驗證失敗（讀回時發生錯誤：" + ex.Message + "），請執行還原");
+            }
+            if (!readBack.AsSpan().SequenceEqual(expected))
+                throw new InvalidOperationException("漢化寫入驗證失敗（讀回資料與寫入不符），請執行還原");
+        }
+        AppEnv.Log("Read-back verification passed.");
         return summary;
     }
 

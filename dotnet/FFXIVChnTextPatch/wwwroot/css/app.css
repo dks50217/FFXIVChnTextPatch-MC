@@ -17,6 +17,9 @@ h1 .by { font-size: 12px; font-weight: normal; color: #aaa; }
     white-space: nowrap; overflow: hidden; text-overflow: ellipsis;
 }
 
+.status { font-size: 13px; color: #27824f; }
+.status.warn { color: #c0392b; font-weight: bold; }
+
 .actions { display: flex; gap: 16px; margin: 24px 0; }
 
 button {

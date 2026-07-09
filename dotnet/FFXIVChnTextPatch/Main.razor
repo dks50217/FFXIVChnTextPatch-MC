@@ -144,12 +144,12 @@ else
 
     private async Task Patch()
     {
-        await RunJob(p => Patcher.PatchAsync(p), "漢化完畢");
+        await RunJob(p => Patcher.PatchAsync(p));
     }
 
     private async Task Rollback()
     {
-        await RunJob(p => Patcher.RollbackAsync(p), "還原完畢");
+        await RunJob(p => Patcher.RollbackAsync(p));
     }
 
     private async Task Lint()
@@ -173,7 +173,7 @@ else
         StateHasChanged();
     }
 
-    private async Task RunJob(Func<IProgress<PatchProgress>, Task<string?>> job, string successMessage)
+    private async Task RunJob(Func<IProgress<PatchProgress>, Task<(bool Ok, string Message)>> job)
     {
         _busy = true;
         _message = null;
@@ -187,10 +187,10 @@ else
             _detail = p.Detail;
             InvokeAsync(StateHasChanged);
         });
-        var error = await job(progress);
+        var (ok, message) = await job(progress);
         _busy = false;
-        _isError = error != null;
-        _message = error ?? successMessage;
+        _isError = !ok;
+        _message = message;
         StateHasChanged();
     }
 }

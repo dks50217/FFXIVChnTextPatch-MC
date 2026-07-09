@@ -58,10 +58,23 @@ public static class SelfTest
         File.WriteAllBytes(tmp, block);
         try
         {
-            using var dat = new SqPackDatFile(tmp);
-            var extracted = dat.ExtractFile(0);
-            Check("BinaryBlock build/extract round-trip", extracted.AsSpan().SequenceEqual(data));
-            Check("Block 128-byte alignment", block.Length % 128 == 0);
+            using (var dat = new SqPackDatFile(tmp))
+            {
+                var extracted = dat.ExtractFile(0);
+                Check("BinaryBlock build/extract round-trip", extracted.AsSpan().SequenceEqual(data));
+                Check("Block 128-byte alignment", block.Length % 128 == 0);
+            }
+
+            // PatchService 漢化中會以 ReadWrite 開著 dat 檔，ExtractFile 必須仍能讀（sharing violation 回歸測試）
+            bool sharingOk;
+            try
+            {
+                using var writeHandle = new FileStream(tmp, FileMode.Open, FileAccess.ReadWrite);
+                using var dat = new SqPackDatFile(tmp);
+                sharingOk = dat.ExtractFile(0).AsSpan().SequenceEqual(data);
+            }
+            catch (IOException) { sharingOk = false; }
+            Check("ExtractFile with concurrent ReadWrite handle", sharingOk);
         }
         finally
         {

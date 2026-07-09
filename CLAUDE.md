@@ -18,7 +18,12 @@ dotnet build
 dotnet run                                  # GUI
 ./bin/Debug/net10.0-windows10.0.17763.0/FFXIVChnTextPatch.exe --selftest
                                             # binary-format checks → selftest.log in repo root
+dotnet publish -c Release -r win-x64 --self-contained -p:PublishSingleFile=true -p:IncludeNativeLibrariesForSelfExtract=true
+                                            # distributable: publish/FFXIVChnTextPatch.exe + wwwroot/
+                                            # (ship together with conf/ and resource/)
 ```
+
+Note: the exe is a GUI app — invoking `--selftest` from a shell returns immediately; wait a moment before reading selftest.log.
 
 The app locates its base directory (for `conf/`, `resource/`, `backup/`, `debug.log`) by walking up from the exe until it finds `conf/global.properties`.
 

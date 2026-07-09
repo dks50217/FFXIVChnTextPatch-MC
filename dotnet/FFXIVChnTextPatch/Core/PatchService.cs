@@ -1,3 +1,4 @@
+using System.Diagnostics;
 using System.Text;
 using Microsoft.VisualBasic.FileIO;
 
@@ -24,15 +25,21 @@ public class PatchService
     private static string SqpackFolder(string gamePath) =>
         Path.Combine(gamePath, "game", "sqpack", "ffxiv");
 
-    /// <summary>執行漢化（含備份）。成功回傳 null，失敗回傳錯誤訊息。</summary>
-    public async Task<string?> PatchAsync(IProgress<PatchProgress> progress)
+    private static bool IsGameRunning() =>
+        Process.GetProcessesByName("ffxiv_dx11").Length > 0;
+
+    /// <summary>執行漢化（含備份）。Ok=true 時 Message 是成功摘要，否則是錯誤訊息。</summary>
+    public async Task<(bool Ok, string Message)> PatchAsync(IProgress<PatchProgress> progress)
     {
         var gamePath = Config.Get("GamePath");
         if (!IsFFXIVFolder(gamePath))
-            return "請選擇正確的遊戲根目錄（目錄內應有 game\\ffxiv_dx11.exe）";
+            return (false, "請選擇正確的遊戲根目錄（目錄內應有 game\\ffxiv_dx11.exe）");
+        if (IsGameRunning())
+            return (false, "偵測到 FFXIV 正在執行中，請先關閉遊戲再進行漢化");
         string resourceFolder = SqpackFolder(gamePath!);
         try
         {
+            string summary = "漢化完畢";
             await Task.Run(() =>
             {
                 Backup(resourceFolder);
@@ -46,7 +53,7 @@ public class PatchService
                     if (Config.Get("FLanguage") == "CSV" && HasCsvFiles(AppEnv.P("resource", "rawexd")))
                     {
                         AppEnv.Log("Start patching with CSV files.");
-                        ReplaceExdf(Path.Combine(resourceFolder, "0a0000.win32.index"), progress);
+                        summary = ReplaceExdf(Path.Combine(resourceFolder, "0a0000.win32.index"), progress);
                     }
                     else
                     {
@@ -59,22 +66,24 @@ public class PatchService
                     AppEnv.Log("Skip replacing text.");
                 }
             });
-            AppEnv.Log("Patch finished.");
-            return null;
+            AppEnv.Log("Patch finished. " + summary);
+            return (true, summary);
         }
         catch (Exception ex)
         {
             AppEnv.Log("Patch failed! " + ex);
-            return "漢化失敗：" + ex.Message;
+            return (false, "漢化失敗：" + ex.Message);
         }
     }
 
-    /// <summary>從 backup/ 還原六個資源檔。成功回傳 null。</summary>
-    public async Task<string?> RollbackAsync(IProgress<PatchProgress> progress)
+    /// <summary>從 backup/ 還原六個資源檔。</summary>
+    public async Task<(bool Ok, string Message)> RollbackAsync(IProgress<PatchProgress> progress)
     {
         var gamePath = Config.Get("GamePath");
         if (!IsFFXIVFolder(gamePath))
-            return "請選擇正確的遊戲根目錄（目錄內應有 game\\ffxiv_dx11.exe）";
+            return (false, "請選擇正確的遊戲根目錄（目錄內應有 game\\ffxiv_dx11.exe）");
+        if (IsGameRunning())
+            return (false, "偵測到 FFXIV 正在執行中，請先關閉遊戲再進行還原");
         string resourceFolder = SqpackFolder(gamePath!);
         try
         {
@@ -94,12 +103,12 @@ public class PatchService
                 }
                 AppEnv.Log("[Rollback] Rollback completed.");
             });
-            return null;
+            return (true, "還原完畢");
         }
         catch (Exception ex)
         {
             AppEnv.Log("Rollback failed! " + ex);
-            return "還原失敗：" + ex.Message;
+            return (false, "還原失敗：" + ex.Message);
         }
     }
 
@@ -154,8 +163,10 @@ public class PatchService
 
     // ===== 文本替換（ReplaceEXDF.java，CSV 模式） =====
 
-    private static void ReplaceExdf(string pathToIndex, IProgress<PatchProgress> progress)
+    /// <summary>回傳成功摘要；一個檔案都沒替換到時視為失敗直接丟例外。</summary>
+    private static string ReplaceExdf(string pathToIndex, IProgress<PatchProgress> progress)
     {
+        int replaced = 0, noCsv = 0, failed = 0;
         string slang = Config.Get("SLanguage") ?? "JA";
         var skipFiles = (Config.Get("SkipFiles") ?? "").ToLowerInvariant().Split('|').ToList();
 
@@ -195,7 +206,7 @@ public class PatchService
 
             byte[] exhData;
             try { exhData = ExtractFile(pathToIndex, exhIndexFile.DataOffset); }
-            catch (Exception ex) { AppEnv.Log($"EXH extract failed: {replaceFile}: {ex.Message}"); continue; }
+            catch (Exception ex) { AppEnv.Log($"EXH extract failed: {replaceFile}: {ex.Message}"); failed++; continue; }
             var exhSE = new EXHFFile(exhData);
             if (exhSE.Langs.Length == 0) continue;
 
@@ -205,13 +216,15 @@ public class PatchService
             if (!File.Exists(csvPath))
             {
                 AppEnv.Log("File not exists: " + csvPath);
+                noCsv++;
                 continue;
             }
             Dictionary<int, int> offsetMap;
             Dictionary<int, string[]> csvDataMap;
             try { (offsetMap, csvDataMap) = LoadCsv(csvPath); }
-            catch (Exception ex) { AppEnv.Log("CSV Exception: " + ex.Message); continue; }
+            catch (Exception ex) { AppEnv.Log("CSV Exception: " + ex.Message); failed++; continue; }
 
+            bool wroteAnyPage = false;
             foreach (var page in exhSE.Pages)
             {
                 int exdFileCrc = FFCRC.ComputeCRC(Encoding.UTF8.GetBytes(
@@ -269,9 +282,16 @@ public class PatchService
                 indexWriter.Write((int)(datLength / 8));
                 datLength += exdfBlock.Length;
                 datFs.Write(exdfBlock);
+                wroteAnyPage = true;
             }
+            if (wroteAnyPage) replaced++;
         }
-        AppEnv.Log("Replace Completed");
+        string summary = $"漢化完畢：已替換 {replaced} 個資料表（無翻譯 CSV：{noCsv}，失敗：{failed}）";
+        AppEnv.Log("Replace Completed. " + summary);
+        if (replaced == 0)
+            throw new InvalidOperationException(
+                $"沒有替換任何文本（失敗：{failed}，無 CSV：{noCsv}），詳見 debug.log");
+        return summary;
     }
 
     /// <summary>CSV 內容轉為 EXD 位元組：&lt;hex:...&gt; 標籤轉回 binary，其他照 UTF-8 寫入。</summary>

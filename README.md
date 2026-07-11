@@ -1,55 +1,36 @@
 # FFXIV Translation Patch Tool
-FFXIV的中文漢化器。更多資訊可參考[Wiki頁面](https://github.com/GpointChen/FFXIVChnTextPatch-GP/wiki)。
 
-English description can be found in [Wiki pages](https://github.com/GpointChen/FFXIVChnTextPatch-GP/wiki).
+FFXIV 國際服的中文漢化器。以 C#/.NET 10（WPF + Blazor Hybrid）重寫，程式碼在 [`dotnet/`](dotnet/README.md)。
 
-相較於原版：
-1. 針對5.5X以後版本修正中文字庫補丁。
-2. 新增使用CSV進行漢化的功能。CSV是使用修改過的SaintCoinach輸出。
-3. 刪除原版exe中與teemo連線的部分。
-4. 以 C#/.NET（WPF + Blazor Hybrid）重寫，程式碼在 [`dotnet/`](dotnet/README.md)。
+相較於上游原版：
+1. 針對 5.5X 以後版本修正中文字庫補丁。
+2. 使用 CSV（修改過的 SaintCoinach 輸出）進行漢化，**僅支援 CSV 模式**（中國服檔案 / 漢化覆蓋檔模式已移除）。
+3. 刪除原版 exe 中與 teemo 連線的部分。
+4. 以 C#/.NET 重寫，含 `--selftest` 二進位格式自檢與翻譯 CSV 檢查工具。
 
 ## 授權與溯源
 
 本專案以 [GNU GPLv3](LICENSE) 授權。.NET 版移植自 [GpointChen/FFXIVChnTextPatch-GP](https://github.com/GpointChen/FFXIVChnTextPatch-GP)（Java Swing 版，其前身為 yumao 的 FFXIVChnTextPatch，2019-09-01 開源），為其衍生著作，沿用 GPLv3。原 Java 原始碼已自工作目錄移除，可在本 repo 的 git 歷史（`dotnet10-upgrade` 分支之前的 `src/`）或上游專案取得。
 
 ## 使用
-目前可以使用CSV、中國服檔案或他人製作的漢化覆蓋檔進行漢化。
 
-為了避免更新時出現問題，建議每次更新前先還原檔案，下載完更新後再次漢化。
+從本專案的 [Releases](https://github.com/dks50217/FFXIVChnTextPatch-MC/releases) 下載，或自行編譯。需要 Windows + WebView2 Runtime。
 
-還原時不需設置資料夾，直接點擊還原即可。
+1. 開啟 `FFXIVChnTextPatch.exe`，首次啟動會進入「漢化設置」
+2. 「遊戲路徑」：選擇 FFXIV 遊戲根目錄（目錄內須有 `game/ffxiv_dx11.exe`，預設名為 `FINAL FANTASY XIV ONLINE`）
+3. 「原始語言」：想要覆蓋遊戲中的哪種語言（建議日文，覆蓋其他語言不保證沒問題）
+4. 視需求勾選「替換字體」「替換文本」，點「確認」
+5. 回到主畫面點「漢化」；「還原」可隨時回復備份，不需任何設定
 
-請注意，如果沒有額外備份原遊戲檔案，請不要重複漢化，因為會覆蓋`backup`資料夾裡面的備份檔。
+漢化前會自動備份六個 index/dat 檔到 `backup/`。注意事項：
 
-
-
-請從[release](https://github.com/GpointChen/FFXIVChnTextPatch-GP/releases)下載。
-
-<img src="https://github.com/GpointChen/FFXIVChnTextPatch-GP/blob/master/docs/fig1.png?raw=true" width="480px" />
-
-<img src="https://github.com/GpointChen/FFXIVChnTextPatch-GP/blob/master/docs/fig2.png?raw=true" width="480px" />
-
-### 如何使用CSV進行漢化？（推薦）
-0. 下載右邊的release版本或自行編譯
-1. 開啟EXE程式
-![](https://i.imgur.com/RPim0G0.png)
-2. 點選「設置」
-![](https://i.imgur.com/OypMCof.png)
-3. 選擇FFXIV遊戲根目錄（例如：`D:\FFXIV\SquareEnix\FINAL FANTASY XIV - A Realm Reborn`）
-4. 「檔案語言」：CSV代表使用`resource/rawexd`裡面的CSV檔案進行漢化（推薦）
-5. 「原始語言」：想要覆蓋遊戲中的哪種語言（我自己是覆蓋日文，不保證覆蓋其他語言會不會有問題）
-6. 「目標語言」：（不需選擇）
-7. 點擊「確定」
-![](https://i.imgur.com/RPim0G0.png)
-8. 點擊「漢化」
-
-其他漢化方法不保證100%可用，請參考[Wiki頁面](https://github.com/GpointChen/FFXIVChnTextPatch-GP/wiki)。
-
+- 為避免遊戲更新時出問題，建議每次更新前先「還原」，更新完成後再重新漢化。
+- 程式會拒絕在已漢化的檔案上重複漢化（避免備份被已漢化的檔案覆蓋導致無法還原）。
+- 主畫面的「檢查翻譯 CSV」可檢查 `resource/rawexd` 翻譯檔的格式與覆蓋率。
 
 ## 編譯
 
-.NET 10 版（Windows）：見 [`dotnet/README.md`](dotnet/README.md)。
+需要 .NET 10 SDK（Windows），詳見 [`dotnet/README.md`](dotnet/README.md)。
 
 ```bash
 cd dotnet/FFXIVChnTextPatch
@@ -57,65 +38,24 @@ dotnet build
 dotnet run
 ```
 
-舊 Java 版的編譯筆記：[製作過程的筆記可以參考這裡](https://hackmd.io/@GpointChen/SJi_gv-ad)（原始碼在 git 歷史中）。
+發佈單一執行檔：
 
+```bash
+dotnet publish -c Release -r win-x64 --self-contained -p:PublishSingleFile=true -p:IncludeNativeLibrariesForSelfExtract=true
+```
 
-## 更新註記
-詳參本專案的[Wiki](https://github.com/GpointChen/FFXIVChnTextPatch-GP/wiki/1.-%E9%A6%96%E9%A0%81)。
+產出的 `FFXIVChnTextPatch.exe` 與 `wwwroot/` 須連同 `conf/`、`resource/` 一起發佈。
 
+舊 Java 版的編譯筆記可參考[這裡](https://hackmd.io/@GpointChen/SJi_gv-ad)（原始碼在 git 歷史中）。
 
-## 原項目說明
-	
-项目说明：
+## 翻譯資源
 
-	此工具作用于：
-	对国际服客户端(SE版)进行中文资源注入
+- `resource/rawexd/` — CSV 翻譯檔（每個 EXD 表一個檔案）。各 CSV 對應遊戲內哪些文本，可參考 [Souma 版的 CSV 文件說明](https://github.com/Souma-Sumire/FFXIVChnTextPatch-Souma/wiki/CSV%E6%96%87%E4%BB%B6)。
+- `resource/font/` — 替換字體（`.fdt` + `.tex`）。
+- 設置頁的「跳過的資料表」可勾選漢化時要跳過的表（含中文說明、可搜尋），也可直接編輯 `conf/global.properties` 的 `SkipFiles`（`|` 分隔，格式如 `exd/quest`）。
+- `conf/exd-names.csv` — 表名對應遊戲內文本位置的說明檔，用於設置頁清單、漢化進度與檢查報告。
 
-	此程序
-	默认只对国际服客户端打中文字库补丁
-	不包含任何中文内容
-	
-	此项目于 2019-09-01 完全开源
+## 免責聲明（沿自原項目）
 
-使用方法：
-
-	1.下载编译项目，或者直接下载release发布包
-	2.解压运行项目
-	3.选择FFXIV游戏根目录
-	4.点击汉化按钮 等待
-	5.Enjoy
-	
-	如果需要中文内容替换
-	请自行将中文客户端的
-	>最终幻想XIV/game/sqpack/ffxiv
-	文件夹下的三个文件
-	0a0000.win32.dat0
-	0a0000.win32.index
-	0a0000.win32.index2
-	复制到汉化工具的
-	>resource/text
-	文件夹下重新运行程序即会自动读取
-	
-	PS:这次的补丁包含了字库内容
-	所以不需要重新再打字库补丁
-	PS2:每次汉化流程都会备份当前文件
-	所以避免在已经汉化的文件上进行二度汉化
-	这样会备份已汉化文件导致还原回滚失效
-	PS3:因为不确定更新是否会覆盖文件
-	所以在每次更新前尽量还原文件以免游戏导致不测
-	
-	注意:
-	繁體中文/正體中文 版本
-	可能因为翻译原因有部分的BUG存在
-	请慎用使用
-	
-	特别注意：
-	本程式采取修改客户端的形式进行中文资源的加载
-	使用本程式表示你已经知晓这是违反官方规则的操作
-	并且确认自行承担使用程式带来的任何后果
-
-免责声明：
-
-	1.此项目仅供学习技术以及技术交流使用
-	2.严禁使用于任何商业用途
-	3.请下载后24小时内删除
+- 本程式以修改客戶端的方式載入中文資源，此舉違反官方規則，使用即表示自行承擔一切後果。
+- 本專案僅供學習與技術交流使用，嚴禁任何商業用途。

@@ -212,7 +212,7 @@ public class PatchService
         int fileCount = 0;
         foreach (var replaceFile in fileList)
         {
-            progress.Report(new(++fileCount / (double)fileList.Count, "正在替換文本：", replaceFile));
+            progress.Report(new(++fileCount / (double)fileList.Count, "正在替換文本：", ExdNames.Label(replaceFile)));
             if (!replaceFile.ToUpperInvariant().EndsWith(".EXH")) continue;
 
             string replaceFileName = replaceFile[..replaceFile.LastIndexOf('.')].ToLowerInvariant();

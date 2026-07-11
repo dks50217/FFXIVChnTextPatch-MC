@@ -86,6 +86,13 @@ public static class SelfTest
             TestConfigUnescape(@"D\:\\FF14\\SquareEnix\\FINAL FANTASY XIV - A Realm Reborn",
                 @"D:\FF14\SquareEnix\FINAL FANTASY XIV - A Realm Reborn"));
 
+        // 6. exd-names.csv 載入與各種表名形式的查詢
+        Check("ExdNames lookup (Item)", ExdNames.Describe("Item") == "道具");
+        Check("ExdNames lookup (EXD/Item.EXH)", ExdNames.Describe("EXD/Item.EXH") == "道具");
+        Check("ExdNames folder fallback (quest/000/x)", ExdNames.Describe("quest/000/ClsArc011_00021") == "任務對話");
+        Check("ExdNames folder/sheet name collision (Quest vs quest/)", ExdNames.Describe("Quest") == "任務");
+        Check("ExdNames unknown passthrough", ExdNames.Label("NoSuchSheet") == "NoSuchSheet");
+
         log.AppendLine(failed == 0 ? "ALL PASSED" : $"{failed} FAILED");
         File.WriteAllText(Path.Combine(AppEnv.BaseDir, "selftest.log"), log.ToString());
     }

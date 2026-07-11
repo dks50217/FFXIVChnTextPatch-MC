@@ -35,6 +35,7 @@ The app locates its base directory (for `conf/`, `resource/`, `backup/`, `debug.
 - `Core/Builders.cs` — rebuilds modified binary blocks (`BinaryBlockBuilder` type 2, `TexBlockBuilder` type 4 fonts, `EXDFBuilder` EXD rows).
 - `Core/FFCRC.cs` — FFXIV's custom CRC for file-path hashing. Verified bit-exact against the Java original via `--selftest` vectors.
 - `Core/Config.cs` — Java `.properties`-compatible read/write of `conf/global.properties` (handles `\:` escapes).
+- `Core/ExdNames.cs` — EXD sheet name → Chinese UI-location description, loaded from `conf/exd-names.csv` (folder keys end with `/`, e.g. `quest/`, to avoid case-insensitive collision with sheet names like `Quest`). Used by patch progress, lint report, and the settings skip-list.
 - `Main.razor` + `wwwroot/` — UI (main panel + settings) hosted in a WPF `BlazorWebView` (`MainWindow.xaml`).
 - `SelfTest.cs` — run with `--selftest`; keep it passing when touching any binary-format code.
 
@@ -52,7 +53,7 @@ The app locates its base directory (for `conf/`, `resource/`, `backup/`, `debug.
 | `SLanguage` | Source language to overwrite (usually `JA`) |
 | `FLanguage` | Must be `CSV` (only supported mode) |
 | `ReplaFont` / `ReplaText` | `1`/`0` toggles for font and text replacement |
-| `SkipFiles` | Pipe-separated EXD names to skip |
+| `SkipFiles` | Pipe-separated EXD names to skip, format `exd/<lowercase name>` (folder entries skip the whole subtree); editable via the settings-page checklist |
 
 ## Resources
 

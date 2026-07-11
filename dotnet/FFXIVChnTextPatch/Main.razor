@@ -31,6 +31,22 @@
             <label><input type="checkbox" @bind="_replaceText" /> 替換文本</label>
         </div>
 
+        <details class="skip">
+            <summary>跳過的資料表（已勾選 @_skip.Count 項）</summary>
+            <input class="skip-search" placeholder="搜尋表名或說明…" @bind="_skipFilter" @bind:event="oninput" />
+            <div class="skip-list">
+                @foreach (var entry in _skipEntries.Where(MatchesSkipFilter))
+                {
+                    <label>
+                        <input type="checkbox" checked="@_skip.Contains(entry.Key)"
+                               @onchange="e => ToggleSkip(entry.Key, (bool)e.Value!)" />
+                        <span class="name">@entry.Display</span>
+                        <span class="desc">@entry.Desc</span>
+                    </label>
+                }
+            </div>
+        </details>
+
         @if (_message != null)
         {
             <p class="message error">@_message</p>
@@ -89,6 +105,12 @@ else
     private bool _replaceFont;
     private bool _replaceText = true;
 
+    // 跳過清單：Key 是寫進 SkipFiles 的值（exd/小寫表名，資料夾為前綴匹配）
+    private record SkipEntry(string Key, string Display, string? Desc);
+    private List<SkipEntry> _skipEntries = new();
+    private HashSet<string> _skip = new();
+    private string _skipFilter = "";
+
     protected override void OnInitialized()
     {
         _showConfig = !PatchService.IsFFXIVFolder(Config.Get("GamePath"));
@@ -101,6 +123,40 @@ else
         _sLang = Config.Get("SLanguage") ?? "JA";
         _replaceFont = Config.Get("ReplaFont") == "1";
         _replaceText = Config.Get("ReplaText") != "0";
+        _skip = (Config.Get("SkipFiles") ?? "")
+            .Split('|', StringSplitOptions.RemoveEmptyEntries | StringSplitOptions.TrimEntries)
+            .Select(s => s.ToLowerInvariant())
+            .ToHashSet();
+        if (_skipEntries.Count == 0) _skipEntries = BuildSkipEntries();
+    }
+
+    /// <summary>rawexd 頂層 CSV 各一項，子資料夾各一項（跳過整個資料夾）。</summary>
+    private static List<SkipEntry> BuildSkipEntries()
+    {
+        var list = new List<SkipEntry>();
+        string rawexd = AppEnv.P("resource", "rawexd");
+        if (!Directory.Exists(rawexd)) return list;
+        foreach (var dir in Directory.GetDirectories(rawexd).OrderBy(d => d, StringComparer.OrdinalIgnoreCase))
+        {
+            string name = Path.GetFileName(dir);
+            list.Add(new("exd/" + name.ToLowerInvariant(), name + "/（整個資料夾）", ExdNames.Describe(name + "/")));
+        }
+        foreach (var file in Directory.GetFiles(rawexd, "*.csv").OrderBy(f => f, StringComparer.OrdinalIgnoreCase))
+        {
+            string name = Path.GetFileNameWithoutExtension(file);
+            list.Add(new("exd/" + name.ToLowerInvariant(), name, ExdNames.Describe(name)));
+        }
+        return list;
+    }
+
+    private bool MatchesSkipFilter(SkipEntry entry) =>
+        _skipFilter.Length == 0 ||
+        entry.Display.Contains(_skipFilter, StringComparison.OrdinalIgnoreCase) ||
+        (entry.Desc?.Contains(_skipFilter, StringComparison.OrdinalIgnoreCase) ?? false);
+
+    private void ToggleSkip(string key, bool on)
+    {
+        if (on) _skip.Add(key); else _skip.Remove(key);
     }
 
     private void Browse()
@@ -131,7 +187,7 @@ else
         Config.Set("FLanguage", "CSV");
         Config.Set("ReplaFont", _replaceFont ? "1" : "0");
         Config.Set("ReplaText", _replaceText ? "1" : "0");
-        Config.Set("SkipFiles", Config.Get("SkipFiles") ?? "");
+        Config.Set("SkipFiles", string.Join("|", _skip.OrderBy(s => s, StringComparer.Ordinal)));
         Config.Set("TransMode", "0");
         Config.Save();
         _message = null;

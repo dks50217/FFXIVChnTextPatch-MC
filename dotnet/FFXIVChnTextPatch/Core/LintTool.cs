@@ -79,7 +79,7 @@ public static class LintTool
         foreach (var (name, translated, total) in coverage.OrderBy(c => c.Total == 0 ? 1.0 : c.Translated / (double)c.Total))
         {
             double ratio = total == 0 ? 100 : translated * 100.0 / total;
-            report.AppendLine($"{ratio,6:0.0}%  {translated}/{total}  {name}");
+            report.AppendLine($"{ratio,6:0.0}%  {translated}/{total}  {ExdNames.Label(name)}");
         }
 
         string reportPath = Path.Combine(AppEnv.BaseDir, "lint-report.txt");
@@ -225,7 +225,7 @@ public static class LintTool
             if (exh.Langs.Length == 0) continue; // 無語言版本的表，漢化流程本來就跳過
             int stringColumns = exh.Datasets.Count(d => d.Type == 0);
             if (stringColumns > 0)
-                missing.Add($"{sheetName}（{stringColumns} 個字串欄位）");
+                missing.Add($"{ExdNames.Label(sheetName)}，{stringColumns} 個字串欄位");
         }
         missing.Sort(StringComparer.OrdinalIgnoreCase);
         return missing;

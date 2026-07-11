@@ -36,6 +36,9 @@ The app locates its base directory (for `conf/`, `resource/`, `backup/`, `debug.
 - `Core/FFCRC.cs` — FFXIV's custom CRC for file-path hashing. Verified bit-exact against the Java original via `--selftest` vectors.
 - `Core/Config.cs` — Java `.properties`-compatible read/write of `conf/global.properties` (handles `\:` escapes).
 - `Core/ExdNames.cs` — EXD sheet name → Chinese UI-location description, loaded from `conf/exd-names.csv` (folder keys end with `/`, e.g. `quest/`, to avoid case-insensitive collision with sheet names like `Quest`). Used by patch progress, lint report, and the settings skip-list.
+- `Core/RawexdUpdater.cs` — one-click translation update (UI「更新翻譯 CSV」button or `--update` CLI flag): git sparse clone of the upstream repo (`UpstreamRepo` config key, default Souma's repo) → `ZhConvert` → `RawexdMerge`. Backs up `resource/rawexd` to `backup/rawexd-before-update.zip` first. Requires git on PATH.
+- `Core/RawexdMerge.cs` — cell-level rawexd CSV merge: non-empty local cells always win; empty cells / missing rows / missing files are filled from upstream; columns aligned by the offset row (survives cross-version column changes); local-only rows appended at EOF.
+- `Core/ZhConvert.cs` — simplified→traditional with Taiwan vocabulary (OpenCC s2twp equivalent plus FFXIV-specific fixes) via longest-forward-match over TSV dictionaries in `resource/opencc/`: GPPhrases+STPhrases+STCharacters → TWPhrases → TWVariants. `GPPhrases.txt` is the FFXIV exception glossary inherited from the Java GP version (converted from `resource/nlpcn/traditional.txt` in git history; includes quote rules and English-name protection entries). `UserPhrases.txt` is the user-editable override list, loaded ahead of rounds 1 and 2 so it beats everything; simplified or traditional keys both work.
 - `Main.razor` + `wwwroot/` — UI (main panel + settings) hosted in a WPF `BlazorWebView` (`MainWindow.xaml`).
 - `SelfTest.cs` — run with `--selftest`; keep it passing when touching any binary-format code.
 
@@ -59,4 +62,5 @@ The app locates its base directory (for `conf/`, `resource/`, `backup/`, `debug.
 
 - `resource/rawexd/` — CSV translation files (one per EXD sheet)
 - `resource/font/` — replacement fonts (`.fdt` + `.tex`)
+- `resource/opencc/` — OpenCC dictionary TSVs used by `ZhConvert` (ship with the app)
 - `docs/DOTNET_MIGRATION.md` — Java→C# port notes (behavioral reference now that Java code is removed)

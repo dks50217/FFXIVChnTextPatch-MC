@@ -72,6 +72,7 @@ else
 
     <div class="toolbar">
         <button class="small" disabled="@_busy" @onclick="Lint">檢查翻譯 CSV</button>
+        <button class="small" disabled="@_busy" @onclick="UpdateRawexd" title="下載 Souma 上游翻譯 → 簡轉繁 → 合併（本地已有的翻譯不會被覆蓋）">更新翻譯 CSV</button>
     </div>
 
     @if (_busy)
@@ -209,6 +210,11 @@ else
     private async Task Rollback()
     {
         await RunJob(p => Patcher.RollbackAsync(p));
+    }
+
+    private async Task UpdateRawexd()
+    {
+        await RunJob(p => RawexdUpdater.UpdateAsync(p));
     }
 
     private async Task Lint()

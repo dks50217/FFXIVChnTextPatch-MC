@@ -24,7 +24,29 @@ public partial class App : Application
             return;
         }
 
+        if (e.Args.Contains("--update"))
+        {
+            // CLI 版一鍵更新，階段進度與結果寫到 debug.log。
+            // 不能用 Progress<T>：它會把 callback 排回被 GetResult() 卡住的 UI 執行緒。
+            string lastAction = "";
+            var progress = new DirectProgress(p =>
+            {
+                if (p.Action == lastAction) return;
+                lastAction = p.Action;
+                AppEnv.Log(p.Action);
+            });
+            var (_, message) = RawexdUpdater.UpdateAsync(progress).GetAwaiter().GetResult();
+            AppEnv.Log(message);
+            Shutdown();
+            return;
+        }
+
         base.OnStartup(e);
         new MainWindow().Show();
+    }
+
+    private sealed class DirectProgress(Action<PatchProgress> handler) : IProgress<PatchProgress>
+    {
+        public void Report(PatchProgress value) => handler(value);
     }
 }

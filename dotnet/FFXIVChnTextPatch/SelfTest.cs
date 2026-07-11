@@ -93,6 +93,38 @@ public static class SelfTest
         Check("ExdNames folder/sheet name collision (Quest vs quest/)", ExdNames.Describe("Quest") == "任務");
         Check("ExdNames unknown passthrough", ExdNames.Label("NoSuchSheet") == "NoSuchSheet");
 
+        // 7. RawexdMerge 逐格合併規則
+        string mLo = "key,0,1\n#,Name,Desc\noffset,0,4\nint32,str,str\n0,已翻,\n1,,\n3,本地獨有,x\n";
+        string mUp = "key,0,1\n#,Name,Desc\noffset,0,4\nint32,str,str\n0,上游改進,上游補\n1,新翻,\n2,新列,y\n";
+        var mr = RawexdMerge.Merge(mLo, mUp, "\n");
+        Check("Merge 本地非空保留 + 空格補上游", mr.Merged.Contains("0,已翻,上游補") && mr.Merged.Contains("1,新翻,"));
+        Check("Merge 上游新列", mr.Merged.Contains("2,新列,y") && mr.NewRows == 1);
+        Check("Merge 本地獨有列附加檔尾", mr.Merged.TrimEnd().EndsWith("3,本地獨有,x"));
+        Check("Merge 補格計數", mr is { Filled: 2, HeadersChanged: false });
+        Check("Merge 註解列原樣保留", mr.Merged.Contains("#,Name,Desc"));
+
+        string mQuoted = "key,0\n#,Name\noffset,0\nint32,str\n0,\"a,\"\"b\"\"\n換行\"\n";
+        var mrQ = RawexdMerge.Merge(mQuoted, mQuoted, "\n");
+        Check("Merge 引號欄位 round-trip",
+            RawexdMerge.Parse(mrQ.Merged).Last(x => x.Fields != null).Fields![1] == "a,\"b\"\n換行");
+
+        var mrAlign = RawexdMerge.Merge(
+            "key,0,1\n#,A,B\noffset,0,4\nint32,str,str\n0,甲,乙\n",
+            "key,0,1,2\n#,A,New,B\noffset,0,2,4\nint32,str,str,str\n0,x,新欄,y\n", "\n");
+        Check("Merge 跨版本 offset 欄位對齊", mrAlign.Merged.Contains("0,甲,新欄,乙") && mrAlign.HeadersChanged);
+
+        // 8. ZhConvert 簡轉繁（單字、詞級消歧義、台灣異體字，各走到不同字典）
+        Check("ZhConvert 單字", ZhConvert.S2Tw("汉化") == "漢化");
+        Check("ZhConvert 詞級消歧義 (头发)", ZhConvert.S2Tw("头发") == "頭髮");
+        Check("ZhConvert 台灣異體字 (麪→麵)", ZhConvert.S2Tw("麪") == "麵");
+        Check("ZhConvert 台灣用語 (服务器→伺服器)", ZhConvert.S2Tw("服务器") == "伺服器");
+        Check("ZhConvert 台灣用語一對多取第一 (菜单→選單)", ZhConvert.S2Tw("菜单") == "選單");
+        Check("ZhConvert GP 詞彙表 (激活→啟動)", ZhConvert.S2Tw("激活") == "啟動");
+        Check("ZhConvert GP 詞彙表 (几率→機率)", ZhConvert.S2Tw("几率") == "機率");
+        Check("ZhConvert GP 引號規則 (‘→『)", ZhConvert.S2Tw("‘") == "『");
+        Check("ZhConvert GP 英文名保護 (L’Heritier 不變)", ZhConvert.S2Tw("L’Heritier") == "L’Heritier");
+        Check("ZhConvert ASCII/CSV 結構字元不動", ZhConvert.S2Tw("0,\"a\",汉") == "0,\"a\",漢");
+
         log.AppendLine(failed == 0 ? "ALL PASSED" : $"{failed} FAILED");
         File.WriteAllText(Path.Combine(AppEnv.BaseDir, "selftest.log"), log.ToString());
     }

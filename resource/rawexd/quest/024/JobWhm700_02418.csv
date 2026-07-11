@@ -1,7 +1,7 @@
 ﻿key,0,1
 #,,
 offset,0,4
-int32,str,str
+Int32,String,String
 0,TEXT_JOBWHM700_02418_SEQ_00,獵人小屋的希爾菲看起來有些驚慌失措。
 1,TEXT_JOBWHM700_02418_SEQ_01,嘉蒂控制魔力的鍛鍊很順利，可母親的病情越發嚴重。代替照看母親的希爾菲，前往基拉巴尼亞邊區的帝國東方堡，從酒保商人那裡獲取<hex:022811FF0A>EventItem<hex:F61E8C850103>。
 2,TEXT_JOBWHM700_02418_SEQ_02,從酒保商人那裡獲得了<hex:022811FF0A>EventItem<hex:F61E8C850103>。和獵人小屋的希爾菲談談。

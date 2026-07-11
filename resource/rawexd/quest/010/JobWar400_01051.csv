@@ -1,7 +1,7 @@
 ﻿key,0,1
 #,,
 offset,0,4
-int32,str,str
+Int32,String,String
 0,TEXT_JOBWAR400_01051_SEQ_00,居里斯·高吉在古書中發現了關於戰士的真相，這令他很難接受。
 1,TEXT_JOBWAR400_01051_SEQ_01,接受了居里斯·高吉的委託。和東拉諾西亞葡萄酒港的警備團團長談談。
 2,TEXT_JOBWAR400_01051_SEQ_02,和葡萄酒港警備團團長進行了交談。巡視東拉諾西亞的<hex:02280CFF05>EObj<hex:F61E8D830103>，討伐魔物。

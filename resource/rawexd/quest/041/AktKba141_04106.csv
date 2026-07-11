@@ -1,7 +1,7 @@
 ﻿key,0,1
 #,,
 offset,0,4
-int32,str,str
+Int32,String,String
 0,TEXT_AKTKBA141_04106_SEQ_00,蛇巢司令部的白蛇守護人正在等待著莫古力族的報告。
 1,TEXT_AKTKBA141_04106_SEQ_01,和白蛇守護人進行了交談。由嘉恩·艾·神納負責種下樹苗。淨化中央林區翠淚擇伐區的<hex:02280CFF05>EObj<hex:F61EB2590103>。
 2,TEXT_AKTKBA141_04106_SEQ_02,淨化了<hex:02280CFF05>EObj<hex:F61EB2590103>。和嘉恩·艾·神納談談。

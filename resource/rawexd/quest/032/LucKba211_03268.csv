@@ -1,7 +1,7 @@
 ﻿key,0,1
 #,,
 offset,0,4
-int32,str,str
+Int32,String,String
 0,TEXT_LUCKBA211_03268_SEQ_00,彷徨階梯亭的吉奧圖似乎喝得酩酊大醉。
 1,TEXT_LUCKBA211_03268_SEQ_01,吉奧圖似乎想讓冒險者分析節德的再生能力。前往珂露西亞島的漏洞小舟亭和吉奧圖談談。
 2,TEXT_LUCKBA211_03268_SEQ_02,打倒獨行食罪靈或許可以招來節德。在光明崖的<hex:02280CFF05>EObj<hex:F61EAB8F0103>張望，討伐出現的獨行食罪靈。

@@ -1,7 +1,7 @@
 ﻿key,0,1
 #,,
 offset,0,4
-int32,str,str
+Int32,String,String
 0,TEXT_STMBDZ427_02750_SEQ_00,無二江流域的魚鱗似乎喪失了信心。
 1,TEXT_STMBDZ427_02750_SEQ_01,和魚鱗進行了交談。這次，魚鱗打算捕捉魔物，售賣魔物的翅膀或者鱗片，於是委託冒險者準備誘餌。在無二江流域討伐3隻<hex:02280FFF09>BNpcName<hex:F216820103>。
 2,TEXT_STMBDZ427_02750_SEQ_02,討伐了<hex:02280FFF09>BNpcName<hex:F216820103>。將<hex:022811FF0A>EventItem<hex:F61E8D980103>交給無二江流域的魚鱗。

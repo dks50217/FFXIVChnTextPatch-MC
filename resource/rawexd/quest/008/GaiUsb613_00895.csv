@@ -1,7 +1,7 @@
 ﻿key,0,1
 #,,
 offset,0,4
-int32,str,str
+Int32,String,String
 0,TEXT_GAIUSB613_00895_SEQ_00,天火要塞群的斯特凡諾好像有件非冒險者不可的事情相求。
 1,TEXT_GAIUSB613_00895_SEQ_01,斯特凡諾委託冒險者將噩耗傳達給新兵的家人。將<hex:022811FF0A>EventItem<hex:F61E87E30103>交給巨龍首營地的新兵之父泰奧巴蘭。
 2,TEXT_GAIUSB613_00895_SEQ_02,向泰奧巴蘭轉達了他兒子犧牲的消息。泰奧巴蘭看起來並沒有懷疑斯特凡諾善意的謊言。<hex:022811FF0A>EventItem<hex:F61E87E30103>本是他妻子的遺物，現在卻又成了他兒子的遺物……

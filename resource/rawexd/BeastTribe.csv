@@ -1,7 +1,7 @@
 ﻿key,11,13,19
-#,Adjective,PossessivePronoun,
+#,Name,Plural,NameRelation
 offset,0,4,8
-int32,str,str,str
+Int32,String,String,String
 0,,,
 1,蜥蜴人族：灰黨,,蜥蜴人族友好度
 2,妖精族：暫留地妖精,,妖精族友好度

@@ -1,7 +1,7 @@
 ﻿key,0,1
 #,,
 offset,0,4
-int32,str,str
+Int32,String,String
 0,TEXT_REGSAK6LUWATENINYAWAWSA_00881_LIYUKWA_000_000,喲，你好。<hex:02100103>原本以為你是來採購的商人……居然是旅行者嗎？<hex:02100103>歡迎來到魯瓦特尼亞薩。
 1,TEXT_REGSAK6LUWATENINYAWAWSA_00881_LIYUKWA_000_001,那個黑鳥一般的東西到底是什麼啊……<hex:02100103>旅行者你也要多加小心。
 2,TEXT_REGSAK6LUWATENINYAWAWSA_00881_LIYUKWA_000_002,那個黑鳥一般的東西終於離開了。<hex:02100103>你也是因為世道恢復了太平所以才出來旅行的嗎？<hex:02100103>歡迎來到魯瓦特尼亞薩。

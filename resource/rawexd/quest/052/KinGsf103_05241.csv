@@ -1,7 +1,7 @@
 ﻿key,0,1
 #,,
 offset,0,4
-int32,str,str
+Int32,String,String
 0,TEXT_KINGSF103_05241_SEQ_00,謝申內青磷泉的瓦裡卡有話想跟冒險者說。
 1,TEXT_KINGSF103_05241_SEQ_01,
 2,TEXT_KINGSF103_05241_SEQ_02,

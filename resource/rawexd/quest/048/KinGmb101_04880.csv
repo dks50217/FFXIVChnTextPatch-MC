@@ -1,7 +1,7 @@
 ﻿key,0,1
 #,,
 offset,0,4
-int32,str,str
+Int32,String,String
 0,TEXT_KINGMB101_04880_SEQ_00,朋友的燈火的埃倫維爾似乎想提醒冒險者小心路上的危險。
 1,TEXT_KINGMB101_04880_SEQ_01,
 2,TEXT_KINGMB101_04880_SEQ_02,

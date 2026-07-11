@@ -1,7 +1,7 @@
 ﻿key,0,1
 #,,
 offset,0,4
-int32,str,str
+Int32,String,String
 0,TEXT_JOBDRK630_02916_SEQ_00,隼巢的希德勒格想要開始下一輪幫助別人的行動。
 1,TEXT_JOBDRK630_02916_SEQ_01,希德勒格提議去尋找下一個要幫助的人。和龍堡參天高地尾羽集落的莉艾勒談談。
 2,TEXT_JOBDRK630_02916_SEQ_02,從莉艾勒那裡得知了囚犯羅蒂的事情。在尾羽集落的<hex:02280CFF05>EObj<hex:F61EA6560103>張望，尋找羅蒂。

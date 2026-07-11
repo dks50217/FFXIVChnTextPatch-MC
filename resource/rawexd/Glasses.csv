@@ -1,7 +1,7 @@
 ﻿key,4,6,12,13
 #,Singular,Plural,Description,Name
 offset,0,4,8,12
-int32,str,str,str,str
+Int32,String,String,String,String
 0,,,,
 1,橢圓眼鏡,,基礎色的面部配飾。,橢圓眼鏡
 2,銀框橢圓眼鏡,,銀色的面部配飾。,銀框橢圓眼鏡

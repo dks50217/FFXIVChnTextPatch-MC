@@ -1,7 +1,7 @@
 ﻿key,0,1
 #,,
 offset,0,4
-int32,str,str
+Int32,String,String
 0,TEXT_REGNOT5OLDSHARLAYAN_00738_WAMEME_000_001,哎呀，是旅行者啊？<hex:02100103>歡迎來到世界知識之都——舊薩雷安。<hex:02100103>有什麼想要了解的嗎？
 1,TEXT_REGNOT5OLDSHARLAYAN_00738_WAMEME_000_002,你好，是拂曉血盟的人吧。<hex:02100103>星外大撤退的決定太讓人吃驚了……<hex:02100103>你有什麼想要了解的嗎？
 2,TEXT_REGNOT5OLDSHARLAYAN_00738_WAMEME_000_003,你好，來自拂曉的英雄。<hex:02100103>聽說你一度跑到了宇宙盡頭啊……<hex:02100103>你有什麼想要了解的嗎？

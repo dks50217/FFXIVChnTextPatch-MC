@@ -1,7 +1,7 @@
 ﻿key,0,1
 #,,
 offset,0,4
-int32,str,str
+Int32,String,String
 0,TEXT_VOICEMAN_06301_000005_NOPHICA,啊——這個時刻終於到來了！
 1,TEXT_VOICEMAN_06301_000010_MENPHINA,雖然戰鬥並非我的本意<hex:02100103>但是 為了實現我們的理想……
 2,TEXT_VOICEMAN_06301_000020_MENPHINA,我會與獵犬一起迎戰！

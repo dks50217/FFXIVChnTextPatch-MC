@@ -1,7 +1,7 @@
 ﻿key,0,1
 #,,
 offset,0,4
-int32,str,str
+Int32,String,String
 0,TEXT_GAIUSC612_01012_SEQ_00,石場水車的希冪有東西想要交給冒險者。
 1,TEXT_GAIUSC612_01012_SEQ_01,收下了<hex:022811FF0A>EventItem<hex:F61E87CE0103>，關於亡靈騎士的情報都收錄在這裡面。返回沙之家，將<hex:022811FF0A>EventItem<hex:F61E87CE0103>交給於里昂熱。
 2,TEXT_GAIUSC612_01012_SEQ_02,將<hex:022811FF0A>EventItem<hex:F61E87CE0103>交給了於里昂熱。於里昂熱說聖典裡記載的內容也只是基於亞拉戈帝國的立場上看到的真相。現在還依然看不到事件的全貌……

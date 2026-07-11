@@ -1,7 +1,7 @@
 ﻿key,0,1
 #,,
 offset,0,4
-int32,str,str
+Int32,String,String
 0,,
 1,白羊之聖魂,主張感
 2,金牛之聖魂,所有感

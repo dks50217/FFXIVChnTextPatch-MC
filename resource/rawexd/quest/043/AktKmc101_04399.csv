@@ -1,7 +1,7 @@
 ﻿key,0,1
 #,,
 offset,0,4
-int32,str,str
+Int32,String,String
 0,TEXT_AKTKMC101_04399_SEQ_00,月面監視者有重要的事要說。
 1,TEXT_AKTKMC101_04399_SEQ_01,
 2,TEXT_AKTKMC101_04399_SEQ_02,

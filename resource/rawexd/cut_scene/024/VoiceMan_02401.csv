@@ -1,7 +1,7 @@
 ﻿key,0,1
 #,,
 offset,0,4
-int32,str,str
+Int32,String,String
 0,TEXT_VOICEMAN_02401_300010_ALISAIE,巴哈姆特竟然已經快要復原了！
 1,TEXT_VOICEMAN_02401_300020_ALPHINAUD,這麼巨大的身體……<hex:02100103>祖父就是和這樣的怪物戰鬥的嗎……
 2,TEXT_VOICEMAN_02401_300030_ALISAIE,不能讓它再進一步恢復了，<hex:02100103>我們必須盡快停止拘束艦的運行。

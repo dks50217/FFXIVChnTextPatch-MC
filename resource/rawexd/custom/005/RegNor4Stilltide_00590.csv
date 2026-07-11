@@ -1,7 +1,7 @@
 ﻿key,0,1
 #,,
 offset,0,4
-int32,str,str
+Int32,String,String
 0,TEXT_REGNOR4STILLTIDE_00590_ARNAR_000_000,喲，沒想到會有旅行者來到這樣荒涼的村子啊。<hex:02100103>如果有什麼想問的就來找我吧。
 1,TEXT_REGNOR4STILLTIDE_00590_Q1_000_000,想了解什麼？
 2,TEXT_REGNOR4STILLTIDE_00590_A1_000_001,你是做什麼的？ 

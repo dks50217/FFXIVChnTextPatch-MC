@@ -1,7 +1,7 @@
 ﻿key,0,1
 #,,
 offset,0,4
-int32,str,str
+Int32,String,String
 0,TEXT_SUBWIL013_00571_SEQ_00,劍術師公會的沃爾坎正因過度增殖的花甲蟲而煩惱，想拜託冒險者討伐花甲蟲。
 1,TEXT_SUBWIL013_00571_SEQ_01,討伐4隻生活在西薩納蘭的花甲蟲。
 2,TEXT_SUBWIL013_00571_SEQ_02,成功討伐了花甲蟲。向劍術師公會的沃爾坎報告。

@@ -1,7 +1,7 @@
 ﻿key,0,1
 #,,
 offset,0,4
-int32,str,str
+Int32,String,String
 0,TEXT_STMBDA206_02475_SEQ_00,烏爾達哈商會館的莉瑟有些在意魚道的事情。
 1,TEXT_STMBDA206_02475_SEQ_01,和漢考克對話
 2,TEXT_STMBDA206_02475_SEQ_02,和赤誠組營房附近的漢考克對話

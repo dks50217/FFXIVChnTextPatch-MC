@@ -1,7 +1,7 @@
 ﻿key,0,1
 #,,
 offset,0,4
-int32,str,str
+Int32,String,String
 0,TEXT_VOICEMAN_05002_000010_ALISAIE,你來得正好……<hex:02100103>我們這裡有位客人來訪呢。
 1,TEXT_VOICEMAN_05002_000020_EMETSELCH,你怎麼也一臉戒備啊。<hex:02100103>我不是說過來日再見嗎？
 2,TEXT_VOICEMAN_05002_000030_EMETSELCH,你們都放輕鬆。<hex:02100103>按照約定，我不會妨礙你們的。<hex:02100103>我就是來參觀參觀。

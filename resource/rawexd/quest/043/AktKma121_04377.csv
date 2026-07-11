@@ -1,7 +1,7 @@
 ﻿key,0,1
 #,,
 offset,0,4
-int32,str,str
+Int32,String,String
 0,TEXT_AKTKMA121_04377_SEQ_00,正廳的可露兒正在注視著夥伴們的情況。
 1,TEXT_AKTKMA121_04377_SEQ_01,和夥伴們商量後決定前往佐特塔進行調查。和薩維奈島桓娑牧場遺址附近的納卜狄恩談談。
 2,TEXT_AKTKMA121_04377_SEQ_02,納卜狄恩鼓勵了冒險者，並告知了冒險者小船的位置。在桓娑牧場遺址附近海邊的<hex:02280CFF05>EObj<hex:F61EB3340103>等待。

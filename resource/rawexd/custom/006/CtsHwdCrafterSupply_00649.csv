@@ -1,7 +1,7 @@
 ﻿key,0,1
 #,,
 offset,0,4
-int32,str,str
+Int32,String,String
 0,TEXT_CTSHWDCRAFTERSUPPLY_00649_POTKIN_000_000,誒、英雄閣下？！<hex:02100103>難道是來視察蒼天街的嗎？<hex:02100103>有失遠迎！
 1,TEXT_CTSHWDCRAFTERSUPPLY_00649_POTKIN_010_000,我從奧格伯特監督那裡聽說了英雄閣下要來參加重建工程的事情！<hex:02100103>恕我冒昧，就讓我來為你說明一下工程的細節吧！
 2,TEXT_CTSHWDCRAFTERSUPPLY_00649_POTKIN_010_010,首先蒼天街重建計劃所需要的物資<hex:02100103>都是我們委託工匠們製作的。

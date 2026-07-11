@@ -1,7 +1,7 @@
 ﻿key,0,1
 #,,
 offset,0,4
-int32,str,str
+Int32,String,String
 0,TEXT_LUCKMI106_03776_SEQ_00,有一塊從未見過的水晶落在了國會議事堂的地板上。
 1,TEXT_LUCKMI106_03776_SEQ_01,
 2,TEXT_LUCKMI106_03776_SEQ_02,

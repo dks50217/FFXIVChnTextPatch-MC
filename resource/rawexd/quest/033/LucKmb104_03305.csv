@@ -1,7 +1,7 @@
 ﻿key,0,1
 #,,
 offset,0,4
-int32,str,str
+Int32,String,String
 0,TEXT_LUCKMB104_03305_SEQ_00,奧斯塔爾嚴命城的萊楠正在為作戰做準備。
 1,TEXT_LUCKMB104_03305_SEQ_01,萊楠委託冒險者進行作戰準備。從奧斯塔爾嚴命城獲取<hex:022811FF0A>EventItem<hex:F61E8E640103>。
 2,TEXT_LUCKMB104_03305_SEQ_02,獲取了飼料。將<hex:022811FF0A>EventItem<hex:F61E8E640103>投餵給奧斯塔爾嚴命城的4匹阿馬羅。

@@ -1,7 +1,7 @@
 ﻿key,0,1
 #,,
 offset,0,4
-int32,str,str
+Int32,String,String
 0,TEXT_STMBDZ622_02800_SEQ_00,模兒衣樓的溫柔的模兒部男子正在尋找神諭的代理人。
 1,TEXT_STMBDZ622_02800_SEQ_01,
 2,TEXT_STMBDZ622_02800_SEQ_02,

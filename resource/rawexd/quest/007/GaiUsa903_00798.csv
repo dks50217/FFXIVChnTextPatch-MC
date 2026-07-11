@@ -1,7 +1,7 @@
 ﻿key,0,1
 #,,
 offset,0,4
-int32,str,str
+Int32,String,String
 0,TEXT_GAIUSA903_00798_SEQ_00,山人岩穴的開山工阿德馬爾想要冒險者幫忙準備梯子。
 1,TEXT_GAIUSA903_00798_SEQ_01,阿德馬爾等開山工正在調查岩盤。可因為地勢高低懸殊，工作較難展開。在<hex:02280CFF05>EObj<hex:F61E8C4C0103>放置<hex:022811FF0A>EventItem<hex:F61E86F50103>。
 2,TEXT_GAIUSA903_00798_SEQ_02,放置好了<hex:022811FF0A>EventItem<hex:F61E86F50103>。向山人岩穴的阿德馬爾報告。
@@ -53,6 +53,6 @@ int32,str,str
 48,TEXT_GAIUSA903_00798_ADEMAR_000_000,我們正在探查這一帶的礦脈。<hex:02100103>但是這邊地勢起伏太多，調查很是費力。
 49,TEXT_GAIUSA903_00798_ADEMAR_000_001,如果你願意的話，可以幫我們個忙嗎？<hex:02100103>將<hex:022811FF0A>EventItem<hex:F61E86F50103>放置在3個地方就好。<hex:02100103>拜託你了。
 50,TEXT_GAIUSA903_00798_DUMMY_000_010,將<hex:022811FF0A>EventItem<hex:F61E86F50103>放置在指定地點
-51,TEXT_GAIUSA903_00798_ADEMAR_000_010,
+51,TEXT_GAIUSA903_00798_ADEMAR_000_010,無
 52,TEXT_GAIUSA903_00798_ADEMAR_000_020,辛苦了，這活兒對冒險者來說很輕鬆吧？<hex:02100103>但是因為魔物太多，<hex:02100103>支梯子對我們來說卻是要賭上性命的工作。
 53,TEXT_GAIUSA903_00798_ADEMAR_000_021,有了梯子立足，<hex:02100103>一旦找到貴重的礦石，我們可就發了啊！<hex:02100103>與此相比，在下面打轉的魔物根本沒什麼大不了的。

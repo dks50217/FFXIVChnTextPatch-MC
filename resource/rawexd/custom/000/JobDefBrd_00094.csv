@@ -1,7 +1,7 @@
 ﻿key,0,1
 #,,
 offset,0,4
-int32,str,str
+Int32,String,String
 0,TEXT_JOBDEFBRD_00094_JEHANTEL_000_2,我只是一個卑微的吟遊詩人。<hex:02100103>雖然曾經隸屬於神勇隊……<hex:02100103>不過現在，每天只是沉醉於盎然綠意之中，吟唱詩歌而已。
 1,TEXT_JOBDEFBRD_00094_JEHANTEL_000_3,我離開這片黑衣森林已經很久了……<hex:02100103>因為有些事情，所以才會又在此滯留一段時間。
 2,TEXT_JOBDEFBRD_00094_JEHANTEL_000_1,哎呀，你來到這森林深處找我這個老吟遊詩人……<hex:02100103>到底有什麼事呢？

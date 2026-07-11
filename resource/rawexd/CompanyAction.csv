@@ -1,7 +1,7 @@
 ﻿key,0,1
 #,Name,Description
 offset,0,4
-int32,str,str
+Int32,String,String
 0,,
 1,討伐經驗值提高,24小時內（地球時間），打倒敵人時獲得的經驗增加5%。
 2,採集經驗值提高,24小時內（地球時間），採集時獲得的經驗增加5%。

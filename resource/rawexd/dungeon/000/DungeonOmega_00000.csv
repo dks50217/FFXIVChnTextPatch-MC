@@ -1,7 +1,7 @@
 ﻿key,0,1
 #,,
 offset,0,4
-int32,str,str
+Int32,String,String
 0,TEXT_DUNGEONOMEGA_00000_CID_000_000,(-西德-)<hex:022903EB0203>，聽得見嗎？<hex:02100103>敵人名為德爾塔I老者！<hex:02100103>將其擊退！
 1,TEXT_DUNGEONOMEGA_00000_NERO_000_010,(-尼祿-)出現了！<hex:02100103>是德爾塔II災變者。<hex:02100103>跟它玩玩吧！
 2,TEXT_DUNGEONOMEGA_00000_HALICARNASSUS_000_020,來了一群愚蠢的傢伙……<hex:02100103>好吧 就讓我陪你們玩玩吧……

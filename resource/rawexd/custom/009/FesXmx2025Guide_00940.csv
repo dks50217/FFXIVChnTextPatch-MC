@@ -1,7 +1,7 @@
 ﻿key,0,1
 #,,
 offset,0,4
-int32,str,str
+Int32,String,String
 0,TEXT_FESXMX2025GUIDE_00940_GUIDEXMS2025_000_000,我是星芒節宣傳員，<hex:02100103>關於星芒節有什麼不懂的，都可以來問我！
 1,TEXT_FESXMX2025GUIDE_00940_Q1_000_001,想了解什麼？
 2,TEXT_FESXMX2025GUIDE_00940_A1_000_001,什麼是「星芒節」？

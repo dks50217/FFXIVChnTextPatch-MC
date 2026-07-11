@@ -1,7 +1,7 @@
 ﻿key,0,1
 #,,
 offset,0,4
-int32,str,str
+Int32,String,String
 0,TEXT_JOBBLM500_01078_SEQ_00,紫紅瀑布的卡扎古·春，想通知冒險者一件事情。
 1,TEXT_JOBBLM500_01078_SEQ_01,接受了卡扎古·春的委託。前往烏爾達哈，和菈菈伊談談。
 2,TEXT_JOBBLM500_01078_SEQ_02,和菈菈伊進行了交談。為了阻止庫庫魯卡，前往納爾神祠。

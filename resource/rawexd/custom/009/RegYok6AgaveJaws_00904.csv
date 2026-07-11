@@ -1,7 +1,7 @@
 ﻿key,0,1
 #,,
 offset,0,4
-int32,str,str
+Int32,String,String
 0,TEXT_REGYOK6AGAVEJAWS_00904_SOVLI_000_000,歡迎來到龍舌蘭牙床。<hex:02100103>你有什麼想問的嗎？
 1,TEXT_REGYOK6AGAVEJAWS_00904_SOVLI_000_001,豔翼蛇鳥出現的傳聞我已經聽說了。<hex:02100103>明明烏克·拉瑪特大人才剛把魔物趕走……<hex:02100103>真是不讓人消停啊。
 2,TEXT_REGYOK6AGAVEJAWS_00904_SOVLI_000_002,結果豔翼蛇鳥並沒有襲擊過來。<hex:02100103>終於可以安心種植龍舌蘭了。

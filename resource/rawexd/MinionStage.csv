@@ -1,7 +1,7 @@
 ﻿key,0
 #,
 offset,0
-int32,str
+Int32,String
 0,
 1,第1關：新手教學
 2,第2關：到處都是巧兒鳥

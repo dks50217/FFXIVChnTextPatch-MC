@@ -1,7 +1,7 @@
 ﻿key,0,1
 #,,
 offset,0,4
-int32,str,str
+Int32,String,String
 0,TEXT_KINGBZ004_05191_SEQ_00,貝殼亭的拉爾·瑪玖恩看起來很緊張。
 1,TEXT_KINGBZ004_05191_SEQ_01,阿帕西開始行動了。和夏勞尼荒野圖萊尤拉關門的洛蘇卡納談談。
 2,TEXT_KINGBZ004_05191_SEQ_02,打倒了阿帕西。逮捕夏勞尼荒野的阿帕西。

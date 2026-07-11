@@ -1,7 +1,7 @@
 ﻿key,0,1
 #,,
 offset,0,4
-int32,str,str
+Int32,String,String
 0,TEXT_COMDEFGRANDCOMPANYOFFICER_00073_STORMPERSONNEL_000_000,這裡是海洋之都利姆薩·羅敏薩的大國防聯軍黑渦軍令部。<hex:02100103>歡迎立志守護這座城邦、充滿熱情的有志之士前來。
 1,TEXT_COMDEFGRANDCOMPANYOFFICER_00073_SERPENTPERSONNEL_000_001,這裡是森林之都格里達尼亞的大國防聯軍蛇巢司令部。<hex:02100103>歡迎想要給予格里達尼亞支援與引導的有志之士前來。
 2,TEXT_COMDEFGRANDCOMPANYOFFICER_00073_FLAMEPERSONNEL_000_002,這裡是沙漠之都烏爾達哈的大國防聯軍恆輝作戰總部。<hex:02100103>我們歡迎擁有不朽鬥志的人士前來。

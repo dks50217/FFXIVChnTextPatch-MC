@@ -1,7 +1,7 @@
 ﻿key,0,1
 #,,
 offset,0,4
-int32,str,str
+Int32,String,String
 0,TEXT_EXITRANGE_DISMOUNT_Q,騎乘狀態下不能繼續前進。<hex:02100103>要從坐騎上下來嗎？
 1,TEXT_EXITRANGE_DISMOUNT_YES,是
 2,TEXT_EXITRANGE_DISMOUNT_NO,否

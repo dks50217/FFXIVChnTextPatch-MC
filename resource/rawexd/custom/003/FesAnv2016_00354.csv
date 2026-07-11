@@ -1,7 +1,7 @@
 ﻿key,0,1
 #,,
 offset,0,4
-int32,str,str
+Int32,String,String
 0,TEXT_FESANV2016_00354_NEWBORNINTERN_000_000,感謝過去，祝福現在，祈禱未來……<hex:02100103>懷著神聖的心情慶祝新生慶典吧！<hex:02100103>還有精彩的英雄傳說舞台劇公演哦！
 1,TEXT_FESANV2016_00354_Q1_000_001,想了解什麼？
 2,TEXT_FESANV2016_00354_A1_000_001,什麼是新生慶典？

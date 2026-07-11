@@ -1,7 +1,7 @@
 ﻿key,0,1
 #,,
 offset,0,4
-int32,str,str
+Int32,String,String
 0,TEXT_CMNDEFRETURNBELT_00721_TALK_ACTOR_01,冒險者公會會臨時保管<hex:02100103>人們不得以無法帶在身上的物品，<hex:02100103>需要時會返還給他們。
 1,TEXT_CMNDEFRETURNBELT_00721_TALK_Q1,要做什麼？
 2,TEXT_CMNDEFRETURNBELT_00721_TALK_A1,取回腰部防具

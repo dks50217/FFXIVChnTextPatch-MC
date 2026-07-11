@@ -1,7 +1,7 @@
 ﻿key,0,1
 #,,
 offset,0,4
-int32,str,str
+Int32,String,String
 0,TEXT_CTSHNT50RISKYMOBILMHEG_00617_HALLDOR_000_001,有沒有強者出現呢……
 1,TEXT_CTSHNT50RISKYMOBILMHEG_00617_HALLDOR_000_002,狩獵怪物就是積累戰鬥經驗，<hex:02100103>所以我還能變得更強更強！
 2,TEXT_CTSHNT50RISKYMOBILMHEG_00617_HALLDOR_000_003,喲，有在好好狩獵怪物嗎？<hex:02100103>可千萬小心別死在怪物手裡，<hex:02100103>最後變成別人茶餘飯後的談資啊。

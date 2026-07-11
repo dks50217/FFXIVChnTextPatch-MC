@@ -1,7 +1,7 @@
 ﻿key,0,1
 #,,
 offset,0,4
-int32,str,str
+Int32,String,String
 0,TEXT_REGYOK6ICUVLOSINN_00868_OVLI_000_000,這位旅行者，歡迎你的到來。<hex:02100103>有什麼想知道的都可以問我，我知無不言。
 1,TEXT_REGYOK6ICUVLOSINN_00868_OVLI_000_001,我收到消息說豔翼蛇鳥被釋放出來了。<hex:02100103>如果你有什麼想問的，請長話短說。
 2,TEXT_REGYOK6ICUVLOSINN_00868_OVLI_000_002,豔翼蛇鳥已經被順利討伐了啊！<hex:02100103>我之前也呼籲旅行商人們自行避難，<hex:02100103>好在沒出什麼事，我也就放心了。

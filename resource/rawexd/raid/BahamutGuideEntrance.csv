@@ -1,7 +1,7 @@
 ﻿key,0,1
 #,,
 offset,0,4
-int32,str,str
+Int32,String,String
 0,TEXT_BAHAMUTGUIDEENTRANCE_JBROHKA_000_000,延伸至地下的「隕石痕跡」屬於未知領域。<hex:02100103>可能比帝國的要塞還要危險。<hex:02100103>請和同伴們做好萬全準備！
 1,TEXT_BAHAMUTGUIDEENTRANCE_Q1_000_010,要做什麼？
 2,TEXT_BAHAMUTGUIDEENTRANCE_A1_000_011,詢問「巴哈姆特大迷宮邂逅之章」的開始條件

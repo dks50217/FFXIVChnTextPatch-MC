@@ -1,7 +1,7 @@
 ﻿key,0,1
 #,Name,Description
 offset,0,4
-int32,str,str
+Int32,String,String
 0,,
 1,部隊儲物櫃,可以使用部隊儲物櫃。
 2,編輯隊徽,可以編輯隊徽的樣式。

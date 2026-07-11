@@ -1,7 +1,7 @@
 ﻿key,0,1
 #,,
 offset,0,4
-int32,str,str
+Int32,String,String
 0,TEXT_FESNYR2024GUIDE_00812_DRAGONSERVER_000_000,我是從東方遠道而來的使節團的一員。<hex:02100103>如果有什麼不清楚的事情，請儘管諮詢。
 1,TEXT_FESNYR2024GUIDE_00812_Q1_000_1,想了解什麼？
 2,TEXT_FESNYR2024GUIDE_00812_A1_000_1,你在這裡做什麼？

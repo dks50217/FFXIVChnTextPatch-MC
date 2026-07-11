@@ -1,7 +1,7 @@
 ﻿key,0,1
 #,,
 offset,0,4
-int32,str,str
+Int32,String,String
 0,TEXT_WARPINNLIMSALOMINSA_MYTESYN_000_1,喲，這裡是後桅旅店。<hex:02100103>……不過抱歉，我們不向新手冒險者開放。
 1,TEXT_WARPINNLIMSALOMINSA_MYTESYN_000_2,如果你能以出色的表現得到人們的信賴，<hex:02100103>那麼巴德龍或許就會允許你使用客房。<hex:02100103>所以不要灰心，繼續努力吧，啊哈哈！
 2,TEXT_WARPINNLIMSALOMINSA_Q1_000_1,想了解什麼？

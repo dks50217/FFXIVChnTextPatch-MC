@@ -1,7 +1,7 @@
 ﻿key,0,1
 #,,
 offset,0,4
-int32,str,str
+Int32,String,String
 0,TEXT_VOICEMAN_06001_000010_MONTICHAIGNE,啊，是你呀。
 1,TEXT_VOICEMAN_06001_000020_ALPHINAUD,啊，校長，原來您在這裡。<hex:02100103>謝謝您前幾天在審問會上幫我們說話。
 2,TEXT_VOICEMAN_06001_000030_MONTICHAIGNE,沒什麼，他們把話題越扯越遠，<hex:02100103>我這老頭子可最受不了那種態度。

@@ -1,7 +1,7 @@
 ﻿key,0,1
 #,,
 offset,0,4
-int32,str,str
+Int32,String,String
 0,TEXT_REGNOR4TISTABIE_00612_TISTABIE_000_000,你是剛來到這裡的吧？<hex:02100103>我能理解你想玩的心情，<hex:02100103>不過你首先需要和自己的主人搞好關係才行。
 1,TEXT_REGNOR4TISTABIE_00612_TISTABIE_000_010,哎呀，你要再跟我玩一次「高低牌」嗎？<hex:02100103>我當然是非常願意。
 2,TEXT_REGNOR4TISTABIE_00612_TISTABIE_000_020,嗯……被驅逐之後還來跟我玩嗎？<hex:02100103>好吧，不管對手是誰，我都會奉陪。

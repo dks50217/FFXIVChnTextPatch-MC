@@ -1,7 +1,7 @@
 ﻿key,0,1
 #,,
 offset,0,4
-int32,str,str
+Int32,String,String
 0,TEXT_AKTKMG110_04459_SEQ_00,辭世絕句碑的古·拉哈·提亞靜靜地注視著同伴們。
 1,TEXT_AKTKMG110_04459_SEQ_01,
 2,TEXT_AKTKMG110_04459_SEQ_02,

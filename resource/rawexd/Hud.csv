@@ -1,7 +1,7 @@
 ﻿key,0,1,2
 #,,,
 offset,0,4,8
-int32,str,str,str
+Int32,String,String,String
 0,熱鍵欄1,Hotbar1,hot1
 1,熱鍵欄2,Hotbar2,hot2
 2,熱鍵欄3,Hotbar3,hot3
@@ -113,3 +113,4 @@ int32,str,str,str
 108,紛爭前線：戰況情報,Frontline:CampaignInfo,
 109,宇宙探索：情報,CosmoExplorer:Info,
 110,,,
+111,,,

@@ -1,7 +1,7 @@
 ﻿key,0,1
 #,,
 offset,0,4
-int32,str,str
+Int32,String,String
 0,TEXT_REGYOK6BREATHBETWEEN_00906_PINUHALI_000_000,哎呀，歡迎光臨。<hex:02100103>你也是來這裡享受釣魚樂趣的嗎？
 1,TEXT_REGYOK6BREATHBETWEEN_00906_PINUHALI_000_001,小魚們感覺最近心情不錯啊。<hex:02100103>你也是來這裡享受釣魚樂趣的嗎？
 2,TEXT_REGYOK6BREATHBETWEEN_00906_PINUHALI_000_002,對於新任聯王大人的誕生，小魚們也很開心啊！<hex:02100103>你也是來這裡享受釣魚樂趣的嗎？

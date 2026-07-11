@@ -1,7 +1,7 @@
 ﻿key,0,1
 #,,
 offset,0,4
-int32,str,str
+Int32,String,String
 0,TEXT_GAIUSA904_00799_SEQ_00,秋瓜浮村的開山工梅德羅德關於怪異事件有些想法。
 1,TEXT_GAIUSA904_00799_SEQ_01,眼球怪也有在秋瓜浮村西部石場出現過的可能性。在那裡或許還有未被發現的屍體。前去尋找事件的痕跡。
 2,TEXT_GAIUSA904_00799_SEQ_02,找到了<hex:022811FF0A>EventItem<hex:F61E87DD0103>。將<hex:022811FF0A>EventItem<hex:F61E87DD0103>交給秋瓜浮村的埃塞爾梅爾正牙士。

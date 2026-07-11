@@ -1,7 +1,7 @@
 ﻿key,0,1
 #,,
 offset,0,4
-int32,str,str
+Int32,String,String
 0,TEXT_CTSERKEUREKA4EXPSCHOLAR_00551_INV00463_000_000,冒險者，歡迎來到豐水地帶！<hex:02100103>可露兒在等著你呢，<hex:02100103>請你去跟她打聲招呼吧！
 1,TEXT_CTSERKEUREKA4EXPSCHOLAR_00551_INV00463_000_010,終於可以為在這座島嶼上發生的一切做個了結了！<hex:02100103>我也會貢獻出微薄之力來支援大家！<hex:02100103>咱們一起努力吧！
 2,TEXT_CTSERKEUREKA4EXPSCHOLAR_00551_INV00463_000_040,可露兒應該前往了瓦爾河源流區域那裡的中央魔力橋腳！<hex:02100103>請冒險者你也過去一趟吧！

@@ -1,7 +1,7 @@
 ﻿key,0,1
 #,,
 offset,0,4
-int32,str,str
+Int32,String,String
 0,TEXT_REGNOR4PLAENNI_00600_TYRNEE_000_000,嗯？你想了解一下這個集落的事情？<hex:02100103>只是這樣的話，倒是用不著支付什麼代價。<hex:02100103>你要能陪我聊聊，我就告訴你！
 1,TEXT_REGNOR4PLAENNI_00600_Q1_000_000,想了解什麼？
 2,TEXT_REGNOR4PLAENNI_00600_A1_000_001,你是做什麼的？

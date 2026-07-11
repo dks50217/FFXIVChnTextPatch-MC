@@ -1,7 +1,7 @@
 ﻿key,0,1
 #,,
 offset,0,4
-int32,str,str
+Int32,String,String
 0,TEXT_SUBFST122_01428_SEQ_00,魔女咖啡館的斯皮寧·布雷德有事情要委託冒險者。
 1,TEXT_SUBFST122_01428_SEQ_01,從斯皮寧·布雷德那裡獲得了雷蒙多的<hex:022811FF0A>EventItem<hex:F61E88BA0103>。和格里達尼亞飛艇坪的雷蒙多談談。
 2,TEXT_SUBFST122_01428_SEQ_02,雷蒙多確認了行李。將聊天頻道設定為「說話」頻道後，使用鍵盤或軟鍵盤輸入「你好！」，向格里達尼亞飛艇坪的雷蒙多問好。
@@ -56,7 +56,7 @@ int32,str,str
 51,TEXT_SUBFST122_01428_RAIMONDAUX_000_010,快到出發時間了……<hex:02100103>暫時會離開格里達尼亞一段時間，<hex:02100103>我得好好檢查下行李，看看有沒有忘帶東西。
 52,TEXT_SUBFST122_01428_SYSTEM_000_011,雷蒙多在確認行李……
 53,TEXT_SUBFST122_01428_SYSTEM_100_011,將聊天頻道設定為「說話」頻道後，<hex:02100103>使用鍵盤或軟鍵盤輸入「你好！」，<hex:02100103>向雷蒙多問好。
-54,TEXT_SUBFST122_01428_SYSTEM_000_012,"Hail fellow well met!"
+54,TEXT_SUBFST122_01428_SYSTEM_000_012,Hail fellow well met!
 55,TEXT_SUBFST122_01428_RAIMONDAUX_000_020,啊，你好。<hex:02100103>這位冒險者，你也要離開格里達尼亞嗎？<hex:02100103>哎呀……我現在得先確認行李。
 56,TEXT_SUBFST122_01428_SYSTEM_000_021,雷蒙多好像很忙……
 57,TEXT_SUBFST122_01428_SYSTEM_100_021,將聊天頻道設定為「說話」頻道後，<hex:02100103>這次使用定型文輸入「<hex:0212023703>你好！<hex:0212023803>」，<hex:02100103>再次向雷蒙多問好。
@@ -64,7 +64,7 @@ int32,str,str
 59,TEXT_SUBFST122_01428_RAIMONDAUX_000_030,話說，你找我有什麼事嗎？
 60,TEXT_SUBFST122_01428_SYSTEM_000_031,雷蒙多問冒險者為什麼找他……
 61,TEXT_SUBFST122_01428_SYSTEM_100_031,將聊天頻道設定為「說話」頻道後，<hex:02100103>使用鍵盤或軟鍵盤輸入「你有嗎？」，<hex:02100103>向雷蒙多說明情況。
-62,TEXT_SUBFST122_01428_SYSTEM_000_032,"Got everything?"
+62,TEXT_SUBFST122_01428_SYSTEM_000_032,Got everything?
 63,TEXT_SUBFST122_01428_RAIMONDAUX_000_033,你有嗎？有什麼啊？什麼意思……<hex:02100103>啊！我的<hex:022811FF0A>EventItem<hex:F61E88BA0103>怎麼不見了！<hex:02100103>那、那東西丟哪裡去了……
 64,TEXT_SUBFST122_01428_RAIMONDAUX_000_040,到底丟哪裡了啊……<hex:02100103>我的<hex:022811FF0A>EventItem<hex:F61E88BA0103>……
 65,TEXT_SUBFST122_01428_RAIMONDAUX_000_041,這、這不是我的<hex:022811FF0A>EventItem<hex:F61E88BA0103>麼！<hex:02100103>為什麼會在你那裡？！<hex:02100103>這樣……原來是落在斯皮寧·布雷德那裡了啊。

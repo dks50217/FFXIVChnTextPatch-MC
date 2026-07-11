@@ -1,7 +1,7 @@
 ﻿key,0,1
-#,,
+#,Singular,Plural
 offset,0,4
-int32,str,str
+Int32,String,String
 0,TEXT_AETHERYTE_MAINMENU_TITLE,<hex:02280FFF0A>PlaceName<hex:E8020103>
 1,TEXT_AETHERYTE_TOWN_WARP,<hex:0212024603> 都市傳送網
 2,TEXT_AETHERYTE_HOUSING_WARP,<hex:0212024603> 冒險者住宅區傳送
@@ -56,3 +56,7 @@ int32,str,str
 51,TEXT_AETHERYTE_FULL_OPEN_SOLUTION_NINE_1,作為獎勵，以後也可以傳送到遺產之地！
 52,TEXT_AETHERYTE_FULL_OPEN_TULIYOLLAL_WITH_QUESTCOMP_6_0,開放了圖萊尤拉的所有城內乙太之晶！
 53,TEXT_AETHERYTE_FULL_OPEN_TULIYOLLAL_WITH_QUESTCOMP_6_1,作為獎勵，以後也可以傳送到奧闊帕恰山、<hex:02100103>克扎瑪烏卡濕地下游水域、克扎瑪烏卡濕地上游水域、<hex:02100103>亞克特爾樹海、夏勞尼荒野和幻境村！
+54,TEXT_AETHERYTE_FULL_OPEN_SOLUTION_NINE,開放了九號解決方案的所有城內乙太之晶！
+55,TEXT_AETHERYTE_FULL_OPEN_SOLUTION_NINE_1,作為獎勵，以後也可以傳送到遺產之地！
+56,TEXT_AETHERYTE_FULL_OPEN_TULIYOLLAL_WITH_QUESTCOMP_6_0,開放了圖萊尤拉的所有城內乙太之晶！
+57,TEXT_AETHERYTE_FULL_OPEN_TULIYOLLAL_WITH_QUESTCOMP_6_1,作為獎勵，以後也可以傳送到奧闊帕恰山、<hex:02100103>克扎瑪烏卡溼地下游水域、克扎瑪烏卡溼地上游水域、<hex:02100103>亞克特爾樹海、夏勞尼荒野和幻境村！

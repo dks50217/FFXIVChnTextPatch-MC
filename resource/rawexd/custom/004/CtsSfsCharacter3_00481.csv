@@ -1,7 +1,7 @@
 ﻿key,0,1
 #,,
 offset,0,4
-int32,str,str
+Int32,String,String
 0,TEXT_CTSSFSCHARACTER3_00481_GREETING_KURENAI_000_000,謝謝您能過來。<hex:02100103>為了得到民眾的理解，就拜託您幫忙了。
 1,TEXT_CTSSFSCHARACTER3_00481_GREETING_KURENAI_000_001,我正在等您呢。<hex:02100103>看到大家的笑容我實在是太高興了……這也是托您的福。
 2,TEXT_CTSSFSCHARACTER3_00481_GREETING_KURENAI_000_002,自從您來幫我之後，每一天都過得十分新鮮……<hex:02100103>儘管忙碌，卻很幸福。

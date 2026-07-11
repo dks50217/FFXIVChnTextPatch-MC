@@ -1,7 +1,7 @@
 ﻿key,0,1
 #,,
 offset,0,4
-int32,str,str
+Int32,String,String
 0,TEXT_AKTKMD101_04409_SEQ_00,巴爾德西昂分館的塔塔露一臉凝重。
 1,TEXT_AKTKMD101_04409_SEQ_01,從塔塔露那裡收到了令人不安的消息。前往巴爾德西昂分館的正廳。
 2,TEXT_AKTKMD101_04409_SEQ_02,聽聞拉札罕出現了緊急事態。與同伴們一同前往薩維奈島。

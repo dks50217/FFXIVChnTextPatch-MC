@@ -1,7 +1,7 @@
 ﻿key,0,1
 #,,
 offset,0,4
-int32,str,str
+Int32,String,String
 0,TEXT_SUBWIL094_00506_SEQ_00,月牙灣的艾達琳正在尋找可以幫忙清除糾纏在漁網上的垃圾的人。
 1,TEXT_SUBWIL094_00506_SEQ_01,幫助艾達琳清除海底拉網上的垃圾。
 2,TEXT_SUBWIL094_00506_SEQ_02,網清理乾淨了。向艾達琳報告。

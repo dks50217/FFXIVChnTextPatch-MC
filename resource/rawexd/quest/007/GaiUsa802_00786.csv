@@ -1,7 +1,7 @@
 ﻿key,0,1
 #,,
 offset,0,4
-int32,str,str
+Int32,String,String
 0,TEXT_GAIUSA802_00786_SEQ_00,秋瓜浮村的開山工伊沃洛有事情想要對冒險者坦白。
 1,TEXT_GAIUSA802_00786_SEQ_01,開山工伊沃洛好像目擊到了眼球怪。在西部石場裡的<hex:02280CFF05>EObj<hex:F61E8C3E0103>附近進行調查，打倒隨之出現的魔物。
 2,TEXT_GAIUSA802_00786_SEQ_02,出現了<hex:02280FFF09>BNpcName<hex:F207C10103>，但是眼球怪並沒有出現。向秋瓜浮村的伊沃洛報告。

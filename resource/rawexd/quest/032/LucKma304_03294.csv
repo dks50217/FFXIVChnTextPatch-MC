@@ -1,7 +1,7 @@
 ﻿key,0,1
 #,,
 offset,0,4
-int32,str,str
+Int32,String,String
 0,TEXT_LUCKMA304_03294_SEQ_00,鼴靈集市的泰絲琳現在就想出發。
 1,TEXT_LUCKMA304_03294_SEQ_01,
 2,TEXT_LUCKMA304_03294_SEQ_02,

@@ -1,7 +1,7 @@
 ﻿key,0,1
 #,,
 offset,0,4
-int32,str,str
+Int32,String,String
 0,TEXT_AKTKUA204_04793_SEQ_00,開拓據點的聯絡小員這次也有事想要告訴冒險者。
 1,TEXT_AKTKUA204_04793_SEQ_01,和聯絡小員進行了交談。前往無人島西南方向的海灘，在<hex:02280CFF05>EObj<hex:F61EB9640103>等待塔塔露。
 2,TEXT_AKTKUA204_04793_SEQ_02,和塔塔露等人匯合了。和無人島小島木屋附近的韋爾夫森談談。

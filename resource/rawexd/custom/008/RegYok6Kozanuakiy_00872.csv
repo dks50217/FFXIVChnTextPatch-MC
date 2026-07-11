@@ -1,7 +1,7 @@
 ﻿key,0,1
 #,,
 offset,0,4
-int32,str,str
+Int32,String,String
 0,TEXT_REGYOK6KOZANUAKIY_00872_GINUHANU_000_000,歡迎光臨。<hex:02100103>有什麼不明白的，就由我來為你說明吧。
 1,TEXT_REGYOK6KOZANUAKIY_00872_GINUHANU_000_001,我們供奉綠咬鵑大人的理由，<hex:02100103>我想你現在應該也明白了吧！<hex:02100103>如果還有什麼不明白的，就由我來為你說明吧。
 2,TEXT_REGYOK6KOZANUAKIY_00872_GINUHANU_000_002,坐在神轎上的烏克·拉瑪特大人成為了新任武王，<hex:02100103>這對我來說真是一生的榮耀。<hex:02100103>那麼關於這裡你有什麼想知道的，我都可以為你說明。

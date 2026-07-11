@@ -1,7 +1,7 @@
 ﻿key,2,3,4
 #,Name,,Description
 offset,0,4,8
-int32,str,str,str
+Int32,String,String,String
 0,,,
 1,COMMUNITY FINDER,社群搜尋器,在社群搜尋器中獲得關於部隊、通訊貝等朋友募集的最新消息。<hex:02100103><hex:02100103>如果想在遊戲中尋找朋友或戰友的話，<hex:02100103>請訪問這裡！
-2,,,
+2,Immerse Spatial Audio,,「Immerse Spatial Audio」是Embody公司提供的可選聲音附加元件。<hex:02100103>通過根據您的耳形來個性化播放最終幻想XIV的聲音，您可以享受到更具立體感的音訊，從360度的角度聽到聲音。<hex:02100103><hex:02100103>要使用此功能，您需要安裝「Immerse Spatial Audio」。<hex:02100103>首先，您可以免費試用。<hex:02100103>※在試用期結束後，繼續使用「Immerse Spatial Audio」需要另外購買許可證。<hex:02100103><hex:02100103>請通過以下按鈕詳細瞭解Immerse™官方網站。

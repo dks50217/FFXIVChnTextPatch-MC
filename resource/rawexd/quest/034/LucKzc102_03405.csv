@@ -1,7 +1,7 @@
 ﻿key,0,1
 #,,
 offset,0,4
-int32,str,str
+Int32,String,String
 0,TEXT_LUCKZC102_03405_SEQ_00,<hex:024804F201FC03><hex:024904F201FD03>特殊規則： 等級調整<hex:0249020103><hex:0248020103><hex:02100103>群花館的烏兒·佐恩正在考慮成為名人的方法。
 1,TEXT_LUCKZC102_03405_SEQ_01,※本任務為<hex:024804F201FC03><hex:024904F201FD03><hex:0249020103><hex:0248020103> 等級調整任務。<hex:02100103><hex:02100103>烏兒·佐恩想到的辦法是畫一些畫。從伊爾美格桃色睡床的<hex:02280CFF05>EObj<hex:F61EACFD0103>上收集<hex:022811FF0A>EventItem<hex:F61E8F1F0103>作為繪畫顏料的材料。
 2,TEXT_LUCKZC102_03405_SEQ_02,收集了<hex:022811FF0A>EventItem<hex:F61E8F1F0103>。將<hex:022811FF0A>EventItem<hex:F61E8F1F0103>交給群花館的烏兒·佐恩。

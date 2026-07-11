@@ -1,7 +1,7 @@
 ﻿key,0,1
 #,,
 offset,0,4
-int32,str,str
+Int32,String,String
 0,TEXT_BANGNA401_02266_SEQ_00,<hex:024804F201FC03><hex:024904F201FD03>特殊規則： 等級調整（限定職業）<hex:0249020103><hex:0248020103><hex:02100103>自由腦窟穴的眼神好看起來很自豪。
 1,TEXT_BANGNA401_02266_SEQ_01,※本任務為<hex:024804F201FC03><hex:024904F201FD03><hex:0249020103><hex:0248020103> 等級調整（限定職業）任務，<hex:02100103>　需要與接受任務時的職業相同才可繼續進行任務。<hex:02100103><hex:02100103>眼神好委託冒險者收集聖菲內雅連隊需要的火藥材料。在阿瓦隆尼亞古陸獲取3袋<hex:022811FF0A>EventItem<hex:F61E8C240103>，在荒煙野地獲取3根<hex:022811FF0A>EventItem<hex:F61E8C250103>。
 2,TEXT_BANGNA401_02266_SEQ_02,獲得了3袋<hex:022811FF0A>EventItem<hex:F61E8C240103>和3根<hex:022811FF0A>EventItem<hex:F61E8C250103>。將<hex:022811FF0A>EventItem<hex:F61E8C240103>和<hex:022811FF0A>EventItem<hex:F61E8C250103>交給自由腦窟穴的眼神好。

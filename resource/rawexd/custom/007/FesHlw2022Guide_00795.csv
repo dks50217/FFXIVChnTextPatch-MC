@@ -1,7 +1,7 @@
 ﻿key,0,1
 #,,
 offset,0,4
-int32,str,str
+Int32,String,String
 0,TEXT_FESHLW2022GUIDE_00795_GUIDEHLW2022_000_000,我、我是冒險者公會派、派來的，<hex:02100103>負責這次活動的宣傳員。<hex:02100103>有什麼想知道的隨時都可以來問我哦！
 1,TEXT_FESHLW2022GUIDE_00795_Q1_000_000,想了解什麼？
 2,TEXT_FESHLW2022GUIDE_00795_A1_000_001,你們是什麼人？

@@ -1,7 +1,7 @@
 ﻿key,0,1
 #,,
 offset,0,4
-int32,str,str
+Int32,String,String
 0,TEXT_LUCKSA311_04092_SEQ_00,弗爾德尼斯前哨的德米塔爾想要將佔領了敵方據點一事告訴冒險者。
 1,TEXT_LUCKSA311_04092_SEQ_01,
 2,TEXT_LUCKSA311_04092_SEQ_02,

@@ -1,7 +1,7 @@
 ﻿key,0,1
 #,,
 offset,0,4
-int32,str,str
+Int32,String,String
 0,TEXT_SUBWIL113_00621_SEQ_00,枯骨營地的領頭人伊桑巴德好像知道奧爾森的動向。
 1,TEXT_SUBWIL113_00621_SEQ_01,為了調查奧爾森，和黃金集市的衣衫襤褸的少年對話。
 2,TEXT_SUBWIL113_00621_SEQ_02,奧爾森外出找尋孩子的寶物後，就一直沒有回來。尋找奧爾森的下落。

@@ -1,7 +1,7 @@
 ﻿key,0,1
 #,,
 offset,0,4
-int32,str,str
+Int32,String,String
 0,TEXT_REGSEAPVPSEASONTICKET_00438_SEASONREWARD2_000_000,將自身的尖牙與利爪磨練到極致的勇士啊！<hex:02100103>在我這裡可以用勝利者的證明「凶狼項圈」交換報酬！
 1,TEXT_REGSEAPVPSEASONTICKET_00438_MENU_000_000,有什麼事？
 2,TEXT_REGSEAPVPSEASONTICKET_00438_MENU_000_001,交換武器（凶狼項圈：10個）

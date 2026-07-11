@@ -1,7 +1,7 @@
 ﻿key,0,1
 #,,
 offset,0,4
-int32,str,str
+Int32,String,String
 0,TEXT_LUCKMF107_03650_SEQ_00,站在無主遺跡前的雅·修特拉似乎決定開展下一項行動。
 1,TEXT_LUCKMF107_03650_SEQ_01,
 2,TEXT_LUCKMF107_03650_SEQ_02,

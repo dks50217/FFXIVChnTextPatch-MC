@@ -1,7 +1,7 @@
 ﻿key,0,1
 #,,
 offset,0,4
-int32,str,str
+Int32,String,String
 0,TEXT_LUCKMH108_03768_SEQ_00,鰭人潮池的於里昂熱想要前往俾斯麥那裡。
 1,TEXT_LUCKMH108_03768_SEQ_01,
 2,TEXT_LUCKMH108_03768_SEQ_02,

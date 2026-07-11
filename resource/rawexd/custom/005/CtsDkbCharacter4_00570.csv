@@ -1,7 +1,7 @@
 ﻿key,0,1
 #,,
 offset,0,4
-int32,str,str
+Int32,String,String
 0,TEXT_CTSDKBCHARACTER4_00570_QESHIRAE_000_000,來了來了，這裡是大地資源部。<hex:02100103>要委託工作的話，還請稍等一下。
 1,TEXT_CTSDKBCHARACTER4_00570_SYSTEM_000_008,（★未使用／削除予定★）
 2,TEXT_CTSDKBCHARACTER4_00570_SYSTEM_000_009,（★未使用／削除予定★）

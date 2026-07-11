@@ -1,7 +1,7 @@
 ﻿key,0,1
 #,,
 offset,0,4
-int32,str,str
+Int32,String,String
 0,TEXT_LUCKTA510_04043_SEQ_00,古姆拉村的矮人族老爹有工作想要委託冒險者。
 1,TEXT_LUCKTA510_04043_SEQ_01,和矮人族老爹進行了交談。和珂露西亞島古姆拉村的悲觀的村民談談。
 2,TEXT_LUCKTA510_04043_SEQ_02,和悲觀的村民進行了交談。去幫助村民們重建村子。

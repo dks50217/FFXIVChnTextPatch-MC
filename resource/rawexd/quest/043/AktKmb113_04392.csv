@@ -1,7 +1,7 @@
 ﻿key,0,1
 #,,
 offset,0,4
-int32,str,str
+Int32,String,String
 0,TEXT_AKTKMB113_04392_SEQ_00,第三站的尤盧斯似乎有心事。
 1,TEXT_AKTKMB113_04392_SEQ_01,接受了尤盧斯的傳話委託。和第三站的馬爾科裡努斯與奧克塔維亞談談。
 2,TEXT_AKTKMB113_04392_SEQ_02,向兩人轉達了尤盧斯的口信。和第三站出口的尤盧斯談談。

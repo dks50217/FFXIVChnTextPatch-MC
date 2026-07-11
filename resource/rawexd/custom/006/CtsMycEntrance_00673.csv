@@ -1,7 +1,7 @@
 ﻿key,0,1
 #,,
 offset,0,4
-int32,str,str
+Int32,String,String
 0,TEXT_CTSMYCENTRANCE_00673_Q1_000_000,要做什麼？
 1,TEXT_CTSMYCENTRANCE_00673_MENU_CONTENT,進入「<hex:02281CFF17>ContentFinderCondition<hex:E8022C03>」
 2,TEXT_CTSMYCENTRANCE_00673_A1_000_001,詢問有關南方博茲雅戰線

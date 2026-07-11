@@ -1,7 +1,7 @@
 ﻿key,0,1
 #,,
 offset,0,4
-int32,str,str
+Int32,String,String
 0,TEXT_STMBDY102_02920_SEQ_00,
 1,TEXT_STMBDY102_02920_SEQ_01,
 2,TEXT_STMBDY102_02920_SEQ_02,
@@ -62,3 +62,4 @@ int32,str,str
 57,TEXT_STMBDY102_02920_SYSTEM_000_009,從有限情報中推測對應地點及條件，<hex:02100103>來完成新的項目吧！
 58,TEXT_STMBDY102_02920_ULGERIRONHEART_000_020,我是探險家。<hex:02100103>冒險之地充滿危險，經驗不足切莫靠近。<hex:02100103>如果你想前往，就必須磨練好自身技能。
 59,TEXT_STMBDY102_02920_SYSTEM_000_021,若要領取或繼續推進本任務，<hex:02100103>需要任意職業的等級在60級以上。
+60,TEXT_STMBDY102_02920_SYSTEM_000_021,若要領取或繼續推進本任務，<hex:02100103>需要任意職業的等級達到60或更高等級。

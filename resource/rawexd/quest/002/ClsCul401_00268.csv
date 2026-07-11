@@ -1,7 +1,7 @@
 ﻿key,0,1
 #,,
 offset,0,4
-int32,str,str
+Int32,String,String
 0,TEXT_CLSCUL401_00268_SEQ_00,烹調師公會的林格薩斯想讓冒險者去和拉蒂莎談談。
 1,TEXT_CLSCUL401_00268_SEQ_01,接受了林格薩斯的委託。和利姆薩·羅敏薩烹調師公會的拉蒂莎談談。
 2,TEXT_CLSCUL401_00268_SEQ_02,和拉蒂莎進行了交談。製作<hex:022813FF07>ItemHQ<hex:FF08>　4712<hex:0103>、<hex:022813FF07>ItemHQ<hex:FF08>　4733<hex:0103>、<hex:022813FF07>ItemHQ<hex:FF08>　4749<hex:0103>各1份，交給烹調師公會的拉蒂莎。

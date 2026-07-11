@@ -1,7 +1,7 @@
 ﻿key,0,1
 #,,
 offset,0,4
-int32,str,str
+Int32,String,String
 0,TEXT_REGSEAWINEPORT_00118_BYRGLENT_000_000,冒險者找我有什麼事啊？<hex:02100103>我可不像你那麼閒。
 1,TEXT_REGSEAWINEPORT_00118_BYRGLENT_000_010,我是葡萄酒港的老闆。<hex:02100103>只能喝些廉價酒的冒險者可能不懂，<hex:02100103>真正品質一流的葡萄酒可是有生命的。
 2,TEXT_REGSEAWINEPORT_00118_BYRGLENT_000_011,將精心培育出的葡萄放到木桶裡發酵，<hex:02100103>讓它們在酒窖裡慢慢呼吸，等待它們成長。<hex:02100103>我不知道還有什麼工作比這個更有意義。

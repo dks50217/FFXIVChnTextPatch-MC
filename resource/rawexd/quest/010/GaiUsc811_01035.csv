@@ -1,7 +1,7 @@
 ﻿key,0,1
 #,,
 offset,0,4
-int32,str,str
+Int32,String,String
 0,TEXT_GAIUSC811_01035_SEQ_00,骷髏谷營地的黑渦團團員法爾克布瑞達，想交給冒險者一個任務。 
 1,TEXT_GAIUSC811_01035_SEQ_01,接受了委託，為了阻止敵人用奪來的水晶召喚蠻神，突襲海盜團海蛇之舌的基地。前往海蛇巢穴，用<hex:022811FF0A>EventItem<hex:F61E878E0103>炸毀分別放在3處的<hex:02280CFF05>EObj<hex:F61E8E170103>。
 2,TEXT_GAIUSC811_01035_SEQ_02,炸毀了所有<hex:02280CFF05>EObj<hex:F61E8E170103>。回到骷髏谷營地，向法爾克布瑞達報告。

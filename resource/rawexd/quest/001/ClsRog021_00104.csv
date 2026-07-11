@@ -1,7 +1,7 @@
 ﻿key,0,1
 #,,
 offset,0,4
-int32,str,str
+Int32,String,String
 0,TEXT_CLSROG021_00104_SEQ_00,雙劍師公會的會長賈可，想要讓冒險者熟悉雙劍的使用方法。
 1,TEXT_CLSROG021_00104_SEQ_01,賈可為了讓冒險者熟悉雙劍，希望冒險者前去討伐魔物。前往中拉諾西亞討伐<hex:02280FFF09>BNpcName<hex:F201880103>、<hex:02280FFF09>BNpcName<hex:F201A10103>、<hex:02280FFF09>BNpcName<hex:F202800103>各三隻。
 2,TEXT_CLSROG021_00104_SEQ_02,討伐了指定的魔物。回到雙劍師公會，向賈可報告。

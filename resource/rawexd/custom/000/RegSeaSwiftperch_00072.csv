@@ -1,7 +1,7 @@
 ﻿key,0,1
 #,,
 offset,0,4
-int32,str,str
+Int32,String,String
 0,TEXT_REGSEASWIFTPERCH_00072_LYULF_000_1,雖說這裡除了乙太之光什麼也沒有……<hex:02100103>不過你可以在這裡稍作休息調整。
 1,TEXT_REGSEASWIFTPERCH_00072_LYULF_000_2,直到5年前，我都和父親在這一帶種植小麥。
 2,TEXT_REGSEASWIFTPERCH_00072_LYULF_000_3,可父親因靈災去世……<hex:02100103>如你所見，現在農田也荒廢了，<hex:02100103>以前飼養的渡渡鳥也回歸荒野，反倒成了這片土地的主人。

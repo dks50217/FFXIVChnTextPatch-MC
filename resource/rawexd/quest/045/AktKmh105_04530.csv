@@ -1,7 +1,7 @@
 ﻿key,0,1
 #,,
 offset,0,4
-int32,str,str
+Int32,String,String
 0,TEXT_AKTKMH105_04530_SEQ_00,封寶之間的雅·修特拉在思考虛無界之門的事。
 1,TEXT_AKTKMH105_04530_SEQ_01,
 2,TEXT_AKTKMH105_04530_SEQ_02,

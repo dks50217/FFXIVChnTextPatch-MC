@@ -1,7 +1,7 @@
 ﻿key,0,1
 #,,
 offset,0,4
-int32,str,str
+Int32,String,String
 0,TEXT_BANIXA103_01496_SEQ_00,<hex:024804F201FC03><hex:024904F201FD03>特殊規則： 等級調整<hex:0249020103><hex:0248020103><hex:02100103>※本任務的推薦等級為：<hex:02100103>　製作職業1級以上、戰鬥職業41級以上。<hex:02100103><hex:02100103>長風實驗場的勞動者雅澤爾·阿華坦，想委託冒險者處理緊急的工作。
 1,TEXT_BANIXA103_01496_SEQ_01,※本任務為<hex:024804F201FC03><hex:024904F201FD03><hex:0249020103><hex:0248020103> 等級調整任務。<hex:02100103><hex:02100103>接受了勞動者雅澤爾·阿華坦的委託，去製作<hex:022811FF05>Item<hex:FF08>　8093<hex:0103>。首先前往私語巨木，擊退<hex:02280FFF09>BNpcName<hex:F20BA90103>，並從被奪走的<hex:02280CFF05>EObj<hex:F61E95E80103>中獲取<hex:022811FF0A>EventItem<hex:F61E89E30103>。
 2,TEXT_BANIXA103_01496_SEQ_02,成功奪回了<hex:022811FF0A>EventItem<hex:F61E89E30103>。前往私語巨木鳥欄，將<hex:022811FF0A>EventItem<hex:F61E89E30103>交給內勒蒙，並獲取製作設施的使用權。

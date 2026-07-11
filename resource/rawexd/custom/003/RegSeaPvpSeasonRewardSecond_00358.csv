@@ -1,7 +1,7 @@
 ﻿key,0,1
 #,,
 offset,0,4
-int32,str,str
+Int32,String,String
 0,TEXT_REGSEAPVPSEASONREWARDSECOND_00358_SEASONREWARD_000_000,哦，這不是在<hex:020821E0E80202FF0D>水晶衝突<hex:FF0D>群狼盛宴<hex:03>中位居前列的參與者嗎！<hex:02100103>請立刻收下這只有取得好成績的人才能獲得的排名獎勵吧！
 1,TEXT_REGSEAPVPSEASONREWARDSECOND_00358_SEASONREWARD_000_001,<hex:020866E0E80202FF34>現在正在舉辦水晶衝突的第<hex:022003E80203>賽季。<hex:FF2B>現在是水晶衝突的季前賽期間。<hex:03><hex:02100103><hex:02086FE0E80302FF34>在這裡可以領取前一賽季的賽季獎勵。<hex:FF34>因之前是季前賽，沒有可領取的獎勵。<hex:03><hex:02100103>如果關於獎勵有不明白的地方也可以問我。
 2,TEXT_REGSEAPVPSEASONREWARDSECOND_00358_Q1_000_1,有什麼事？

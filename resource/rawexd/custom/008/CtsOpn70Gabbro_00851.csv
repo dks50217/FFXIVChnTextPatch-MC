@@ -1,7 +1,7 @@
 ﻿key,0,1
 #,,
 offset,0,4
-int32,str,str
+Int32,String,String
 0,TEXT_CTSOPN70GABBRO_00851_CFC_TO_INSTANCE_CONTENT,<hex:02281CFF17>ContentFinderCondition<hex:E8020403>
 1,TEXT_CTSOPN70GABBRO_00851_GABBRO_000_000,喲，<hex:022903EB0203>，謝謝你來找我。
 2,TEXT_CTSOPN70GABBRO_00851_GABBRO_000_001,不戴調魂器的全量級冠軍大駕光臨與我搭話，<hex:02100103>真是三生有幸！

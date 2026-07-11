@@ -1,7 +1,7 @@
 ﻿key,0,1
 #,,
 offset,0,4
-int32,str,str
+Int32,String,String
 0,TEXT_BANKOB306_01369_SEQ_00,第789洞穴團採礦地的第789團清潔工博布，想要一件東西。
 1,TEXT_BANKOB306_01369_SEQ_01,第789團清潔工博布似乎很羨慕第13洞穴團的伙食。前往黑金湖，向第13團煉金術士加吉詢問打開裝有食材的<hex:02280CFF05>EObj<hex:F61E93E90103>的方法。
 2,TEXT_BANKOB306_01369_SEQ_02,第13團煉金術士加吉告訴冒險者，想要打開<hex:02280CFF05>EObj<hex:F61E93E90103>的話，需要先拿到鑰匙。首先前往武伽瑪羅武裝礦山，接觸<hex:02280CFF05>EObj<hex:F61E93DA0103>，討伐出現的<hex:02280FFF09>BNpcName<hex:F20A950103>。

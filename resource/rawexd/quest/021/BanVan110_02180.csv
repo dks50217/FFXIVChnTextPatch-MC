@@ -1,7 +1,7 @@
 ﻿key,0,1
 #,,
 offset,0,4
-int32,str,str
+Int32,String,String
 0,TEXT_BANVAN110_02180_SEQ_00,<hex:024804F201FC03><hex:024904F201FD03>特殊規則： 等級調整（限定職業）<hex:0249020103><hex:0248020103><hex:02100103>西風島的穆納瓦努感覺有些不舒服。
 1,TEXT_BANVAN110_02180_SEQ_01,※本任務為<hex:024804F201FC03><hex:024904F201FD03><hex:0249020103><hex:0248020103> 等級調整（限定職業）任務，<hex:02100103>　需要與接受任務時的職業相同才可繼續進行任務。<hex:02100103><hex:02100103>穆納瓦努委託冒險者幫忙與尊杜族進行交易。在藍天窗的<hex:02280CFF05>EObj<hex:F61E9E8B0103>獲取<hex:022811FF0A>EventItem<hex:F61E8C150103>。
 2,TEXT_BANVAN110_02180_SEQ_02,獲得了<hex:022811FF0A>EventItem<hex:F61E8C150103>。對藍天窗的<hex:02280CFF05>EObj<hex:F61E9E8A0103>使用<hex:022811FF0A>EventItem<hex:F61E8C150103>，從<hex:02280FFF09>BNpcName<hex:F211EC0103>身上獲取2塊<hex:022811FF0A>EventItem<hex:F61E8BF50103>。

@@ -1,7 +1,7 @@
 ﻿key,0,1
 #,,
 offset,0,4
-int32,str,str
+Int32,String,String
 0,TEXT_REGGYR3ALAMHIGANQUARTER_00403_AURIOL_000_000,咦，你不是這裡的人吧。<hex:02100103>你是因為對這裡感興趣才特意來找我搭話的嗎？<hex:02100103>那我可以給你講一講。
 1,TEXT_REGGYR3ALAMHIGANQUARTER_00403_Q1_000_000,想了解什麼？
 2,TEXT_REGGYR3ALAMHIGANQUARTER_00403_A1_000_001,你是做什麼的？

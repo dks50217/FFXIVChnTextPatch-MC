@@ -1,7 +1,7 @@
 ﻿key,0,1
 #,,
 offset,0,4
-int32,str,str
+Int32,String,String
 0,TEXT_JOBBLM450_01076_SEQ_00,紫紅瀑布的卡扎古·春，有事情想告訴冒險者。
 1,TEXT_JOBBLM450_01076_SEQ_01,接受了卡扎古·春的委託。前往南部林區的兀爾德恩惠地，調查<hex:02280CFF05>EObj<hex:F61E8E010103>。
 2,TEXT_JOBBLM450_01076_SEQ_02,調查了石塔。在南部林區的兀爾德恩惠地，和第269團募緣修士韃札談談。

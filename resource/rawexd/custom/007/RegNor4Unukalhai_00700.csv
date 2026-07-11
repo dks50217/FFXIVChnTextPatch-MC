@@ -1,7 +1,7 @@
 ﻿key,0,1
 #,,
 offset,0,4
-int32,str,str
+Int32,String,String
 0,TEXT_REGNOR4UNUKALHAI_00700_UNUKALHAI_000_010,在等待拜克·拉各先生的解析結果出來的這段時間，<hex:02100103>我每天都會跟賞金獵人們一起刻苦修行。
 1,TEXT_REGNOR4UNUKALHAI_00700_UNUKALHAI_000_020,你說你去了第十三世界？！<hex:02100103>我們光是維持與那邊微弱的聯繫就已經用盡了全力，<hex:02100103>真不愧是你啊……
 2,TEXT_REGNOR4UNUKALHAI_00700_UNUKALHAI_000_021,還有雅·修特拉閣下對於穿越世界的研究……<hex:02100103>沒想到她會將著眼點放在人工製作的阿托莫斯上，<hex:02100103>真是讓我深感興趣。

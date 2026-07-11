@@ -1,7 +1,7 @@
 ﻿key,0,1
 #,,
 offset,0,4
-int32,str,str
+Int32,String,String
 0,TEXT_XXAUSA302_03861_SEQ_00,梅梅盧恩交易站的特特盧恩，有事想請冒險者幫忙。
 1,TEXT_XXAUSA302_03861_SEQ_01,接受了幫助特特盧恩製作<hex:022811FF0A>EventItem<hex:F61E86D20103>的委託。在愚者瀑布附近討伐<hex:02280DFF09>BNpcName<hex:1D0103>，獲取3根<hex:022811FF0A>EventItem<hex:F61E90410103>。
 2,TEXT_XXAUSA302_03861_SEQ_02,將集齊的材料交給梅梅盧恩交易站的特特盧恩。

@@ -1,7 +1,7 @@
 ﻿key,0,1
 #,,
 offset,0,4
-int32,str,str
+Int32,String,String
 0,TEXT_AKTKMF101_04439_SEQ_00,正廳的可露兒想要共享情報。
 1,TEXT_AKTKMF101_04439_SEQ_01,從可露兒和塔塔露那裡了解了拂曉的動向。和加雷馬碎璃營地的露琪亞談談。
 2,TEXT_AKTKMF101_04439_SEQ_02,前往偉大冰原，與夥伴一起救助了人們。返回碎璃營地。

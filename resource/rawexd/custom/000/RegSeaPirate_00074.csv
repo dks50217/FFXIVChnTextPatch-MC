@@ -1,7 +1,7 @@
 ﻿key,0,1
 #,,
 offset,0,4
-int32,str,str
+Int32,String,String
 0,TEXT_REGSEAPIRATE_00074_GERALD_000_1,一提到利姆薩·羅敏薩，大家都會有海盜城市的印象，<hex:02100103>但海盜也是與時俱進的。<hex:02100103>你想了解一下海盜嗎？
 1,TEXT_REGSEAPIRATE_00074_GERALD_000_2,卡爾瓦蘭是利姆薩·羅敏薩的三大海盜團之一，百鬼夜行的頭領。<hex:02100103>而我便是輔佐頭領日常生活和貿易事務的人。
 2,TEXT_REGSEAPIRATE_00074_GERALD_000_3,卡爾瓦蘭不光能讀懂海浪的更迭，<hex:02100103>還能讀懂時代的變遷。

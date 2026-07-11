@@ -1,7 +1,7 @@
 ﻿key,0,1
 #,,
 offset,0,4
-int32,str,str
+Int32,String,String
 0,TEXT_JOBPLD400_01057_SEQ_00,近衛兵團銀胄團的總長傑林斯，想要傳授給冒險者新的戰技。
 1,TEXT_JOBPLD400_01057_SEQ_01,從傑林斯處習得了戰技。去東薩納蘭的宇格拉姆河，點燃<hex:02280CFF05>EObj<hex:F61E8DAB0103>，討伐隨之出現的怪魚。
 2,TEXT_JOBPLD400_01057_SEQ_02,成功討伐了怪魚。向烏爾達哈御道的傑林斯報告。

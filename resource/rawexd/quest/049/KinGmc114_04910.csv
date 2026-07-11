@@ -1,7 +1,7 @@
 ﻿key,0,1
 #,,
 offset,0,4
-int32,str,str
+Int32,String,String
 0,TEXT_KINGMC114_04910_SEQ_00,船頭小屋的佩謝誇正在歡迎冒險者的回歸。
 1,TEXT_KINGMC114_04910_SEQ_01,
 2,TEXT_KINGMC114_04910_SEQ_02,

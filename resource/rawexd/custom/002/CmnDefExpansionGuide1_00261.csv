@@ -1,7 +1,7 @@
 ﻿key,0,1
 #,,
 offset,0,4
-int32,str,str
+Int32,String,String
 0,TEXT_CMNDEFEXPANSIONGUIDE1_00261_TEMPLEKNIGHT01580_000_000,這裡是通往皇都伊修加德的大審門……<hex:02100103>你不能從這裡通過。
 1,TEXT_CMNDEFEXPANSIONGUIDE1_00261_SYSTEM_000_001,要前往皇都伊修加德需要滿足以下條件。
 2,TEXT_CMNDEFEXPANSIONGUIDE1_00261_SYSTEM_000_003,1.完成「重生之境主線任務」中的「希望的燈火」。

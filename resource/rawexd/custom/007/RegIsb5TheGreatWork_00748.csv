@@ -1,7 +1,7 @@
 ﻿key,0,1
 #,,
 offset,0,4
-int32,str,str
+Int32,String,String
 0,TEXT_REGISB5THEGREATWORK_00748_AMRA_000_000,哦呀哦呀，這個時期居然有旅行者來訪真是稀奇啊。<hex:02100103>你要是有想要了解的事情就來問我吧。
 1,TEXT_REGISB5THEGREATWORK_00748_AMRA_000_001,在那座塔發生的事情我已經聽說了。<hex:02100103>我很擔心尼答娜還有其他同胞們……
 2,TEXT_REGISB5THEGREATWORK_00748_AMRA_000_002,多虧了你們塔才消失了，聽說你們還救出了我們的同胞。<hex:02100103>只要能幫得上你這位恩人，有什麼問題請儘管問我。

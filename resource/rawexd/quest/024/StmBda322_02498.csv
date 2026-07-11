@@ -1,7 +1,7 @@
 ﻿key,0,1
 #,,
 offset,0,4
-int32,str,str
+Int32,String,String
 0,TEXT_STMBDA322_02498_SEQ_00,弓束官邸附近的夕霧想要確認作戰的詳情。
 1,TEXT_STMBDA322_02498_SEQ_01,為了視察管轄地，芝諾斯來到了多瑪。夕霧計劃趁機暗殺芝諾斯。在弓束官邸的<hex:02280CFF05>EObj<hex:F61EA3220103>張望，尋找可以藏身的地方。
 2,TEXT_STMBDA322_02498_SEQ_02,找到了可以藏身的地方。做好戰鬥準備，和弓束官邸的夕霧談談。

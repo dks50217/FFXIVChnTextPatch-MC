@@ -1,7 +1,7 @@
 ﻿key,0,1
 #,Singular,Plural
 offset,0,4
-int32,str,str
+Int32,String,String
 0,,
 1,開拓素材,
 2,稀少開拓素材,

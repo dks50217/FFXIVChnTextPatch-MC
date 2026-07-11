@@ -1,7 +1,7 @@
 ﻿key,0,1
 #,,
 offset,0,4
-int32,str,str
+Int32,String,String
 0,TEXT_LUCKZA023_03365_SEQ_00,<hex:024804F201FC03><hex:024904F201FD03>特殊規則： 等級調整<hex:0249020103><hex:0248020103><hex:02100103>鼴靈集市的慌張的鼴靈族好像希望冒險者能幫幫年輕人。
 1,TEXT_LUCKZA023_03365_SEQ_01,
 2,TEXT_LUCKZA023_03365_SEQ_02,

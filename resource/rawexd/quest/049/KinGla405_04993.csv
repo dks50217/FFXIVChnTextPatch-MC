@@ -1,7 +1,7 @@
 ﻿key,0,1
 #,,
 offset,0,4
-int32,str,str
+Int32,String,String
 0,TEXT_KINGLA405_04993_SEQ_00,珠串萬貨街的休涅想委託冒險者送貨。
 1,TEXT_KINGLA405_04993_SEQ_01,從休涅那裡拿到了送給瓦泡塔的商品。將<hex:022811FF0A>EventItem<hex:F61E92CD0103>交給圖萊尤拉翼鏡街的瓦泡塔。
 2,TEXT_KINGLA405_04993_SEQ_02,將商品交給了瓦泡塔。採集<hex:02280BFF05>Item<hex:F2AB890103>，交給珠串萬貨街的休涅。當職業為採礦工時，可以在奧闊帕恰山的沉星浮淚的池附近採集到<hex:02280BFF05>Item<hex:F2AB890103>；當職業為園藝工時，可以在奧闊帕恰山的拉托托花田附近採集到<hex:02280BFF05>Item<hex:F2AB890103>。

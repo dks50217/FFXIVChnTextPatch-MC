@@ -1,7 +1,7 @@
 ﻿key,0,1
 #,,
 offset,0,4
-int32,str,str
+Int32,String,String
 0,TEXT_REGROCWHITEBRIM_00109_ELIASSIN_000_000,你有什麼事？<hex:02100103>我很忙，沒事就趕快離開。
 1,TEXT_REGROCWHITEBRIM_00109_ELIASSIN_000_100,歡迎。<hex:02100103>因為目前我們正在忙著重建奪回的石衛塔，<hex:02100103>如果對你這個大功臣有招待不周的地方，還希望你能見諒。
 2,TEXT_REGROCWHITEBRIM_00109_ELIASSIN_000_101,歡迎。<hex:02100103>對你這個大功臣有招待不周的地方，還希望你能見諒。

@@ -1,7 +1,7 @@
 ﻿key,0,1
 #,,
 offset,0,4
-int32,str,str
+Int32,String,String
 0,TEXT_LUCKMG109_03681_SEQ_00,門前區的采·努茲想要開始就任演講。
 1,TEXT_LUCKMG109_03681_SEQ_01,
 2,TEXT_LUCKMG109_03681_SEQ_02,

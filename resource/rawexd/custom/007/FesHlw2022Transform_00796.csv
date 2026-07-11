@@ -1,7 +1,7 @@
 ﻿key,0,1
 #,,
 offset,0,4
-int32,str,str
+Int32,String,String
 0,TEXT_FESHLW2022TRANSFORM_00796_TRANSFORMHLW2022_000_000,嘻嘻嘻……我是擅長變身奇術的普通小魔精。<hex:02100103>讓我來用我的拿手絕活，把你變成你想到的人吧！
 1,TEXT_FESHLW2022TRANSFORM_00796_TRANSFORMHLW2022_000_001,想像一下在你至今為止的冒險旅途所遇到的人們中，<hex:02100103>給你留下強烈印象的人！
 2,TEXT_FESHLW2022TRANSFORM_00796_TRANSFORMHLW2022_000_002,那麼，首先回憶一下你至今為止的冒險！<hex:02100103>嘻嘻嘻……你想到了什麼？

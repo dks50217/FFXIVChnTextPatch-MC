@@ -1,7 +1,7 @@
 ﻿key,0,1
 #,,
 offset,0,4
-int32,str,str
+Int32,String,String
 0,TEXT_VOICEMAN_03008_000010_NANAMO,神殿騎士團總騎士長艾默里克閣下<hex:02100103>作為伊修加德代理教皇已經簽下了名字
 1,TEXT_VOICEMAN_03008_000020_NANAMO,我在此宣布！
 2,TEXT_VOICEMAN_03008_000030_NANAMO,從即日起<hex:02100103>山岳之都伊修加德正式回歸艾歐澤亞城邦軍事同盟

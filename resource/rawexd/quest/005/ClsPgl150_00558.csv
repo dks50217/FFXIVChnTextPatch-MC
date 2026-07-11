@@ -1,7 +1,7 @@
 ﻿key,0,1
 #,,
 offset,0,4
-int32,str,str
+Int32,String,String
 0,TEXT_CLSPGL150_00558_SEQ_00,格鬥家公會的哈蒙， 將要給予冒險者新的課題。
 1,TEXT_CLSPGL150_00558_SEQ_01,從哈蒙處學到了打倒大塊頭敵人的竅門。打倒邪嗣的毒蟾蜍，獲取5塊毒蟾蜍腿肉。
 2,TEXT_CLSPGL150_00558_SEQ_02,獲取了毒蟾蜍腿肉。向黑塵驛站中的哈蒙報告。

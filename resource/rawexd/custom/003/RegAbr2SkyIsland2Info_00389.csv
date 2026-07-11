@@ -1,7 +1,7 @@
 ﻿key,0,1
 #,,
 offset,0,4
-int32,str,str
+Int32,String,String
 0,TEXT_REGABR2SKYISLAND2INFO_00389_MAUNIE_000_000,自從有奇怪的浮島漂到這裡後，<hex:02100103>雲冠群島周圍的屬性之力就開始失去控制，<hex:02100103>讓島上產生了一片風脈特別強勁又十分混亂的地區。
 1,TEXT_REGABR2SKYISLAND2INFO_00389_MAUNIE_000_001,我們空賊將那片空域稱為「亂風脈帶」，<hex:02100103>想穿越它可不容易。
 2,TEXT_REGABR2SKYISLAND2INFO_00389_BARNABAIX_110_000,我們曾經是飛空艇恩惠號的船員。<hex:02100103>因為遭遇到了強風，導致飛空艇失事，漂流到了這片暗礁空域。

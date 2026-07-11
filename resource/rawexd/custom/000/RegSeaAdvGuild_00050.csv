@@ -1,7 +1,7 @@
 ﻿key,0,1
 #,,
 offset,0,4
-int32,str,str
+Int32,String,String
 0,TEXT_REGSEAADVGUILD_00050_SDHODJBI_000_1,歡迎來到沉溺海豚亭。<hex:02100103>有什麼事情都可以問我。
 1,TEXT_REGSEAADVGUILD_00050_SDHODJBI_000_2,我是沉溺海豚亭的侍者。<hex:02100103>你也看見了吧？店主是個當過傭兵的大叔。<hex:02100103>所以需要我這樣的女孩給店裡增添幾分姿色。
 2,TEXT_REGSEAADVGUILD_00050_SDHODJBI_000_3,因為第七靈災，我失去了家、失去了希望，<hex:02100103>在我餓得快趴下的時候，<hex:02100103>巴德龍店主分給了我一點玉米麵包……

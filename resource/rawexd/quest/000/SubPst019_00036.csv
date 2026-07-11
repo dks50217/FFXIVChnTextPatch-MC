@@ -1,7 +1,7 @@
 ﻿key,0,1
 #,,
 offset,0,4
-int32,str,str
+Int32,String,String
 0,TEXT_SUBPST019_00036_SEQ_00,郵差莫古力前輩有大量的信要交給冒險者。
 1,TEXT_SUBPST019_00036_SEQ_01,接受了郵差莫古力前輩的委託，前去送信。前往烏爾達哈的劍術師公會，將至少有100封以上的<hex:022811FF0A>EventItem<hex:F61E8A320103>交給美貌劍弗朗茨。
 2,TEXT_SUBPST019_00036_SEQ_02,將信交給了弗朗茨。沒想到信中夾雜著恐嚇信，為此經紀人布布多嘉委託冒險者警戒周邊。假裝宣傳弗朗茨的比賽，尋找可疑的人。在現世迴廊分發<hex:022811FF0A>EventItem<hex:F61E8A340103>，在來生迴廊的<hex:02280CFF05>EObj<hex:F61E96860103>貼上<hex:022811FF0A>EventItem<hex:F61E8A330103>。

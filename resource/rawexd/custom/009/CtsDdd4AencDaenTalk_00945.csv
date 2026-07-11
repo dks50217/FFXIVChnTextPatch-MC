@@ -1,7 +1,7 @@
 ﻿key,0,1
 #,,
 offset,0,4
-int32,str,str
+Int32,String,String
 0,TEXT_CTSDDD4AENCDAENTALK_00945_AENCDAEN_000_000,如果這一切並不是偶然，<hex:02100103>那朝聖路中一定有一個開始這場葬禮的人，<hex:02100103>並且還能連接教會內外。
 1,TEXT_CTSDDD4AENCDAENTALK_00945_AENCDAEN_000_001,總之請您盡力向前探索吧。<hex:02100103>如果見到了疑似幕後黑手的傢伙，就來告訴我一聲。
 2,TEXT_CTSDDD4AENCDAENTALK_00945_AENCDAEN_000_010,之前我說了些莫名其妙的話，<hex:02100103>不過騷動的原因的確被徹底斬斷了，這一點毫無疑問。

@@ -1,7 +1,7 @@
 ﻿key,1,4
 #,Name,TextString
 offset,0,4
-int32,str,str
+Int32,String,String
 0,,
 1,,
 2,,
@@ -95,5 +95,11 @@ int32,str,str
 90,可露兒的魔力,ContentGaugeMax_positive
 91,割草之魂,
 92,,
-93,,
+93,巨大重力塊,
 94,,
+95,,
+96,,
+97,乙太供給率,ContentGaugeMax_negative
+98,普羅瑪西亞的魔力,ContentGaugeMax_negative
+99,無之力,ContentGaugeMax_negative
+100,,

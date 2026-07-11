@@ -1,7 +1,7 @@
 ﻿key,0,1
 #,,
 offset,0,4
-int32,str,str
+Int32,String,String
 0,TEXT_AKTKLA407_04159_SEQ_00,屯集堂的雛芥子對現在的生活很滿足。
 1,TEXT_AKTKLA407_04159_SEQ_01,文化系的研究到此結束。但是斷金有話想對雛芥子說。將<hex:02280BFF05>Item<hex:F28C080103>交給屯集堂的斷金。<hex:02280BFF05>Item<hex:F28C080103>可以在迷津的中環附近採集到。
 2,TEXT_AKTKLA407_04159_SEQ_02,將<hex:02280BFF05>Item<hex:F28C080103>交給了斷金。在斷金進行製作的期間，將<hex:022811FF0A>EventItem<hex:F61E909A0103>交給舊薩雷安知識神像的雛芥子。

@@ -1,7 +1,7 @@
 ﻿key,0,1
 #,,
 offset,0,4
-int32,str,str
+Int32,String,String
 0,TEXT_STMBDZ917_02873_SEQ_00,帝國東方堡的悲傷的女子需要冒險者的幫助。
 1,TEXT_STMBDZ917_02873_SEQ_01,
 2,TEXT_STMBDZ917_02873_SEQ_02,

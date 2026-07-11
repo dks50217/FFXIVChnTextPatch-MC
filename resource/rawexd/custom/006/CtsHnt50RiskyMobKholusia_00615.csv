@@ -1,7 +1,7 @@
 ﻿key,0,1
 #,,
 offset,0,4
-int32,str,str
+Int32,String,String
 0,TEXT_CTSHNT50RISKYMOBKHOLUSIA_00615_VROIREEQ_000,這個村子不會、也不能依靠游末邦的庇護。<hex:02100103>想要對抗這附近的危險魔物，<hex:02100103>只有我們自己變得更強這一條路。
 1,TEXT_CTSHNT50RISKYMOBKHOLUSIA_00615_VROIREEQ_001,我是這個村子的護衛兼怪物獵人。<hex:02100103>你也是狂熱兵團的同伴吧？<hex:02100103>我可以將這附近危險怪物的情報講給你聽！
 2,TEXT_CTSHNT50RISKYMOBKHOLUSIA_00615_VROIREEQ_Q1_000_000,想了解什麼？

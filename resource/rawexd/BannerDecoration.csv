@@ -1,9 +1,9 @@
 ﻿key,8
-#,
+#,Name
 offset,0
-int32,str
-0,
-1,
+Int32,String
+0,無
+1,無
 2,月桂葉
 3,心形
 4,星星

@@ -1,7 +1,7 @@
 ﻿key,2,9
-#,GridText,
+#,GridText,Text
 offset,4,0
-int32,str,str
+Int32,String,String
 0,,無
 1,,★ 相片
 2,,★ 拍立得

@@ -1,7 +1,7 @@
 ﻿key,0,1
 #,,
 offset,0,4
-int32,str,str
+Int32,String,String
 0,TEXT_CTSHWDRANKING_00635_LUDOVRAINT_000_000,我叫呂多佛蘭。<hex:02100103>請多多指教……雖然想這麼說，<hex:02100103>不過我看你現在還在迷茫啊。
 1,TEXT_CTSHWDRANKING_00635_LUDOVRAINT_010_000,哦哦，我能看見，我能看見！<hex:02100103>我與你共同編織出的奇特緣分！<hex:02100103>呵呵呵呵呵，我就是在等待你這樣的人到來。
 2,TEXT_CTSHWDRANKING_00635_LUDOVRAINT_010_010,啊，失禮了。<hex:02100103>我一見到高超的工匠就會抑制不住激昂的心情。<hex:02100103>我是呂多佛蘭，「技巧點」窗口的負責人。

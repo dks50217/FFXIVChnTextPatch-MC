@@ -1,7 +1,7 @@
 ﻿key,0,1
 #,,
 offset,0,4
-int32,str,str
+Int32,String,String
 0,TEXT_JOBWHM400_01081_SEQ_00,恬靜路營地的拉雅·奧·神納，有事情想要委託給冒險者。
 1,TEXT_JOBWHM400_01081_SEQ_01,接受了拉雅·奧·神納的委託。前往東部林區的荊棘森，和阿·盧恩·神納談談。
 2,TEXT_JOBWHM400_01081_SEQ_02,和阿·盧恩·神納進行了交談。前往東部林區的荊棘森，在<hex:02280CFF05>EObj<hex:F61E8DDA0103>和樹中的元靈進行共鳴。

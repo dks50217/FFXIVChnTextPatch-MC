@@ -1,7 +1,7 @@
 ﻿key,0,1
 #,,
 offset,0,4
-int32,str,str
+Int32,String,String
 0,TEXT_REGOTH4MYCMARSCHAK_00658_MARSCHAK_000_000,我們將為了即將開始的反攻作戰，做好進一步的準備。<hex:02100103>屆時請解放者閣下也務必參加！<hex:02100103>在此之前還請耐心等待！
 1,TEXT_REGOTH4MYCMARSCHAK_00658_MARSCHAK_000_001,有什麼想要確認的事情嗎？
 2,TEXT_REGOTH4MYCMARSCHAK_00658_MARSCHAK_000_005,反擊作戰已經開始了。<hex:02100103>請先趕赴最前線的烏特亞前哨吧。<hex:02100103>碼頭的謝羅斯會為你帶路。

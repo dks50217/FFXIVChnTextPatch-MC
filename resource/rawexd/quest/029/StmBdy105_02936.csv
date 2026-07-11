@@ -1,7 +1,7 @@
 ﻿key,0,1
 #,,
 offset,0,4
-int32,str,str
+Int32,String,String
 0,TEXT_STMBDY105_02936_SEQ_00,潮風亭的埃斯特麗爾德在審視路過的行人。
 1,TEXT_STMBDY105_02936_SEQ_01,
 2,TEXT_STMBDY105_02936_SEQ_02,

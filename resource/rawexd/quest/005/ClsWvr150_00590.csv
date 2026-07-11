@@ -1,7 +1,7 @@
 ﻿key,0,1
 #,,
 offset,0,4
-int32,str,str
+Int32,String,String
 0,TEXT_CLSWVR150_00590_SEQ_00,裁衣匠公會的雷多倫特·羅斯想要交給冒險者一份工作。
 1,TEXT_CLSWVR150_00590_SEQ_01,雷多倫特·羅斯想向裁衣匠公會的老主顧贈送禮物。代替他縫制禮物。先去採礦工公會，詢問瓦瓦魯卡有沒有想要的東西。
 2,TEXT_CLSWVR150_00590_SEQ_02,瓦瓦魯卡想要<hex:02280BFF05>Item<hex:F20A6E0103>和<hex:02280BFF05>Item<hex:F20CFA0103>。備齊這兩樣東西，交給裁衣匠公會的雷多倫特·羅斯。

@@ -1,7 +1,7 @@
 ﻿key,0,1
 #,,
 offset,0,4
-int32,str,str
+Int32,String,String
 0,TEXT_CLSALC300_00584_SEQ_00,煉金術士公會的塞文利安希望再次試探冒險者的實力。
 1,TEXT_CLSALC300_00584_SEQ_01,這次要完成的任務是製作毒藥。製作3個<hex:02280DFF07>ItemHQ<hex:F211DF0103>交給煉金術士公會的塞文利安。
 2,TEXT_CLSALC300_00584_SEQ_02,塞文利安讚揚冒險者製作的毒藥足以引起大慘案，並要求冒險者將<hex:02280DFF07>ItemHQ<hex:F211DF0103>交給盜賊團伙的走私者。去找白玉小巷的女貓魅。

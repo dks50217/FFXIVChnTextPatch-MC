@@ -1,7 +1,7 @@
 ﻿key,0,1
 #,,
 offset,0,4
-int32,str,str
+Int32,String,String
 0,TEXT_DEEPDUNGEON2REWARD_DD2SHOP_000_000,雖然這可能聽起來有些矛盾，<hex:02100103>但是真的是很閒，一點事情都沒有。<hex:02100103>啊，我是指警備的工作啦。
 1,TEXT_DEEPDUNGEON2REWARD_DD2SHOP_000_010,哎呀……已經到了幹活的時間了嗎？<hex:02100103>呵呵呵……我正等你呢。<hex:02100103>你需要我做些什麼呢？
 2,TEXT_DEEPDUNGEON2REWARD_DD2SHOP_000_020,看來到了展現鬼師眾技術的時候了呢。<hex:02100103>你來告訴我需要做些什麼吧。

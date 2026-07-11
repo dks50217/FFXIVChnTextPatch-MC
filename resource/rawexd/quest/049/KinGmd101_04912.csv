@@ -1,7 +1,7 @@
 ﻿key,0,1
 #,,
 offset,0,4
-int32,str,str
+Int32,String,String
 0,TEXT_KINGMD101_04912_SEQ_00,薩卡圖拉爾關門前的埃倫維爾正打算出發。
 1,TEXT_KINGMD101_04912_SEQ_01,出發前的準備已經萬無一失。和薩卡圖拉爾關門前的勇連隊的守門人談談。
 2,TEXT_KINGMD101_04912_SEQ_02,將通行證出示給了守門人。越過佐戈永結橋前往夏勞尼荒野。

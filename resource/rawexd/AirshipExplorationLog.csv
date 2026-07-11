@@ -1,7 +1,7 @@
 ﻿key,0
 #,Text
 offset,0
-int32,str
+Int32,String
 0,
 1,到達了阿巴拉提亞雲海的未知區域，即將向「<hex:02281DFF18>AirshipExplorationPoint<hex:E8020103>」調整航線。
 2,初次到達「<hex:02281DFF18>AirshipExplorationPoint<hex:E8020103>」，即將開始探索。

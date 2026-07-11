@@ -1,7 +1,7 @@
 ﻿key,0,1
 #,,
 offset,0,4
-int32,str,str
+Int32,String,String
 0,TEXT_GAIUSC001_00938_SEQ_00,西德對異端審問官吉耶姆的介入感到很困擾。
 1,TEXT_GAIUSC001_00938_SEQ_01,在白雲崖前哨收集關於異端審問官吉耶姆的情報。
 2,TEXT_GAIUSC001_00938_SEQ_02,收集到了吉耶姆的情報。向阿爾菲諾報告。

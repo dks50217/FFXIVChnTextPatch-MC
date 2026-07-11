@@ -1,7 +1,7 @@
 ﻿key,0,1
 #,,
 offset,0,4
-int32,str,str
+Int32,String,String
 0,TEXT_REGFSTLNCGUILD_00007_YWAIN_000_1,來得正好。<hex:02100103>要我給你講講「槍術」麼？
 1,TEXT_REGFSTLNCGUILD_00007_Q1_000_1,想了解什麼？
 2,TEXT_REGFSTLNCGUILD_00007_A1_000_1,你是做什麼的？

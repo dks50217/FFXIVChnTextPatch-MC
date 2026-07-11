@@ -1,7 +1,7 @@
 ﻿key,0
-#,
+#,Name
 offset,0
-int32,str
+Int32,String
 0,
 1,狼獄水上競技場
 2,狼獄水上競技場(非段位賽)

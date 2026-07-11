@@ -1,7 +1,7 @@
 ﻿key,0,1
 #,,
 offset,0,4
-int32,str,str
+Int32,String,String
 0,TEXT_CTSETCEOVEQUIPCHECK_00953_VANAADV05234B_100_000,你是不是去過波亞達樹喵？<hex:02100103>有沒有從寶瓶蟹那拿到寶貝喵？
 1,TEXT_CTSETCEOVEQUIPCHECK_00953_VANAADV05234B_000_000,我是專門收集稀有道具的尋寶獵人喵。<hex:02100103>讓我看看你身上的裝備中有沒有好東西喵……
 2,TEXT_CTSETCEOVEQUIPCHECK_00953_VANAADV05234B_000_001,這是……蘊含火屬性魔力的魔杖，火焰杖喵。<hex:02100103>據說這是溫達斯聯邦那個黑色惡……香托托博士的最愛。

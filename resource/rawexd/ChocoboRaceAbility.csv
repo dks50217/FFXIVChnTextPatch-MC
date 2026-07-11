@@ -1,7 +1,7 @@
 ﻿key,0,1
 #,Name,Description
 offset,0,4
-int32,str,str
+Int32,String,String
 0,,
 1,陸行鳥衝刺,衝刺。<hex:02100103>持續時間：1秒
 2,陸行鳥衝刺II,衝刺。<hex:02100103>持續時間：2秒

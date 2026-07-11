@@ -1,6 +1,6 @@
 ﻿key,0,1
 #,,
 offset,0,4
-int32,str,str
+Int32,String,String
 0,TEXT_CTSWKSTRANSPOINT_00962_TALK_ACTOR_000_010,和星內乙太之光進行了共鳴。開放了星內傳送網！
 1,TEXT_CTSWKSTRANSPOINT_00962_TALK_ACTOR_000_020,接觸星內乙太之光，使用星內傳送網，<hex:02100103>可以在同一探索場景的星內乙太之光間進行自由傳送。<hex:02100103>找到星內乙太之光時，請積極進行共鳴。

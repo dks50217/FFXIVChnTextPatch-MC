@@ -1,7 +1,7 @@
 ﻿key,1,2
-#,,
+#,Name,
 offset,0,4
-int32,str,str
+Int32,String,String
 0,,
 1,,
 2,DATA,檔案
@@ -14,17 +14,20 @@ int32,str,str
 9,DEEP DUNGEON,深層迷宮解說
 10,DEEP DUNGEON,深層迷宮解說
 11,DEEP DUNGEON,深層迷宮解說
-12,,時尚配飾解說
-13,,套裝解說
-14,,玩家對戰解說
-15,,烈羽爭鋒解說
-16,,紛爭前線解說
-17,,水晶衝突解說
-18,,莫古莫古★大收集解說
-19,,設計搭配相關的解說
+12,FASHION ACCESSORIES,時尚配飾解說
+13,GEARSET,套裝解說
+14,PvP,玩家對戰解說
+15,RIVAL WINGS,烈羽爭鋒解說
+16,FRONTLINE,紛爭前線解說
+17,CRYSTALLINE CONFLICT,水晶衝突解說
+18,MOGMOG COLLECTION,莫古莫古★大收集解說
+19,OUTFIT ,設計搭配相關的解說
 20,BATTLE,戰鬥解說
 21,MAHJONG,多瑪方城戰解說
-22,,
-23,,新月島解說
-24,,宇宙探索說明
-25,,戰術板說明
+22,DEEP DUNGEON,深層迷宮解說
+23,OCCULT CRESCENT,新月島解說
+24,COSMO EXPLORER,宇宙探索說明
+25,STRATEGY BOARD,戰術板說明
+26,SIGHTSEEING LOG,探索筆記解說
+27,CUSTOM DELIVERIES,老主顧交易解說
+28,,

@@ -1,7 +1,7 @@
 ﻿key,0,1
 #,,
 offset,0,4
-int32,str,str
+Int32,String,String
 0,TEXT_JOBSAM600_02565_SEQ_00,雲霧街的莫莫吉格非常慌張。
 1,TEXT_JOBSAM600_02565_SEQ_01,從莫莫吉格口中得知無雙齋悄悄離開了旅館。前往伊修加德聖瓦勒魯瓦揚廣場的<hex:02280CFF05>EObj<hex:F61EA5070103>張望，尋找無雙齋。
 2,TEXT_JOBSAM600_02565_SEQ_02,在<hex:02280CFF05>EObj<hex:F61EA5070103>張望時沒能發現無雙齋的身影。前往伊修加德乙太之光廣場附近的<hex:02280CFF05>EObj<hex:F61EA5080103>再次張望。

@@ -1,7 +1,7 @@
 ﻿key,0,1
 #,,
 offset,0,4
-int32,str,str
+Int32,String,String
 0,TEXT_CTSERKEUREKA3MAGIAARCAGUIDE_00516_DRAKE_000_001,哎呀，你找我有什麼事嗎？<hex:02100103>現在文理融合器還在進行最終調整，<hex:02100103>請你過一會再來吧。
 1,TEXT_CTSERKEUREKA3MAGIAARCAGUIDE_00516_DRAKE_000_010,哎呀，你是……<hex:02100103>是師父大人讓你來找我的嗎？
 2,TEXT_CTSERKEUREKA3MAGIAARCAGUIDE_00516_DRAKE_000_011,謝謝你能過來！<hex:02100103>那我就為你講解一下有關這個文理融合器的事情。

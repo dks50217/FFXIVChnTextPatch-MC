@@ -1,7 +1,7 @@
 ﻿key,0,1
 #,,
 offset,0,4
-int32,str,str
+Int32,String,String
 0,TEXT_CTSWKSLOT_00918_ORBITINGWAY_000_000,歡迎來到憧憬灣宇宙好運道的接待窗口。<hex:02100103>在這裡可以使用月球信用點轉動幸運大轉盤進行抽獎。<hex:02100103>請問有什麼可以幫您的？
 1,TEXT_CTSWKSLOT_00918_ORBITINGWAY_000_001,歡迎來到玻璃匠基地宇宙好運道的接待窗口。<hex:02100103>在這裡可以使用法恩娜信用點轉動幸運大轉盤進行抽獎。<hex:02100103>請問有什麼可以幫您的？
 2,TEXT_CTSWKSLOT_00918_ORBITINGWAY_000_002,こちらはテラ・ファーマ基地のコスモフォーチュン窓口です～。<hex:02100103>オイジュスクレジットを使ってルーレット式のくじが遊べますよ。<hex:02100103>どのようなご用件でしょう～？
@@ -29,3 +29,4 @@ int32,str,str
 24,TEXT_CTSWKSLOT_00918_ORBITINGWAY_070_010,挑戰宇宙好運爆需要消耗1張<hex:02280AFF05>Item<hex:E8030103>。<hex:02100103>（持有數量：<hex:022206E802FF022C03>）
 25,TEXT_CTSWKSLOT_00918_ORBITINGWAY_070_020,是
 26,TEXT_CTSWKSLOT_00918_ORBITINGWAY_070_030,否
+27,TEXT_CTSWKSLOT_00918_ORBITINGWAY_070_030,否

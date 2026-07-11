@@ -1,7 +1,7 @@
 ﻿key,0,1
 #,,
 offset,0,4
-int32,str,str
+Int32,String,String
 0,TEXT_REGROCGATESOFJUDGEMENT_00111_MARCELAIN_000_000,冒險者之流找我有什麼事啊？<hex:02100103>要是什麼無聊的事小心我敲掉你的腦袋。
 1,TEXT_REGROCGATESOFJUDGEMENT_00111_MARCELAIN_000_001,冒險者之流找我有什麼事啊？<hex:02100103>和龍族的戰爭迫在眉睫，我們正忙著應戰呢。<hex:02100103>你有什麼事快說，不要耽誤我工作。
 2,TEXT_REGROCGATESOFJUDGEMENT_00111_MARCELAIN_000_002,我還當是誰呢，原來是品德高尚的冒險者！<hex:02100103>先前的防衛戰真是多虧有你。<hex:02100103>你這次來是有什麼事嗎？

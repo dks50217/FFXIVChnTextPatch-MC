@@ -1,7 +1,7 @@
 ﻿key,0,1
 #,,
 offset,0,4
-int32,str,str
+Int32,String,String
 0,TEXT_JOBSMN680_02628_SEQ_00,碧企鵝瀑布的雅·蜜特拉的調查工作遇到了困難。
 1,TEXT_JOBSMN680_02628_SEQ_01,和雅·蜜特拉進行了交談，決定去尋求拉姆布魯斯的幫助。前往摩杜納，和聖寇伊納克調查地的拉姆布魯斯談談。
 2,TEXT_JOBSMN680_02628_SEQ_02,和拉姆布魯斯進行了交談。將<hex:022811FF0A>EventItem<hex:F61E8D610103>交給喪靈鐘羅薇娜會館的羅薇娜。

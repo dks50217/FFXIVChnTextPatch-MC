@@ -1,7 +1,7 @@
 ﻿key,0,1
 #,,
 offset,0,4
-int32,str,str
+Int32,String,String
 0,TEXT_GAIUSA007_00713_SEQ_00,鬼哭隊的皮拉爾諾想讓冒險者幫助進行巡視。
 1,TEXT_GAIUSA007_00713_SEQ_01,代替士兵進行巡視。有3處地點設定了<hex:02280CFF05>EObj<hex:F61E8BF20103>，需要在這些地方附近巡視一段時間。
 2,TEXT_GAIUSA007_00713_SEQ_02,順利地完成了巡視工作。向若斯蘭哨塔的皮拉爾諾報告。

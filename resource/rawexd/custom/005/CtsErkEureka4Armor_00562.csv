@@ -1,7 +1,7 @@
 ﻿key,0,1
 #,,
 offset,0,4
-int32,str,str
+Int32,String,String
 0,TEXT_CTSERKEUREKA4ARMOR_00562_CRAFSMAN00532_000_000,帶到豐水地帶的設備還在調試中。<hex:02100103>非常抱歉，有關防具的事情還請你再稍等些時間。
 1,TEXT_CTSERKEUREKA4ARMOR_00562_CRAFSMAN00532_000_010,嗯？冒險者你想要防具嗎？<hex:02100103>十分抱歉，要想用湧火地帶的素材製作防具，<hex:02100103>請到湧火地帶進行下單。
 2,TEXT_CTSERKEUREKA4ARMOR_00562_Q1_000_000,要做什麼？

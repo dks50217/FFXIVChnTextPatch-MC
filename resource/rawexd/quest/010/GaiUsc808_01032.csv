@@ -1,7 +1,7 @@
 ﻿key,0,1
 #,,
 offset,0,4
-int32,str,str
+Int32,String,String
 0,TEXT_GAIUSC808_01032_SEQ_00,骷髏谷營地的愛伊利斯，希望冒險者能幫她一個忙。
 1,TEXT_GAIUSC808_01032_SEQ_01,愛伊利斯想在北防波堤附近開展佯動作戰，向北防波堤衛士長諾爾特穆恩詢問詳細作戰內容。
 2,TEXT_GAIUSC808_01032_SEQ_02,了解了佯動作戰的詳細內容。打倒2隻北防波堤周圍的<hex:02280FFF09>BNpcName<hex:F202350103>。

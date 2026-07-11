@@ -1,7 +1,7 @@
 ﻿key,0,1
 #,,
 offset,0,4
-int32,str,str
+Int32,String,String
 0,TEXT_STMBDZ106_02656_SEQ_00,阿拉加納的塞伊亞打算推進計劃。
 1,TEXT_STMBDZ106_02656_SEQ_01,塞伊亞打算向村民報告奪回採石場的事。向阿拉加納的3位村民告知塞伊亞的話。
 2,TEXT_STMBDZ106_02656_SEQ_02,向村民告知了塞伊亞的話。向阿拉加納的塞伊亞報告。

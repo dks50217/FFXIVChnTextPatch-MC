@@ -1,7 +1,7 @@
 ﻿key,0,1
 #,,
 offset,0,4
-int32,str,str
+Int32,String,String
 0,TEXT_SUBWIL093_00342_SEQ_00,月牙灣的奧斯門特對滿地的垃圾束手無策。
 1,TEXT_SUBWIL093_00342_SEQ_01,利姆薩·羅敏薩的商人將垃圾亂丟。打掃棧橋上的垃圾。
 2,TEXT_SUBWIL093_00342_SEQ_02,打掃完了垃圾。向月牙灣的奧斯門特報告。

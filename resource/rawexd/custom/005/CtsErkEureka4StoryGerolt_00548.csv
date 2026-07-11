@@ -1,7 +1,7 @@
 ﻿key,0,1
 #,,
 offset,0,4
-int32,str,str
+Int32,String,String
 0,TEXT_CTSERKEUREKA4STORYGEROLT_00548_GEROLT_000_000,嘿，你來了啊。<hex:02100103>這回我也為你準備了好東西。<hex:02100103>不過在我給你說明之前，你得先去找可露兒小姐談談。
 1,TEXT_CTSERKEUREKA4STORYGEROLT_00548_GEROLT_000_010,喲，你來了啊。<hex:02100103>這回我也為你準備了好東西。<hex:02100103>你就把耳朵掏乾淨了聽我說明吧！
 2,TEXT_CTSERKEUREKA4STORYGEROLT_00548_GEROLT_000_011,首先是關於文理融合器的事情。<hex:02100103>因為保存技術有了進展，所以藥品的可持有數量也就變多了。<hex:02100103>關於這個的詳細情況你得去問調查隊的煉金術士。

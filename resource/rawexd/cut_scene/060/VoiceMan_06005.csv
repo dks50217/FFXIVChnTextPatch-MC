@@ -1,7 +1,7 @@
 ﻿key,0,1
 #,,
 offset,0,4
-int32,str,str
+Int32,String,String
 0,TEXT_VOICEMAN_06005_000010_SYSTEM_NONE_VOICE,不久前 偉大冰原
 1,TEXT_VOICEMAN_06005_000020_REFUGEEMAN,別過來！
 2,TEXT_VOICEMAN_06005_000030_REFUGEEMAN,不……我們逃到這裡是為了活命的！<hex:02100103>為什麼……為什麼會這樣！

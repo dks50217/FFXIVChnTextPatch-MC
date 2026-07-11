@@ -1,7 +1,7 @@
 ﻿key,0,1
 #,,
 offset,0,4
-int32,str,str
+Int32,String,String
 0,TEXT_VOICEMAN_07000_000010_WUKLAMAT,嘿……確實能看出來是個冒險者。<hex:02100103>你很期待去探索未知的大陸吧，想法都寫在臉上了！
 1,TEXT_VOICEMAN_07000_000020_ALISAIE,畢竟這次不是什麼拯救世界那麼重大的責任，<hex:02100103>就算大家都有不同的目的，誰又能拒絕享受新的冒險呢！
 2,TEXT_VOICEMAN_07000_000030_ERENVILLE,不要那麼早就開始鬆懈。

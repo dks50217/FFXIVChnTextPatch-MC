@@ -1,7 +1,7 @@
 ﻿key,0,1
 #,,
 offset,0,4
-int32,str,str
+Int32,String,String
 0,TEXT_CLSPGL021_00553_SEQ_00,格鬥家公會的公會會長哈蒙，想要確認冒險者的力量。
 1,TEXT_CLSPGL021_00553_SEQ_01,收到了哈蒙的討伐指令。打倒猛烈鼩鼱、大黃蜂和星點栗鼠各3隻。
 2,TEXT_CLSPGL021_00553_SEQ_02,打倒了所有魔物。向格鬥家公會的哈蒙報告。

@@ -1,7 +1,7 @@
 ﻿key,0,1
 #,,
 offset,0,4
-int32,str,str
+Int32,String,String
 0,TEXT_CTSHNT50RISKYMOBLAKELAND_00614_MERANTH_000_001,我是狂熱兵團的怪物獵人。<hex:02100103>你是旅行者？對狩獵感興趣嗎？<hex:02100103>與死亡擦肩而過的瞬間才是生命最為閃耀的時刻！
 1,TEXT_CTSHNT50RISKYMOBLAKELAND_00614_MERANTH_000_002,我是狂熱兵團的怪物獵人。<hex:02100103>你是旅行者？對狩獵感興趣嗎？<hex:02100103>我可以告訴你雷克蘭德地區都有哪些厲害的怪物。
 2,TEXT_CTSHNT50RISKYMOBLAKELAND_00614_Q1_000_000,想了解什麼？

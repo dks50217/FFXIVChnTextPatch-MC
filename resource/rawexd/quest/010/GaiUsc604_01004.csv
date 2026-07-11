@@ -1,7 +1,7 @@
 ﻿key,0,1
 #,,
 offset,0,4
-int32,str,str
+Int32,String,String
 0,TEXT_GAIUSC604_01004_SEQ_00,喪靈鐘的格拉烏蒙特準備實行計劃。
 1,TEXT_GAIUSC604_01004_SEQ_01,格拉烏蒙特講述了奪取魔導裝甲的詳細計劃。首先向巡邏中的帝國軍小隊做情感動作「帝國式軍禮」，提醒他們加強對危險分子的警戒。
 2,TEXT_GAIUSC604_01004_SEQ_02,將危險分子的情報告知了巡邏中的帝國軍小隊。在<hex:02280CFF05>EObj<hex:F61E8D400103>使用<hex:022811FF0A>EventItem<hex:F61E87830103>，將帝國軍小隊引誘出來。

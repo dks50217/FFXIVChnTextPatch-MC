@@ -1,7 +1,7 @@
 ﻿key,0,1
 #,,
 offset,0,4
-int32,str,str
+Int32,String,String
 0,TEXT_SUBWIL160_00702_SEQ_00,斯威夫特正耀校想要教給冒險者如何獲得專屬陸行鳥。
 1,TEXT_SUBWIL160_00702_SEQ_01,用軍票和補給負責人交換<hex:02280BFF05>Item<hex:F217830103>，再交給陸行鳥房的米米古恩就能獲得專屬陸行鳥了。努力積攢軍票。
 2,TEXT_SUBWIL160_00702_SEQ_02,米米古恩牽來了專屬陸行鳥。給陸行鳥取個好聽的名字。

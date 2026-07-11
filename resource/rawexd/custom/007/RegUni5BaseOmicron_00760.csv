@@ -1,7 +1,7 @@
 ﻿key,0,1
 #,,
 offset,0,4
-int32,str,str
+Int32,String,String
 0,TEXT_REGUNI5BASEOMICRON_00760_M051_000_000,本機M-051任務執行狀況，無異常。<hex:02100103>來訪者如需本機協助，<hex:02100103>請簡短描述你的需求。
 1,TEXT_REGUNI5BASEOMICRON_00760_Q1_000_000,想了解什麼？
 2,TEXT_REGUNI5BASEOMICRON_00760_A1_000_001,你是做什麼的？

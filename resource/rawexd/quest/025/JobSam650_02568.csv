@@ -1,7 +1,7 @@
 ﻿key,0,1
 #,,
 offset,0,4
-int32,str,str
+Int32,String,String
 0,TEXT_JOBSAM650_02568_SEQ_00,赤誠組營房的真琴好像有些慌亂。
 1,TEXT_JOBSAM650_02568_SEQ_01,從真琴口中得知了金剛剖腹自殺的消息。但來不及祭奠，大老就抵達了黃金港，冒險者被拜託去港口巡視。在黃金港小防波堤的<hex:02280CFF05>EObj<hex:F61EA5770103>張望。
 2,TEXT_JOBSAM650_02568_SEQ_02,在<hex:02280CFF05>EObj<hex:F61EA5770103>張望時沒發現什麼可疑之處。在小防波堤的<hex:02280CFF05>EObj<hex:F61EA5780103>再次張望。

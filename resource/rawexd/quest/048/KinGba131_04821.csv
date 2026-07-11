@@ -1,7 +1,7 @@
 ﻿key,0,1
 #,,
 offset,0,4
-int32,str,str
+Int32,String,String
 0,TEXT_KINGBA131_04821_SEQ_00,神殿騎士團的菲爾馬爾貝仍在警惕敵人。
 1,TEXT_KINGBA131_04821_SEQ_01,和菲爾馬爾貝進行了交談。憂心特恩托瓦安全的洛澤尼凱從圖拉爾大陸趕到了艾歐澤亞。她表示如果能製作一種名叫春陽之甘霖的秘藥，或許就能喚醒特恩托瓦。首先在翻雲霧海的四臂廣場附近收集<hex:022811FF0A>EventItem<hex:F61E92210103>。
 2,TEXT_KINGBA131_04821_SEQ_02,收集了<hex:022811FF0A>EventItem<hex:F61E92210103>。在龍堡內陸低地的薩雷安治學區的<hex:02280CFF05>EObj<hex:F61EB9F10103>張望，討伐出現的魔物，獲取<hex:022811FF0A>EventItem<hex:F61E92220103>。

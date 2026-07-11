@@ -1,7 +1,7 @@
 ﻿key,1,3,9,10
 #,Singular,Plural,TitleCase,Description
 offset,0,4,8,12
-int32,str,str,str,str
+Int32,String,String,String,String
 0,,,,
 1,,,烏內亞靈複製體,記載了烏內數據的神典石。通過亞靈複製體生成器解析讀取後，即可召喚烏內亞靈複製體。
 2,,,多加亞靈複製體,記載了多加數據的神典石。通過亞靈複製體生成器解析讀取後，即可召喚多加亞靈複製體。

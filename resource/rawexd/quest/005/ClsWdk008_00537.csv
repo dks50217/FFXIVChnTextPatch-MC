@@ -1,7 +1,7 @@
 ﻿key,0,1
 #,,
 offset,0,4
-int32,str,str
+Int32,String,String
 0,TEXT_CLSWDK008_00537_SEQ_00,刻木匠公會的貝亞坦有東西想務必委託給冒險者來製作。
 1,TEXT_CLSWDK008_00537_SEQ_01,接受了貝亞坦的委託。籌備1把<hex:022813FF07>ItemHQ<hex:FF08>　1925<hex:0103>，讓格里達尼亞刻木匠公會的貝亞坦查看。
 2,TEXT_CLSWDK008_00537_SEQ_02,讓貝亞坦查看了<hex:022813FF07>ItemHQ<hex:FF08>　1925<hex:0103>。將<hex:022813FF07>ItemHQ<hex:FF08>　1925<hex:0103>交給蛇巢司令部的蓋伊爾哈德。

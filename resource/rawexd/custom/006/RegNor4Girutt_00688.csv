@@ -1,7 +1,7 @@
 ﻿key,0,1
 #,,
 offset,0,4
-int32,str,str
+Int32,String,String
 0,TEXT_REGNOR4GIRUTT_00688_GIRUTT_000_000,我打算在這裡大賺一筆。<hex:02100103>現在正在準備開業，你稍後再來吧。
 1,TEXT_REGNOR4GIRUTT_00688_GIRUTT_000_001,你好啊，<hex:022903EB0203>！<hex:02100103>要不要試試在我的酒館「魯卡的首飾」裡當調酒師？
 2,TEXT_REGNOR4GIRUTT_00688_GIRUTT_000_002,你只需要根據客人的對話來判斷其喜好，<hex:02100103>然後加入2種輔助材料調製雞尾酒即可。<hex:02100103>想要確認配方的話，可以從這邊的食譜中確認。

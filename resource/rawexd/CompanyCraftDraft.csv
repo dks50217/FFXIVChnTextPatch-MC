@@ -1,7 +1,7 @@
 ﻿key,0
 #,Name
 offset,0
-int32,str
+Int32,String
 0,飛空艇設計圖2
 1,飛空艇設計圖3
 2,飛空艇設計圖4

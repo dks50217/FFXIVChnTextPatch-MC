@@ -1,7 +1,7 @@
 ﻿key,0,1
 #,,
 offset,0,4
-int32,str,str
+Int32,String,String
 0,TEXT_REGOTH3YUZUKAMANOR_00414_GYOSAN_000_000,歡迎來到弓束官邸。<hex:02100103>有什麼想問的儘管問，我魚山無所不知無所不曉噗！
 1,TEXT_REGOTH3YUZUKAMANOR_00414_Q1_000_000,想了解什麼？
 2,TEXT_REGOTH3YUZUKAMANOR_00414_A1_000_001,你是做什麼的？

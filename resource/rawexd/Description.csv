@@ -1,33 +1,36 @@
 ﻿key,2,3,4
-#,Text[Long],Text[Short],Text[Commentary]
+#,TextLong,TextShort,TextCommentary
 offset,0,4,8
-int32,str,str,str
+Int32,String,String,String
 3604480,,,
 3604481,,,
-3604482,多瑪方城戰解說,MAHJONG,
-3604483,烈羽爭鋒解說,RIVAL WINGS,
-3604484,房屋解說,HOUSING,
-3604485,昔日重現模式解說,昔日重現模式解說,
-3604486,紛爭前線解說,FRONTLINE,
-3604487,出海垂釣解說,OCEAN FISHING,
-3604488,幻巧拼圖解說,FAUX HOLLOWS,
-3604489,南方博茲雅戰線解說,THE BOZJAN SOUTHERN FRONT,
-3604490,義軍等級解說,RESISTANCE RANK,
-3604491,失傳技能解說,LOST ACTION,
-3604492,博茲雅晶簇解說,BOZJA CLUSTER,
-3604493,九宮幻卡錦標賽解說解說,CARD TOURNAMENT,
+3604482,多瑪方城戰解說,MAHJONG,多瑪方城戰解說
+3604483,烈羽爭鋒解說,RIVAL WINGS,烈羽爭鋒解說
+3604484,房屋解說,HOUSING,房屋解說
+3604485,昔日重現模式解說,昔日重現模式解說,昔日重現模式解說
+3604486,紛爭前線解說,FRONTLINE,紛爭前線解說
+3604487,出海垂釣解說,OCEAN FISHING,出海垂釣解說
+3604488,幻巧拼圖解說,FAUX HOLLOWS,幻巧拼圖解說
+3604489,南方博茲雅戰線解說,THE BOZJAN SOUTHERN FRONT,南方博茲雅戰線解說
+3604490,義軍等級解說,RESISTANCE RANK,義軍等級解說
+3604491,失傳技能解說,LOST ACTION,失傳技能解說
+3604492,博茲雅晶簇解說,BOZJA CLUSTER,博茲雅晶簇解說
+3604493,九宮幻卡錦標賽解說解說,CARD TOURNAMENT,九宮幻卡錦標賽解說
 3604494,,,
 3604495,,,
-3604496,義軍勳章解說,RESISTANCE HONORS,
-3604497,扎杜諾爾高原戰線解說,ZADNOR,
-3604498,玩家對戰解說,PvP,
-3604499,水晶衝突解說,CRYSTALLINE CONFLICT,
-3604500,深層迷宮解說,DEEP DUNGEON,
-3604501,深層迷宮解說,DEEP DUNGEON,
-3604502,深層迷宮解說,DEEP DUNGEON,
-3604503,金碟巨豆中心解說,BLUNDERVILLE,
-3604504,初學者學堂,BATTLE,
-3604505,深層迷宮解說,,
-3604506,,,
-3604507,詢問有關蜃景幻界新月島南征之章,,
-3604508,,SPRIG CLEANING,
+3604496,義軍勳章解說,RESISTANCE HONORS,義軍勳章解說
+3604497,扎杜諾爾高原戰線解說,ZADNOR,扎杜諾爾高原戰線解說
+3604498,玩家對戰解說,PvP,玩家對戰解說
+3604499,水晶衝突解說,CRYSTALLINE CONFLICT,水晶衝突解說
+3604500,深層迷宮解說,DEEP DUNGEON,深層迷宮解說
+3604501,深層迷宮解說,DEEP DUNGEON,深層迷宮解說
+3604502,深層迷宮解說,DEEP DUNGEON,深層迷宮解說
+3604503,金碟巨豆中心解說,BLUNDERVILLE,金碟巨豆中心解說
+3604504,初學者學堂,BATTLE,戰鬥解說
+3604505,深層迷宮解說,DEEP DUNGEON,深層迷宮解說
+3604506,宇宙探索,COSMO EXPLORER,宇宙探索解說
+3604507,詢問有關蜃景幻界新月島南征之章,OCCULT CRESCENT,蜃景幻界新月島
+3604508,詢問有關嫩枝大清掃的事情,SPRIG CLEANING,嫩枝大清掃解說
+3604509,詢問有關老主顧交易的事情,CUSTOM DELIVERIES,老主顧交易解說
+3604510,,,
+3604511,,,

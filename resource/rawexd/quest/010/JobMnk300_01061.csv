@@ -1,7 +1,7 @@
 ﻿key,0,1
 #,,
 offset,0,4
-int32,str,str
+Int32,String,String
 0,TEXT_JOBMNK300_01061_SEQ_00,格鬥家公會的接待員伽伽魯納有事想要委託給冒險者。
 1,TEXT_JOBMNK300_01061_SEQ_01,接受了護衛艾歐澤亞戰史研究專家的委託。和護衛對象、雕金匠公會的艾里克談談。
 2,TEXT_JOBMNK300_01061_SEQ_02,陪同艾里克進行實地考察。在中薩納蘭希拉狄哈遺跡的<hex:02280CFF05>EObj<hex:F61E8E070103>上設定<hex:022811FF0A>EventItem<hex:F61E88370103>。

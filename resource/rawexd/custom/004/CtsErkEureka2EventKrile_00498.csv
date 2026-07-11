@@ -1,7 +1,7 @@
 ﻿key,0,1
 #,,
 offset,0,4
-int32,str,str
+Int32,String,String
 0,TEXT_CTSERKEUREKA2EVENTKRILE_00498_KRILE_000_000,感謝你過來。<hex:02100103>不好意思，讓你等了一段時間，<hex:02100103>那咱們繼續探索這座島嶼吧！
 1,TEXT_CTSERKEUREKA2EVENTKRILE_00498_KRILE_000_001,首先是關於今後的方針……
 2,TEXT_CTSERKEUREKA2EVENTKRILE_00498_EJIKATSUNJIKA_000_002,我在薩蓋特港打聽到你們在這邊。<hex:02100103>正好我也多少獲得了一些算不上重要的情報。<hex:02100103>遵照約定，就特意過來告訴你們。

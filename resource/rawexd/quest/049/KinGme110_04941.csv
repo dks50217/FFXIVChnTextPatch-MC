@@ -1,7 +1,7 @@
 ﻿key,0,1
 #,,
 offset,0,4
-int32,str,str
+Int32,String,String
 0,TEXT_KINGME110_04941_SEQ_00,舊亞歷山德裡亞的歐提斯十分滿意。
 1,TEXT_KINGME110_04941_SEQ_01,
 2,TEXT_KINGME110_04941_SEQ_02,

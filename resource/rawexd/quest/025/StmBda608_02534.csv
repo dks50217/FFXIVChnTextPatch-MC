@@ -1,7 +1,7 @@
 ﻿key,0,1
 #,,
 offset,0,4
-int32,str,str
+Int32,String,String
 0,TEXT_STMBDA608_02534_SEQ_00,對等石的阿爾菲諾看上去精神極好。
 1,TEXT_STMBDA608_02534_SEQ_01,和同盟軍士兵對話
 2,TEXT_STMBDA608_02534_SEQ_02,和梅·娜格對話

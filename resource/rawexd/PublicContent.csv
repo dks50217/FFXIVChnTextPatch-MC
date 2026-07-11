@@ -1,7 +1,7 @@
 ﻿key,3
 #,Name
 offset,0
-int32,str
+Int32,String
 0,
 1,永結同心典禮
 2,
@@ -49,3 +49,4 @@ int32,str
 44,
 45,
 46,
+47,

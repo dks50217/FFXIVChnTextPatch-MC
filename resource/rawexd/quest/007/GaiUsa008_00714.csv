@@ -1,7 +1,7 @@
 ﻿key,0,1
 #,,
 offset,0,4
-int32,str,str
+Int32,String,String
 0,TEXT_GAIUSA008_00714_SEQ_00,若斯蘭哨塔的皮拉爾諾有些雜活想要委託給冒險者。
 1,TEXT_GAIUSA008_00714_SEQ_01,<hex:02280DFF09>BNpcName<hex:110103>的數量增長過快。前往荊棘森，打倒5隻<hex:02280DFF09>BNpcName<hex:110103>。
 2,TEXT_GAIUSA008_00714_SEQ_02,成功打倒了<hex:02280DFF09>BNpcName<hex:110103>。回到若斯蘭哨塔，向皮拉爾諾報告。

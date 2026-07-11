@@ -1,7 +1,7 @@
 ﻿key,0,1
 #,,
 offset,0,4
-int32,str,str
+Int32,String,String
 0,TEXT_SUBWIL031_00223_SEQ_00,毒蠍交易所的古恩特拉姆正為貨物的事情發愁。
 1,TEXT_SUBWIL031_00223_SEQ_01,古恩特拉姆不知為何急需仙人掌身上的仙人掌露。去取得4份仙人掌露。
 2,TEXT_SUBWIL031_00223_SEQ_02,獲得了仙人掌露。交給毒蠍交易所的古恩特拉姆。

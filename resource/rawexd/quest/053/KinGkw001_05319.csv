@@ -1,7 +1,7 @@
 ﻿key,0,1
 #,,
 offset,0,4
-int32,str,str
+Int32,String,String
 0,TEXT_KINGKW001_05319_SEQ_00,幻境村的利迪爾賽爾好像在找誰。
 1,TEXT_KINGKW001_05319_SEQ_01,和利迪爾賽爾進行了交談。在幻境村尋找不知去向的蓋羅爾特。
 2,TEXT_KINGKW001_05319_SEQ_02,找到了蓋羅爾特。和幻境村的利迪爾賽爾談談。

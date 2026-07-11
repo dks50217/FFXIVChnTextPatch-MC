@@ -1,7 +1,7 @@
 ﻿key,0,1
 #,,
 offset,0,4
-int32,str,str
+Int32,String,String
 0,TEXT_JOBSCH520_01672_SEQ_00,放浪神古神殿的斯里托·卡里托有事情想要拜託冒險者。
 1,TEXT_JOBSCH520_01672_SEQ_01,接受了斯里托·卡里托的委託。和拉諾西亞高地石綠湖東部遺跡的阿爾卡·佐爾卡談談。
 2,TEXT_JOBSCH520_01672_SEQ_02,和阿爾卡·佐爾卡進行了交談。獲取石綠湖東部遺跡內的<hex:02280CFF05>EObj<hex:F61E9A100103>。

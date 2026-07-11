@@ -1,7 +1,7 @@
 ﻿key,0,1
 #,,
 offset,0,4
-int32,str,str
+Int32,String,String
 0,TEXT_KINGBZ002_05189_SEQ_00,黃金廣場的自由之門的成員想為冒險者介紹下一次面試。
 1,TEXT_KINGBZ002_05189_SEQ_01,下一次的面試可能會由首領本人負責。在南薩納蘭撒溝厲沙漠的<hex:02280CFF05>EObj<hex:F61EBCD30103>張望。
 2,TEXT_KINGBZ002_05189_SEQ_02,發現了正在使用祭器的阿帕西。和撒溝厲沙漠的阿帕西談談。

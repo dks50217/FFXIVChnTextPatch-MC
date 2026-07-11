@@ -1,7 +1,7 @@
 ﻿key,0,1
 #,,
 offset,0,4
-int32,str,str
+Int32,String,String
 0,TEXT_RAIDGUIDEENTRANCE30_REDBRIX_000_000,呼哧……呼哧……<hex:02100103>你 想要進到 機械巨人裡面去？真是 好奇心旺盛。<hex:02100103>如果你 真的很想進去的話 那我可以給你引路哥布！
 1,TEXT_RAIDGUIDEENTRANCE30_Q1_000_010,要做什麼？
 2,TEXT_RAIDGUIDEENTRANCE30_A1_000_011,詢問「亞歷山大零式機神城啟動之章」的開始條件

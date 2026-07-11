@@ -1,7 +1,7 @@
 ﻿key,0
-#,
+#,Name
 offset,0
-int32,str
+Int32,String
 0,
 1,第1關：搶佔內圈賽道
 2,第2關：躲避範圍攻擊

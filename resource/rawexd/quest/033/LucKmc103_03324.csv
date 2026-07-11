@@ -1,7 +1,7 @@
 ﻿key,0,1
 #,,
 offset,0,4
-int32,str,str
+Int32,String,String
 0,TEXT_LUCKMC103_03324_SEQ_00,光耀教會的於里昂熱有事要告訴冒險者。
 1,TEXT_LUCKMC103_03324_SEQ_01,從於里昂熱處得知，雅·修特拉現在自稱瑪托雅。和喬布要塞東北門的米爾坎特談談。
 2,TEXT_LUCKMC103_03324_SEQ_02,和米爾坎特進行了交談。

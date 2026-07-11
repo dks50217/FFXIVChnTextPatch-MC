@@ -1,7 +1,7 @@
 ﻿key,0,1
 #,,
 offset,0,4
-int32,str,str
+Int32,String,String
 0,TEXT_COMDEFGRANDCOMPANY_00046_FULKE_000_01,這裡是森林之都格里達尼亞<hex:02100103>大國防聯軍雙蛇黨總司令部。<hex:02100103>歡迎各位有志之士對格里達尼亞提供支持和指導。
 1,TEXT_COMDEFGRANDCOMPANY_00046_FULKE_000_05,是<hex:022903EB0203>二等牙兵吧。<hex:02100103>以你現在的軍銜，軍票的持有上限是1000張。
 2,TEXT_COMDEFGRANDCOMPANY_00046_FULKE_000_06,完成大國防聯軍的任務升級軍銜，<hex:02100103>可提高你的軍票持有上限。

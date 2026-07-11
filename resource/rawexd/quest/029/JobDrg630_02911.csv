@@ -1,7 +1,7 @@
 ﻿key,0,1
 #,,
 offset,0,4
-int32,str,str
+Int32,String,String
 0,TEXT_JOBDRG630_02911_SEQ_00,阿德內爾占星台的雅伯里克想將調查結果告訴冒險者。
 1,TEXT_JOBDRG630_02911_SEQ_01,從雅伯里克處得知了有關基拉巴尼亞沉睡的猛龍的情報，並得到了<hex:022811FF0A>EventItem<hex:F61E8D560103>。前往龍堡參天高地的美夏醒言遺跡，將<hex:022811FF0A>EventItem<hex:F61E8D560103>交給厄絲蒂安。
 2,TEXT_JOBDRG630_02911_SEQ_02,將<hex:022811FF0A>EventItem<hex:F61E8D560103>交給了厄絲蒂安。前往基拉巴尼亞邊區的開宗堂，在<hex:02280CFF05>EObj<hex:F61EA5E40103>吹響笛子，呼喚奧恩·凱。

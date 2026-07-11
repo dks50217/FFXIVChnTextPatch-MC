@@ -1,7 +1,7 @@
 ﻿key,0,1
 #,,
 offset,0,4
-int32,str,str
+Int32,String,String
 0,TEXT_CMNRADENTERSHPOSHAE_00077_DPERJHA_1,裡面的沙斯塔夏溶洞是<hex:02100103>「黃衫隊第四陸戰隊」的管轄範圍。
 1,TEXT_CMNRADENTERSHPOSHAE_00077_Q1_1,有什麼事？
 2,TEXT_CMNRADENTERSHPOSHAE_00077_A1_1,詢問「天然要害沙斯塔夏溶洞」的開始條件

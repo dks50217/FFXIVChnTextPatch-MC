@@ -1,7 +1,7 @@
 ﻿key,0
 #,Name
 offset,0
-int32,str
+Int32,String
 0,
 1,防護職業裝備
 2,近戰職業裝備（龍騎士·釤鐮客）

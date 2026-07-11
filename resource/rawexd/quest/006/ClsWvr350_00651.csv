@@ -1,7 +1,7 @@
 ﻿key,0,1
 #,,
 offset,0,4
-int32,str,str
+Int32,String,String
 0,TEXT_CLSWVR350_00651_SEQ_00,裁衣匠公會的雷多倫特·羅斯想為冒險者介紹工作。
 1,TEXT_CLSWVR350_00651_SEQ_01,接受了雷多倫特·羅斯的委託。和烏爾達哈採礦工公會附近的瓦瓦魯卡談談。
 2,TEXT_CLSWVR350_00651_SEQ_02,和瓦瓦魯卡進行了交談。將1件<hex:022813FF07>ItemHQ<hex:FF08>　3125<hex:0103>交給烏爾達哈裁衣匠公會的雷多倫特·羅斯。

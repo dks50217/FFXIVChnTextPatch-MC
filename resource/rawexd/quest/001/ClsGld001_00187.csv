@@ -1,7 +1,7 @@
 ﻿key,0,1
 #,,
 offset,0,4
-int32,str,str
+Int32,String,String
 0,TEXT_CLSGLD001_00187_SEQ_00,為了能夠到雕金匠公會學習，成為一名雕金匠，冒險者必須辦理相應的手續才行。接待處的傑麥姆想要確認冒險者的意願。
 1,TEXT_CLSGLD001_00187_SEQ_01,
 2,TEXT_CLSGLD001_00187_SEQ_02,

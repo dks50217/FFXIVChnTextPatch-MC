@@ -1,7 +1,7 @@
 ﻿key,0,1
 #,,
 offset,0,4
-int32,str,str
+Int32,String,String
 0,TEXT_VOICEMAN_05004_000010_MYSTERYVOICE,你也來了啊。<hex:02100103>看來你已經做好萬全的應戰準備了？
 1,TEXT_VOICEMAN_05004_000020_MYSTERYVOICE,那太好了。<hex:02100103>既然所有人都到齊了，我們來談談今後的打算吧。
 2,TEXT_VOICEMAN_05004_000030_MYSTERYVOICE,你們一共消滅了4隻靈光衛……<hex:02100103>諾弗蘭特泛濫的光芒也因此驅散了大半。

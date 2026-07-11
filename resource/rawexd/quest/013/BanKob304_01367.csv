@@ -1,7 +1,7 @@
 ﻿key,0,1
 #,,
 offset,0,4
-int32,str,str
+Int32,String,String
 0,TEXT_BANKOB304_01367_SEQ_00,第789洞穴團採礦地的第789團清潔工博布，想糾正不公平的事情。
 1,TEXT_BANKOB304_01367_SEQ_01,第789團清潔工博布想把第13洞穴團使用的材料佔為己有。前往武伽瑪羅武裝礦山，獲取<hex:022811FF0A>EventItem<hex:F61E895E0103>。
 2,TEXT_BANKOB304_01367_SEQ_02,獲得了<hex:022811FF0A>EventItem<hex:F61E895E0103>。按照第789團清潔工博布的要求，前往第789洞穴團採礦地，將<hex:022811FF0A>EventItem<hex:F61E895E0103>交給第789團輔祭巴戈。

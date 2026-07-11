@@ -1,7 +1,7 @@
 ﻿key,0,1
 #,,
 offset,0,4
-int32,str,str
+Int32,String,String
 0,TEXT_LUCKHZ002_03838_SEQ_00,十字鎬大街的認真的冒險者在凝視這邊。
 1,TEXT_LUCKHZ002_03838_SEQ_01,
 2,TEXT_LUCKHZ002_03838_SEQ_02,

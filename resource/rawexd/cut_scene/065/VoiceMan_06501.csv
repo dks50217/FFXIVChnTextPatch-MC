@@ -1,7 +1,7 @@
 ﻿key,0,1
 #,,
 offset,0,4
-int32,str,str
+Int32,String,String
 0,TEXT_VOICEMAN_06501_000010_OSCHON,星球的意志將未來託付給了現在的人類
 1,TEXT_VOICEMAN_06501_000020_OSCHON,作為輔助亞伊太利斯的系統<hex:02100103>我們非常高興能夠迎來這樣的結局
 2,TEXT_VOICEMAN_06501_000030_THETWELVE,親愛的孩子們<hex:02100103>與我們這些舊世之人的碎片告別吧

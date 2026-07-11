@@ -1,7 +1,7 @@
 ﻿key,0,1
 #,Rule,Description
 offset,0,4
-int32,str,str
+Int32,String,String
 0,,
 1,僅限召喚點10的寵物參戰,擁有1隻以上召喚點為10的寵物
 2,僅限召喚點20以下的寵物參戰,擁有1隻以上召喚點為20以下的寵物

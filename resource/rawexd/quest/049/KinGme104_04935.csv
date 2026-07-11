@@ -1,7 +1,7 @@
 ﻿key,0,1
 #,,
 offset,0,4
-int32,str,str
+Int32,String,String
 0,TEXT_KINGME104_04935_SEQ_00,9-14號居住棟附近的斯菲因想繼續帶冒險者們遊覽。
 1,TEXT_KINGME104_04935_SEQ_01,
 2,TEXT_KINGME104_04935_SEQ_02,

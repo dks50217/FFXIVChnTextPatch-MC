@@ -1,7 +1,7 @@
 ﻿key,0,1
 #,,
 offset,0,4
-int32,str,str
+Int32,String,String
 0,TEXT_JOBREL401_02380_SEQ_00,田園郡的安費莉絲有些在意地看著冒險者。
 1,TEXT_JOBREL401_02380_SEQ_01,安費莉絲表示冒險者可以用3章歷練冒險譚與她交換<hex:02280BFF05>Item<hex:F23EC00103>。完成「隨機任務：練級迷宮」，獲取<hex:022811FF0A>EventItem<hex:F61E8C620103>。<hex:02100103><hex:02100103>※只有在接受任務的狀態下完成「隨機任務：練級迷宮」，才能獲得<hex:022811FF0A>EventItem<hex:F61E8C620103>。
 2,TEXT_JOBREL401_02380_SEQ_02,獲得了<hex:022811FF0A>EventItem<hex:F61E8C620103>。完成「隨機任務：練級迷宮」，獲取<hex:022811FF0A>EventItem<hex:F61E8C680103>。<hex:02100103><hex:02100103>※只有在接受任務的狀態下完成「隨機任務：練級迷宮」，才能獲得<hex:022811FF0A>EventItem<hex:F61E8C680103>。

@@ -1,7 +1,7 @@
 ﻿key,0,1
 #,,
 offset,0,4
-int32,str,str
+Int32,String,String
 0,TEXT_GAIUSB804_00913_SEQ_00,巨龍首營地的奧雷勒想要對奧爾什方致謝。
 1,TEXT_GAIUSB804_00913_SEQ_01,奧雷勒想要送酒給奧爾什方。和巨龍首營地的伊曼紐爾打個招呼並拿到酒。
 2,TEXT_GAIUSB804_00913_SEQ_02,拿到了酒。前往巨龍首營地廚房，將<hex:022811FF0A>EventItem<hex:F61E874C0103>交給奧爾什方的部下梅德吉絲提爾。

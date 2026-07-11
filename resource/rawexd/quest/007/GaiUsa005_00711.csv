@@ -1,7 +1,7 @@
 ﻿key,0,1
 #,,
 offset,0,4
-int32,str,str
+Int32,String,String
 0,TEXT_GAIUSA005_00711_SEQ_00,鬼哭隊隊員弗洛里蒙正在尋找可以代替自己參加魔物驅逐作戰的人。
 1,TEXT_GAIUSA005_00711_SEQ_01,冒險者答應了代替弗洛里蒙參加魔物的驅逐作戰。先去若斯蘭哨塔，請求阿紐德給予指示。
 2,TEXT_GAIUSA005_00711_SEQ_02,阿紐德命令冒險者去討伐<hex:02280DFF09>BNpcName<hex:270103>。討伐6隻荊棘森裡的<hex:02280DFF09>BNpcName<hex:270103>。

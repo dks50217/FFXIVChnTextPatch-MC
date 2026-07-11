@@ -1,7 +1,7 @@
 ﻿key,0,1
 #,,
 offset,0,4
-int32,str,str
+Int32,String,String
 0,TEXT_STMBDZ323_02719_SEQ_00,漁村的熟練的老漁夫正在尋找有能力的人。
 1,TEXT_STMBDZ323_02719_SEQ_01,熟練的老漁夫委託冒險者救助村民。在漁村海岸邊討伐襲擊名吉的魔物。
 2,TEXT_STMBDZ323_02719_SEQ_02,討伐了襲擊名吉的魔物。救助名吉。

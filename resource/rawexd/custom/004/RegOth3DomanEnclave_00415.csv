@@ -1,7 +1,7 @@
 ﻿key,0,1
 #,,
 offset,0,4
-int32,str,str
+Int32,String,String
 0,TEXT_REGOTH3DOMANENCLAVE_00415_YOMOGI_000_000,啊，你是……<hex:02100103>是和飛燕大人一起戰鬥的那位吧！<hex:02100103>由衷歡迎你來到多瑪飛地！
 1,TEXT_REGOTH3DOMANENCLAVE_00415_YOMOGI_000_010,啊，是<hex:022903EB0203>閣下！<hex:02100103>最近總能從飛燕大人口中聽到閣下的名字。
 2,TEXT_REGOTH3DOMANENCLAVE_00415_Q1_000_100,想了解什麼？

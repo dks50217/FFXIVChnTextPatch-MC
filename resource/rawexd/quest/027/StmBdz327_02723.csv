@@ -1,7 +1,7 @@
 ﻿key,0,1
 #,,
 offset,0,4
-int32,str,str
+Int32,String,String
 0,TEXT_STMBDZ327_02723_SEQ_00,漁村的漁有事要和冒險者商量。
 1,TEXT_STMBDZ327_02723_SEQ_01,漁委託冒險者和名吉交談。和漁村的名吉交談。
 2,TEXT_STMBDZ327_02723_SEQ_02,和名吉進行了交談，他委託冒險者向村民傳授討伐魔物的要領。再次和漁村的名吉交談。

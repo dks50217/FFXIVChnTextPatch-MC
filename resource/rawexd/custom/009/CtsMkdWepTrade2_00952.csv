@@ -1,7 +1,7 @@
 ﻿key,0,1
 #,,
 offset,0,4
-int32,str,str
+Int32,String,String
 0,TEXT_CTSMKDWEPTRADE2_00952_GEROLT_000_000,又到本大爺出場的時候了嗎？<hex:02100103>那就讓你見識見識經過屬性壓縮鍛造法強化後的力量吧！
 1,TEXT_CTSMKDWEPTRADE2_00952_GEROLT_000_001,哈啊啊啊——！
 2,TEXT_CTSMKDWEPTRADE2_00952_GEROLT_000_002,我都佩服我自己！<hex:02100103>4種屬性的濃厚乙太得到了完美調和，<hex:02100103>乙太沒有就此消散，也都是多虧了這座島……

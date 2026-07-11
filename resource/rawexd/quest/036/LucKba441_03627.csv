@@ -1,7 +1,7 @@
 ﻿key,0,1
 #,,
 offset,0,4
-int32,str,str
+Int32,String,String
 0,TEXT_LUCKBA441_03627_SEQ_00,鼴靈集市的凱瑞格正因緹納的修行而苦惱。
 1,TEXT_LUCKBA441_03627_SEQ_01,凱瑞格想讓緹納積累實戰經驗。為了修行，前往雷克蘭德的迷途羊倌之森，和凱瑞格談談。
 2,TEXT_LUCKBA441_03627_SEQ_02,身為魔法師的前輩，給緹納做個榜樣。在迷途羊倌之森的<hex:02280CFF05>EObj<hex:F61EAC670103>張望，討伐出現的<hex:02280FFF09>BNpcName<hex:F220D70103>。

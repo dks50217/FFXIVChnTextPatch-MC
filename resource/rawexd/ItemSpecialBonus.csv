@@ -1,7 +1,7 @@
 ﻿key,0,1
-#,Name,
+#,Name,RequirementText
 offset,0,4
-int32,str,str
+Int32,String,String
 0,,
 1,,
 2,套裝效果：,
@@ -13,3 +13,4 @@ int32,str,str
 8,天佑女王專用效果：,
 9,新月島專用效果：,
 10,新月島專用套裝效果：,僅在裝備<hex:022003E80203>種裝備時生效
+11,,

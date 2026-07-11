@@ -1,7 +1,7 @@
 ﻿key,0,1
 #,,
 offset,0,4
-int32,str,str
+Int32,String,String
 0,TEXT_XXAUSE106_03876_SEQ_00,沙之家的敏菲利亞有事情要向冒險者說明。
 1,TEXT_XXAUSE106_03876_SEQ_01,將總部遷移至喪靈鐘的計劃終於開始了。和沙之家的敏菲利亞談談。
 2,TEXT_XXAUSE106_03876_SEQ_02,和敏菲利亞進行了交談。她與賢人們正忙著進行總部遷移的準備。將<hex:022811FF0A>EventItem<hex:F61E90350103>交給摩杜納喪靈鐘的斯拉佛伯恩。

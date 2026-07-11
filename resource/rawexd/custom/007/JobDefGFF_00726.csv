@@ -1,7 +1,7 @@
 ﻿key,0,1
 #,,
 offset,0,4
-int32,str,str
+Int32,String,String
 0,TEXT_JOBDEFGFF_00726_Q1_000_000,某位賢者的手記
 1,TEXT_JOBDEFGFF_00726_A1_000_010,某位賢者的手記1～2
 2,TEXT_JOBDEFGFF_00726_A1_000_020,某位賢者的手記3～5

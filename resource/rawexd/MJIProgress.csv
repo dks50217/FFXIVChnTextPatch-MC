@@ -1,7 +1,7 @@
 ﻿key,0,1,2
 #,Vision,Objective,PreviousObjective
 offset,0,4,8
-int32,str,str,str
+Int32,String,String,String
 0,,,
 1,開拓目標：建造小島木屋,<hex:021306FEFFFFFFFF03><hex:021406FEFF0A699203>聽取貓耳小員的說明<hex:021402EC03><hex:021302EC03>,
 2,開拓目標：建造小島木屋,<hex:021306FEFFFFFFFF03><hex:021406FEFF0A699203>再次聽取貓耳小員的說明<hex:021402EC03><hex:021302EC03>,聽取貓耳小員的說明

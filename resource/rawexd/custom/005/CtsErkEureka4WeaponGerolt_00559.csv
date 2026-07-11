@@ -1,7 +1,7 @@
 ﻿key,0,1
 #,,
 offset,0,4
-int32,str,str
+Int32,String,String
 0,TEXT_CTSERKEUREKA4WEAPONGEROLT_00559_GEROLT_000_000,我想到了進一步強化武器的方法，<hex:02100103>不過你的武器現在還沒到嘗試這個方法的階段。<hex:02100103>等你在湧火地帶把該幹的事情幹完了再過來吧！
 1,TEXT_CTSERKEUREKA4WEAPONGEROLT_00559_GEROLT_000_010,……現在回想起來，<hex:02100103>我可是陪著你在優雷卡強化了不少武器啊。<hex:02100103>不過這也馬上快要到頭了。
 2,TEXT_CTSERKEUREKA4WEAPONGEROLT_00559_GEROLT_000_011,上回我利用記憶嵌寫的方法鍛造了坯料。<hex:02100103>到了這個階段，就用不著做多餘的強化了。

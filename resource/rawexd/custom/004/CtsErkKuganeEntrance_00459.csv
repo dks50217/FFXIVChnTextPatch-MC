@@ -1,7 +1,7 @@
 ﻿key,0,1
 #,,
 offset,0,4
-int32,str,str
+Int32,String,String
 0,TEXT_CTSERKKUGANEENTRANCE_00459_RODNEY_000_000,黃金港真是有趣！<hex:02100103>能讓人感覺到世界的廣闊。<hex:02100103>看來我從薩雷安跑出來是對的。
 1,TEXT_CTSERKKUGANEENTRANCE_00459_RODNEY_100_010,……哎呀，原來是你啊。<hex:02100103>現在去不了優雷卡呢，<hex:02100103>你找我有什麼事嗎？
 2,TEXT_CTSERKKUGANEENTRANCE_00459_Q1_000_000,要做什麼？

@@ -1,7 +1,7 @@
 ﻿key,0
 #,
 offset,0
-int32,str
+Int32,String
 0,
 1,到達未知的海域，正在朝著「<hex:02281AFF15>SubmarineExploration<hex:E8020103>」航行中。
 2,初次到達「<hex:02281AFF15>SubmarineExploration<hex:E8020103>」，即將開始探索。

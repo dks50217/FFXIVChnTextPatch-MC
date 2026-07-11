@@ -1,7 +1,7 @@
 ﻿key,0,1
 #,,
 offset,0,4
-int32,str,str
+Int32,String,String
 0,TEXT_KINGMA119_04878_SEQ_00,貝殼亭附近的烏克·拉瑪特想要挑戰下一個試煉。
 1,TEXT_KINGMA119_04878_SEQ_01,
 2,TEXT_KINGMA119_04878_SEQ_02,

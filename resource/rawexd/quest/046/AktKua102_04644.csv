@@ -1,7 +1,7 @@
 ﻿key,0,1
 #,,
 offset,0,4
-int32,str,str
+Int32,String,String
 0,TEXT_AKTKUA102_04644_SEQ_00,
 1,TEXT_AKTKUA102_04644_SEQ_01,從巴爾丁那裡聽說了無人島的事。想要去別人的島時，可以請他開船前往。
 2,TEXT_AKTKUA102_04644_SEQ_02,

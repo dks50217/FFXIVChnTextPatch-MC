@@ -1,7 +1,7 @@
 ﻿key,0,1
 #,,
 offset,0,4
-int32,str,str
+Int32,String,String
 0,TEXT_LUCKMJ104_04010_SEQ_00,石之家的阿莉塞準備進行下一步行動。
 1,TEXT_LUCKMJ104_04010_SEQ_01,
 2,TEXT_LUCKMJ104_04010_SEQ_02,

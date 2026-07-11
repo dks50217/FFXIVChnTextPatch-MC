@@ -1,7 +1,7 @@
 ﻿key,0,1
 #,,
 offset,0,4
-int32,str,str
+Int32,String,String
 0,TEXT_GAIUSB814_00923_SEQ_00,藍玉大街國際市場的商人辛特戈特有事情想要委託給冒險者。
 1,TEXT_GAIUSB814_00923_SEQ_01,發送青磷水的準備已經做好了。將<hex:022811FF0A>EventItem<hex:F61E87D40103>交給巨龍首營地的商人埃德溫。
 2,TEXT_GAIUSB814_00923_SEQ_02,將<hex:022811FF0A>EventItem<hex:F61E87D40103>交給了埃德溫。得知緣由後，埃德溫表示可以理解。

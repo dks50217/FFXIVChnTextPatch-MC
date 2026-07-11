@@ -1,7 +1,7 @@
 ﻿key,0,1
 #,,
 offset,0,4
-int32,str,str
+Int32,String,String
 0,TEXT_CMNGSCCHOCOBORACEGETABILITY_00228_TALK_ACTOR_02,你想讓<hex:022903EA0203><hex:02100103>學習新的競賽能力嗎？<hex:02100103>那請你先選擇學習時使用的陸行鳥競賽教材吧！
 1,TEXT_CMNGSCCHOCOBORACEGETABILITY_00228_001_DONE,好，你的競賽陸行鳥已經學會了「<hex:022818FF13>ChocoboRaceAbility<hex:E8020103>」！<hex:02100103>一定會在比賽時派上用場的！
 2,TEXT_CMNGSCCHOCOBORACEGETABILITY_00228_TALK_ACTOR,你想讓你的競賽陸行鳥學習新的競賽能力嗎？<hex:02100103>那請你先選擇學習時使用的陸行鳥競賽教材吧！

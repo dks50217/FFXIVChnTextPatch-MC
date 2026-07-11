@@ -1,7 +1,7 @@
 ﻿key,0,2
 #,,
 offset,0,4
-int32,str,str
+Int32,String,String
 0,標準,
 1,雜音,vfx_nc_nise0013
 2,徑向模糊,vfx_nc_blur0005

@@ -1,7 +1,7 @@
 ﻿key,0,1
 #,,
 offset,0,4
-int32,str,str
+Int32,String,String
 0,TEXT_REGFSTHRVGUILD_00033_FUFUCHA_000_1,這裡的景色很漂亮吧？<hex:02100103>這片田是由我們園藝工公會打理的。
 1,TEXT_REGFSTHRVGUILD_00033_Q1_000_1,想了解什麼？
 2,TEXT_REGFSTHRVGUILD_00033_A1_000_1,你是做什麼的？

@@ -1,7 +1,7 @@
 ﻿key,0,1
 #,,
 offset,0,4
-int32,str,str
+Int32,String,String
 0,TEXT_CLSBSM451_00301_SEQ_00,鍛鐵匠公會的布瑞賽爾十分感謝冒險者。
 1,TEXT_CLSBSM451_00301_SEQ_01,接受了布瑞賽爾的委託。和利姆薩·羅敏薩鍛鐵匠公會的費茲阿爾談談。
 2,TEXT_CLSBSM451_00301_SEQ_02,和費茲阿爾進行了交談。籌備<hex:022813FF07>ItemHQ<hex:FF08>　1723<hex:0103>、<hex:022813FF07>ItemHQ<hex:FF08>　1796<hex:0103>和<hex:022813FF07>ItemHQ<hex:FF08>　1659<hex:0103>各1件，讓費茲阿爾查看。

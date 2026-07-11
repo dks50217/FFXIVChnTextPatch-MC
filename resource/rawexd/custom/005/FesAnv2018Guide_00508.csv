@@ -1,7 +1,7 @@
 ﻿key,0,1
 #,,
 offset,0,4
-int32,str,str
+Int32,String,String
 0,TEXT_FESANV2018GUIDE_00508_Q1_000_000,談點什麼？
 1,TEXT_FESANV2018GUIDE_00508_A1_000_002,詢問有關「新生慶典」
 2,TEXT_FESANV2018GUIDE_00508_A1_000_003,詢問有關「<hex:02281CFF17>ContentFinderCondition<hex:E8022C03>」

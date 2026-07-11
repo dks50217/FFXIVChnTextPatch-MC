@@ -1,7 +1,7 @@
 ﻿key,0,1
 #,,
 offset,0,4
-int32,str,str
+Int32,String,String
 0,TEXT_JOBMNK450_01064_SEQ_00,艾里克決定了下一次的調查對象。
 1,TEXT_JOBMNK450_01064_SEQ_01,艾里克將冒險者和維達蓋爾特定為下一次的調查對象。在東部林區的百靈啼設定<hex:022811FF0A>EventItem<hex:F61E87B40103>。
 2,TEXT_JOBMNK450_01064_SEQ_02,測量了乙太。回收<hex:022811FF0A>EventItem<hex:F61E87B40103>。

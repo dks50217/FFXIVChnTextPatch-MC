@@ -1,7 +1,7 @@
 ﻿key,0,1
 #,,
 offset,0,4
-int32,str,str
+Int32,String,String
 0,TEXT_GAIUSB002_00809_SEQ_00,風車管理人小屋的特拉哈塗姆想要講述自己在海雄旅團時的英勇事跡。
 1,TEXT_GAIUSB002_00809_SEQ_01,特拉哈塗姆聲稱想要從自己這裡得到討伐泰蛋……泰坦的情報的話，就要先去打倒<hex:02280FFF09>BNpcName<hex:F201A10103>。調查<hex:02280CFF05>EObj<hex:F61E8C710103>，打倒隨之出現的全部<hex:02280FFF09>BNpcName<hex:F201A10103>和<hex:02280FFF09>BNpcName<hex:F202A60103>。
 2,TEXT_GAIUSB002_00809_SEQ_02,打倒了全部的<hex:02280FFF09>BNpcName<hex:F201A10103>和<hex:02280FFF09>BNpcName<hex:F202A60103>。向灰艦風車群管理人小屋的特拉哈塗姆報告。

@@ -1,7 +1,7 @@
 ﻿key,0,1
 #,,
 offset,0,4
-int32,str,str
+Int32,String,String
 0,TEXT_VOICEMAN_07010_000010_METEM,用尖銳的利爪撕開一切對手 不知恐懼為何物的新人！<hex:02100103>磨爪貓魂——黑貓！
 1,TEXT_VOICEMAN_07010_000020_REFEREE,Ｋ.Ｏ！
 2,TEXT_VOICEMAN_07010_000030_METEM,比賽結束！挑戰者獲勝！

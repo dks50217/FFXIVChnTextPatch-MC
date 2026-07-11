@@ -1,7 +1,7 @@
 ﻿key,1
-#,
+#,Name
 offset,0
-int32,str
+Int32,String
 0,未設定
 1,拉諾西亞
 2,黑衣森林

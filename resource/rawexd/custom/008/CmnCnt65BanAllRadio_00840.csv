@@ -1,7 +1,7 @@
 ﻿key,0,1
 #,,
 offset,0,4
-int32,str,str
+Int32,String,String
 0,TEXT_CMNCNT65BANALLRADIO_00840_TALKINGWAY_000_000,(-談興威的聲音-)能依靠的果然還得是河馬的腿！<hex:02100103>無論多重的物品，河馬騎手團都能即刻送到！
 1,TEXT_CMNCNT65BANALLRADIO_00840_TALKINGWAY_000_001,(-談興威的聲音-)目前正在推出僅面向能聽到這一宣傳的客人的運費打折活動！<hex:02100103>想要發起委託時，請說出口令「河馬的腿」。
 2,TEXT_CMNCNT65BANALLRADIO_00840_TALKINGWAY_000_002,(-談興威的聲音-)一邊眺望著曾經是絕望象徵的地方，<hex:02100103>一邊闡述希望的背世咖啡廳……

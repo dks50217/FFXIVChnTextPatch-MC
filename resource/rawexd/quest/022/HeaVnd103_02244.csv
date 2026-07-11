@@ -1,7 +1,7 @@
 ﻿key,0,1
 #,,
 offset,0,4
-int32,str,str
+Int32,String,String
 0,TEXT_HEAVND103_02244_SEQ_00,不潔三塔的阿爾菲諾想要出發。
 1,TEXT_HEAVND103_02244_SEQ_01,阿爾菲諾率先帶領艾默里克前往索姆阿爾靈峰的峰頂了。和翻雲霧海莫古力之家的艾默里克談談。
 2,TEXT_HEAVND103_02244_SEQ_02,在和艾默里克交談的時候，莫古唐突然出現了。為了呼喚出聖龍，在翻雲霧海天極白堊宮的<hex:02280CFF05>EObj<hex:F61E9FAC0103>吹響喇叭。

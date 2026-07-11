@@ -1,7 +1,7 @@
 ﻿key,0,1
 #,,
 offset,0,4
-int32,str,str
+Int32,String,String
 0,TEXT_STMBDZ221_02693_SEQ_00,碧玉水的纖瘦的甲人族想要向身輕如燕的客人請教。
 1,TEXT_STMBDZ221_02693_SEQ_01,和纖瘦的甲人族對話
 2,TEXT_STMBDZ221_02693_SEQ_02,前往印記處

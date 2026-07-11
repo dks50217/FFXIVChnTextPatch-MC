@@ -1,7 +1,7 @@
 ﻿key,0,1
 #,,
 offset,0,4
-int32,str,str
+Int32,String,String
 0,TEXT_AKTKMI109_04600_SEQ_00,織風桑田的瓦爾桑露出了微笑。
 1,TEXT_AKTKMI109_04600_SEQ_01,帶零了解原初世界的觀光之旅順利結束了。和雲使宮的官員交談，回到雲使宮客房。
 2,TEXT_AKTKMI109_04600_SEQ_02,零講述了過去發生在第十三世界的事情。和雲使宮前的瓦爾桑談談。

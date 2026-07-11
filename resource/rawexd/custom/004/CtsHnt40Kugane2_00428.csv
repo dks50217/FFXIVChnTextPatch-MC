@@ -1,7 +1,7 @@
 ﻿key,0,1
 #,,
 offset,0,4
-int32,str,str
+Int32,String,String
 0,TEXT_CTSHNT40KUGANE2_004286_HERSANDE_000_000,沒想到在這遙遠的東方還能碰到同鄉，真是令人高興。<hex:02100103>我這個比你先到達東方的人給你點建議吧。<hex:02100103>這裡魔物很多，千萬不要懈怠了武器的維護！
 1,TEXT_CTSHNT40KUGANE2_004286_HERSANDE_000_001,沒想到在這遙遠的東方還能碰到同鄉，真是令人高興。<hex:02100103>你要不要聽我給你講講出沒在延夏的危險怪物都有哪些？
 2,TEXT_CTSHNT40KUGANE2_004286_HERSANDE_Q1_000_000,想了解什麼？

@@ -1,7 +1,7 @@
 ﻿key,0,1
 #,,
 offset,0,4
-int32,str,str
+Int32,String,String
 0,TEXT_CLSTHM050_00347_SEQ_00,咒術師公會會長可可布奇，想指導冒險者學習«咒術的深淵»。
 1,TEXT_CLSTHM050_00347_SEQ_01,向咒術師公會會長可可比格討教，學習咒術的深淵之「迫近之危」。
 2,TEXT_CLSTHM050_00347_SEQ_02,在白銀集市附近放置魚乾。

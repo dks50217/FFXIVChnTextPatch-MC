@@ -1,7 +1,7 @@
 ﻿key,4,5
 #,,
 offset,0,4
-int32,str,str
+Int32,String,String
 0,,
 1,屏障,"屏障
 抵禦一切傷害"

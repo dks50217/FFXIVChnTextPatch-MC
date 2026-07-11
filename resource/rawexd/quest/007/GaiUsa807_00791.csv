@@ -1,7 +1,7 @@
 ﻿key,0,1
 #,,
 offset,0,4
-int32,str,str
+Int32,String,String
 0,TEXT_GAIUSA807_00791_SEQ_00,弗洛朗泰爾哨塔的鬼哭隊士兵奧莉亞娜有想要的東西。
 1,TEXT_GAIUSA807_00791_SEQ_01,奧莉亞娜想要確定<hex:02280FFF09>BNpcName<hex:F2088C0103>數量激增的原因。削弱<hex:02280FFF09>BNpcName<hex:F2088C0103>的體力後，對其使用<hex:022811FF0A>EventItem<hex:F61E86ED0103>，獲取<hex:022811FF0A>EventItem<hex:F61E86EE0103>。
 2,TEXT_GAIUSA807_00791_SEQ_02,順利獲得了<hex:022811FF0A>EventItem<hex:F61E86EE0103>。將<hex:022811FF0A>EventItem<hex:F61E86EE0103>交給秋瓜浮村浮栓亭的博物學家約姆·艾波卡恩。

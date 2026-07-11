@@ -1,7 +1,7 @@
 ﻿key,0,1
 #,,
 offset,0,4
-int32,str,str
+Int32,String,String
 0,TEXT_VOICEMAN_02400_000010_ILBERD,哦，這不是我們的大英雄嗎，有什麼事？
 1,TEXT_VOICEMAN_02400_000020_ILBERD,原來如此……阿爾菲諾總帥讓你來幫忙嗎……
 2,TEXT_VOICEMAN_02400_000030_ILBERD,那太好了，我們現在還沒法分辨出到底誰是間諜，<hex:02100103>有你幫忙就放心多了。

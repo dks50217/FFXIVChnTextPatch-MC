@@ -1,7 +1,7 @@
 ﻿key,0,1
 #,,
 offset,0,4
-int32,str,str
+Int32,String,String
 0,TEXT_SUBCTS671_04524_SEQ_00,萊韋耶勒爾府的阿梅莉安絲想去迎接彌剌狄恩。
 1,TEXT_SUBCTS671_04524_SEQ_01,
 2,TEXT_SUBCTS671_04524_SEQ_02,

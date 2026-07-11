@@ -1,7 +1,7 @@
 ﻿key,0,1
 #,,
 offset,0,4
-int32,str,str
+Int32,String,String
 0,TEXT_REGYOK6OKBEKBE_00873_UUNUHANU_000_000,暴風雨造成的影響尚未散去，大家依舊忙得不可開交。<hex:02100103>可以的話，就由我來為你介紹這裡吧。
 1,TEXT_REGYOK6OKBEKBE_00873_UUNUHANU_000_001,前不久的展翅節，我也玩得很盡興。<hex:02100103>這裡的商人們對此也都聊得不亦樂乎。
 2,TEXT_REGYOK6OKBEKBE_00873_UUNUHANU_000_002,相信在新任聯王大人的帶領下，<hex:02100103>克扎瑪烏卡濕地今後也會變得更加熱鬧。<hex:02100103>大家的聚落也將會更加繁盛。

@@ -1,7 +1,7 @@
 ﻿key,0,1
 #,,
 offset,0,4
-int32,str,str
+Int32,String,String
 0,TEXT_STMBDZ607_02785_SEQ_00,也速根想要和者勒蔑重歸於好。
 1,TEXT_STMBDZ607_02785_SEQ_01,和也速根進行了交談。也速根很想和者勒蔑重歸於好，但他必須先定下宴會菜單。代替也速根，將<hex:022811FF0A>EventItem<hex:F61E8DBC0103>交給晨曦王座的者勒蔑。
 2,TEXT_STMBDZ607_02785_SEQ_02,將<hex:022811FF0A>EventItem<hex:F61E8DBC0103>交給了者勒蔑。者勒蔑收下了，但其兄長苦哲可身體狀況欠佳，者勒蔑由於很擔心而沒有心思享用零食。向晨曦王座的也速根報告從者勒蔑那裡聽到的消息。

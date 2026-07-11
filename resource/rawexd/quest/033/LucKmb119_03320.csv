@@ -1,7 +1,7 @@
 ﻿key,0,1
 #,,
 offset,0,4
-int32,str,str
+Int32,String,String
 0,TEXT_LUCKMB119_03320_SEQ_00,雲村的賽特十分擔心冒險者。
 1,TEXT_LUCKMB119_03320_SEQ_01,從賽特處得知了通往夢羽城的路線。調查伊爾美格夢羽城的<hex:02280CFF05>EObj<hex:F61EAAF00103>。
 2,TEXT_LUCKMB119_03320_SEQ_02,解開了<hex:02280CFF05>EObj<hex:F61EAAF00103>的封印。討伐城堡內化身靈光衛的妖靈王緹坦妮雅！<hex:02100103><hex:02100103>※可以通過任務搜尋器參加。

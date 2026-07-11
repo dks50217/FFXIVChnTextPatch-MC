@@ -1,7 +1,7 @@
 ﻿key,0,1
 #,,
 offset,0,4
-int32,str,str
+Int32,String,String
 0,TEXT_CTSSFSCHARACTER7_00710_GREETING_CHARLEMEND_000_000,<hex:022903EB0203>，感謝來訪。<hex:02100103>我們需要的是寢具和餐具等紀念醫院的日常用品。<hex:02100103>不知道你幫忙準備了嗎？
 1,TEXT_CTSSFSCHARACTER7_00710_GREETING_CHARLEMEND_000_001,<hex:022903EB0203>！<hex:02100103>此次需要的是膿盆和繃帶等紀念醫院的醫療用品。<hex:02100103>可以拜託你幫忙籌集嗎？
 2,TEXT_CTSSFSCHARACTER7_00710_GREETING_CHARLEMEND_000_002,<hex:022903EB0203>！<hex:02100103>此次需要的是拐杖和輪椅等紀念醫院的康復訓練用品。<hex:02100103>可以請你幫忙籌集嗎？

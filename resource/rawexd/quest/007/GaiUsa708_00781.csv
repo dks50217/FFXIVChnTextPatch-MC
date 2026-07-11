@@ -1,7 +1,7 @@
 ﻿key,0,1
 #,,
 offset,0,4
-int32,str,str
+Int32,String,String
 0,TEXT_GAIUSA708_00781_SEQ_00,小阿拉米格的阿梅羅特又有一件事想要委託給冒險者。
 1,TEXT_GAIUSA708_00781_SEQ_01,<hex:02280FFF09>BNpcName<hex:F202340103>這種魔物是引起熱病的原因。打倒4團<hex:02280FFF09>BNpcName<hex:F202340103>。並分別在毒蜥蜴和鮟鱇的屍體上使用<hex:022811FF0A>EventItem<hex:F61E87DB0103>，打倒隨之出現的<hex:02280FFF09>BNpcName<hex:F207CA0103>。
 2,TEXT_GAIUSA708_00781_SEQ_02,成功地消滅了<hex:02280FFF09>BNpcName<hex:F202340103>和<hex:02280FFF09>BNpcName<hex:F207CA0103>。向小阿拉米格的阿梅羅特報告。

@@ -1,7 +1,7 @@
 ﻿key,0,1
 #,,
 offset,0,4
-int32,str,str
+Int32,String,String
 0,TEXT_CLSALC350_00647_SEQ_00,煉金術士公會的塞文利安看上去很高興。
 1,TEXT_CLSALC350_00647_SEQ_01,接受了塞文利安的委託。和烏爾達哈煉金術士公會的迪特里希談談。
 2,TEXT_CLSALC350_00647_SEQ_02,和迪特里希進行了交談。和烏爾達哈煉金術士公會的塞文利安談談。

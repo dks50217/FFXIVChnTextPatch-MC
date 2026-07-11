@@ -1,7 +1,7 @@
 ﻿key,0,1
 #,,
 offset,0,4
-int32,str,str
+Int32,String,String
 0,TEXT_JOBWHM650_02416_SEQ_00,帝國東方堡的希爾菲想向冒險者提一個建議。
 1,TEXT_JOBWHM650_02416_SEQ_01,希爾菲多次遇見了嘉蒂，可每次都被她逃掉。為了從上次嘉蒂逃掉的地方進行調查，前往基拉巴尼亞邊區的東境混交林，在<hex:02280CFF05>EObj<hex:F61EA29F0103>進行張望。
 2,TEXT_JOBWHM650_02416_SEQ_02,在<hex:02280CFF05>EObj<hex:F61EA29F0103>進行了張望。追上希爾菲，在<hex:02280CFF05>EObj<hex:F61EA2A00103>再次進行張望。

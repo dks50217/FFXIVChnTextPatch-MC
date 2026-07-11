@@ -1,7 +1,7 @@
 ﻿key,0,1
 #,,
 offset,0,4
-int32,str,str
+Int32,String,String
 0,TEXT_CMNDEFRELICWEAPON050TRADE_00221_JALZAHN_000_000,看來你已經準備好要重鑄黃道武器了。<hex:02100103>那就讓我們快點開始吧！
 1,TEXT_CMNDEFRELICWEAPON050TRADE_00221_JALZAHN_000_001,黃道武器會擁有如下的能力，<hex:02100103>如果你下定決心，我們就開始進行再鑄！
 2,TEXT_CMNDEFRELICWEAPON050TRADE_00221_MENU_TITLE,請選擇想要再鑄的黃道武器

@@ -1,7 +1,7 @@
 ﻿key,0,1
 #,,
 offset,0,4
-int32,str,str
+Int32,String,String
 0,TEXT_JOBMNK400_01063_SEQ_00,艾里克有事想要委託給冒險者。
 1,TEXT_JOBMNK400_01063_SEQ_01,艾里克委託了兩項工作。首先，和南薩納蘭小阿拉米格的維達蓋爾特談談。
 2,TEXT_JOBMNK400_01063_SEQ_02,維達蓋爾特的測量還沒有結束，結束後，他會將<hex:022811FF0A>EventItem<hex:F61E87B30103>交給冒險者。下一份工作，前往南部林區的蛇蛻林，在指定地點設定<hex:022811FF0A>EventItem<hex:F61E87B20103>。

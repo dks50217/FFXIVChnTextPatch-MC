@@ -1,7 +1,7 @@
 ﻿key,0,1
 #,,
 offset,0,4
-int32,str,str
+Int32,String,String
 0,TEXT_JOBSCH450_01100_SEQ_00,斧術師公會的阿爾卡·佐爾卡有個好消息想告訴冒險者。
 1,TEXT_JOBSCH450_01100_SEQ_01,接受了阿爾卡·佐爾卡的委託。前往摩杜納的迷霧濕地，調查<hex:02280CFF05>EObj<hex:F61E8DD10103>。
 2,TEXT_JOBSCH450_01100_SEQ_02,調查了<hex:02280CFF05>EObj<hex:F61E8DD10103>，並討伐了出現的魔物。繼續調查<hex:02280CFF05>EObj<hex:F61E8DD10103>，獲取<hex:022811FF0A>EventItem<hex:F61E87490103>。

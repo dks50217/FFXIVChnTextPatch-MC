@@ -1,7 +1,7 @@
 ﻿key,0,1
 #,,
 offset,0,4
-int32,str,str
+Int32,String,String
 0,TEXT_LUCKMI112_03782_SEQ_00,露天席大廣場的琳表情顯得很平靜。
 1,TEXT_LUCKMI112_03782_SEQ_01,和琳一起與同伴們匯合了。和水晶都觀星室的拜克·拉各談談。
 2,TEXT_LUCKMI112_03782_SEQ_02,和拜克·拉各進行了交談。帶著同伴們的記憶與靈魂返回石之家。

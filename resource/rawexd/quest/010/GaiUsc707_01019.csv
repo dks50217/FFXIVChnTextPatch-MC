@@ -1,7 +1,7 @@
 ﻿key,0,1
 #,,
 offset,0,4
-int32,str,str
+Int32,String,String
 0,TEXT_GAIUSC707_01019_SEQ_00,瞭望陣營地的布魯艾丁協漩校有個作戰計劃想要冒險者共同進行。
 1,TEXT_GAIUSC707_01019_SEQ_01,布魯艾丁委託冒險者進行佯動作戰。前往黑金湖，使用<hex:022811FF0A>EventItem<hex:F61E87880103>來爆破<hex:02280CFF05>EObj<hex:F61E8D420103>。
 2,TEXT_GAIUSC707_01019_SEQ_02,順利地炸毀了<hex:02280CFF05>EObj<hex:F61E8D420103>。不知布魯艾丁方面的狀況如何。返回瞭望陣營地，向布魯艾丁報告。
@@ -54,6 +54,6 @@ int32,str,str
 49,TEXT_GAIUSC707_01019_BLOEIDIN_000_001,我想要委託你執行佯動作戰，吸引他們的注意力。<hex:02100103>我的部下們會趁新式煉金爐的保管庫防守薄弱時，<hex:02100103>把裡面的東西都毀掉。
 50,TEXT_GAIUSC707_01019_BLOEIDIN_000_002,黑金湖那邊有<hex:02280CFF05>EObj<hex:F61E8D420103>，<hex:02100103>我希望你能用這個<hex:022811FF0A>EventItem<hex:F61E87880103>給他們來一場大爆炸。<hex:02100103>讓我們開始祭典吧！
 51,TEXT_GAIUSC707_01019_DUMMY_000_000,使用<hex:022811FF0A>EventItem<hex:F61E87880103>，炸毀地靈軍的物資
-52,TEXT_GAIUSC707_01019_TODO_000_000,
+52,TEXT_GAIUSC707_01019_TODO_000_000,無
 53,TEXT_GAIUSC707_01019_BLOEIDIN_000_010,喲，你回來啦。<hex:02100103>多虧了你的佯動，作戰非常成功！
 54,TEXT_GAIUSC707_01019_BLOEIDIN_000_011,地靈族那些傢伙這下會老實一陣子了吧。<hex:02100103>接下來只要拿到獎賞就完美了。

@@ -1,7 +1,7 @@
 ﻿key,0,1
 #,,
 offset,0,4
-int32,str,str
+Int32,String,String
 0,TEXT_SUBPST024_00244_SEQ_00,郵差莫古力前輩有3封送往枯骨營地的信要交給冒險者。
 1,TEXT_SUBPST024_00244_SEQ_01,接受了郵差莫古力前輩的委託，前去送信。前往東薩納蘭的枯骨營地，將3封<hex:022811FF0A>EventItem<hex:F61E8A4D0103>交給乙太學者——朗貝爾坦。
 2,TEXT_SUBPST024_00244_SEQ_02,將零組來的信交給了朗貝爾坦。為了迎接零組的到來，前往成為了研究會會場的枯骨營地酒館，將<hex:022811FF0A>EventItem<hex:F61E8A4F0103>放在酒館的<hex:02280CFF05>EObj<hex:F61E96650103>。

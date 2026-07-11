@@ -1,7 +1,7 @@
 ﻿key,0,1
 #,,
 offset,0,4
-int32,str,str
+Int32,String,String
 0,TEXT_REGGYR3COLDHEARTH_00401_GIBBON_000_000,哎呀，這偏僻的小村子居然會有客人來。<hex:02100103>雖然我們這什麼都沒有，但你可以放鬆身心好好休息一下。
 1,TEXT_REGGYR3COLDHEARTH_00401_Q1_000_000,想了解什麼？
 2,TEXT_REGGYR3COLDHEARTH_00401_A1_000_001,你是做什麼的？

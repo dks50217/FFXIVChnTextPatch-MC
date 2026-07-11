@@ -1,7 +1,7 @@
 ﻿key,0,1
 #,,
 offset,0,4
-int32,str,str
+Int32,String,String
 0,TEXT_CLSFSH151_01111_SEQ_00,捕魚人公會的希希蒲有事想要拜託冒險者。
 1,TEXT_CLSFSH151_01111_SEQ_01,接受了希希蒲的委託。和利姆薩·羅敏薩捕魚人公會的圖圖盧恩談談。
 2,TEXT_CLSFSH151_01111_SEQ_02,和圖圖盧恩進行了交談。和利姆薩·羅敏薩捕魚人公會的希希蒲談談。

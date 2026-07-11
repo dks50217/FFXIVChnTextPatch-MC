@@ -1,7 +1,7 @@
 ﻿key,0,1
 #,,
 offset,0,4
-int32,str,str
+Int32,String,String
 0,TEXT_REGROC2FORGOTTENKNIGHT_00278_GIBRILLONT_000_000,歡迎光臨，忘憂騎士亭歡迎來自五湖四海的顧客……<hex:02100103>當然前提是能夠習慣這家酒館做派的。
 1,TEXT_REGROC2FORGOTTENKNIGHT_00278_GIBRILLONT_000_001,竟然把這裡當做情報源來利用，那小姑娘膽子還挺大。<hex:02100103>不過很多客人也是衝著那小姑娘來的，<hex:02100103>不妨就當是互幫互助吧。
 2,TEXT_REGROC2FORGOTTENKNIGHT_00278_GIBRILLONT_000_002,各種各樣的邂逅讓人成長，也組成了那個人的過去。<hex:02100103>為人與人牽線搭橋也是酒館的魅力所在。

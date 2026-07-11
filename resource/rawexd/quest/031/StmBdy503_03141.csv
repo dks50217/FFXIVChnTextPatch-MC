@@ -1,7 +1,7 @@
 ﻿key,0,1
 #,,
 offset,0,4
-int32,str,str
+Int32,String,String
 0,TEXT_STMBDY503_03141_SEQ_00,多瑪飛地的小櫻繼續努力地工作著。
 1,TEXT_STMBDY503_03141_SEQ_01,小櫻委託冒險者協助進行新的多瑪飛地重建計劃。和多瑪飛地的百貨市場的三葉交談。
 2,TEXT_STMBDY503_03141_SEQ_02,和三葉進行了交談。和車前會所的小櫻交談。

@@ -1,7 +1,7 @@
 ﻿key,0,1
 #,,
 offset,0,4
-int32,str,str
+Int32,String,String
 0,TEXT_LUCKMF102_03645_SEQ_00,中庸工藝館的卡特莉絲正在觀察冒險者的情況。
 1,TEXT_LUCKMF102_03645_SEQ_01,
 2,TEXT_LUCKMF102_03645_SEQ_02,

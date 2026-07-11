@@ -1,7 +1,7 @@
 ﻿key,0,1
 #,,
 offset,0,4
-int32,str,str
+Int32,String,String
 0,TEXT_CTSERKEUREKA3GEROLT_00514_GEROLT_000_000,你來幹什麼啊，冒險者。<hex:02100103>我正在準備你探索所需要的東西，<hex:02100103>別來妨礙我幹活，去去去！
 1,TEXT_CTSERKEUREKA3GEROLT_00514_GEROLT_000_010,喂喂，我可是一直在等你來呢！<hex:02100103>想必你應該從可露兒小姐那裡聽說了，<hex:02100103>我靈光一現，想到了幾個有意思的東西。
 2,TEXT_CTSERKEUREKA3GEROLT_00514_GEROLT_000_011,這對你今後的探索也能派上用場，你就先聽我說說。<hex:02100103>那時候我正看著魔素板的設計圖，<hex:02100103>心裡想著能不能做出些來錢的東西，突然間就來了靈感。

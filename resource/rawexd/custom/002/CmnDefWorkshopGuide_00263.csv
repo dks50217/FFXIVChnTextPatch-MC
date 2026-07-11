@@ -1,7 +1,7 @@
 ﻿key,0,1
 #,,
 offset,0,4
-int32,str,str
+Int32,String,String
 0,TEXT_CMNDEFWORKSHOPGUIDE_00263_MAMMET00263_000_000,歡迎、來到、部隊工房！<hex:02100103>我是、冒險人偶014號。<hex:02100103>關於部隊工房、有什麼不懂的、可以問我！
 1,TEXT_CMNDEFWORKSHOPGUIDE_00263_Q1_000_000,想了解什麼？
 2,TEXT_CMNDEFWORKSHOPGUIDE_00263_A1_000_001,關於部隊工房

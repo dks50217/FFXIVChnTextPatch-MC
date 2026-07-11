@@ -1,7 +1,7 @@
 ﻿key,0,1
 #,,
 offset,0,4
-int32,str,str
+Int32,String,String
 0,TEXT_CTSERKEUREKA1LOTTERYEXCHANGESHOP_00449_RGHONATI_100_000,光靠氣勢乘著東阿爾迪納德商會的船就來到了黃金港，<hex:02100103>現在我可真是後悔死了。<hex:02100103>錢包都快空了，我要怎麼生活下去啊……
 1,TEXT_CTSERKEUREKA1LOTTERYEXCHANGESHOP_00449_RGHONATI_110_000,我拜託漢考克先生讓我加入了調查隊。<hex:02100103>作為調查隊的貨物調度員，我會為你做出與工資相稱的支援的！<hex:02100103>請多關照啦！
 2,TEXT_CTSERKEUREKA1LOTTERYEXCHANGESHOP_00449_EXS00449_000_000,你就是傳聞中的冒險者吧？<hex:02100103>抱歉，我這邊還在準備中……<hex:02100103>請你過一會再來吧。

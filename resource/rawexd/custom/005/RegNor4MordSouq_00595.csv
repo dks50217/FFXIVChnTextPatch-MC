@@ -1,7 +1,7 @@
 ﻿key,0,1
 #,,
 offset,0,4
-int32,str,str
+Int32,String,String
 0,TEXT_REGNOR4MORDSOUQ_00595_GHELGEL_000_000,喲喲、旅行者！<hex:02100103>找我有什麼事情嗎？
 1,TEXT_REGNOR4MORDSOUQ_00595_GHELGEL_000_010,空中的光芒居然消失了、真是驚人……<hex:02100103>總、總之、你找我有什麼事情嗎？
 2,TEXT_REGNOR4MORDSOUQ_00595_GHELGEL_000_020,嗯、天空又被光芒覆蓋了。<hex:02100103>雖然是看慣的風景、但總有不好的預感……<hex:02100103>總、總之、你找我有什麼事情嗎？

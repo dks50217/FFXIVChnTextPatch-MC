@@ -1,7 +1,7 @@
 ﻿key,0,1
 #,,
 offset,0,4
-int32,str,str
+Int32,String,String
 0,TEXT_CTSERKEUREKA3SPHERE2_00521_EJIKATSUNJIKA_000_001,……嗯，是你啊。<hex:02100103>沒想到你都來到了這種地方，<hex:02100103>利用原型乙太之光進行的調查有進展了嗎？
 1,TEXT_CTSERKEUREKA3SPHERE2_00521_EJIKATSUNJIKA_000_002,原來如此……原來如此啊。<hex:02100103>讓流向逆轉……那最後……
 2,TEXT_CTSERKEUREKA3SPHERE2_00521_EJIKATSUNJIKA_000_003,啊，抱歉。<hex:02100103>感謝你提供的情報，<hex:02100103>這樣我就有些頭緒了。

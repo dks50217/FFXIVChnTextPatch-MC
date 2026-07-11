@@ -1,7 +1,7 @@
 ﻿key,0,1
 #,,
 offset,0,4
-int32,str,str
+Int32,String,String
 0,TEXT_STMBDA601_02527_SEQ_00,渡輪碼頭的阿爾菲諾因為能夠順利歸還而放下心來。
 1,TEXT_STMBDA601_02527_SEQ_01,
 2,TEXT_STMBDA601_02527_SEQ_02,

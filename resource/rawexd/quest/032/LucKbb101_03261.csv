@@ -1,7 +1,7 @@
 ﻿key,0,1
 #,,
 offset,0,4
-int32,str,str
+Int32,String,String
 0,TEXT_LUCKBB101_03261_SEQ_00,※本任務是特職絕槍戰士的開放任務。<hex:02100103><hex:02100103>乙太之光廣場的耿直的神勇隊隊員似乎正在召集人手。
 1,TEXT_LUCKBB101_03261_SEQ_01,耿直的神勇隊隊員委託冒險者搜索盜賊團伙。在東部林區荊棘森的<hex:02280CFF05>EObj<hex:F61EAC7D0103>張望。
 2,TEXT_LUCKBB101_03261_SEQ_02,在<hex:02280CFF05>EObj<hex:F61EAC7D0103>張望的時候，被異國打扮的兩名盜賊襲擊了。在荊棘森討伐憤怒的盜賊。

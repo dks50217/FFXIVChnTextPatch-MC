@@ -1,7 +1,7 @@
 ﻿key,0,1
 #,,
 offset,0,4
-int32,str,str
+Int32,String,String
 0,TEXT_REGUNI5REAHTAHRA_00758_FOHLOLOH_000_000,哎呀……這可真是神奇的客人啊。<hex:02100103>小傢伙，找我有什麼事嗎？
 1,TEXT_REGUNI5REAHTAHRA_00758_Q1_000_000,想了解什麼？
 2,TEXT_REGUNI5REAHTAHRA_00758_A1_000_001,你是做什麼的？

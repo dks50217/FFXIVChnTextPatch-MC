@@ -1,7 +1,7 @@
 ﻿key,0,1
 #,,
 offset,0,4
-int32,str,str
+Int32,String,String
 0,TEXT_CTSHNT60RISKYMOBELPIS_00765_BASILDERE_000_001,我是比較神話學的專家。<hex:02100103>我的目的是通過比較不同土地、不同時代所傳頌的神話，<hex:02100103>進而從它們的共同點中尋找隱藏在其背後的真相。
 1,TEXT_CTSHNT60RISKYMOBELPIS_00765_BASILDERE_000_002,我是比較神話學的專家。<hex:02100103>為了證明神話中的事物是否實際存在，<hex:02100103>目前正在尋找拾穗人幫忙回收樣本，不知你是否有興趣呢？
 2,TEXT_CTSHNT60RISKYMOBELPIS_00765_BASILDERE_000_003,

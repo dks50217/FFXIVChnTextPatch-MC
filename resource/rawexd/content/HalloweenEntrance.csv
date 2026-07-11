@@ -1,7 +1,7 @@
 ﻿key,0,1
 #,,
 offset,0,4
-int32,str,str
+Int32,String,String
 0,TEXT_HALLOWEENENTRANCE_MEMBERC01548_000_000,我正在為守護天節的活動做準備，還會花一點時間……<hex:02100103>請你過一會再來！
 1,TEXT_HALLOWEENENTRANCE_MEMBERC01548_000_010,讓你久等了！<hex:02100103>你想前往鬧鬼莊園還是想問我些什麼？
 2,TEXT_HALLOWEENENTRANCE_MAINMENU_TITLE,要做什麼？

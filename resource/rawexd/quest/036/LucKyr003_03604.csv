@@ -1,7 +1,7 @@
 ﻿key,0,1
 #,,
 offset,0,4
-int32,str,str
+Int32,String,String
 0,TEXT_LUCKYR003_03604_SEQ_00,
 1,TEXT_LUCKYR003_03604_SEQ_01,
 2,TEXT_LUCKYR003_03604_SEQ_02,
@@ -63,3 +63,4 @@ int32,str,str
 58,TEXT_LUCKYR003_03604_SYSTEM_000_010,從有限情報中推測對應地點及條件，<hex:02100103>來完成新的項目吧！
 59,TEXT_LUCKYR003_03604_EIRLALTH_000_020,你……看來很有前途啊，<hex:02100103>不過我也不能求一個經驗尚淺的冒險者。
 60,TEXT_LUCKYR003_03604_SYSTEM_000_021,若要領取或繼續推進本任務，<hex:02100103>需要任意職業的等級在70級以上。
+61,TEXT_LUCKYR003_03604_SYSTEM_000_021,若要領取或繼續推進本任務，<hex:02100103>需要任意職業的等級達到70或更高等級。

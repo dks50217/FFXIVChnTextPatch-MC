@@ -1,7 +1,7 @@
 ﻿key,0,1
 #,,
 offset,0,4
-int32,str,str
+Int32,String,String
 0,TEXT_CMNDEFRELICWEAPON030TRADE_00173_JALZAHN_000_000,讓我用秘術把嵌寫在«天球書卷»中的魔晶石之力，<hex:02100103>注入到上古武器吧。<hex:02100103>……你想要強化哪把上古武器呢？
 1,TEXT_CMNDEFRELICWEAPON030TRADE_00173_Q1_000_000,請選擇想要強化的「上古武器·魂靈」
 2,TEXT_CMNDEFRELICWEAPON030TRADE_00173_A1_000_010,強化<hex:02280AFF05>Item<hex:E8020103>

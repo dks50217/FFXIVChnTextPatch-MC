@@ -1,7 +1,7 @@
 ﻿key,0,1
 #,,
 offset,0,4
-int32,str,str
+Int32,String,String
 0,TEXT_GAIUSB607_00889_SEQ_00,阿德內爾占星台的波特萊納想要委託冒險者進行搜尋工作。
 1,TEXT_GAIUSB607_00889_SEQ_01,波特萊納想要冒險者去取回被盜賊襲擊的行商人遺失的貨物。前往阿德內爾占星台西面的街道，撿回<hex:022811FF0A>EventItem<hex:F61E87350103>。
 2,TEXT_GAIUSB607_00889_SEQ_02,雖然有盜賊的妨礙，冒險者還是成功回收了<hex:022811FF0A>EventItem<hex:F61E87350103>。將其交給阿德內爾占星台的波特萊納。

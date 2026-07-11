@@ -1,7 +1,7 @@
 ﻿key,0,1
 #,,
 offset,0,4
-int32,str,str
+Int32,String,String
 0,TEXT_KINGMF102_04947_SEQ_00,鮮羽兵站的烏克·拉瑪特想去犒勞勇連隊的士兵。
 1,TEXT_KINGMF102_04947_SEQ_01,
 2,TEXT_KINGMF102_04947_SEQ_02,

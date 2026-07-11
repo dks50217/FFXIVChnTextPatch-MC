@@ -1,7 +1,7 @@
 ﻿key,0,1
 #,,
 offset,0,4
-int32,str,str
+Int32,String,String
 0,TEXT_LUCKMA201_03282_SEQ_00,觀星室的水晶公要告訴冒險者見到阿爾菲諾的方法。
 1,TEXT_LUCKMA201_03282_SEQ_01,水晶公告訴了冒險者前往珂露西亞島的方法。將<hex:022811FF0A>EventItem<hex:F61E8F0B0103>交給水晶都聖林牧場的柴莫田梅。
 2,TEXT_LUCKMA201_03282_SEQ_02,將信交給了柴莫田梅。和水晶都阿馬羅棧橋的新手阿馬羅馴養人談談。

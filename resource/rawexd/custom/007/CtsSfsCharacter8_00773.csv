@@ -1,7 +1,7 @@
 ﻿key,0,1
 #,,
 offset,0,4
-int32,str,str
+Int32,String,String
 0,TEXT_CTSSFSCHARACTER8_00773_GREETING_AMELIANCE_000_000,歡迎，<hex:022903EB0203>。<hex:02100103>你今天來是為了工作？<hex:02100103>還是想來和我一起喝杯茶放鬆一下？
 1,TEXT_CTSSFSCHARACTER8_00773_GREETING_AMELIANCE_000_001,你來啦，<hex:022903EB0203>。<hex:02100103>為留學生籌備的魔器和青蛙進展如何了？<hex:02100103>我一直在等著看你拿來的好東西呢！
 2,TEXT_CTSSFSCHARACTER8_00773_GREETING_AMELIANCE_000_002,<hex:022903EB0203>，很高興看到你過來！<hex:02100103>能請你幫忙準備一些魔法餐盒嗎？<hex:02100103>有你出手，留學生們就不用擔心餓肚子啦。

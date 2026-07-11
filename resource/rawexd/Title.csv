@@ -1,7 +1,7 @@
 ﻿key,0,1
 #,Masculine,Feminine
 offset,0,4
-int32,str,str
+Int32,String,String
 0,,
 1,永無止境,永無止境
 2,忠誠,忠誠

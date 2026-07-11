@@ -1,7 +1,7 @@
 ﻿key,0,1
 #,,
 offset,0,4
-int32,str,str
+Int32,String,String
 0,TEXT_KINGMD108_04919_SEQ_00,美花黑澤恩附近的埃倫維爾正盯著木材。
 1,TEXT_KINGMD108_04919_SEQ_01,和埃倫維爾進行了交談。拿起夏勞尼荒野美花黑澤恩附近木料存放處的<hex:02280CFF05>EObj<hex:F61EBA710103>。
 2,TEXT_KINGMD108_04919_SEQ_02,拿起了<hex:02280CFF05>EObj<hex:F61EBA710103>。將<hex:02280CFF05>EObj<hex:F61EBA710103>運送至美花黑澤恩外的<hex:02280CFF05>EObj<hex:F61EBA9C0103>放下。

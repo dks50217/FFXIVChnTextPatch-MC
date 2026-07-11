@@ -1,7 +1,7 @@
 ﻿key,0,1
 #,,
 offset,0,4
-int32,str,str
+Int32,String,String
 0,TEXT_FESSUM2015_00305_GURENSTAFFA_000_000,喲！<hex:02100103>我是執行委員中最專業的，人稱紅蓮節博士！<hex:02100103>你有任何關於紅蓮節的問題都可以問我。
 1,TEXT_FESSUM2015_00305_Q1_000_000,想了解什麼？
 2,TEXT_FESSUM2015_00305_A1_000_001,什麼是紅蓮節？

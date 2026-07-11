@@ -1,7 +1,7 @@
 ﻿key,0,1
 #,,
 offset,0,4
-int32,str,str
+Int32,String,String
 0,TEXT_GAIUSA706_00779_SEQ_00,小阿拉米格的雷姆菲恩想要打倒某些人。
 1,TEXT_GAIUSA706_00779_SEQ_01,盜賊團伙骸旅團正聚集在小阿拉米格東北。前往小阿拉米格東北方，驅除骸旅團。
 2,TEXT_GAIUSA706_00779_SEQ_02,成功驅除了骸旅團的隊伍。向小阿拉米格的雷姆菲恩報告。

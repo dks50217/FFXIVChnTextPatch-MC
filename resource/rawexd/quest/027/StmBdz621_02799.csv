@@ -1,7 +1,7 @@
 ﻿key,0,1
 #,,
 offset,0,4
-int32,str,str
+Int32,String,String
 0,TEXT_STMBDZ621_02799_SEQ_00,百一啟示的維亞吉兒部青年有事想請冒險者幫忙。
 1,TEXT_STMBDZ621_02799_SEQ_01,
 2,TEXT_STMBDZ621_02799_SEQ_02,

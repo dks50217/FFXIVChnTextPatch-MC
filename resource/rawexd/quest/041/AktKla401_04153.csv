@@ -1,7 +1,7 @@
 ﻿key,0,1
 #,,
 offset,0,4
-int32,str,str
+Int32,String,String
 0,TEXT_AKTKLA401_04153_SEQ_00,屯集堂的雛芥子正在尋找協助者。
 1,TEXT_AKTKLA401_04153_SEQ_01,和雛芥子進行了交談，接受了來自文化系的委託。前往舊薩雷安的所思大書院尋找斷金。
 2,TEXT_AKTKLA401_04153_SEQ_02,找到了斷金，並將<hex:022811FF0A>EventItem<hex:F61E90990103>交給了他。為了了解委託詳情，和舊薩雷安屯集堂的斷金談談。

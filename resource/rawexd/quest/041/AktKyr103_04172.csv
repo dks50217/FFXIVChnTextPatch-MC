@@ -1,7 +1,7 @@
 ﻿key,0,1
 #,,
 offset,0,4
-int32,str,str
+Int32,String,String
 0,TEXT_AKTKYR103_04172_SEQ_00,伊修加德乙太之光廣場的貢德蘭博在等待著英雄的造訪。
 1,TEXT_AKTKYR103_04172_SEQ_01,貢德蘭博說伊修加德裡建好了冒險者住宅區。雲霧街的托梅林會負責帶路。
 2,TEXT_AKTKYR103_04172_SEQ_02,和托梅林進行了交談。前往穹頂皓天。

@@ -1,7 +1,7 @@
 ﻿key,0,1
 #,,
 offset,0,4
-int32,str,str
+Int32,String,String
 0,TEXT_STMBDZ402_02725_SEQ_00,玄水連山的圃場正在尋找能幹力氣活的協助者。
 1,TEXT_STMBDZ402_02725_SEQ_01,
 2,TEXT_STMBDZ402_02725_SEQ_02,

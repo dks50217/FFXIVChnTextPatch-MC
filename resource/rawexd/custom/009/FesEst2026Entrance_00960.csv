@@ -1,7 +1,7 @@
 ﻿key,0,1
 #,,
 offset,0,4
-int32,str,str
+Int32,String,String
 0,TEXT_FESEST2026ENTRANCE_00960_ENTRANCEMAN0960_000_000,事情經過我都聽諾諾塔小姐說過了，<hex:02100103>就由我來帶領你進入會場吧！
 1,TEXT_FESEST2026ENTRANCE_00960_ENTRANCEMAN0960_000_001,感謝你的協助！<hex:02100103>關於帶入會場以及割草相關的說明就請交給我吧！
 2,TEXT_FESEST2026ENTRANCE_00960_SYSTEM_000_002,為進行任務「彩蛋狩獵與謎之草[暫]」，<hex:02100103>需完成嫩枝大清掃，<hex:02100103>並至少獲得1點分數。

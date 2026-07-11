@@ -1,7 +1,7 @@
 ﻿key,0,1
 #,,
 offset,0,4
-int32,str,str
+Int32,String,String
 0,TEXT_CLSWDK006_00169_SEQ_00,刻木匠公會的貝亞坦，想讓冒險者去完成雙蛇黨的弓箭手發來的委託。
 1,TEXT_CLSWDK006_00169_SEQ_01,有指名要冒險者去執行的委託。籌備1根最完美的<hex:02280DFF07>ItemHQ<hex:F207DF0103>，讓刻木匠公會的貝亞坦查看。
 2,TEXT_CLSWDK006_00169_SEQ_02,貝亞坦對成品十分滿意。馬上將<hex:02280DFF07>ItemHQ<hex:F207DF0103>交給蛇巢司令部的委託人。

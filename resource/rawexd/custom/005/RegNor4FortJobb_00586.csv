@@ -1,7 +1,7 @@
 ﻿key,0,1
 #,,
 offset,0,4
-int32,str,str
+Int32,String,String
 0,TEXT_REGNOR4FORTJOBB_00586_FERNWREN_000_000,怎麼了？有什麼困擾嗎？
 1,TEXT_REGNOR4FORTJOBB_00586_FERNWREN_000_002,水灘村那邊遭到了食罪靈的襲擊，<hex:02100103>這次輪到游末邦軍又攻了過來……<hex:02100103>真是慌慌張張的，不過我們一定會守住這個喬布要塞還有都市！
 2,TEXT_REGNOR4FORTJOBB_00586_FERNWREN_000_003,現在雷克蘭德處於戒嚴狀態。<hex:02100103>我正在強化警戒，有事情的話請長話短說。

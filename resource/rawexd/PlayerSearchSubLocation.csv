@@ -1,7 +1,7 @@
 ﻿key,3,4,5
-#,,,
+#,Name0,Name1,Name2
 offset,0,4,8
-int32,str,str,str
+Int32,String,String,String
 0,無效,無效,無效
 1,所有伺服器,world,所有伺服器
 2,利姆薩·羅敏薩,Limsa Lominsa,利姆薩·羅敏薩

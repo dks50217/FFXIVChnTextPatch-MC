@@ -1,7 +1,7 @@
 ﻿key,0,1
 #,,
 offset,0,4
-int32,str,str
+Int32,String,String
 0,TEXT_CTSHNT70RISKYMOBSHAALOANI_00901_ELENYATE_000_001,狩獵？<hex:02100103>不好意思，我沒什麼可告訴你的，你去別處打聽吧。<hex:02100103>你要是死了，我的後半輩子可就都得活在自責的陰影裡了。
 1,TEXT_CTSHNT70RISKYMOBSHAALOANI_00901_ELENYATE_000_002,波爾·歐伽說你也準備加入狩獵的隊伍。<hex:02100103>那告訴你這片地區的狩獵資訊就成了我的義務。<hex:02100103>但聽好了，不管你有多強，都決不能貿然單打獨鬥。
 2,TEXT_CTSHNT70RISKYMOBSHAALOANI_00901_ELENYATE_Q1_000_000,想了解什麼？

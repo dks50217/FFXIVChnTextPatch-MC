@@ -1,7 +1,7 @@
 ﻿key,0,1
 #,,
 offset,0,4
-int32,str,str
+Int32,String,String
 0,TEXT_LUCKMB105_03306_SEQ_00,伊爾美格的桑克瑞德若有所思。
 1,TEXT_LUCKMB105_03306_SEQ_01,從桑克瑞德處得知，目前可以前往仙子族的聚集地。和伊爾美格群花館的桑克瑞德談談。
 2,TEXT_LUCKMB105_03306_SEQ_02,和桑克瑞德進行了交談。從群花館的<hex:02280CFF05>EObj<hex:F61EAAD80103>獲取<hex:022811FF0A>EventItem<hex:F61E8E650103>。

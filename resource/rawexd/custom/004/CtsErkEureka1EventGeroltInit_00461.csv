@@ -1,7 +1,7 @@
 ﻿key,0,1
 #,,
 offset,0,4
-int32,str,str
+Int32,String,String
 0,TEXT_CTSERKEUREKA1EVENTGEROLTINIT_00461_GEROLT_100_000,啊？！<hex:02100103>我現在正忙著調整接下來要用到的重要道具呢！<hex:02100103>快走開！去去去！
 1,TEXT_CTSERKEUREKA1EVENTGEROLTINIT_00461_GEROLT_000_000,哦，是你啊。<hex:02100103>聽說你是很厲害的冒險者，卻要跑來這座島真是辛苦你了。<hex:02100103>你是不是像我一樣因為欠債被脅迫才到這裡來的？
 2,TEXT_CTSERKEUREKA1EVENTGEROLTINIT_00461_GEROLT_000_001,哦，是你啊。<hex:02100103>你居然還敢接受羅薇娜的委託，你可真是個好事之徒。<hex:02100103>你又不像我背著一身債。

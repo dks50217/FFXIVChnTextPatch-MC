@@ -1,7 +1,7 @@
 ﻿key,0,1
 #,,
 offset,0,4
-int32,str,str
+Int32,String,String
 0,TEXT_FESCHN2015_00181_ENREI_000_000,我叫豔麗，來自遙遠的東方，<hex:02100103>是桃源老師的侍從。<hex:02100103>……你找我有什麼事嗎？
 1,TEXT_FESCHN2015_00181_Q1_000_1,想了解什麼？
 2,TEXT_FESCHN2015_00181_A1_000_1,你在這裡做什麼？

@@ -1,7 +1,7 @@
 ﻿key,0,1
 #,,
 offset,0,4
-int32,str,str
+Int32,String,String
 0,TEXT_JOBMNK350_01062_SEQ_00,艾里克博士想要在新的古戰場上測量乙太。
 1,TEXT_JOBMNK350_01062_SEQ_01,不知不覺間，冒險者加入了劃時代的嘗試，和維達蓋爾特同時調查兩個古戰場。在東拉諾西亞的鮮血濱設定<hex:022811FF0A>EventItem<hex:F61E87B10103>。
 2,TEXT_JOBMNK350_01062_SEQ_02,測量了乙太。回收<hex:022811FF0A>EventItem<hex:F61E87B10103>。

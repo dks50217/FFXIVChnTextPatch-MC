@@ -1,7 +1,7 @@
 ﻿key,0,1
 #,,
 offset,0,4
-int32,str,str
+Int32,String,String
 0,TEXT_REGNOT5SHARLAYANHAMLET_00744_SYRENEAD_000_000,你是巴爾德西昂委員會的協助者吧。<hex:02100103>有什麼事嗎？
 1,TEXT_REGNOT5SHARLAYANHAMLET_00744_SYRENEAD_000_001,呀，聽說你和兔兔族們<hex:02100103>幫助有困難的研究者們解決了煩惱啊。<hex:02100103>如果我遇到了什麼難題的話，也請你多幫忙啊。
 2,TEXT_REGNOT5SHARLAYANHAMLET_00744_SYRENEAD_000_002,方舟……不，諸神黃昏號魔導船<hex:02100103>對於我們來說也是血與汗的結晶……<hex:02100103>請你一定要和魔導船共同完成使命，然後平安歸來。

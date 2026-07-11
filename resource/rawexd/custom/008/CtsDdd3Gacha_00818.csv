@@ -1,7 +1,7 @@
 ﻿key,0,1
 #,,
 offset,0,4
-int32,str,str
+Int32,String,String
 0,TEXT_CTSDDD3GACHA_00818_VALEROINE_000_000,我現在負責鑑定你從研究所中發現的物品。<hex:02100103>能參加此次的研究項目倍感光榮，還請多多關照。
 1,TEXT_CTSDDD3GACHA_00818_VALEROINE_000_010,探索的情況如何了？<hex:02100103>如果你在探索的過程中帶了可疑的研究成果回來，<hex:02100103>我想我應該能幫上你的忙。
 2,TEXT_CTSDDD3GACHA_00818_Q1_000_020,要做什麼？

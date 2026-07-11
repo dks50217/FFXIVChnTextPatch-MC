@@ -1,7 +1,7 @@
 ﻿key,0,1
 #,,
 offset,0,4
-int32,str,str
+Int32,String,String
 0,TEXT_VOICEMAN_07200_000010_WUKLAMAT,斯菲因？為什麼會在這裡……？
 1,TEXT_VOICEMAN_07200_000020_WUKLAMAT,剛剛進來之前不是還提到過，她一直在對民眾說成為永久人的事。<hex:02100103>為什麼會在這躺著？
 2,TEXT_VOICEMAN_07200_000030_YSHTOLA,她……其實是另一個人。

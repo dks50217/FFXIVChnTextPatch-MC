@@ -1,7 +1,7 @@
 ﻿key,0,1
 #,,
 offset,0,4
-int32,str,str
+Int32,String,String
 0,TEXT_FESEST2025GUIDE_00914_EGGHUNTINGSTAFFA_000_000,彩蛋～彩蛋～大彩蛋～<hex:02100103>我可以為你講解有關季節活動「彩蛋狩獵」的事情哦！
 1,TEXT_FESEST2025GUIDE_00914_EGGHUNTINGSTAFFA_000_001,格里達尼亞的一個叫做吉莉·阿里亞珀的少女，<hex:02100103>曾經做了個不可思議的夢。<hex:02100103>彩蛋狩獵就是以這個夢為原型的活動。
 2,TEXT_FESEST2025GUIDE_00914_EGGHUNTINGSTAFFA_000_002,這是第七靈災之前的事情了。<hex:02100103>為了迎接在她的夢中出現的「騎著蛋而來的賢者」，<hex:02100103>我們策劃並主辦了尋找裝飾彩蛋的活動，就是彩蛋狩獵。

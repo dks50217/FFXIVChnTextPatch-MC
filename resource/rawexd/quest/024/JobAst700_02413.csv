@@ -1,7 +1,7 @@
 ﻿key,0,1
 #,,
 offset,0,4
-int32,str,str
+Int32,String,String
 0,TEXT_JOBAST700_02413_SEQ_00,黃金港的旭峰好像有心事。
 1,TEXT_JOBAST700_02413_SEQ_01,接受了旭峰的委託，與他一起尋找群雲。在黃金港樂水園南祠附近的<hex:02280CFF05>EObj<hex:F61EA4270103>進行張望。
 2,TEXT_JOBAST700_02413_SEQ_02,在南祠附近進行了張望，沒有找到群雲。為了尋找群雲，和小防波堤西祠附近的旭峰匯合。

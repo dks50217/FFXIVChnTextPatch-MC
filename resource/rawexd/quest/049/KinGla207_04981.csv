@@ -1,7 +1,7 @@
 ﻿key,0,1
 #,,
 offset,0,4
-int32,str,str
+Int32,String,String
 0,TEXT_KINGLA207_04981_SEQ_00,珠串萬貨街的帕梅卡很在意澤莫韋尼的情況。
 1,TEXT_KINGLA207_04981_SEQ_01,和帕梅卡進行了交談。為了了解澤莫韋尼有沒有下個委託，決定去他工作的地方看看。和圖萊尤拉貝殼亭的澤莫韋尼談談。
 2,TEXT_KINGLA207_04981_SEQ_02,和澤莫韋尼進行了交談。用<hex:02280BFF05>Item<hex:F2ABA20103>製作<hex:02280DFF07>ItemHQ<hex:F2AB860103>，交給圖萊尤拉珠串萬貨街的帕梅卡。<hex:02100103><hex:02100103>※如果<hex:02280BFF05>Item<hex:F2ABA20103>不足，可以與澤莫韋尼對話重新獲得材料，並再次進行挑戰。

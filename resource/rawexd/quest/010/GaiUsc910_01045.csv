@@ -1,7 +1,7 @@
 ﻿key,0,1
 #,,
 offset,0,4
-int32,str,str
+Int32,String,String
 0,TEXT_GAIUSC910_01045_SEQ_00,青磷精煉所的梅梅佐夫，正因藥材不夠而煩惱。
 1,TEXT_GAIUSC910_01045_SEQ_01,藥材不夠用了。打倒<hex:02280EFF09>BNpcName<hex:F0F20103>，獲取2個<hex:022811FF0A>EventItem<hex:F61E87960103>。
 2,TEXT_GAIUSC910_01045_SEQ_02,獲得了<hex:022811FF0A>EventItem<hex:F61E87960103>。回到青燐精製所，將其交給梅梅佐夫。

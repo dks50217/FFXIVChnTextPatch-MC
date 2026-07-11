@@ -1,7 +1,7 @@
 ﻿key,0,2,3,4
 #,,,,
 offset,0,4,8,12
-int32,str,str,str,str
+Int32,String,String,String,String
 0,,,,
 1,說話,LogChatBubbleSayShowType,LogChatBubbleSayFontColor,LogChatBubbleSayWindowColor
 2,呼喊,LogChatBubbleYellShowType,LogChatBubbleYellFontColor,LogChatBubbleYellWindowColor

@@ -1,7 +1,7 @@
 ﻿key,0,1
 #,,
 offset,0,4
-int32,str,str
+Int32,String,String
 0,TEXT_CLSHRV009_00011_SEQ_00,園藝工公會的弗弗茶，想委託給冒險者一份工作。
 1,TEXT_CLSHRV009_00011_SEQ_01,接受了弗弗茶的委託。讓格里達尼亞園藝工公會的弗弗茶查看20個<hex:022811FF05>Item<hex:FF08>　4792<hex:0103>。可以在東拉諾西亞接雨草樹林碼頭南面的草場裡採到<hex:022811FF05>Item<hex:FF08>　4792<hex:0103>。
 2,TEXT_CLSHRV009_00011_SEQ_02,讓弗弗茶查看了<hex:022811FF05>Item<hex:FF08>　4792<hex:0103>。將20個<hex:022811FF05>Item<hex:FF08>　4792<hex:0103>交給格里達尼亞格雷洛姆農場的亞妮。

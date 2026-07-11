@@ -1,7 +1,7 @@
 ﻿key,0,1
 #,,
 offset,0,4
-int32,str,str
+Int32,String,String
 0,TEXT_CMNDEFMINSTREL01_00138_WANDERINGMINSTREL_100_000,我感覺到荒野之上，有惡徒在躁動。<hex:02100103>與之對抗的，是異國的訪客們……另外，還有你。<hex:02100103>我也打算起身前往，面對此次災難。
 1,TEXT_CMNDEFMINSTREL01_00138_WANDERINGMINSTREL_100_001,……不過，此刻還是先演奏一曲，沉浸在音符之中吧。<hex:02100103>沒錯，為你而譜寫的樂曲……
 2,TEXT_CMNDEFMINSTREL01_00138_WANDERINGMINSTREL_000_000,「月明流散，拂曉驅暗。<hex:02100103>混沌之地眾神亂。」

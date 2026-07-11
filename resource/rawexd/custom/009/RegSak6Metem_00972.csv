@@ -1,7 +1,7 @@
 ﻿key,0,1
 #,,
 offset,0,4
-int32,str,str
+Int32,String,String
 0,TEXT_REGSAK6METEM_00972_METEM_000_000,這不是我們不戴調魂器的全量級冠軍<hex:022903EB0203>嗎！<hex:02100103>今天是來阿卡狄亞玩的嗎？
 1,TEXT_REGSAK6METEM_00972_METEM_000_001,哎呀，我很榮幸陪我們的名譽全量級冠軍聊兩句！<hex:02100103>如今我也再沒有什麼好隱瞞的事了，<hex:02100103>有什麼問題，請儘管發問吧！
 2,TEXT_REGSAK6METEM_00972_Q1_000_000,想了解什麼？

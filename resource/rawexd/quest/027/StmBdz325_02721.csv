@@ -1,7 +1,7 @@
 ﻿key,0,1
 #,,
 offset,0,4
-int32,str,str
+Int32,String,String
 0,TEXT_STMBDZ325_02721_SEQ_00,漁村的名吉想要嘗試擬餌的效果。
 1,TEXT_STMBDZ325_02721_SEQ_01,名吉委託冒險者陪他進行使用擬餌釣魚的訓練。和漁村東北側懸崖的名吉匯合。
 2,TEXT_STMBDZ325_02721_SEQ_02,和名吉匯合後，發現魚竿連同擬餌都被魚奪去了。在漁村附近的海域尋找<hex:022811FF0A>EventItem<hex:F61E8DC70103>。

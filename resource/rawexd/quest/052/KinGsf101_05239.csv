@@ -1,7 +1,7 @@
 ﻿key,0,1
 #,,
 offset,0,4
-int32,str,str
+Int32,String,String
 0,TEXT_KINGSF101_05239_SEQ_00,海岸鳥群市場的鐵路公司的員工為了尋找冒險者來到了圖萊尤拉。
 1,TEXT_KINGSF101_05239_SEQ_01,
 2,TEXT_KINGSF101_05239_SEQ_02,

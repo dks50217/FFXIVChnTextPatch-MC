@@ -1,7 +1,7 @@
 ﻿key,0,1
 #,,
 offset,0,4
-int32,str,str
+Int32,String,String
 0,TEXT_CTSDOMRECONSTRUCTTAUYAKU_00530_TAUYAKU_000_000,先前清除瓦礫時候把這裡弄出了一個大水坑。<hex:02100103>多虧木匠團的那些傢伙們突發奇想，在水坑上面造了座橋。<hex:02100103>你看這不就成了一個很氣派的池塘了嗎？
 1,TEXT_CTSDOMRECONSTRUCTTAUYAKU_00530_TAUYAKU_000_005,這個池塘具體該怎麼弄，我倒是有點想法……<hex:02100103>不過詳情我就先暫時不說了。
 2,TEXT_CTSDOMRECONSTRUCTTAUYAKU_00530_TAUYAKU_000_010,……我原來是幹什麼的？<hex:02100103>我想你差不多應該已經猜到了吧？

@@ -1,7 +1,7 @@
 ﻿key,0,1
 #,,
 offset,0,4
-int32,str,str
+Int32,String,String
 0,TEXT_JOBREL011_00357_SEQ_00,向喪靈鐘的帕帕娜諮詢黃道武器古書一事。
 1,TEXT_JOBREL011_00357_SEQ_01,帕帕娜手中有描寫古代英雄武器的古書。為了換到古書，集齊<hex:02280BFF05>Item<hex:F225430103>、<hex:02280BFF05>Item<hex:F225440103>、<hex:02280BFF05>Item<hex:F225420103>，交給喪靈鐘的帕帕娜。<hex:02280BFF05>Item<hex:F225420103>應該能在拉諾西亞高地的石綠湖周邊買到。
 2,TEXT_JOBREL011_00357_SEQ_02,帕帕娜不滿意貨物的品質，不得不答應她的新要求。突破山中戰線澤梅爾要塞，獲取<hex:022811FF0A>EventItem<hex:F61E8A780103>。突破紛爭要地布雷福洛克斯野營地，獲取<hex:022811FF0A>EventItem<hex:F61E8A790103>。<hex:02100103><hex:02100103>※可以通過任務搜尋器參加。

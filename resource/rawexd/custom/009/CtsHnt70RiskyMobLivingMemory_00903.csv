@@ -1,7 +1,7 @@
 ﻿key,0,1
 #,,
 offset,0,4
-int32,str,str
+Int32,String,String
 0,TEXT_CTSHNT70RISKYMOBLIVINGMEMORY_00903_RINURI_000_001,武器、食物、藥品、衣服……<hex:02100103>要籌備的東西數都數不清。
 1,TEXT_CTSHNT70RISKYMOBLIVINGMEMORY_00903_RINURI_100_001,喲，<hex:022903EB0203>，我正在整理從活著的記憶中收集到的情報，<hex:02100103>等你忙完手頭的事情後，隨時回來找我，<hex:02100103>我會和你分享這些發現。
 2,TEXT_CTSHNT70RISKYMOBLIVINGMEMORY_00903_RINURI_000_002,忘斷軍的幾位成員仍在活著的記憶中進行調查。<hex:02100103>如果你需要，我可以和你分享一些重要發現。

@@ -1,7 +1,7 @@
 ﻿key,0,1
 #,,
 offset,0,4
-int32,str,str
+Int32,String,String
 0,TEXT_BANGNA504_02274_SEQ_00,<hex:024804F201FC03><hex:024904F201FD03>特殊規則： 等級調整（限定職業）<hex:0249020103><hex:0248020103><hex:02100103>自由腦窟穴的眼神好興趣盎然地思考著什麼。
 1,TEXT_BANGNA504_02274_SEQ_01,※本任務為<hex:024804F201FC03><hex:024904F201FD03><hex:0249020103><hex:0248020103> 等級調整（限定職業）任務，<hex:02100103>　需要與接受任務時的職業相同才可繼續進行任務。<hex:02100103><hex:02100103>眼神好委託冒險者收集供給田園郡的哥布林族的香草。在阿瓦隆尼亞古陸獲取<hex:022811FF0A>EventItem<hex:F61E8C2D0103>和<hex:022811FF0A>EventItem<hex:F61E8C2E0103>各3株。
 2,TEXT_BANGNA504_02274_SEQ_02,獲得了3株<hex:022811FF0A>EventItem<hex:F61E8C2D0103>和3株<hex:022811FF0A>EventItem<hex:F61E8C2E0103>。將<hex:022811FF0A>EventItem<hex:F61E8C2D0103>和<hex:022811FF0A>EventItem<hex:F61E8C2E0103>交給自由腦窟穴的眼神好。

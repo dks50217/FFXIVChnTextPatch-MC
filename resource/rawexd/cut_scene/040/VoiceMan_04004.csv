@@ -1,7 +1,7 @@
 ﻿key,0,1
 #,,
 offset,0,4
-int32,str,str
+Int32,String,String
 0,TEXT_VOICEMAN_04004_000010_ALPHINAUD,我來說一下我的作戰方案吧。<hex:02100103>這次的目的，是攻下帝國軍駐紮的多瑪城。
 1,TEXT_VOICEMAN_04004_000020_ALPHINAUD,首先，由莉瑟和多瑪的百姓一起，<hex:02100103>在各地引起暴亂，聲勢越大越好。<hex:02100103>我們以此來分散帝國軍的注意力。
 2,TEXT_VOICEMAN_04004_000030_ALPHINAUD,太陽神草原的敖龍族也同時出擊。<hex:02100103>利用飛行坐騎打他們一個出其不意。

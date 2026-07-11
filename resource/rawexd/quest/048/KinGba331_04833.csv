@@ -1,7 +1,7 @@
 ﻿key,0,1
 #,,
 offset,0,4
-int32,str,str
+Int32,String,String
 0,TEXT_KINGBA331_04833_SEQ_00,赤誠組營房附近的庫伊奇憂心忡忡。
 1,TEXT_KINGBA331_04833_SEQ_01,和庫伊奇進行交談時，中年戰士前來拜訪。他表示自己發現了五月雨的藏身處，想請冒險者前去討伐。在紅玉海獄之蓋的<hex:02280CFF05>EObj<hex:F61EB9FB0103>張望，討伐出現的敵人。
 2,TEXT_KINGBA331_04833_SEQ_02,在<hex:02280CFF05>EObj<hex:F61EB9FB0103>張望時，沒有發現可疑的人。繼續向前，在紅玉海獄之蓋的<hex:02280CFF05>EObj<hex:F61EB9FC0103>張望，討伐出現的敵人。

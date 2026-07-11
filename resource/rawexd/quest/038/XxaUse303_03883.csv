@@ -1,7 +1,7 @@
 ﻿key,0,1
 #,,
 offset,0,4
-int32,str,str
+Int32,String,String
 0,TEXT_XXAUSE303_03883_SEQ_00,無望流民街的顫抖的男人，希望冒險者去阻止同伴的武裝暴動。
 1,TEXT_XXAUSE303_03883_SEQ_01,接受了顫抖的男人的委託，去阻止他的同伴開展武裝暴動。前往中薩納蘭的執掌峽谷，尋找躲在洞窟裡的難民風貌的男人，打倒統帥他們的<hex:02280FFF09>BNpcName<hex:F20B350103>和<hex:02280FFF09>BNpcName<hex:F20B360103>。
 2,TEXT_XXAUSE303_03883_SEQ_02,擊退了襲來的一夥人。再次和執掌峽谷的難民風貌的男人談談。

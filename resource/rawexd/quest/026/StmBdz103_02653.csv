@@ -1,7 +1,7 @@
 ﻿key,0,1
 #,,
 offset,0,4
-int32,str,str
+Int32,String,String
 0,TEXT_STMBDZ103_02653_SEQ_00,阿拉加納的蓋爾伯特正在為老鼠而感到困擾。
 1,TEXT_STMBDZ103_02653_SEQ_01,
 2,TEXT_STMBDZ103_02653_SEQ_02,

@@ -1,7 +1,7 @@
 ﻿key,0,1
 #,,
 offset,0,4
-int32,str,str
+Int32,String,String
 0,TEXT_CTSWKSDELEGATIONMEMBER_00927_SCANNINGWAY_000_000,你好，我叫探清威，是本次宇宙探索計劃的分析員。<hex:02100103>等你正式加入探索計劃後，我會為你詳細介紹我的工作。
 1,TEXT_CTSWKSDELEGATIONMEMBER_00927_SCANNINGWAY_100_000,你好，我叫探清威，<hex:02100103>是本次宇宙探索計劃的分析員。
 2,TEXT_CTSWKSDELEGATIONMEMBER_00927_SCANNINGWAY_100_010,我的任務是記錄各位協助者的工作成果，<hex:02100103>並按照一定週期進行數據統計。

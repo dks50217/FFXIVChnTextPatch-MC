@@ -1,7 +1,7 @@
 ﻿key,0,1
 #,,
 offset,0,4
-int32,str,str
+Int32,String,String
 0,TEXT_CMNDEFHOUSINGKICK_00206_TALK00206_000_001,我們這裡會回收在廢棄或拆除土地、房屋、個人房間之後，<hex:02100103>遺留下的資產，並暫時代為保管。
 1,TEXT_CMNDEFHOUSINGKICK_00206_TALK00206_000_002,資產的保管設有回收期限，還望你能多加注意。
 2,TEXT_CMNDEFHOUSINGKICK_00206_SYSTEM_001_000,沒有正在被保管的資產，無法回收。

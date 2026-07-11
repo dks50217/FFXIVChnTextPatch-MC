@@ -1,7 +1,7 @@
 ﻿key,0,1
 #,,
 offset,0,4
-int32,str,str
+Int32,String,String
 0,TEXT_LUCKSA305_04088_SEQ_00,弗爾德尼斯前哨的白沙恩有事想要告訴冒險者。
 1,TEXT_LUCKSA305_04088_SEQ_01,白沙恩宣布作戰開始。和弗爾德尼斯前哨的莉莉婭談談。
 2,TEXT_LUCKSA305_04088_SEQ_02,決定和莉莉婭一起去敵方旗艦附近設定引導裝置。調查扎杜諾爾高原北部台地的<hex:02280CFF05>EObj<hex:F61EB1A20103>。

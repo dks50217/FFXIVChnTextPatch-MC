@@ -1,7 +1,7 @@
 ﻿key,0,1
 #,,
 offset,0,4
-int32,str,str
+Int32,String,String
 0,TEXT_KINGMB105_04884_SEQ_00,沃洛克聯王宮的烏克·拉瑪特想和大家會合。
 1,TEXT_KINGMB105_04884_SEQ_01,
 2,TEXT_KINGMB105_04884_SEQ_02,

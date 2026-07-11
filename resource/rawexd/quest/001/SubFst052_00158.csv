@@ -1,7 +1,7 @@
 ﻿key,0,1
 #,,
 offset,0,4
-int32,str,str
+Int32,String,String
 0,TEXT_SUBFST052_00158_SEQ_00,鏡池棧橋的瓦爾塞奧夫正在尋找可以協助他工作的人。
 1,TEXT_SUBFST052_00158_SEQ_01,討伐從彎枝牧場到鏡池棧橋這段路上的黃蜂群，收集4袋黃蜂屍骸。
 2,TEXT_SUBFST052_00158_SEQ_02,成功收集了黃蜂屍骸。交給鏡池棧橋的瓦爾塞奧夫。

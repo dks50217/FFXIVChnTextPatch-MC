@@ -1,7 +1,7 @@
 ﻿key,0,1
 #,,
 offset,0,4
-int32,str,str
+Int32,String,String
 0,TEXT_GAIUSE218_01362_SEQ_00,工事大廳的贊特海爾有話要對冒險者說。
 1,TEXT_GAIUSE218_01362_SEQ_01,贊特海爾向冒險者介紹了地下組織的人。前往利姆薩·羅敏薩下層甲板的南面廣場，把<hex:022811FF0A>EventItem<hex:F61E89400103>交給眼光敏銳的男人。
 2,TEXT_GAIUSE218_01362_SEQ_02,將<hex:022811FF0A>EventItem<hex:F61E89400103>交給了眼光敏銳的男人，獲得了地下組織的認可。夕霧為了學習他們的流派技巧，接下來會和地下組織一起行動。

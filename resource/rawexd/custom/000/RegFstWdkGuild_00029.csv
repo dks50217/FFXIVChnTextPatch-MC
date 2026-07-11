@@ -1,7 +1,7 @@
 ﻿key,0,1
 #,,
 offset,0,4
-int32,str,str
+Int32,String,String
 0,TEXT_REGFSTWDKGUILD_00029_BEATINE_000_1,如果你有時間的話……<hex:02100103>就來了解下刻木吧？
 1,TEXT_REGFSTWDKGUILD_00029_Q1_000_1,想了解什麼？
 2,TEXT_REGFSTWDKGUILD_00029_A1_000_1,你是做什麼的？

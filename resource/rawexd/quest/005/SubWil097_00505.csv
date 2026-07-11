@@ -1,7 +1,7 @@
 ﻿key,0,1
 #,,
 offset,0,4
-int32,str,str
+Int32,String,String
 0,TEXT_SUBWIL097_00505_SEQ_00,足跡谷的托托魯納想要驅除棲息在附近的鬼鮟鱇。
 1,TEXT_SUBWIL097_00505_SEQ_01,為了護衛咒術師公會的調查隊，需要驅除周圍的魔物。打倒6頭鬼鮟鱇。
 2,TEXT_SUBWIL097_00505_SEQ_02,成功打倒了鬼鮟鱇。向足跡谷的托托魯納報告。

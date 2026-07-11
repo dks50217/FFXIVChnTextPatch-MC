@@ -1,7 +1,7 @@
 ﻿key,0,1
 #,,
 offset,0,4
-int32,str,str
+Int32,String,String
 0,TEXT_DEEPDUNGEON2GACHA_ABOUT_DD2GACHA_000_000,你有事找我的話，就先跟那邊的九星打聲招呼吧？<hex:02100103>海賊眾也有些人情世故之類的問題呢。
 1,TEXT_DEEPDUNGEON2GACHA_ABOUT_DD2GACHA_000_010,喲，鑑定「埋藏的寶藏」的事情就交給我吧。<hex:02100103>我會全心全意地幫你鑑定的！
 2,TEXT_DEEPDUNGEON2GACHA_ABOUT_DD2GACHA_000_020,嘿嘿，你來了啊英雄！<hex:02100103>你是來鑑定「埋藏的寶藏」的嗎？<hex:02100103>我來給你展示一下什麼叫鬼師的手腕！

@@ -1,7 +1,7 @@
 ﻿key,0,1
 #,,
 offset,0,4
-int32,str,str
+Int32,String,String
 0,TEXT_VOICEMAN_05200_000010_MAXIMA,勞班總司令，<hex:02100103>拂曉的二位到了。
 1,TEXT_VOICEMAN_05200_000020_RAUBAHN,看來你已經完全恢復了。<hex:02100103>上次見面還是基姆利特暗區一戰的時候吧。
 2,TEXT_VOICEMAN_05200_000030_RAUBAHN,我只聽說你這段時間在忙其他事情，<hex:02100103>後來從拂曉的報告中看到你去了異世界……<hex:02100103>真是超出了我的理解範圍。

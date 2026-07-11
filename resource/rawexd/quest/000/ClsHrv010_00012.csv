@@ -1,7 +1,7 @@
 ﻿key,0,1
 #,,
 offset,0,4
-int32,str,str
+Int32,String,String
 0,TEXT_CLSHRV010_00012_SEQ_00,園藝工公會的弗弗茶，想委託給冒險者一份工作。
 1,TEXT_CLSHRV010_00012_SEQ_01,接受了弗弗茶的委託。和格里達尼亞蛇巢司令部的加文談談。
 2,TEXT_CLSHRV010_00012_SEQ_02,和加文進行了交談。將20束<hex:022811FF05>Item<hex:FF08>　5536<hex:0103>交給格里達尼亞園藝工公會的弗弗茶。可以在庫爾札斯中央高地巨龍首營地附近的良材上採到<hex:022811FF05>Item<hex:FF08>　5536<hex:0103>。

@@ -1,7 +1,7 @@
 ﻿key,0,1
 #,,
 offset,0,4
-int32,str,str
+Int32,String,String
 0,TEXT_VOICEMAN_03005_000010_EDMONT,阿巴拉提亞雲海北部<hex:02100103>仍然留有諸多尚未探索開發的地區
 1,TEXT_VOICEMAN_03005_000020_EDMONT,為了追趕前往魔大陸的教皇<hex:02100103>冒險者等人毅然踏入這片未知的領域
 2,TEXT_VOICEMAN_03005_000030_EDMONT,然而他們並不知道新的戰火即將燃起……

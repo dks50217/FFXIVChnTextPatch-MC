@@ -1,7 +1,7 @@
 ﻿key,0,1
 #,,
 offset,0,4
-int32,str,str
+Int32,String,String
 0,TEXT_REGSAKPRESERVATIONLABO1ST_00950_SYSTEM_000_000,似乎是研究人員的私人移動終端。
 1,TEXT_REGSAKPRESERVATIONLABO1ST_00950_SYSTEM_000_010,要查看裡面的內容嗎？
 2,TEXT_REGSAKPRESERVATIONLABO1ST_00950_SYSTEM_000_020,(-日記文件1-)今天我入職了保全院，<hex:02100103>雖然從來沒聽說過這個組織，但收到邀請信時，<hex:02100103>我的第一感覺是這裡的工作比做醫生有趣得多。

@@ -1,7 +1,7 @@
 ﻿key,1
-#,
+#,Name
 offset,0
-int32,str
+Int32,String
 0,
 1,騎士裝備
 2,武僧裝備

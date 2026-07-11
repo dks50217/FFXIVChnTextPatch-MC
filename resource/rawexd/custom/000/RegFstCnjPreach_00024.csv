@@ -1,7 +1,7 @@
 ﻿key,0,1
 #,,
 offset,0,4
-int32,str,str
+Int32,String,String
 0,TEXT_REGFSTCNJPREACH_00024_OSWOLD_000_1,冒險者，歡迎來到森林與元靈的國度——格里達尼亞。
 1,TEXT_REGFSTCNJPREACH_00024_OSWOLD_000_2,你好像對元靈挺感興趣的……<hex:02100103>你想我從何說起呢？
 2,TEXT_REGFSTCNJPREACH_00024_OSWOLD_000_3,我是一名「法師」。<hex:02100103>法師是幻術師當中可以傾聽元靈之聲的人。

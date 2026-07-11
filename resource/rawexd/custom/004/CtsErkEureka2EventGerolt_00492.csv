@@ -1,7 +1,7 @@
 ﻿key,0,1
 #,,
 offset,0,4
-int32,str,str
+Int32,String,String
 0,TEXT_CTSERKEUREKA2EVENTGEROLT_00492_GEROLT_000_000,我在考慮將武器進一步強化的方法，<hex:02100103>還有還清債務的方法，現在正忙得要命。<hex:02100103>在我整理好思緒之前你趕緊給我走開，去去去！
 1,TEXT_CTSERKEUREKA2EVENTGEROLT_00492_GEROLT_000_010,我想到了將武器進一步強化的方法，<hex:02100103>不過我看你的武器還差得遠著呢。<hex:02100103>先在常風地帶把武器強化到極限以後再過來吧！
 2,TEXT_CTSERKEUREKA2EVENTGEROLT_00492_GEROLT_000_020,喲，你來了啊冒險者！<hex:02100103>我想到了新的還清債務的……不對！<hex:02100103>是將武器進一步強化的方法！

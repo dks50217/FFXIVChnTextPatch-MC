@@ -1,7 +1,7 @@
 ﻿key,0,1
 #,,
 offset,0,4
-int32,str,str
+Int32,String,String
 0,TEXT_JOBREL013_00359_SEQ_00,向狼煙丘的阿德金詢問關於特殊天球書卷的事情。
 1,TEXT_JOBREL013_00359_SEQ_01,決定和阿德金一起製作再鑄黃道武器所需的特殊天球書卷。首先要收集製作墨水的材料。突破神靈聖域放浪神古神殿，獲取<hex:022811FF0A>EventItem<hex:F61E8A800103>。<hex:02100103><hex:02100103>※可以通過任務搜尋器參加。
 2,TEXT_JOBREL013_00359_SEQ_02,獲得了<hex:022811FF0A>EventItem<hex:F61E8A800103>。將<hex:022811FF0A>EventItem<hex:F61E8A800103>交給狼煙丘的阿德金。

@@ -1,7 +1,7 @@
 ﻿key,0,1
 #,,
 offset,0,4
-int32,str,str
+Int32,String,String
 0,TEXT_CTSERKEUREKA1EVENTKRILEINIT_00460_KRILE_000_000,……這地方真糟糕。<hex:02100103>甚至連皮膚都能直接感受到混亂的屬性之力。
 1,TEXT_CTSERKEUREKA1EVENTKRILEINIT_00460_EJIKATSUNJIKA_000_001,嗯……<hex:02100103>看來你的預測是正確的。<hex:02100103>可是屬性之力居然會變得如此混亂……
 2,TEXT_CTSERKEUREKA1EVENTKRILEINIT_00460_KRILE_000_002,登島之後我終於能夠確定了。<hex:02100103>所以我會按照跟你的約定，為你說明一下，<hex:02100103>拂曉……不對，是我接下委託的理由。

@@ -1,7 +1,7 @@
 ﻿key,0,1
 #,,
 offset,0,4
-int32,str,str
+Int32,String,String
 0,TEXT_SUBCTS829_04795_SEQ_00,舊薩雷安的歌鳴威正在尋找冒險者。
 1,TEXT_SUBCTS829_04795_SEQ_01,歌鳴威拜託冒險者調查一道奇怪的乙太波。和嘆息海淚灣的歌鳴威談談。
 2,TEXT_SUBCTS829_04795_SEQ_02,從歌鳴威那裡了解了調查的具體計劃。在嘆息海的苦灣使用<hex:022811FF0A>EventItem<hex:F61E920F0103>，找到乙太波的信號源。

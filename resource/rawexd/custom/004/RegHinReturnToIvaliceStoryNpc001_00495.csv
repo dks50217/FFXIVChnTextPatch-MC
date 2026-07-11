@@ -1,7 +1,7 @@
 ﻿key,0,1
 #,,
 offset,0,4
-int32,str,str
+Int32,String,String
 0,TEXT_REGHINRETURNTOIVALICESTORYNPC001_00495_LINA_000_020,昨天的敵人竟然成了今天的朋友。<hex:02100103>沒想到事情竟然會發展成這樣，真是無法預料！
 1,TEXT_REGHINRETURNTOIVALICESTORYNPC001_00495_LINA_000_040,雖然這麼說有點奇怪，但冒險者還真是尋物高手呢！<hex:02100103>一點一點腳踏實地完成任務就是獲得信賴的秘訣吧！
 2,TEXT_REGHINRETURNTOIVALICESTORYNPC001_00495_LINA_000_085,老實說，我現在非常吃驚……<hex:02100103>那就是聖石的力量嗎？<hex:02100103>如果是的話，聖石還真是個可怕的東西……

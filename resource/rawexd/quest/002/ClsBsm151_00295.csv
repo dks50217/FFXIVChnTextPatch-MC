@@ -1,7 +1,7 @@
 ﻿key,0,1
 #,,
 offset,0,4
-int32,str,str
+Int32,String,String
 0,TEXT_CLSBSM151_00295_SEQ_00,鍛鐵匠公會的布瑞賽爾在生意上有些煩惱，他想和冒險者談一談。
 1,TEXT_CLSBSM151_00295_SEQ_01,代替膽怯的布瑞賽爾，去鍛鐵匠公會附近找費茲阿爾，向他詢問有關開拓市場的事。
 2,TEXT_CLSBSM151_00295_SEQ_02,在費茲阿爾的推薦下，試著製作能向格里達尼亞出口的產品。製作<hex:02280BFF05>Item<hex:F206450103>和<hex:02280BFF05>Item<hex:F206D90103>，交給費茲阿爾。

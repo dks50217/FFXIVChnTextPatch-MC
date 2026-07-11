@@ -1,7 +1,7 @@
 ﻿key,0,1
 #,,
 offset,0,4
-int32,str,str
+Int32,String,String
 0,TEXT_CTSERKEUREKA1SPWEAPON_00450_GEROLT_000_000,喲！冒險者你已經習慣優雷卡的環境了嗎？<hex:02100103>我可是已經巴不得趕緊回去了……
 1,TEXT_CTSERKEUREKA1SPWEAPON_00450_GEROLT_000_001,唉，但是光在這裡抱怨也不能讓我少還一分錢。<hex:02100103>既然這樣，那就只能靠辛勤工作來還債了。<hex:02100103>快點把你的裝備和<hex:02280BFF05>Item<hex:F255290103>交出來。
 2,TEXT_CTSERKEUREKA1SPWEAPON_00450_GEROLT_000_002,作為冒險者所需要的東西……<hex:02100103>發什麼愣啊，我是說要給你製作武器和防具！<hex:02100103>確切的說是用在優雷卡收集到的素材來強化你的裝備。

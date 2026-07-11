@@ -1,7 +1,7 @@
 ﻿key,0,1
 #,,
 offset,0,4
-int32,str,str
+Int32,String,String
 0,TEXT_CTSDKBCHARACTER5SUB1_00580_TALK_ACTOR,0
 1,TEXT_CTSDKBCHARACTER5SUB1_00580_LOBB_000_000,捕魚之餘……我也會來幫忙管理委託品。<hex:02100103>我現在深刻反省……<hex:02100103>不該把這麼多工作都壓在弗里斯利克一個人的肩上。
 2,TEXT_CTSDKBCHARACTER5SUB1_00580_LOBB_000_010,謝謝你願意繼續幫忙治療赫莉耶爾的病……

@@ -1,7 +1,7 @@
 ﻿key,0,1
 #,,
 offset,0,4
-int32,str,str
+Int32,String,String
 0,TEXT_GAIUSB603_00885_SEQ_00,弗洛朗泰爾哨塔的神勇隊士兵伊德里斯唐想要委託冒險者消滅魔物。
 1,TEXT_GAIUSB603_00885_SEQ_01,伊德里斯唐想要驅逐從庫爾札斯流竄來的<hex:02280FFF09>BNpcName<hex:F2018F0103>。將<hex:022811FF0A>EventItem<hex:F61E87320103>放置在弗洛朗泰爾哨塔南面的<hex:02280CFF05>EObj<hex:F61E8CBA0103>，討伐隨之出現的<hex:02280FFF09>BNpcName<hex:F2018F0103>。
 2,TEXT_GAIUSB603_00885_SEQ_02,成功討伐了<hex:02280FFF09>BNpcName<hex:F2018F0103>。向弗洛朗泰爾哨塔的伊德里斯唐報告。
@@ -54,7 +54,7 @@ int32,str,str
 49,TEXT_GAIUSB603_00885_IDRISTAN_000_001,我收到報告，有一些飢腸轆轆的<hex:02280FFF09>BNpcName<hex:F2018F0103>從庫爾札斯流竄到了這裡。
 50,TEXT_GAIUSB603_00885_IDRISTAN_000_002,冒險者，請你用<hex:022811FF0A>EventItem<hex:F61E87320103>將它們引出來，<hex:02100103>然後把它們一網打盡。<hex:02100103>能在它們對旅行者造成危害前解決掉就最好了。
 51,TEXT_GAIUSB603_00885_DUMMY_000_010,在指定地點設定<hex:022811FF0A>EventItem<hex:F61E87320103>，討伐狼×2
-52,TEXT_GAIUSB603_00885_DUMMYTODO_000_010,
+52,TEXT_GAIUSB603_00885_DUMMYTODO_000_010,無
 53,TEXT_GAIUSB603_00885_IDRISTAN_000_020,謝謝你，真是幫了大忙。<hex:02100103>……庫爾札斯受靈災的影響而環境劇變，<hex:02100103>現在已經是一片冰天雪地，常年下著暴雪。
 54,TEXT_GAIUSB603_00885_IDRISTAN_000_021,植物，然後是小動物都數量大減，<hex:02100103>魔物們沒了可捕食的獵物，也都變得更加凶暴。<hex:02100103>要去庫爾札斯的話一定要做好相應的準備和覺悟啊。
 55,TEXT_GAIUSB603_00885_POP_MESSAGE_000,察覺到了敵人的氣息！

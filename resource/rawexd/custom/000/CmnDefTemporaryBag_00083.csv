@@ -1,7 +1,7 @@
 ﻿key,0,1
 #,,
 offset,0,4
-int32,str,str
+Int32,String,String
 0,TEXT_CMNDEFTEMPORARYBAG_00083_TALK_ACTOR_01,因為先前的靈災，出現了大量的遺失物品。<hex:02100103>而我們則負責將這些遺失物品歸還給失主或遇難者家屬。
 1,TEXT_CMNDEFTEMPORARYBAG_00083_TALK_Q1,要做什麼？
 2,TEXT_CMNDEFTEMPORARYBAG_00083_TALK_A1,想要尋找遺失物品

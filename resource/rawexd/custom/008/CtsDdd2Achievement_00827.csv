@@ -1,7 +1,7 @@
 ﻿key,0,1
 #,,
 offset,0,4
-int32,str,str
+Int32,String,String
 0,TEXT_CTSDDD2ACHIEVEMENT_00827_DD2FORMERLEADER_000_000,你找我這個老頭有什麼事啊？<hex:02100103>我看你現在並不需要老朽說些什麼。
 1,TEXT_CTSDDD2ACHIEVEMENT_00827_DD2FORMERLEADER_000_010,願意接受羅生委託的人就是你啊。<hex:02100103>原來如此，確實是一副英傑之相……<hex:02100103>等你成功挑戰完30層以後，再來找老朽吧。
 2,TEXT_CTSDDD2ACHIEVEMENT_00827_DD2FORMERLEADER_000_020,聽說你打倒了蛭子啊。<hex:02100103>如果你還打算繼續挑戰31層之後的迷宮，<hex:02100103>老朽有事想要拜託給你。

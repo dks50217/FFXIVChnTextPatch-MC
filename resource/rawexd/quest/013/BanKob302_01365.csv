@@ -1,7 +1,7 @@
 ﻿key,0,1
 #,,
 offset,0,4
-int32,str,str
+Int32,String,String
 0,TEXT_BANKOB302_01365_SEQ_00,第789洞穴團採礦地的第789團清潔工博布，想改善環境。
 1,TEXT_BANKOB302_01365_SEQ_01,第789團清潔工博布想從武伽瑪羅武裝礦山消滅第13團指導者佐加的手下。前往武伽瑪羅武裝礦山，討伐<hex:02280FFF09>BNpcName<hex:F209D60103>、<hex:02280FFF09>BNpcName<hex:F209D70103>、<hex:02280FFF09>BNpcName<hex:F209D80103>和<hex:02280FFF09>BNpcName<hex:F209D90103>中的任意5名。
 2,TEXT_BANKOB302_01365_SEQ_02,討伐了第13團指導者佐加的手下們。向第789洞穴團採礦地的第789團清潔工博布報告。

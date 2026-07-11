@@ -1,7 +1,7 @@
 ﻿key,0,1
 #,,
 offset,0,4
-int32,str,str
+Int32,String,String
 0,TEXT_STMBDZ001_02635_SEQ_00,神拳痕的貝夫斯想要將這個時代的動亂告知後世。
 1,TEXT_STMBDZ001_02635_SEQ_01,
 2,TEXT_STMBDZ001_02635_SEQ_02,

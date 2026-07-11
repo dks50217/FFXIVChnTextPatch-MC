@@ -1,7 +1,7 @@
 ﻿key,0,1
 #,,
 offset,0,4
-int32,str,str
+Int32,String,String
 0,TEXT_COMDEFFREECOMPANYREWARD_00100_TALK_ACTOR_001,隸屬於<hex:020924E802FF0A>黑渦團<hex:FF0A>雙蛇黨<hex:FF0A>恆輝隊<hex:03>的部隊可以在這裡用部隊戰績<hex:02100103>兌換特殊的強化魔法和各種有用的物品。
 1,TEXT_COMDEFFREECOMPANYREWARD_00100_TALK_ACTOR_Q,你有什麼事？
 2,TEXT_COMDEFFREECOMPANYREWARD_00100_TALK_ACTOR_A1,使用部隊戰績進行交換（部隊特效）

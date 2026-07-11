@@ -1,7 +1,7 @@
 ﻿key,0,1
 #,,
 offset,0,4
-int32,str,str
+Int32,String,String
 0,TEXT_LUCKLA402_03237_SEQ_00,中庸工藝館的科希·芮想要對薩邁爾進行考察。
 1,TEXT_LUCKLA402_03237_SEQ_01,
 2,TEXT_LUCKLA402_03237_SEQ_02,

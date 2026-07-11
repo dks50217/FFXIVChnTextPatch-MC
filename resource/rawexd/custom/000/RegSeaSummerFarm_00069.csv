@@ -1,7 +1,7 @@
 ﻿key,0,1
 #,,
 offset,0,4
-int32,str,str
+Int32,String,String
 0,TEXT_REGSEASUMMERFARM_00069_STAELWYRN_000_1,這裡是盛夏農莊。<hex:02100103>由於這附近的花草樹木都繁茂如夏，<hex:02100103>因此被稱為「盛夏農莊」。
 1,TEXT_REGSEASUMMERFARM_00069_Q1_000_1,想了解什麼？
 2,TEXT_REGSEASUMMERFARM_00069_A1_000_1,你是做什麼的？

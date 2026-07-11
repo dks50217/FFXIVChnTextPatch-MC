@@ -1,7 +1,7 @@
 ﻿key,0,1
 #,,
 offset,0,4
-int32,str,str
+Int32,String,String
 0,TEXT_WARPINNKUGANE_USHITORA_000_1,歡迎光臨。<hex:02100103>這裡是「望海樓」。
 1,TEXT_WARPINNKUGANE_USHITORA_000_2,不過很抱歉……<hex:02100103>目前館內還在進行打掃，<hex:02100103>請過段時間再來吧。
 2,TEXT_WARPINNKUGANE_Q1_000_1,想了解什麼？

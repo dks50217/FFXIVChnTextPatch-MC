@@ -1,7 +1,7 @@
 ﻿key,0,1
 #,,
 offset,0,4
-int32,str,str
+Int32,String,String
 0,TEXT_GAIUSA905_00800_SEQ_00,秋瓜浮村的埃塞爾梅爾想要將紐扣交給冒險者。
 1,TEXT_GAIUSA905_00800_SEQ_01,埃塞爾梅爾說<hex:022811FF0A>EventItem<hex:F61E86F60103>是解決怪異事件的突破口，將其交給了冒險者。讓格里達尼亞魔女咖啡館的店主繆恩查看<hex:022811FF0A>EventItem<hex:F61E86F60103>，她或許知道些什麼。
 2,TEXT_GAIUSA905_00800_SEQ_02,繆恩對<hex:022811FF0A>EventItem<hex:F61E86F60103>沒有什麼印象。讓在乙太之光廣場執行警備的伯娜迪特查看<hex:022811FF0A>EventItem<hex:F61E86F60103>。

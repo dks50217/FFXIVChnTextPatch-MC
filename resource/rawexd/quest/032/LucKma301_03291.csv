@@ -1,7 +1,7 @@
 ﻿key,0,1
 #,,
 offset,0,4
-int32,str,str
+Int32,String,String
 0,TEXT_LUCKMA301_03291_SEQ_00,觀星室的水晶公要告訴冒險者見到阿莉塞的方法。
 1,TEXT_LUCKMA301_03291_SEQ_01,水晶公告訴了冒險者前往安穆·艾蘭的方法。將<hex:022811FF0A>EventItem<hex:F61E8E6E0103>交給阿馬羅棧橋的卡薩德。
 2,TEXT_LUCKMA301_03291_SEQ_02,將信交給了卡薩德。做好出發的準備，再次和阿馬羅棧橋的卡薩德談談。

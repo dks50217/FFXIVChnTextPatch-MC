@@ -1,7 +1,7 @@
 ﻿key,0,1
 #,,
 offset,0,4
-int32,str,str
+Int32,String,String
 0,TEXT_REGSEAARMGUILD_00056_HNAANZA_000_1,呦，你對加工鑄甲的板金加工技術有興趣嗎？
 1,TEXT_REGSEAARMGUILD_00056_Q1_000_1,想了解什麼？
 2,TEXT_REGSEAARMGUILD_00056_A1_000_1,你是做什麼的？

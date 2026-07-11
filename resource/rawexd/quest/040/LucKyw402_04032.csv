@@ -1,7 +1,7 @@
 ﻿key,0,1
 #,,
 offset,0,4
-int32,str,str
+Int32,String,String
 0,TEXT_LUCKYW402_04032_SEQ_00,燕鷗崖的賽維拉很擔心阿莉的狀態。
 1,TEXT_LUCKYW402_04032_SEQ_01,和賽維拉進行了交談。和燕鷗崖的阿維莉娜談談。
 2,TEXT_LUCKYW402_04032_SEQ_02,和阿維莉娜進行了交談。和燕鷗崖的賽維拉談談。

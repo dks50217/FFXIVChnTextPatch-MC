@@ -1,7 +1,7 @@
 ﻿key,0,1
 #,,
 offset,0,4
-int32,str,str
+Int32,String,String
 0,TEXT_STMBDZ522_02773_SEQ_00,模兒衣樓的模兒部的女子正準備去買東西。
 1,TEXT_STMBDZ522_02773_SEQ_01,
 2,TEXT_STMBDZ522_02773_SEQ_02,

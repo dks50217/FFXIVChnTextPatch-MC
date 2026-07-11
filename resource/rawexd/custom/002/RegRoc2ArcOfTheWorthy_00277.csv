@@ -1,7 +1,7 @@
 ﻿key,0,1
 #,,
 offset,0,4
-int32,str,str
+Int32,String,String
 0,TEXT_REGROC2ARCOFTHEWORTHY_00277_BELTARDOIS_000_000,……嗯，是冒險者啊。<hex:02100103>你要是敢在伊修加德鬧事，小心吃不了兜著走……
 1,TEXT_REGROC2ARCOFTHEWORTHY_00277_BELTARDOIS_000_001,……嗯，是冒險者啊。<hex:02100103>你是我們的恩人，皇都的大門時刻為你敞開……
 2,TEXT_REGROC2ARCOFTHEWORTHY_00277_BELTARDOIS_000_002,……嗯，在這種緊張局勢之下，<hex:02100103>你還有想要問我的？

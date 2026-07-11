@@ -1,7 +1,7 @@
 ﻿key,27,28
-#,,
+#,Name,NameJapanese
 offset,100,104
-int32,str,str
+Int32,String,String
 0,,
 1,阿爾菲諾,阿爾菲諾
 2,阿莉塞,阿莉塞

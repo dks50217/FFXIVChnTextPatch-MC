@@ -1,7 +1,7 @@
 ﻿key,0,1
 #,,
 offset,0,4
-int32,str,str
+Int32,String,String
 0,TEXT_STMBDA323_02499_SEQ_00,東龍鱗橋附近的一畝有些慌張。
 1,TEXT_STMBDA323_02499_SEQ_01,
 2,TEXT_STMBDA323_02499_SEQ_02,

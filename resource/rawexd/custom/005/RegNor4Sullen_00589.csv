@@ -1,7 +1,7 @@
 ﻿key,0,1
 #,,
 offset,0,4
-int32,str,str
+Int32,String,String
 0,TEXT_REGNOR4SULLEN_00589_SIGURTHUR_000_000,喲，<hex:020813E905FF07>小姐<hex:FF07>小哥<hex:03>，沒見過你啊……<hex:02100103>看你也不像衛兵。<hex:02100103>你來陰沉鄉有什麼事嗎？
 1,TEXT_REGNOR4SULLEN_00589_SIGURTHUR_000_020,聽說游末邦的那些傢伙駐留在拉克汕城那邊啊。<hex:02100103>真是招人討厭呢……<hex:02100103>那幫有錢人就老老實實地窩在自己的城市裡不就好了。
 2,TEXT_REGNOR4SULLEN_00589_SIGURTHUR_000_030,喲，<hex:020813E905FF07>小姐<hex:FF07>小哥<hex:03>，沒見過你啊……<hex:02100103>看你也不像衛兵。<hex:02100103>你來陰沉鄉有什麼事嗎？

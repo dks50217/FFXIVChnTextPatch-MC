@@ -1,7 +1,7 @@
 ﻿key,0,1
 #,,
 offset,0,4
-int32,str,str
+Int32,String,String
 0,TEXT_AKTKBB102_04068_SEQ_00,和風陸門的菈菈·基恩加爾想要向冒險者介紹賢具。
 1,TEXT_AKTKBB102_04068_SEQ_01,從菈菈·基恩加爾那裡聽取了賢具的說明。為了確認追蹤目標的目擊情報，和田園郡的菈菈·基恩加爾談談。
 2,TEXT_AKTKBB102_04068_SEQ_02,兩人決定分頭尋找追蹤目標。在田園郡的<hex:02280CFF05>EObj<hex:F61EB26F0103>附近張望。

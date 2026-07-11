@@ -1,7 +1,7 @@
 ﻿key,0,1
 #,,
 offset,0,4
-int32,str,str
+Int32,String,String
 0,TEXT_STMBDA315_02491_SEQ_00,漁村的豪雪非常高興。
 1,TEXT_STMBDA315_02491_SEQ_01,在海賊眾的協助下，冒險者等人未暴露蹤跡便解放了漁村。順利歸隊的豪雪提議出發前往延夏。前往延夏。
 2,TEXT_STMBDA315_02491_SEQ_02,來到了延夏。和延夏蒼鷺瀑布附近的豪雪談談。

@@ -1,7 +1,7 @@
 ﻿key,0,1
 #,,
 offset,0,4
-int32,str,str
+Int32,String,String
 0,TEXT_CTSMJIMISSION_00791_TALK_ACTOR,0
 1,TEXT_CTSMJIMISSION_00791_NEKOMIMI_001_000,歡迎來到無人島！<hex:02100103>這座島上現在什麼都沒有，<hex:02100103>請你按照你自己的想法開拓這座島喵。
 2,TEXT_CTSMJIMISSION_00791_NEKOMIMI_001_005,在前面發現了一片空地喵。<hex:02100103>我們先去那裡喵。

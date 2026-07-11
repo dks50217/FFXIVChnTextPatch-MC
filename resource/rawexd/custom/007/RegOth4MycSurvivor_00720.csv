@@ -1,7 +1,7 @@
 ﻿key,0,1
 #,,
 offset,0,4
-int32,str,str
+Int32,String,String
 0,TEXT_REGOTH4MYCSURVIVOR_00720_BLADESOFGUNNHILDR_000_000,解放者閣下，謝謝你。<hex:02100103>多虧了你，我們才能成功奪回祖國。<hex:02100103>想必那些死去的同胞也能瞑目了吧……
 1,TEXT_REGOTH4MYCSURVIVOR_00720_BLADESOFGUNNHILDR_000_001,12個新生女王之刃中只有我和另一人活了下來……<hex:02100103>雖然不知道究竟是幸還是不幸，但這就是我的命運。
 2,TEXT_REGOTH4MYCSURVIVOR_00720_BLADESOFGUNNHILDR_000_002,作為倖存者，我有義務讓那些犧牲的同胞之名流傳於後世。<hex:02100103>他們的英勇事跡絕不能就此消失。

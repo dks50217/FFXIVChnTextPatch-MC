@@ -1,7 +1,7 @@
 ﻿key,0,1
 #,,
 offset,0,4
-int32,str,str
+Int32,String,String
 0,TEXT_CMNGSCCHOCOBORACETRAINING_00227_TALK_ACTOR_02,你想讓<hex:022903EA0203>接受訓練嗎？<hex:02100103>那請你先選擇訓練時使用的飼料吧！
 1,TEXT_CMNGSCCHOCOBORACETRAINING_00227_001_DONE,嗯，你的競賽陸行鳥又有所成長了哦！<hex:02100103>就保持這個狀態，不斷地培育它吧！
 2,TEXT_CMNGSCCHOCOBORACETRAINING_00227_TALK_ACTOR,你想訓練你的競賽陸行鳥？<hex:02100103>那請你先選擇訓練時使用的飼料吧！

@@ -1,7 +1,7 @@
 ﻿key,0,1
 #,,
 offset,0,4
-int32,str,str
+Int32,String,String
 0,TEXT_JOBREL500_02396_SEQ_00,<hex:024804F201F603><hex:024904F201F703>特殊規則： 職業固定<hex:0249020103><hex:0248020103><hex:02100103>阿爾達希爾有個好消息要告訴冒險者。
 1,TEXT_JOBREL500_02396_SEQ_01,※本任務為<hex:024804F201F603><hex:024904F201F703><hex:0249020103><hex:0248020103> 職業固定任務，<hex:02100103>　需要與接受任務時的職業相同才可繼續進行任務。<hex:02100103>※另外，本任務無法直接從日誌放棄。<hex:02100103>　需要放棄時請和阿爾達希爾進行對話。<hex:02100103><hex:02100103>蓋羅爾特委託冒險者收集<hex:022811FF0A>EventItem<hex:F61E8C6E0103>、<hex:022811FF0A>EventItem<hex:F61E8C6F0103>、<hex:022811FF0A>EventItem<hex:F61E8C700103>。突破神聖遺跡無限城市街古蹟可獲得<hex:022811FF0A>EventItem<hex:F61E8C6E0103>，突破秘本寶庫迦巴勒幻想圖書館可獲得<hex:022811FF0A>EventItem<hex:F61E8C6F0103>，突破天山深境索姆阿爾靈峰可獲得<hex:022811FF0A>EventItem<hex:F61E8C700103>。<hex:02100103><hex:02100103>※可以通過任務搜尋器參加。
 2,TEXT_JOBREL500_02396_SEQ_02,集齊了3種材料。使用接受任務時的職業並將元靈武器裝備上或放在兵裝庫、背包中，將<hex:022811FF0A>EventItem<hex:F61E8C6E0103>、<hex:022811FF0A>EventItem<hex:F61E8C6F0103>、<hex:022811FF0A>EventItem<hex:F61E8C700103>交給螺旋港的蓋羅爾特。

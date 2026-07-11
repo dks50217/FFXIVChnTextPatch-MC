@@ -1,7 +1,7 @@
 ﻿key,0,1
 #,,
 offset,0,4
-int32,str,str
+Int32,String,String
 0,TEXT_STMBDZ216_02688_SEQ_00,痙攣寨的月影想要開展新的交涉。
 1,TEXT_STMBDZ216_02688_SEQ_01,月影希望冒險者能協助他們和東阿爾迪納德商會達成交易。為了得到交付琪琪茉的信件，和痙攣寨的月影談談。
 2,TEXT_STMBDZ216_02688_SEQ_02,和月影進行了交談，拿到了信件。前往黃金港第一防波堤，將<hex:022811FF0A>EventItem<hex:F61E8D310103>交給琪琪茉。

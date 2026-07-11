@@ -1,7 +1,7 @@
 ﻿key,0,1
 #,,
 offset,0,4
-int32,str,str
+Int32,String,String
 0,TEXT_VOICEMAN_04002_000010_TANSUI,喂，帝國的兵小哥，<hex:02100103>聽說我的小弟在你們那受到了「關照」，啊？
 1,TEXT_VOICEMAN_04002_000020_TANSUI,身為海賊眾，我也不指望會遇到什麼好臉色。<hex:02100103>但是，我們收不到紅玉錢，<hex:02100103>可不能保證你們在海上的安全。
 2,TEXT_VOICEMAN_04002_000030_GARLEANLEADERDOMA,哈哈，你這虛張聲勢也太明顯，<hex:02100103>我都替你感到悲哀了。

@@ -1,7 +1,7 @@
 ﻿key,0,1
 #,,
 offset,0,4
-int32,str,str
+Int32,String,String
 0,TEXT_AKTKMG109_04458_SEQ_00,異亞村落的於里昂熱若有所思。
 1,TEXT_AKTKMG109_04458_SEQ_01,於里昂熱委託冒險者與他一同調查。和天外天垓逡巡泉的於里昂熱談談。
 2,TEXT_AKTKMG109_04458_SEQ_02,於里昂熱提出了寶貴的建議。和逡巡泉的古·拉哈·提亞談談。

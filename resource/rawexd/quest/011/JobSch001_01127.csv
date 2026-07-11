@@ -1,7 +1,7 @@
 ﻿key,0,1
 #,,
 offset,0,4
-int32,str,str
+Int32,String,String
 0,TEXT_JOBSCH001_01127_SEQ_00,林場水車的蓋羅爾特有事想要拜託冒險者。
 1,TEXT_JOBSCH001_01127_SEQ_01,接受了蓋羅爾特的委託。調查西拉諾西亞薩普沙產卵地的<hex:02280CFF05>EObj<hex:F61E8E430103>，獲取<hex:022811FF0A>EventItem<hex:F61E88640103>。
 2,TEXT_JOBSCH001_01127_SEQ_02,獲得了<hex:022811FF0A>EventItem<hex:F61E88640103>。將<hex:022811FF0A>EventItem<hex:F61E88640103>交給北部林區林場水車的蓋羅爾特。

@@ -1,7 +1,7 @@
 ﻿key,0,1
 #,,
 offset,0,4
-int32,str,str
+Int32,String,String
 0,TEXT_LUCKBA341_03277_SEQ_00,門前區的奧爾瓦拉似乎很擔心蘆·利柯。
 1,TEXT_LUCKBA341_03277_SEQ_01,奧爾瓦拉拜託冒險者去看看孤單一人的蘆·利柯。在水晶都的彷徨階梯亭的<hex:02280CFF05>EObj<hex:F61EAD250103>張望。
 2,TEXT_LUCKBA341_03277_SEQ_02,在<hex:02280CFF05>EObj<hex:F61EAD250103>進行了張望，卻沒有看到蘆·利柯。為了得知他的行蹤，在彷徨階梯亭收集情報。

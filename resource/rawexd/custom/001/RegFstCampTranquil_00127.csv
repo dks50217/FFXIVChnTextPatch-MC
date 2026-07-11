@@ -1,7 +1,7 @@
 ﻿key,0,1
 #,,
 offset,0,4
-int32,str,str
+Int32,String,String
 0,TEXT_REGFSTCAMPTRANQUIL_00127_FARRIMOND_000_000,這裡是恬靜路營地。<hex:02100103>這位冒險者，你找我有什麼事嗎？
 1,TEXT_REGFSTCAMPTRANQUIL_00127_FARRIMOND_000_010,我是一名鬼哭隊隊員，奉命守護這個據點。<hex:02100103>因為這裡是與烏爾達哈進行貿易交往的線路中轉站，<hex:02100103>從以前就有許多隊員被派到這裡。
 2,TEXT_REGFSTCAMPTRANQUIL_00127_FARRIMOND_000_011,第七靈災之後，我們除了對這條貿易線路加強戒備之外，<hex:02100103>維護吊橋也是一項重要的工作。

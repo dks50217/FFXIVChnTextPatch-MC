@@ -1,7 +1,7 @@
 ﻿key,0,1
 #,,
 offset,0,4
-int32,str,str
+Int32,String,String
 0,TEXT_REGSEASKYLIFT_00071_WYRKRHIT_000_1,這裡的斷崖夠壯觀的吧？<hex:02100103>就是因為這斷崖，才建造了這麼個龐然大物，<hex:02100103>好讓人和貨物來往流通。
 1,TEXT_REGSEASKYLIFT_00071_WYRKRHIT_000_2,我們幾個運貨人一起經營著氣球升降機「天梯」。<hex:02100103>你就當我是這行的代表就成了。
 2,TEXT_REGSEASKYLIFT_00071_WYRKRHIT_000_3,不過，原本這利姆薩·羅敏薩是海盜城市，<hex:02100103>在決定事情的時候，海盜們都投票表決，<hex:02100103>因此我們也沿襲這習慣，用投票的方式決定天梯的事。

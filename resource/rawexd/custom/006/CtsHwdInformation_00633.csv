@@ -1,7 +1,7 @@
 ﻿key,0,1
 #,,
 offset,0,4
-int32,str,str
+Int32,String,String
 0,TEXT_CTSHWDINFORMATION_00633_AUGEBERT_000_000,喲，怎麼了？<hex:02100103>你是來看蒼天街情況的嗎？
 1,TEXT_CTSHWDINFORMATION_00633_AUGEBERT_010_000,喲，<hex:022903EB0203>。<hex:02100103>你要是想參加蒼天街的公共建設，<hex:02100103>就先稍微聽我說明一下吧。
 2,TEXT_CTSHWDINFORMATION_00633_AUGEBERT_010_010,首先我希望你記住這個<hex:02280CFF05>EObj<hex:F61EAE970103>。<hex:02100103>這上面貼著關於蒼天街重建工程的情報。

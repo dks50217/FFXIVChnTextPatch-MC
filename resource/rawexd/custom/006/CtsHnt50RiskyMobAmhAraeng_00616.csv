@@ -1,7 +1,7 @@
 ﻿key,0,1
 #,,
 offset,0,4
-int32,str,str
+Int32,String,String
 0,TEXT_CTSHNT50RISKYMOBAMHARAENG_00616_HALINE_000_001,我是狂熱兵團的哈麗娜。<hex:02100103>你看起來相當有實力呀，<hex:02100103>有沒有興趣加入我們兵團？
 1,TEXT_CTSHNT50RISKYMOBAMHARAENG_00616_HALINE_000_002,我是狂熱兵團的哈麗娜。<hex:02100103>你看起來相當有實力呀，<hex:02100103>想不想了解一下安穆·艾蘭地區有哪些厲害傢伙？
 2,TEXT_CTSHNT50RISKYMOBAMHARAENG_00616_Q1_000_000,想了解什麼？

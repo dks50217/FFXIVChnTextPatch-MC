@@ -1,7 +1,7 @@
 ﻿key,0,1
 #,,
 offset,0,4
-int32,str,str
+Int32,String,String
 0,TEXT_CLSWVR450_00653_SEQ_00,裁衣匠公會的雷多倫特·羅斯想將瓦瓦魯卡的訂單交給冒險者去做。
 1,TEXT_CLSWVR450_00653_SEQ_01,接受了雷多倫特·羅斯的委託。和烏爾達哈採礦工公會附近的瓦瓦魯卡談談。
 2,TEXT_CLSWVR450_00653_SEQ_02,和瓦瓦魯卡進行了交談。將<hex:022813FF07>ItemHQ<hex:FF08>　3176<hex:0103>、<hex:022813FF07>ItemHQ<hex:FF08>　3429<hex:0103>和<hex:022813FF07>ItemHQ<hex:FF08>　2829<hex:0103>各1個，交給烏爾達哈裁衣匠公會的雷多倫特·羅斯。

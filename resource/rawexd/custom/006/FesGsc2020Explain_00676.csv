@@ -1,7 +1,7 @@
 ﻿key,0,1
 #,,
 offset,0,4
-int32,str,str
+Int32,String,String
 0,TEXT_FESGSC2020EXPLAIN_00676_STAFFA_000_000,在寵物廣場中，<hex:02100103>可以驅使寵物進行攻防戰……<hex:02100103>請盡情享受「萌寵之王」大賽的樂趣吧。
 1,TEXT_FESGSC2020EXPLAIN_00676_STAFFA_000_001,不僅是那些覺得寵物們可愛的客人們，<hex:02100103>也推薦對指揮能力有自信的客人們參加哦！
 2,TEXT_FESGSC2020EXPLAIN_00676_STAFFB_000_010,幻卡廣場為大家提供的是<hex:02100103>「九宮幻卡」卡牌對局……

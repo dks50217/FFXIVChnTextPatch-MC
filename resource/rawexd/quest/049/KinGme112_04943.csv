@@ -1,7 +1,7 @@
 ﻿key,0,1
 #,,
 offset,0,4
-int32,str,str
+Int32,String,String
 0,TEXT_KINGME112_04943_SEQ_00,真唯大道的烏克·拉瑪特想要為居民們做些力所能及的事。
 1,TEXT_KINGME112_04943_SEQ_01,
 2,TEXT_KINGME112_04943_SEQ_02,

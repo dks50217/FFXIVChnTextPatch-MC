@@ -1,7 +1,7 @@
 ﻿key,0,1
 #,,
 offset,0,4
-int32,str,str
+Int32,String,String
 0,TEXT_REGYOK6GOLMAJIIKGROVE_00878_HAPOLLJA_000_000,很抱歉，我跟外來人員沒什麼可說的。
 1,TEXT_REGYOK6GOLMAJIIKGROVE_00878_HAPOLLJA_000_010,納蕉……你們以前管這東西叫加提卡香蕉啊，<hex:02100103>要這會發光的果實有什麼用嗎？
 2,TEXT_REGYOK6GOLMAJIIKGROVE_00878_Q1_000_000,想了解什麼？

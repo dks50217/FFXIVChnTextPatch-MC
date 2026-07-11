@@ -1,7 +1,7 @@
 ﻿key,0,1
 #,,
 offset,0,4
-int32,str,str
+Int32,String,String
 0,TEXT_GAIUSC807_01031_SEQ_00,骷髏谷營地的愛伊利斯，希望冒險者幫她送趟東西。
 1,TEXT_GAIUSC807_01031_SEQ_01,接受了去南北防波堤送東西的委託。將<hex:022811FF0A>EventItem<hex:F61E878F0103>交給北防波堤的哥哥，諾爾特穆恩，將<hex:022811FF0A>EventItem<hex:F61E878F0103>交給南防波堤的弟弟，斯塔爾瑞特。
 2,TEXT_GAIUSC807_01031_SEQ_02,成功將<hex:022811FF0A>EventItem<hex:F61E878F0103>送達。回到骷髏谷營地，向愛伊利斯報告。

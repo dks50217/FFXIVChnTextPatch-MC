@@ -1,7 +1,7 @@
 ﻿key,0,1
 #,,
 offset,0,4
-int32,str,str
+Int32,String,String
 0,TEXT_STMBDZ624_02802_SEQ_00,模兒衣樓的靖克失無論如何也想獲得某樣東西。
 1,TEXT_STMBDZ624_02802_SEQ_01,
 2,TEXT_STMBDZ624_02802_SEQ_02,

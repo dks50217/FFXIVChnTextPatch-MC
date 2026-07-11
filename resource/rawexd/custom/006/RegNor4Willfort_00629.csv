@@ -1,7 +1,7 @@
 ﻿key,0,1
 #,,
 offset,0,4
-int32,str,str
+Int32,String,String
 0,TEXT_REGNOR4WILLFORT_00629_WILLFORT_000_000,喲，旅行者。<hex:02100103>雖然這裡這麼寒酸，<hex:02100103>你要是願意的話就在這裡待會吧。
 1,TEXT_REGNOR4WILLFORT_00629_WILLFORT_000_010,你說哈爾裡克不見了？！<hex:02100103>不妙啊，讓閒著的人全體出動去進行搜索吧！
 2,TEXT_REGNOR4WILLFORT_00629_WILLFORT_000_020,……抱歉，給我點時間。

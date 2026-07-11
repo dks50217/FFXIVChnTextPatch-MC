@@ -1,7 +1,7 @@
 ﻿key,0,1
 #,,
 offset,0,4
-int32,str,str
+Int32,String,String
 0,TEXT_CTSERKEUREKA1EVENTKRILE_00455_KRILE_000_001,麻煩你從蓋羅爾特那裡領取一下探索用的重要道具好嗎？<hex:02100103>拜託你了。
 1,TEXT_CTSERKEUREKA1EVENTKRILE_00455_KRILE_000_005,……看來你已經拿到了道具，<hex:02100103>但好像你還有什麼事情沒做呢吧？<hex:02100103>你先把事情辦完再說吧。
 2,TEXT_CTSERKEUREKA1EVENTKRILE_00455_KRILE_000_010,辛苦了。<hex:02100103>看來你拿到魔素板了，<hex:02100103>在開始探索之前……先讓我確認一下現狀。

@@ -1,7 +1,7 @@
 ﻿key,0,1
 #,,
 offset,0,4
-int32,str,str
+Int32,String,String
 0,TEXT_JOBWAR001_01119_SEQ_00,林場水車的蓋羅爾特有事想要拜託冒險者。
 1,TEXT_JOBWAR001_01119_SEQ_01,接受了蓋羅爾特的委託。調查拉諾西亞外地武伽瑪羅武裝礦山的<hex:02280CFF05>EObj<hex:F61E8E3B0103>，獲取<hex:022811FF0A>EventItem<hex:F61E885C0103>。
 2,TEXT_JOBWAR001_01119_SEQ_02,獲得了<hex:022811FF0A>EventItem<hex:F61E885C0103>。將<hex:022811FF0A>EventItem<hex:F61E885C0103>交給北部林區林場水車的蓋羅爾特。

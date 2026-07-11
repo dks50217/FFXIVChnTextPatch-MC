@@ -1,7 +1,7 @@
 ﻿key,0,1
 #,,
 offset,0,4
-int32,str,str
+Int32,String,String
 0,TEXT_SUBFST014_00041_SEQ_00,園藝工薩米阿娜不小心將什麼東西撒在路上了。她需要別人幫她將撒落的東西重新撿回收集在一起。
 1,TEXT_SUBFST014_00041_SEQ_01,撿回撒落在園藝工公會沿路的阿澤瑪玫瑰果。
 2,TEXT_SUBFST014_00041_SEQ_02,果實都撿回來了。去交給薩米阿娜。

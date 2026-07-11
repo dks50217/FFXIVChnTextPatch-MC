@@ -1,7 +1,7 @@
 ﻿key,0,1
 #,,
 offset,0,4
-int32,str,str
+Int32,String,String
 0,TEXT_CTSHNT60RISKYMOBTHAVNAIR_00762_LUBDAHRM_000_001,魔法大學這邊會經常委託拾穗人總會<hex:02100103>幫忙籌集研究所需的各類物品。<hex:02100103>最近很多都是跟近東以及北洲有關的麻煩委託，實在是叫人頭疼。
 1,TEXT_CTSHNT60RISKYMOBTHAVNAIR_00762_LUBDAHRM_000_002,我將魔法大學給出的委託整理了一下，<hex:02100103>最近關於薩維奈島以及加雷馬的棘手事情比較多……<hex:02100103>如果你對討伐有關的委託感興趣的話，我會為你說明一下的。
 2,TEXT_CTSHNT60RISKYMOBTHAVNAIR_00762_LUBDAHRM_Q1_000_000,想了解什麼？

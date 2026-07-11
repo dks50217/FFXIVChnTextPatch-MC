@@ -1,7 +1,7 @@
 ﻿key,0,1
 #,,
 offset,0,4
-int32,str,str
+Int32,String,String
 0,TEXT_VOICEMAN_05000_000010_TATARU,大家都到齊了啊！
 1,TEXT_VOICEMAN_05000_000020_TATARU,我們也馬上開始尋找裝置吧！<hex:02100103>只要有一點可疑之處，我們都要收集起來！
 2,TEXT_VOICEMAN_05000_000030_BIGGS,(-？？？？-)哦，大英雄也來了啊！<hex:02100103>我們正愁沒有線索呢，你來了就太好了。

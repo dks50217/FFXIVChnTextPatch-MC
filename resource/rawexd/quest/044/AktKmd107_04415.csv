@@ -1,7 +1,7 @@
 ﻿key,0,1
 #,,
 offset,0,4
-int32,str,str
+Int32,String,String
 0,TEXT_AKTKMD107_04415_SEQ_00,神我寺的阿莉塞凝視著樹叢的方向。
 1,TEXT_AKTKMD107_04415_SEQ_01,阿莉塞看到有人正在被異形野獸追趕。在薩維奈島摩耶幻泉的<hex:02280CFF05>EObj<hex:F61EB42F0103>張望。
 2,TEXT_AKTKMD107_04415_SEQ_02,雖然找到了麥梵，但她受到異形野獸的攻擊落入了水中。在摩耶幻泉中尋找麥梵。

@@ -1,7 +1,7 @@
 ﻿key,0,1
 #,,
 offset,0,4
-int32,str,str
+Int32,String,String
 0,TEXT_VOICEMAN_04000_000010_ALPHINAUD,蠻神和歐米茄消失於東方的天際後就不知所蹤了……<hex:02100103>帝國會如何行動呢……
 1,TEXT_VOICEMAN_04000_000020_ALPHINAUD,啊，不好意思，我想問題有點出神了。<hex:02100103>說來，前往巴埃薩長城的同盟軍也該有消息了……
 2,TEXT_VOICEMAN_04000_000030_TATARU,冒險者，阿爾菲諾！<hex:02100103>剛剛有艾歐澤亞同盟軍的傳令兵帶來了給拂曉的信件！

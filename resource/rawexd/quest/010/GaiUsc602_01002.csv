@@ -1,7 +1,7 @@
 ﻿key,0,1
 #,,
 offset,0,4
-int32,str,str
+Int32,String,String
 0,TEXT_GAIUSC602_01002_SEQ_00,喪靈鐘的格拉烏蒙特在作戰開始前有事情想要委託給冒險者。
 1,TEXT_GAIUSC602_01002_SEQ_01,為了偽裝成帝國兵，學習他們的軍禮是很重要的一件事情。在帝國中央堡附近的<hex:02280CFF05>EObj<hex:F61E8D3E0103>觀察帝國兵，學習帝國式軍禮。
 2,TEXT_GAIUSC602_01002_SEQ_02,學會了帝國式軍禮。向喪靈鐘的格拉烏蒙特報告。

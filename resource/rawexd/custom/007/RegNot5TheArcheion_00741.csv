@@ -1,7 +1,7 @@
 ﻿key,0,1
 #,,
 offset,0,4
-int32,str,str
+Int32,String,String
 0,TEXT_REGNOT5THEARCHEION_00741_SHUSHUTABY_000_000,你好，找我有什麼事嗎？
 1,TEXT_REGNOT5THEARCHEION_00741_SHUSHUTABY_000_001,大撤退的命令已出，我現在忙得腳不著地。<hex:02100103>你有事的話就長話短說吧。
 2,TEXT_REGNOT5THEARCHEION_00741_SHUSHUTABY_000_002,我聽說了你要前往宇宙盡頭的計劃。<hex:02100103>有事的話請儘管吩咐……

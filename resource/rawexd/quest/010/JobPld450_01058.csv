@@ -1,7 +1,7 @@
 ﻿key,0,1
 #,,
 offset,0,4
-int32,str,str
+Int32,String,String
 0,TEXT_JOBPLD450_01058_SEQ_00,近衛兵團銀胄團的總長傑林斯，將要授予冒險者白銀騎士甲胄。
 1,TEXT_JOBPLD450_01058_SEQ_01,傑林斯告訴了冒險者白銀騎士甲胄的所在地。調查南薩納蘭喀恩埋沒聖堂裡的4個<hex:02280CFF05>EObj<hex:F61E8DAC0103>，獲取白銀騎士甲胄。
 2,TEXT_JOBPLD450_01058_SEQ_02,調查完<hex:02280CFF05>EObj<hex:F61E8DAC0103>，獲得了白銀騎士甲胄。向烏爾達哈御道的傑林斯報告。

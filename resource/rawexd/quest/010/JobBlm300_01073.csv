@@ -1,7 +1,7 @@
 ﻿key,0,1
 #,,
 offset,0,4
-int32,str,str
+Int32,String,String
 0,TEXT_JOBBLM300_01073_SEQ_00,咒術師公會的雅雅凱，有事情想要委託給冒險者。
 1,TEXT_JOBBLM300_01073_SEQ_01,接受了雅雅凱的委託。前往東薩納蘭的跨天橋，調查<hex:02280CFF05>EObj<hex:F61E8DFD0103>，並討伐出現的妖異，獲取<hex:022811FF0A>EventItem<hex:F61E883A0103>。
 2,TEXT_JOBBLM300_01073_SEQ_02,獲得了<hex:022811FF0A>EventItem<hex:F61E883A0103>。在東薩納蘭的跨天橋，將<hex:022811FF0A>EventItem<hex:F61E883A0103>銘刻於<hex:02280CFF05>EObj<hex:F61E8DFD0103>。

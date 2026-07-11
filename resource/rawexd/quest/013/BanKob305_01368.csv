@@ -1,7 +1,7 @@
 ﻿key,0,1
 #,,
 offset,0,4
-int32,str,str
+Int32,String,String
 0,TEXT_BANKOB305_01368_SEQ_00,第789洞穴團採礦地的第789團清潔工博布，想阻止某件事情的發生。
 1,TEXT_BANKOB305_01368_SEQ_01,第13洞穴團的地靈族使用了<hex:02280FFF09>BNpcName<hex:F209E10103>，來增產爆彈怪。因此，第789團清潔工博布委託冒險者阻止他們的計劃。在第789洞穴團採礦地，向第789團輔祭巴戈詢問破壞<hex:02280FFF09>BNpcName<hex:F209E10103>的方法。
 2,TEXT_BANKOB305_01368_SEQ_02,第789團輔祭巴戈告訴冒險者，只要攻擊<hex:02280FFF09>BNpcName<hex:F209E10103>，就能將其破壞。前往武伽瑪羅武裝礦山，破壞<hex:02280FFF09>BNpcName<hex:F209E10103>。

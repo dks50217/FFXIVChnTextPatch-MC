@@ -1,7 +1,7 @@
 ﻿key,0,1
 #,,
 offset,0,4
-int32,str,str
+Int32,String,String
 0,TEXT_STMBDZ012_02646_SEQ_00,阿拉加納的希登·哈斯正在尋找有力氣的年輕人。
 1,TEXT_STMBDZ012_02646_SEQ_01,
 2,TEXT_STMBDZ012_02646_SEQ_02,

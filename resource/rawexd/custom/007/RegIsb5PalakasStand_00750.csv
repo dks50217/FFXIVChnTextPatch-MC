@@ -1,7 +1,7 @@
 ﻿key,0,1
 #,,
 offset,0,4
-int32,str,str
+Int32,String,String
 0,TEXT_REGISB5PALAKASSTAND_00750_MULRUNNAH_000_000,您是來幫忙的人吧。<hex:02100103>這是個小村子，請隨意逛逛吧。<hex:02100103>如果您有想問的事情，我一定知無不言，言無不盡。
 1,TEXT_REGISB5PALAKASSTAND_00750_Q1_000_000,想了解什麼？
 2,TEXT_REGISB5PALAKASSTAND_00750_A1_000_001,你是做什麼的？

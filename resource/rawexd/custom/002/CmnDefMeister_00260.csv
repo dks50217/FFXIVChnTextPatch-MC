@@ -1,7 +1,7 @@
 ﻿key,0,1
 #,,
 offset,0,4
-int32,str,str
+Int32,String,String
 0,TEXT_CMNDEFMEISTER_00260_ARDERAN_000_001,看來你做好準備領取專家之證了？<hex:02100103>那麼，就告訴我你想要在哪條道路上達到終極吧。
 1,TEXT_CMNDEFMEISTER_00260_MEISTER_MENU_TITLE,要接受哪個職業的專家製作認證？
 2,TEXT_CMNDEFMEISTER_00260_MEISTER_MENU_CLASS,<hex:02280EFF09>ClassJob<hex:E8020103> <hex:020817E4E80302FF0F>[專家製作]<hex:FF01><hex:03>

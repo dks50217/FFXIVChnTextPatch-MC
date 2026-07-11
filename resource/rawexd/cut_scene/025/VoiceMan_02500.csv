@@ -1,7 +1,7 @@
 ﻿key,0,1
 #,,
 offset,0,4
-int32,str,str
+Int32,String,String
 0,TEXT_VOICEMAN_02500_000010_MINFILIA,你回來了。<hex:02100103>有位客人在等你，是從伊修加德來的。
 1,TEXT_VOICEMAN_02500_000020_MINFILIA,露琪亞小姐和你是見過面的吧。<hex:02100103>她剛剛向我說明過。
 2,TEXT_VOICEMAN_02500_000030_LUCIA,請恕我冒昧來訪。<hex:02100103>我們這邊出現了緊急情況，可是現在阿爾菲諾閣下卻不在……

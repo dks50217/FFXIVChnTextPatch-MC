@@ -1,7 +1,7 @@
 ﻿key,0,1
 #,,
 offset,0,4
-int32,str,str
+Int32,String,String
 0,TEXT_CLSACN300_00461_SEQ_00,秘術師公會代理會長圖比爾蓋姆，想把克·莉霞的指示轉告給冒險者。
 1,TEXT_CLSACN300_00461_SEQ_01,克·莉霞為了打倒杜斯瑪伽，制定了最強戰術，現已展開作戰行動。前往東拉諾西亞的太陽海岸，將<hex:022811FF0A>EventItem<hex:F61E87F50103>交給捕魚人里爾吉恩。
 2,TEXT_CLSACN300_00461_SEQ_02,和里爾吉恩交談後，獲得了<hex:022811FF0A>EventItem<hex:F61E87F60103>。把這個交給太陽海岸的烹調師奧皮隆納。

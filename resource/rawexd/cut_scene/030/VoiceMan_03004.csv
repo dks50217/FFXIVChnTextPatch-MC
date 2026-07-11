@@ -1,7 +1,7 @@
 ﻿key,0,1
 #,,
 offset,0,4
-int32,str,str
+Int32,String,String
 0,TEXT_VOICEMAN_03004_000010_HAURCHEFANT,在那邊！
 1,TEXT_VOICEMAN_03004_000020_ICEHEART,大家先退下！<hex:02100103>我們沒有繼續流血的必要了！
 2,TEXT_VOICEMAN_03004_000030_MALEHERETIC,(-異端者-)冰之巫女大人？

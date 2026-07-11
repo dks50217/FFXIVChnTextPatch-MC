@@ -1,7 +1,7 @@
 ﻿key,0
-#,
+#,Text
 offset,0
-int32,str
+Int32,String
 0,隨機任務
 1,特殊場景探索
 2,深層迷宮

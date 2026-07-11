@@ -1,7 +1,7 @@
 ﻿key,0,1
 #,,
 offset,0,4
-int32,str,str
+Int32,String,String
 0,TEXT_STMBDZ980_03030_SEQ_00,神拳痕性格爽朗的旅行商人正在叫賣。
 1,TEXT_STMBDZ980_03030_SEQ_01,性格爽朗的旅行商人讓冒險者去鹽村看看。和基拉巴尼亞湖區鹽村的維斯卡談談。
 2,TEXT_STMBDZ980_03030_SEQ_02,維斯卡打算帶冒險者參觀現在的鹽村。和鹽村的維斯卡談談。

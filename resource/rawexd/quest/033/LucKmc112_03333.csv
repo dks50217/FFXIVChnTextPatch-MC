@@ -1,7 +1,7 @@
 ﻿key,0,1
 #,,
 offset,0,4
-int32,str,str
+Int32,String,String
 0,TEXT_LUCKMC112_03333_SEQ_00,蛇水湖的雅·修特拉想要進行下一步行動。
 1,TEXT_LUCKMC112_03333_SEQ_01,雅·修特拉提出前往伊奇絲瑪雅艾禁林。和拉凱提卡大森林蛇行枝的雅·修特拉談談。
 2,TEXT_LUCKMC112_03333_SEQ_02,和雅·修特拉進行了交談。在拉凱提卡大森林的伊奇絲瑪雅艾禁林的<hex:02280CFF05>EObj<hex:F61EAB1E0103>張望。

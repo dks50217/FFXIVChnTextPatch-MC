@@ -1,7 +1,7 @@
 ﻿key,0,1
 #,,
 offset,0,4
-int32,str,str
+Int32,String,String
 0,TEXT_SUBSEA153_01144_SEQ_00,小麥酒港的絲·萘若又有事想要拜託冒險者。
 1,TEXT_SUBSEA153_01144_SEQ_01,接受了絲·萘若的委託。將<hex:022811FF0A>EventItem<hex:F61E88470103>交給骷髏谷營地的法爾克布瑞達。
 2,TEXT_SUBSEA153_01144_SEQ_02,將<hex:022811FF0A>EventItem<hex:F61E88470103>交給了法爾克布瑞達。絲·萘若免去了被部隊開除，但看來免不了減薪……

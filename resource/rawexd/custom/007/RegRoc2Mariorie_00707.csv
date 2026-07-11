@@ -1,7 +1,7 @@
 ﻿key,0,1
 #,,
 offset,0,4
-int32,str,str
+Int32,String,String
 0,TEXT_REGROC2MARIORIE_00707_MARIORIE_000_000,<hex:022903EB0203>，歡迎你過來！<hex:02100103>你要是想舉辦蒼天街重建紀念演奏會的話，<hex:02100103>我馬上就給你安排！
 1,TEXT_REGROC2MARIORIE_00707_MARIORIE_000_001,如果有興趣的話，<hex:02100103>我還可以為你準備更高難度的樂譜！
 2,TEXT_REGROC2MARIORIE_00707_SYSTEM_000_002,

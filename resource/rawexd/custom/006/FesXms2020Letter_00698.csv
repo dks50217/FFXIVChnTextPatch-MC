@@ -1,7 +1,7 @@
 ﻿key,0,1
 #,,
 offset,0,4
-int32,str,str
+Int32,String,String
 0,TEXT_FESXMS2020LETTER_00698_BAENFAELD_000_000,抱歉，我正在整理書信，有點忙不過來。<hex:02100103>除了和各國執行委員的書信往來，<hex:02100103>還有很多其他信件寄過來。
 1,TEXT_FESXMS2020LETTER_00698_BAENFAELD_000_010,哦，辛苦你去幫忙了！<hex:02100103>各地協助我們活動的人也給你寄來了加油賀卡哦！
 2,TEXT_FESXMS2020LETTER_00698_Q1_000_001,要讀哪封？

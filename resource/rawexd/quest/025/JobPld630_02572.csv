@@ -1,7 +1,7 @@
 ﻿key,0,1
 #,,
 offset,0,4
-int32,str,str
+Int32,String,String
 0,TEXT_JOBPLD630_02572_SEQ_00,劍術師公會的密拉有事情想要告訴冒險者。
 1,TEXT_JOBPLD630_02572_SEQ_01,和密拉進行了交談。為了參加大會，在劍術師公會的<hex:02280CFF05>EObj<hex:F61EA4250103>等待。
 2,TEXT_JOBPLD630_02572_SEQ_02,在<hex:02280CFF05>EObj<hex:F61EA4250103>等待後，第一戰的對手巴塞洛繆出現了。做好戰鬥的準備，和劍術師公會的鬥技大會的接待員對話，參加預賽。

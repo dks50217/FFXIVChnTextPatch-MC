@@ -1,7 +1,7 @@
 ﻿key,0,1
 #,,
 offset,0,4
-int32,str,str
+Int32,String,String
 0,TEXT_FESVLT2020GUIDE_00646_MAIDVLT00646_000_000,小莉拜託我在此負責回答有關「戀人節」活動的疑問。<hex:02100103>您有什麼不明白的，請儘管開口。
 1,TEXT_FESVLT2020GUIDE_00646_Q1_000_001,想了解什麼？
 2,TEXT_FESVLT2020GUIDE_00646_A1_000_001,你們在這裡是做什麼的？

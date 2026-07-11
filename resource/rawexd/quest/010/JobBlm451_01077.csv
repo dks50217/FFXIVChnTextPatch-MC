@@ -1,7 +1,7 @@
 ﻿key,0,1
 #,,
 offset,0,4
-int32,str,str
+Int32,String,String
 0,TEXT_JOBBLM451_01077_SEQ_00,紫紅瀑布的卡扎古·春，希望冒險者完成任務。
 1,TEXT_JOBBLM451_01077_SEQ_01,接受了卡扎古·春的委託。完成任務，收集黑魔法師裝束。前往南薩納蘭的贊拉克側翼陣，將<hex:022811FF0A>EventItem<hex:F61E87AC0103>銘刻於<hex:02280CFF05>EObj<hex:F61E8E020103>；前往北部林區的鳥人軍採伐所，將<hex:022811FF0A>EventItem<hex:F61E883B0103>銘刻於<hex:02280CFF05>EObj<hex:F61E8E030103>；前往拉諾西亞外地的武伽瑪羅武裝礦山，將<hex:022811FF0A>EventItem<hex:F61E883C0103>銘刻於<hex:02280CFF05>EObj<hex:F61E8E040103>。
 2,TEXT_JOBBLM451_01077_SEQ_02,完成了指定的任務。前往東薩納蘭的紫紅瀑布，和卡扎古·春談談。

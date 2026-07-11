@@ -1,7 +1,7 @@
 ﻿key,0,1
 #,,
 offset,0,4
-int32,str,str
+Int32,String,String
 0,TEXT_REGFSTARMORCRAFTSMANLEGENDARY_00159_GEROLT_000_000,窮兮兮的冒險者找我有什麼事啊？<hex:02100103>我可沒功夫陪你！
 1,TEXT_REGFSTARMORCRAFTSMANLEGENDARY_00159_SYSTEM_000_001,可製作、強化本職業上古武器的特職為：<hex:02100103>騎士、戰士、武僧、龍騎士、吟遊詩人、忍者、<hex:02100103>黑魔法師、召喚師、白魔法師、學者。
 2,TEXT_REGFSTARMORCRAFTSMANLEGENDARY_00159_GEROLT_000_001,窮兮兮的冒險者找我有什麼事啊？<hex:02100103>我可是在忙著做壺呢！

@@ -1,7 +1,7 @@
 ﻿key,0,1
 #,,
 offset,0,4
-int32,str,str
+Int32,String,String
 0,TEXT_VOICEMAN_05001_000010_MYSTERYVOICE,來得正好。<hex:02100103>也許你們在城鎮裡也有所耳聞，現在情況不太妙。
 1,TEXT_VOICEMAN_05001_000020_MYSTERYVOICE,這是雷克蘭德的拉克汕城。<hex:02100103>游末邦的飛空艇剛剛飛到了這裡。
 2,TEXT_VOICEMAN_05001_000030_MYSTERYVOICE,聽說他們是來調查靈光衛被消滅的事的。<hex:02100103>他們已經發來消息，說很快就會有使者前來。

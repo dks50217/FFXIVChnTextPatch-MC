@@ -1,7 +1,7 @@
 ﻿key,0,1
 #,,
 offset,0,4
-int32,str,str
+Int32,String,String
 0,TEXT_GAIUSA006_00712_SEQ_00,霍桑山寨的伊莎貝爾正在尋找可以設定陷阱、捕獲野獸的人。
 1,TEXT_GAIUSA006_00712_SEQ_01,用來招待在霍桑山寨休息的士兵們的肉不夠用了。代替伊莎貝爾前往荊棘森，將<hex:022811FF0A>EventItem<hex:F61E86BC0103>設定在指定地點。
 2,TEXT_GAIUSA006_00712_SEQ_02,成功設定了陷阱。向霍桑山寨的伊莎貝爾報告。

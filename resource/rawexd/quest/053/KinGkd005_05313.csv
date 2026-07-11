@@ -1,7 +1,7 @@
 ﻿key,0,1
 #,,
 offset,0,4
-int32,str,str
+Int32,String,String
 0,TEXT_KINGKD005_05313_SEQ_00,調查隊營地的檔案希望冒險者將靈魂碎晶帶在身上。
 1,TEXT_KINGKD005_05313_SEQ_01,
 2,TEXT_KINGKD005_05313_SEQ_02,

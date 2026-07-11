@@ -1,7 +1,7 @@
 ﻿key,0,1
 #,,
 offset,0,4
-int32,str,str
+Int32,String,String
 0,TEXT_AKTKVA201_04733_SEQ_00,列柱廊的莎蘿·摩爾有話想對冒險者說。
 1,TEXT_AKTKVA201_04733_SEQ_01,和莎蘿·摩爾進行了交談。前往漢考克信中提到的匯合地點。在黃金港的<hex:02280CFF05>EObj<hex:F61EB8800103>等待，和漢考克匯合。
 2,TEXT_AKTKVA201_04733_SEQ_02,和漢考克匯合了。和黃金港望海泉附近的椿談談。

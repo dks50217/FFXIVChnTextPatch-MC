@@ -1,7 +1,7 @@
 ﻿key,0,1
 #,,
 offset,0,4
-int32,str,str
+Int32,String,String
 0,TEXT_REGYOK6DOCKPOGAQIVLI_00911_QIVLI_000_001,這不是特別顧問閣下嗎，有什麼事想問我嗎？<hex:02100103>要是有我能幫得上忙的事，我定會知無不言。
 1,TEXT_REGYOK6DOCKPOGAQIVLI_00911_Q1_000_000,想了解什麼？
 2,TEXT_REGYOK6DOCKPOGAQIVLI_00911_A1_000_001,你是做什麼的？

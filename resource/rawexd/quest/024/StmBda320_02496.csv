@@ -1,7 +1,7 @@
 ﻿key,0,1
 #,,
 offset,0,4
-int32,str,str
+Int32,String,String
 0,TEXT_STMBDA320_02496_SEQ_00,帝國河畔堡的夕霧想要營救被徵召的多瑪村民。
 1,TEXT_STMBDA320_02496_SEQ_01,
 2,TEXT_STMBDA320_02496_SEQ_02,

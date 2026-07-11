@@ -1,7 +1,7 @@
 ﻿key,0,1
 #,,
 offset,0,4
-int32,str,str
+Int32,String,String
 0,TEXT_JOBSCH350_01098_SEQ_00,斧術師公會的阿爾卡·佐爾卡有話要對冒險者說。
 1,TEXT_JOBSCH350_01098_SEQ_01,接受了阿爾卡·佐爾卡的委託。前往拉諾西亞外地的尼姆浮游遺跡，調查<hex:02280CFF05>EObj<hex:F61E8DCB0103>。
 2,TEXT_JOBSCH350_01098_SEQ_02,調查了<hex:02280CFF05>EObj<hex:F61E8DCB0103>。在拉諾西亞外地的尼姆浮游遺跡調查<hex:02280CFF05>EObj<hex:F61E8DCF0103>。

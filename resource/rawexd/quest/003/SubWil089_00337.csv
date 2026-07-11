@@ -1,7 +1,7 @@
 ﻿key,0,1
 #,,
 offset,0,4
-int32,str,str
+Int32,String,String
 0,TEXT_SUBWIL089_00337_SEQ_00,銅刃團團員弗弗魯帕想要捉拿盜賊。
 1,TEXT_SUBWIL089_00337_SEQ_01,倉庫被盜的案件接連發生。為了捉拿犯人，在道路的周圍布設4個捕獸夾。
 2,TEXT_SUBWIL089_00337_SEQ_02,順利布設完了捕獸夾。向切切贊恩報告。

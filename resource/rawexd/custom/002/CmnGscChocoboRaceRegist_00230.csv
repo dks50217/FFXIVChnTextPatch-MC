@@ -1,7 +1,7 @@
 ﻿key,0,1
 #,,
 offset,0,4
-int32,str,str
+Int32,String,String
 0,TEXT_CMNGSCCHOCOBORACEREGIST_00230_TALK_ACTOR,你是準備登記新的競賽陸行鳥吧！<hex:02100103>想將哪一隻新陸行鳥登記為競賽陸行鳥呢？
 1,TEXT_CMNGSCCHOCOBORACEREGIST_00230_TALK_ACTOR_02,你已經學習到了陸行鳥競賽的基本規則嗎？<hex:02100103>那接下來為你介紹培育競賽陸行鳥的方法吧！
 2,TEXT_CMNGSCCHOCOBORACEREGIST_00230_TALK_ACTOR_03,競賽陸行鳥可以通過「訓練」這一手段獲得成長。<hex:02100103>另外，還可以讓它學習名為「競賽能力」的陸行鳥專用技能。

@@ -1,7 +1,7 @@
 ﻿key,0,1
 #,,
 offset,0,4
-int32,str,str
+Int32,String,String
 0,TEXT_CTSHNT60RISKYMOBLABYRINTHOS_00761_EDITHE_000_001,畢竟迷津當中有著各種各樣的研究設施，<hex:02100103>對拾穗人發出的委託也是千奇百怪……<hex:02100103>光是整理委託就已經是一件令人費心的工作了。
 1,TEXT_CTSHNT60RISKYMOBLABYRINTHOS_00761_EDITHE_000_002,你是拾穗人總會中精明能幹的拾穗人吧。<hex:02100103>如果對於迷津各部門發出的怪物狩獵的委託有任何疑問，<hex:02100103>請儘管詢問。
 2,TEXT_CTSHNT60RISKYMOBLABYRINTHOS_00761_EDITHE_Q1_000_000,想了解什麼？

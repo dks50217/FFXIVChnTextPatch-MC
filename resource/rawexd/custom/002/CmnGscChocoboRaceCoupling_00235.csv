@@ -1,7 +1,7 @@
 ﻿key,0,1
 #,,
 offset,0,4
-int32,str,str
+Int32,String,String
 0,TEXT_CMNGSCCHOCOBORACECOUPLING_00235_TALK_ACTOR,你是希望進行退役競賽陸行鳥的配種嗎？
 1,TEXT_CMNGSCCHOCOBORACECOUPLING_00235_001_01,好的，這就是你的「<hex:02280BFF05>Item<hex:F225580103>」！<hex:02100103>直到你的新陸行鳥長大到可以參賽為止，<hex:02100103>就由我來悉心照料它吧！
 2,TEXT_CMNGSCCHOCOBORACECOUPLING_00235_001_02,只要經過<hex:02280BFF05>Item<hex:F225580103>上標示的時間，<hex:02100103>就可以前來用它交換已經長成的新陸行鳥。<hex:02100103>到時候請再來這裡領取你的新夥伴！

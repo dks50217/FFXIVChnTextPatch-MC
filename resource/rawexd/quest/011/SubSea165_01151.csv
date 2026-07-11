@@ -1,7 +1,7 @@
 ﻿key,0,1
 #,,
 offset,0,4
-int32,str,str
+Int32,String,String
 0,TEXT_SUBSEA165_01151_SEQ_00,北防波堤的黑渦團員魯漢斯副漩士想要委託冒險者討伐魔物。
 1,TEXT_SUBSEA165_01151_SEQ_01,<hex:02280FFF09>BNpcName<hex:F202840103>在衛士軍墓周圍繁殖，魯漢斯副漩士為此很頭疼。討伐4隻<hex:02280FFF09>BNpcName<hex:F202840103>。
 2,TEXT_SUBSEA165_01151_SEQ_02,成功討伐了<hex:02280FFF09>BNpcName<hex:F202840103>。向黑渦團員魯漢斯副漩士報告。

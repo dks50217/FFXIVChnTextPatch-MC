@@ -1,7 +1,7 @@
 ﻿key,0
 #,Name
 offset,0
-int32,str
+Int32,String
 0,無效分類
 1,重生之境主線任務
 2,第七星曆主線任務

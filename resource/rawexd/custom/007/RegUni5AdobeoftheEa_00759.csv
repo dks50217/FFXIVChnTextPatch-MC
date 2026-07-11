@@ -1,7 +1,7 @@
 ﻿key,0,1
 #,,
 offset,0,4
-int32,str,str
+Int32,String,String
 0,TEXT_REGUNI5ADOBEOFTHEEA_00759_GEWGEESV_000_000,難道……是在跟我說話嗎？<hex:02100103>我已經很久……沒跟別人交流過了……<hex:02100103>那麼……找我到底有什麼事呢？
 1,TEXT_REGUNI5ADOBEOFTHEEA_00759_Q1_000_000,想了解什麼？
 2,TEXT_REGUNI5ADOBEOFTHEEA_00759_A1_000_001,你是做什麼的？

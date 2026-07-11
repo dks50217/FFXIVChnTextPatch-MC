@@ -1,7 +1,7 @@
 ﻿key,0,1
 #,,
 offset,0,4
-int32,str,str
+Int32,String,String
 0,TEXT_GAIUSB904_00927_SEQ_00,白雲崖前哨的奧斯特福想要拜託冒險者捕獵。
 1,TEXT_GAIUSB904_00927_SEQ_01,因為大雪影響，從都城送來的食品物資沒能及時到達。為了緩解食物不足的影響，前往東南的洞窟聖人旅道，從泉水裡的<hex:02280FFF09>BNpcName<hex:F2080C0103>身上得到<hex:022811FF0A>EventItem<hex:F61E87540103>。
 2,TEXT_GAIUSB904_00927_SEQ_02,成功討伐了<hex:02280FFF09>BNpcName<hex:F2080C0103>。將<hex:022811FF0A>EventItem<hex:F61E87540103>交給白雲崖前哨的奧斯特福。

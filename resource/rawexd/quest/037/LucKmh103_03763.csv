@@ -1,7 +1,7 @@
 ﻿key,0,1
 #,,
 offset,0,4
-int32,str,str
+Int32,String,String
 0,TEXT_LUCKMH103_03763_SEQ_00,觀星室的阿爾菲諾想和冒險者同行。
 1,TEXT_LUCKMH103_03763_SEQ_01,
 2,TEXT_LUCKMH103_03763_SEQ_02,

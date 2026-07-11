@@ -1,7 +1,7 @@
 ﻿key,0,1
 #,,
 offset,0,4
-int32,str,str
+Int32,String,String
 0,TEXT_DUNGEONWEAPONS_00000_MILISANDIA_000_000,代號——奈爾·範·達納斯<hex:02100103>發現敵對單位……戰鬥開始！
 1,TEXT_DUNGEONWEAPONS_00000_SHADOWHUNTER_100_010,綠寶石神兵……看來這邊是正確的！
 2,TEXT_DUNGEONWEAPONS_00000_REX_200_010,你果然追上來了啊，艾歐澤亞的英雄！

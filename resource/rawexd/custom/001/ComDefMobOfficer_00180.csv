@@ -1,7 +1,7 @@
 ﻿key,0,1
 #,,
 offset,0,4
-int32,str,str
+Int32,String,String
 0,TEXT_COMDEFMOBOFFICER_00180_MOBOFFICER_000_000,「怪物狩獵告示板」上公布的待討伐怪物全都是十分危險的。<hex:02100103>只有有實力的兵將才能接受任務。
 1,TEXT_COMDEFMOBOFFICER_00180_MOBOFFICER_000_001,辛苦了。<hex:02100103>你可以隨時找我了解有關「怪物狩獵」的詳細說明。
 2,TEXT_COMDEFMOBOFFICER_00180_Q1_000_000,想了解什麼？

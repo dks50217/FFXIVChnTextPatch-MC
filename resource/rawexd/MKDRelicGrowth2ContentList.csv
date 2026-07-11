@@ -1,7 +1,7 @@
 ﻿key,3
-#,
+#,Description
 offset,0
-int32,str
+Int32,String
 0,想要開放該任務，需要完成主線中最近更新的2個任務。
 1,
 2,

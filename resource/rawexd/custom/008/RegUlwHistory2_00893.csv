@@ -1,7 +1,7 @@
 ﻿key,0,1
 #,,
 offset,0,4
-int32,str,str
+Int32,String,String
 0,TEXT_REGULWHISTORY2_00893_SYSTEM_000_000,記載了米拉拉族的歷史。
 1,TEXT_REGULWHISTORY2_00893_SYSTEM_000_010,(-貳之章-)米拉拉族有一件代代流傳至今的秘寶。<hex:02100103>那是一件蘊含了驚人力量的結晶，<hex:02100103>但誰也不知道它來自哪裡，又因何傳承於米拉拉族。
 2,TEXT_REGULWHISTORY2_00893_SYSTEM_000_011,(-貳之章-)當冰之災厄席捲米拉拉族的島嶼時，<hex:02100103>神子們向著秘寶一刻不停地祈禱了起來。

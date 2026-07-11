@@ -1,7 +1,7 @@
 ﻿key,0,1
 #,,
 offset,0,4
-int32,str,str
+Int32,String,String
 0,TEXT_OPENINGLIMSALOMINSA_RYSSFLOH_000_02,喂，你上哪去？！<hex:02100103>快，來這邊！
 1,TEXT_OPENINGLIMSALOMINSA_FZHUMII_000_03,等一下。<hex:02100103>想去巴德龍所在的沉溺海豚亭的話，<hex:02100103>就去和古雷海法爾談談吧。
 2,TEXT_OPENINGLIMSALOMINSA_AHLDSKYF_000_05,喂，你等一下。<hex:02100103>和沉溺海豚亭的巴德龍聊過了嗎？<hex:02100103>想在利姆薩·羅敏薩活動的話，最好先和他談談。

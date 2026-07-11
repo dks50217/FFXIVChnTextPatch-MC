@@ -1,7 +1,7 @@
 ﻿key,0,1
 #,,
 offset,0,4
-int32,str,str
+Int32,String,String
 0,TEXT_KINGZD106_05105_SEQ_00,<hex:024804F201FC03><hex:024904F201FD03>特殊規則： 等級調整<hex:0249020103><hex:0248020103><hex:02100103>瑪穆克的老實的布涅瓦族正在尋找丈夫。
 1,TEXT_KINGZD106_05105_SEQ_01,
 2,TEXT_KINGZD106_05105_SEQ_02,
@@ -61,7 +61,7 @@ int32,str,str
 56,TEXT_KINGZD106_05105_SYSTEM_000_008,將聊天頻道設定為「說話」頻道後，<hex:02100103>使用鍵盤或軟鍵盤輸入含有「飛向太陽」（seek the sun）的詞句呼喚霍比格族男性。
 57,TEXT_KINGZD106_05105_HOOBIGOHASBAND05105_000_009,我能聽到，孩子們的聲音一直在呼喚我，<hex:02100103>要我前往深空天坑……
 58,TEXT_KINGZD106_05105_SYSTEM_000_010,將聊天頻道設定為「說話」頻道後，<hex:02100103>使用鍵盤或軟鍵盤輸入含有「飛向太陽」（seek the sun）的詞句呼喚霍比格族男性。
-59,TEXT_KINGZD106_05105_SAYTODO_000_011,"seek the sun"
+59,TEXT_KINGZD106_05105_SAYTODO_000_011,seek the sun
 60,TEXT_KINGZD106_05105_HOOBIGOHASBAND05105_000_012,為……為什麼你會知道這句話……！
 61,TEXT_KINGZD106_05105_HOOBIGOHASBAND05105_000_013,是我的妻子委託你這樣說的？<hex:02100103>這樣啊……她……
 62,TEXT_KINGZD106_05105_HOOBIGOHASBAND05105_000_014,「飛向太陽」對嚮往光照充足的土地的瑪穆克百姓來說<hex:02100103>有著「不要放棄，不要氣餒」的含義。<hex:02100103>妻子這是在勸我不要因痛苦便放棄一切，而是要向前看啊……

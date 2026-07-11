@@ -1,7 +1,7 @@
 ﻿key,0,1
 #,,
 offset,0,4
-int32,str,str
+Int32,String,String
 0,TEXT_JOBDEFROLEALL_00620_CYELLA_000_000,你好，歡迎光臨彷徨階梯亭。<hex:02100103>……你那是什麼眼神啊，我現在還是這裡的服務員。<hex:02100103>不好意思，如果你是來戲弄我的，就請回吧。
 1,TEXT_JOBDEFROLEALL_00620_CYELLA_100_000,咦，你今天的打扮很少見呢。
 2,TEXT_JOBDEFROLEALL_00620_CYELLA_200_000,你來啦，我也看到了出現在城中的阿爾博特……<hex:02100103>不過現在還是不說這個了。

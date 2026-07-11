@@ -1,7 +1,7 @@
 ﻿key,0,1
 #,,
 offset,0,4
-int32,str,str
+Int32,String,String
 0,TEXT_STMBDZ422_02745_SEQ_00,弓束官邸的魚影有事想委託看上去很強的人類。
 1,TEXT_STMBDZ422_02745_SEQ_01,
 2,TEXT_STMBDZ422_02745_SEQ_02,

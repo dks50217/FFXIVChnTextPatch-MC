@@ -1,7 +1,7 @@
 ﻿key,0,1
 #,,
 offset,0,4
-int32,str,str
+Int32,String,String
 0,TEXT_STMBDZ520_02771_SEQ_00,模兒衣樓的速可該在為羊跑了感到很困擾。
 1,TEXT_STMBDZ520_02771_SEQ_01,
 2,TEXT_STMBDZ520_02771_SEQ_02,

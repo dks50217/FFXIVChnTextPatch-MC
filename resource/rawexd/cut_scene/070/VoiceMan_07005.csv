@@ -1,7 +1,7 @@
 ﻿key,0,1
 #,,
 offset,0,4
-int32,str,str
+Int32,String,String
 0,TEXT_VOICEMAN_07005_000010_KOANA,你回來了？！
 1,TEXT_VOICEMAN_07005_000020_KOANA,我這就下來！
 2,TEXT_VOICEMAN_07005_000030_KOANA,拉瑪提呢？<hex:02100103>穹頂裡到底是什麼情況？！

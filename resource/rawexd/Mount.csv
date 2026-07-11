@@ -1,7 +1,7 @@
 ﻿key,0,2,18,19,20
-#,Singular,Plural,,,
+#,Singular,Plural,WhistlePath,,DismountSCDPath
 offset,0,4,16,20,24
-int32,str,str,str,str,str
+Int32,String,String,String,String,String
 0,,,,,
 1,專屬陸行鳥,,SE_Bt_Etc_ChocoboWhistle,SE_Bt_Etc_ChocoboWhistle_only,SE_Bt_Etc_ChocoboBye
 2,,,,,SE_Bt_Etc_ChocoboBye
@@ -339,7 +339,7 @@ int32,str,str,str,str,str
 334,斯塔緹絲幻影,,SE_Bt_Etc_Mount_Nimue_call,SE_Bt_Etc_GuuBooWhistle_only,SE_Bt_Etc_Mount_Nimue_bye
 335,加隆德GL-IIT,,SE_Bt_Etc_Mount_TractorBike_call,SE_Bt_Etc_MadoWhistle_only,SE_Bt_Etc_Mount_TractorBike_bye
 336,皮蒂,,SE_Bt_Etc_GuuBooWhistle,SE_Bt_Etc_GuuBooWhistle_only,SE_Bt_Etc_GuuBooBye
-337,,,,,
+337,阿爾斯維茲,,SE_Bt_Etc_UnicornWhistle,SE_Bt_Etc_GuuBooWhistle_only,SE_Bt_Etc_UnicornBye
 338,庫阿庫阿,,SE_Bt_Etc_Mount_SenreijuCu_call,SE_Bt_Etc_GuuBooWhistle_only,SE_Bt_Etc_Mount_SenreijuCu_bye
 339,海島皮里福爾,,SE_Bt_Etc_Mount_Mandragora_call,SE_Bt_Etc_GuuBooWhistle_only,SE_Bt_Etc_Mount_Mandragora_bye
 340,海島沙漠玫瑰,,SE_Bt_Etc_Mount_Mandragora_call,SE_Bt_Etc_GuuBooWhistle_only,SE_Bt_Etc_Mount_Mandragora_bye
@@ -361,7 +361,7 @@ int32,str,str,str,str,str
 356,酒桶刺,,SE_Bt_Etc_Mount_MachoSaboten_call,SE_Bt_Etc_GuuBooWhistle_only,SE_Bt_Etc_Mount_MachoSaboten_bye
 357,食蛋獸,,SE_Bt_Etc_Mount_Arikui_call,SE_Bt_Etc_GuuBooWhistle_only,SE_Bt_Etc_Mount_Arikui_bye
 358,海牛,,SE_Bt_Etc_Mount_BigManatee_call,SE_Bt_Etc_GuuBooWhistle_only,SE_Bt_Etc_Mount_BigManatee_bye
-359,,,,,
+359,斧喙魔鳥,,SE_Bt_Etc_Mount_FF9Axebeak_call,SE_Bt_Etc_GuuBooWhistle_only,SE_Bt_Etc_Mount_FF9Axebeak_bye
 360,暗黑羽衣,,SE_Bt_Etc_Mount_KurayamiKumo_call,SE_Bt_Etc_GuuBooWhistle_only,SE_Bt_Etc_Mount_KurayamiKumo_bye
 361,暗黑領域,,SE_Bt_Etc_Mount_AnkokuTenku_call,SE_Bt_Etc_GuuBooWhistle_only,SE_Bt_Etc_Mount_AnkokuTenku_bye
 362,風火鍋,,SE_Bt_Etc_Mount_Hinabe_call,SE_Bt_Etc_GuuBooWhistle_only,SE_Bt_Etc_Mount_Hinabe_bye
@@ -373,7 +373,7 @@ int32,str,str,str,str,str
 368,CHL P-0005,,,,
 369,,,SE_Bt_Etc_Mount_BigManatee_call,SE_Bt_Etc_GuuBooWhistle_only,SE_Bt_Etc_Mount_BigManatee_bye
 370,,,,,
-371,,,,,
+371,宇宙面像,,SE_Bt_Etc_Mount_Blocks_call,SE_Bt_Etc_GuuBooWhistle_only,SE_Bt_Etc_Mount_Blocks_bye
 372,惡魔板,,SE_Bt_Etc_Mount_DemonWallMKD_call,SE_Bt_Etc_GuuBooWhistle_only,SE_Bt_Etc_Mount_DemonWallMKD_call_bye
 373,瓣齒鯊,,SE_Bt_Etc_Mount_SameNingen_call,SE_Bt_Etc_GuuBooWhistle_only,SE_Bt_Etc_Mount_SameNingen_bye
 374,陪伴雪人,,SE_Bt_Etc_SnowmanWhistle,SE_Bt_Etc_GuuBooWhistle_only,SE_Bt_Etc_SnowmanBye

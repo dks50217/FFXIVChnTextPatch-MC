@@ -1,7 +1,7 @@
 ﻿key,0,1
 #,,
 offset,0,4
-int32,str,str
+Int32,String,String
 0,TEXT_REGSEAAETHEGUID_00051_SUNDHIMAL_000_1,冒險者啊。<hex:02100103>有空的話來聽聽關於「傳送魔法」和「乙太之光」的說明吧？
 1,TEXT_REGSEAAETHEGUID_00051_Q1_000_1,想了解什麼？
 2,TEXT_REGSEAAETHEGUID_00051_A1_000_1,什麼是傳送魔法？

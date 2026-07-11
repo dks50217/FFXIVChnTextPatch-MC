@@ -1,7 +1,7 @@
 ﻿key,0,1
 #,,
 offset,0,4
-int32,str,str
+Int32,String,String
 0,TEXT_LUCKMC114_03335_SEQ_00,法諾村的奧梅願意為冒險者等人帶路。
 1,TEXT_LUCKMC114_03335_SEQ_01,
 2,TEXT_LUCKMC114_03335_SEQ_02,

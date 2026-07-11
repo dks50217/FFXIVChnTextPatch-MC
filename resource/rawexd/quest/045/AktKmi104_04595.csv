@@ -1,7 +1,7 @@
 ﻿key,0,1
 #,,
 offset,0,4
-int32,str,str
+Int32,String,String
 0,TEXT_AKTKMI104_04595_SEQ_00,首席神官之間的埃斯蒂尼安看著冒險者，好像有話要說。
 1,TEXT_AKTKMI104_04595_SEQ_01,
 2,TEXT_AKTKMI104_04595_SEQ_02,

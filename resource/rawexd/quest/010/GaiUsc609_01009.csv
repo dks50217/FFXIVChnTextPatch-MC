@@ -1,7 +1,7 @@
 ﻿key,0,1
 #,,
 offset,0,4
-int32,str,str
+Int32,String,String
 0,TEXT_GAIUSC609_01009_SEQ_00,神勇隊的盧因想要聽一下其他人的意見。
 1,TEXT_GAIUSC609_01009_SEQ_01,有必要更深入了解一下聖典中所提到的奧丁。前往石場水車，和角尊奧·阿帕·佩西談談。
 2,TEXT_GAIUSC609_01009_SEQ_02,據說惡神奧丁被封印在兀爾德泉。前往兀爾德泉，調查<hex:02280CFF05>EObj<hex:F61E8D410103>，查看封印有無異變。如果出現了<hex:02280FFF09>BNpcName<hex:F2080E0103>，就使用<hex:022811FF0A>EventItem<hex:F61E88430103>打倒它。

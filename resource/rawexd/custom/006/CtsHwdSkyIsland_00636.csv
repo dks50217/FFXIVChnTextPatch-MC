@@ -1,7 +1,7 @@
 ﻿key,0,1
 #,,
 offset,0,4
-int32,str,str
+Int32,String,String
 0,TEXT_CTSHWDSKYISLAND_00636_AURVAEL_000_000,唔，這不是<hex:022903EB0203>閣下嗎？！<hex:02100103>沒想到在這裡見到你！
 1,TEXT_CTSHWDSKYISLAND_00636_AURVAEL_000_010,你聽我說！<hex:02100103>我們終止的雲冠群島探索工作在重建工程的推動下，<hex:02100103>即將重新開始了！
 2,TEXT_CTSHWDSKYISLAND_00636_AURVAEL_000_020,唔，這不是救國的英雄閣下嗎？！<hex:02100103>沒想到在這裡見到你！

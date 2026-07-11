@@ -1,7 +1,7 @@
 ﻿key,0,1
 #,,
 offset,0,4
-int32,str,str
+Int32,String,String
 0,TEXT_CTSERKCTSERKEUREKA4MAGIAARCAGUIDE_00560_DRAKE_000_000,啊，冒險者！<hex:02100103>你要鑑定文理碎晶的話，還需要再等一會。<hex:02100103>現在正在進行調整……給你添麻煩了。
 1,TEXT_CTSERKCTSERKEUREKA4MAGIAARCAGUIDE_00560_DRAKE_000_010,非常感謝你使用文理融合器。<hex:02100103>話說師父大人不知是不是從你那得到了靈感，<hex:02100103>又開始了記憶嵌寫方法的追加研究了。
 2,TEXT_CTSERKCTSERKEUREKA4MAGIAARCAGUIDE_00560_DRAKE_000_011,根據經驗，差不多是研究告一段落，<hex:02100103>師父過來顯擺研究成果的時候了……啊！

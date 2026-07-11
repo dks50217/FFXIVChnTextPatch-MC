@@ -1,7 +1,7 @@
 ﻿key,0,1
 #,,
 offset,0,4
-int32,str,str
+Int32,String,String
 0,TEXT_REGOTH4MYCMEESIYA_00662_MEESIYA_030_000,重現「上古武器」、重建「女王之刃」……<hex:02100103>希望這能為還在猶豫是否參加戰鬥的博茲雅人民帶來勇氣……
 1,TEXT_REGOTH4MYCMEESIYA_00662_MEESIYA_030_001,有什麼事情是我可以幫到你的嗎？
 2,TEXT_REGOTH4MYCMEESIYA_00662_MEESIYA_030_005,博茲雅義軍的反擊作戰開始了。<hex:02100103>主力部隊正在向最前線的烏特亞前哨移動。<hex:02100103>解放者閣下也會與我們同去吧。

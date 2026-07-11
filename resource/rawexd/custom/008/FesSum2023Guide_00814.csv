@@ -1,7 +1,7 @@
 ﻿key,0,1
 #,,
 offset,0,4
-int32,str,str
+Int32,String,String
 0,TEXT_FESSUM2023GUIDE_00814_ETHELIA_000_000,現在，太陽海岸正在舉辦紅蓮節。<hex:02100103>關於節日的事情都可以來問我！
 1,TEXT_FESSUM2023GUIDE_00814_ETHELIA_000_010,紅蓮節正在火熱開展中！<hex:02100103>如果對節日有任何在意的問題，<hex:02100103>請儘管來諮詢吧！
 2,TEXT_FESSUM2023GUIDE_00814_Q1_000_000,想了解什麼？

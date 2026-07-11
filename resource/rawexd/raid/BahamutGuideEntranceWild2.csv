@@ -1,7 +1,7 @@
 ﻿key,0,1
 #,,
 offset,0,4
-int32,str,str
+Int32,String,String
 0,TEXT_BAHAMUTGUIDEENTRANCEWILD2_ERKENRAD_000_000,我會將各位傳送到「巴哈姆特大迷宮」最深處的拘束艦那裡。<hex:02100103>請大家務必要小心……祝你們旗開得勝！
 1,TEXT_BAHAMUTGUIDEENTRANCEWILD2_Q1_000_010,要做什麼？
 2,TEXT_BAHAMUTGUIDEENTRANCEWILD2_A1_000_011,詢問「巴哈姆特大迷宮真源之章」的開始條件

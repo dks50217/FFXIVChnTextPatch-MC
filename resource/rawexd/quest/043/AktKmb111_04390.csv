@@ -1,7 +1,7 @@
 ﻿key,0,1
 #,,
 offset,0,4
-int32,str,str
+Int32,String,String
 0,TEXT_AKTKMB111_04390_SEQ_00,第三站的尤盧斯正在等冒險者一行人準備好開始任務。
 1,TEXT_AKTKMB111_04390_SEQ_01,
 2,TEXT_AKTKMB111_04390_SEQ_02,

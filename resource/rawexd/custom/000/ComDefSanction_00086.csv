@@ -1,7 +1,7 @@
 ﻿key,0,1
 #,,
 offset,0,4
-int32,str,str
+Int32,String,String
 0,TEXT_COMDEFSANCTION_00086_FLAMEMAGE_001,本人是<hex:020963E802FF1F>大國防聯軍「黑渦團」<hex:FF1F>大國防聯軍「雙蛇黨」<hex:FF1F>大國防聯軍「恆輝隊」<hex:03>的魔法工兵！
 1,TEXT_COMDEFSANCTION_00086_FLAMEMAGE_006,本人是<hex:020963E802FF1F>大國防聯軍「黑渦團」<hex:FF1F>大國防聯軍「雙蛇黨」<hex:FF1F>大國防聯軍「恆輝隊」<hex:03>的魔法工兵！<hex:02100103>負責給軍階在<hex:020924E802FF0A>漩士長<hex:FF0A>牙士長<hex:FF0A>耀士長<hex:03>以上的人員賦予「神應」！
 2,TEXT_COMDEFSANCTION_00086_FLAMEMAGE_Q00,要做什麼？

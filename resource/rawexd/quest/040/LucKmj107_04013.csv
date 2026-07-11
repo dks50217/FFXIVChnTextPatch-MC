@@ -1,7 +1,7 @@
 ﻿key,0,1
 #,,
 offset,0,4
-int32,str,str
+Int32,String,String
 0,TEXT_LUCKMJ107_04013_SEQ_00,工事大廳的阿爾菲諾想要探尋水晶的來源。
 1,TEXT_LUCKMJ107_04013_SEQ_01,
 2,TEXT_LUCKMJ107_04013_SEQ_02,

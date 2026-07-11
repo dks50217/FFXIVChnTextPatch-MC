@@ -1,7 +1,7 @@
 ﻿key,0,1
 #,,
 offset,0,4
-int32,str,str
+Int32,String,String
 0,TEXT_REGWIKADVGUILD_00059_PAPASU_000,哎呀，你來得正好。<hex:02100103>怎麼樣？流沙屋的食物很好吃吧？<hex:02100103>大口吃飯才能有幹勁去冒險！
 1,TEXT_REGWIKADVGUILD_00059_Q1_000_1,想了解什麼？
 2,TEXT_REGWIKADVGUILD_00059_A1_000_1,你是做什麼的？

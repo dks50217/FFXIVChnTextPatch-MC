@@ -1,7 +1,7 @@
 ﻿key,0,1
 #,,
 offset,0,4
-int32,str,str
+Int32,String,String
 0,TEXT_REGDRA2BIGWESTSHORTSTOP_00286_BACKRIX_000_000,呼哧……呼哧……<hex:02100103>我是記錄員巴庫利克斯！人們稱呼我為 數據狂人！<hex:02100103>我這裡可 沒有要告訴你的 數據哥布！
 1,TEXT_REGDRA2BIGWESTSHORTSTOP_00286_BACKRIX_000_010,呼哧……呼哧……<hex:02100103>我是記錄員巴庫利克斯！人們稱呼我為 數據狂人！<hex:02100103>你想要知道 我所掌握的 數據嗎哥布？
 2,TEXT_REGDRA2BIGWESTSHORTSTOP_00286_BACKRIX_000_013,呼哧……呼哧……<hex:02100103>我現在正在 收集有關 3年前那場地震的數據……<hex:02100103>……你有什麼 想知道的？

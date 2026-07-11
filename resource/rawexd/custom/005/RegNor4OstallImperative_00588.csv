@@ -1,7 +1,7 @@
 ﻿key,0,1
 #,,
 offset,0,4
-int32,str,str
+Int32,String,String
 0,TEXT_REGNOR4OSTALLIMPERATIVE_00588_PAULARD_000_000,沒見過你啊。<hex:02100103>你是最近才來到雷克蘭德的吧？<hex:02100103>有什麼想問的，找我就對了。
 1,TEXT_REGNOR4OSTALLIMPERATIVE_00588_PAULARD_000_030,游末邦軍那幫人好像撤退了啊。<hex:02100103>真是的……一群討厭的傢伙們。<hex:02100103>好了，你有什麼想要了解的嗎？
 2,TEXT_REGNOR4OSTALLIMPERATIVE_00588_PAULARD_000_040,喂喂，現在沒有工夫閒聊吧？！<hex:02100103>食罪靈們可是正在襲擊雷克蘭德啊！<hex:02100103>你要是有事情問我，就請長話短說！

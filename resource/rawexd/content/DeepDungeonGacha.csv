@@ -1,7 +1,7 @@
 ﻿key,0,1
 #,,
 offset,0,4
-int32,str,str
+Int32,String,String
 0,TEXT_DEEPDUNGEONGACHA_ABOUT_WOODWAILERAPPRAISERS_000_000,在這附近發現了很多未知的文物和陶器。<hex:02100103>我被派來負責對那些東西進行鑑定調查。
 1,TEXT_DEEPDUNGEONGACHA_ABOUT_WOODWAILERAPPRAISERS_000_010,你有沒有在「死者宮殿」裡發現「埋藏的寶藏」？<hex:02100103>把那些東西帶到我這裡來，我可以幫你鑑定哦！
 2,TEXT_DEEPDUNGEONGACHA_ABOUT_WOODWAILERAPPRAISERS_000_020,創造了迷宮的人留下的筆記……<hex:02100103>上面到底寫了什麼呢？

@@ -1,7 +1,7 @@
 ﻿key,3
-#,
+#,Name
 offset,0
-int32,str
+Int32,String
 0,
 1,圓形格子底
 2,正方形格子底

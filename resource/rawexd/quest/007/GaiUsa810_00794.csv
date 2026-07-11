@@ -1,7 +1,7 @@
 ﻿key,0,1
 #,,
 offset,0,4
-int32,str,str
+Int32,String,String
 0,TEXT_GAIUSA810_00794_SEQ_00,烏爾達哈的貿易商戈戈拉塔不想回家。
 1,TEXT_GAIUSA810_00794_SEQ_01,戈戈拉塔還想在旅店裡享受。將<hex:022811FF0A>EventItem<hex:F61E86F00103>交給來接他的氣沖沖的傭人。
 2,TEXT_GAIUSA810_00794_SEQ_02,將<hex:022811FF0A>EventItem<hex:F61E86F00103>交給了氣沖沖的傭人。他發現裡面是浮栓亭的住宿預定表，便立即趕去找戈戈拉塔。和浮栓亭的戈戈拉塔對話。

@@ -1,7 +1,7 @@
 ﻿key,0,1
 #,,
 offset,0,4
-int32,str,str
+Int32,String,String
 0,TEXT_STMBDZ992_02886_SEQ_00,小阿拉米格的古恩德巴爾德正在等待冒險者的幫助。
 1,TEXT_STMBDZ992_02886_SEQ_01,和古恩德巴爾德進行了交談。古恩德巴爾德委託冒險者和博特里阿娜把水晶義勇隊的<hex:022811FF0A>EventItem<hex:F61E8DD00103>送往阿拉米格並進行弔喪。為商談弔喪事宜，把<hex:022811FF0A>EventItem<hex:F61E8DD00103>交給小阿拉米格的博特里阿娜。
 2,TEXT_STMBDZ992_02886_SEQ_02,把<hex:022811FF0A>EventItem<hex:F61E8DD00103>交給了博特里阿娜。經過商談，決定把<hex:022811FF0A>EventItem<hex:F61E8DD00103>拿到基拉巴尼亞湖區的墓碑獻祭。和小阿拉米格的古恩德巴爾德談談。

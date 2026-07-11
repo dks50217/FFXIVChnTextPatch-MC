@@ -1,7 +1,7 @@
 ﻿key,0,1
 #,,
 offset,0,4
-int32,str,str
+Int32,String,String
 0,TEXT_CTSOPN60NEMJIJI_00732_CFC_TO_INSTANCE_CONTENT,<hex:02281CFF17>ContentFinderCondition<hex:E8020403>
 1,TEXT_CTSOPN60NEMJIJI_00732_NEMJIJI_000_000,<hex:022903EB0203>！感謝你願意協助我們調查。<hex:02100103>你報告中的那些過去的創造生物……<hex:02100103>呵呵呵……我已經等不及想要開始推測它們的生態了！
 2,TEXT_CTSOPN60NEMJIJI_00732_NEMJIJI_000_005,我想厄爾庇斯一定也有保管資料的設施，<hex:02100103>你先去那邊調查一下，再去萬魔殿吧。

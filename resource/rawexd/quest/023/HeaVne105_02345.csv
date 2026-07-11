@@ -1,7 +1,7 @@
 ﻿key,0,1
 #,,
 offset,0,4
-int32,str,str
+Int32,String,String
 0,TEXT_HEAVNE105_02345_SEQ_00,瞭望陣營地的嘎埠看上去坐立不安。
 1,TEXT_HEAVNE105_02345_SEQ_01,嘎埠願意帶冒險者等人去地靈族保管水晶的地方。和拉諾西亞外地黑金湖的嘎埠談談。
 2,TEXT_HEAVNE105_02345_SEQ_02,和嘎埠進行了交談。獲取黑金湖的<hex:02280CFF05>EObj<hex:F61EA1770103>。

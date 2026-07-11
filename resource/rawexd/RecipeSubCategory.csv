@@ -1,7 +1,7 @@
 ﻿key,1
 #,
 offset,0
-int32,str
+Int32,String
 0,
 1,重建計劃第四期
 2,重建計劃第三期

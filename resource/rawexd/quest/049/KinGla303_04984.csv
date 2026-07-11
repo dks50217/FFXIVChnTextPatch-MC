@@ -1,7 +1,7 @@
 ﻿key,0,1
 #,,
 offset,0,4
-int32,str,str
+Int32,String,String
 0,TEXT_KINGLA303_04984_SEQ_00,珠串萬貨街的謝榮加想談談客人們的反應。
 1,TEXT_KINGLA303_04984_SEQ_01,受謝榮加委託幫忙試製果汁。製作6杯<hex:02280DFF07>ItemMP<hex:F2AB780103>，然後交給珠串萬貨街的謝榮加。<hex:02100103><hex:02100103>※收藏價值達到210時才可交納，若交納時收藏價值達到430的話，可以獲得更多報酬。
 2,TEXT_KINGLA303_04984_SEQ_02,將<hex:02280DFF07>ItemMP<hex:F2AB780103>交給了謝榮加。為了下一次試製果汁，繼續磨鍊技藝。

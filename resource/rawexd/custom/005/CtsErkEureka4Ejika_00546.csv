@@ -1,7 +1,7 @@
 ﻿key,0,1
 #,,
 offset,0,4
-int32,str,str
+Int32,String,String
 0,TEXT_CTSERKEUREKA4EJIKA_00546_EJIKATSUNJIKA_100_000,一定要消滅創神優雷卡。<hex:02100103>雖然估計我會死在這裡，但我已經做好了覺悟。<hex:02100103>我只是替加拉夫大人完成未完之事罷了。
 1,TEXT_CTSERKEUREKA4EJIKA_00546_EJIKATSUNJIKA_100_001,你也應該理解了創神有多麼危險。<hex:02100103>既然這樣，你還猶豫什麼？<hex:02100103>你會尊重我的選擇吧？
 2,TEXT_CTSERKEUREKA4EJIKA_00546_SYSTEM_100_002,選擇與艾吉卡·岑吉卡對話推進劇情後，<hex:02100103>將無法再次推進與可露兒對話後的劇情。

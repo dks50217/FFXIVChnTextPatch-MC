@@ -1,7 +1,7 @@
 ﻿key,0,1
 #,,
 offset,0,4
-int32,str,str
+Int32,String,String
 0,TEXT_REGSEACAMPBRONZELAKE_00114_RUKUSAFARUSA_000_000,你好，歡迎來到石綠湖營地。<hex:02100103>你找我有什麼事嗎？
 1,TEXT_REGSEACAMPBRONZELAKE_00114_RUKUSAFARUSA_000_010,我在這裡負責照顧來此進行療養的傷員。
 2,TEXT_REGSEACAMPBRONZELAKE_00114_RUKUSAFARUSA_000_011,因為大家都多多少少受著傷，<hex:02100103>如果是不適合泡溫泉的人泡的時間太長，<hex:02100103>那麼反而會對身體產生危害。

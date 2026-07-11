@@ -1,7 +1,7 @@
 ﻿key,0,1
 #,,
 offset,0,4
-int32,str,str
+Int32,String,String
 0,TEXT_CLSBSM351_00299_SEQ_00,鍛鐵匠公會的布瑞賽爾正在尋找可以接下工作的鍛鐵匠。
 1,TEXT_CLSBSM351_00299_SEQ_01,接受了布瑞賽爾的委託。向利姆薩·羅敏薩鍛鐵匠公會的費茲阿爾詢問詳情。
 2,TEXT_CLSBSM351_00299_SEQ_02,和費茲阿爾進行了交談。製作1把<hex:022813FF07>ItemHQ<hex:FF08>　1778<hex:0103>，交給利姆薩·羅敏薩鍛鐵匠公會的費茲阿爾。

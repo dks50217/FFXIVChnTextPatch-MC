@@ -1,7 +1,7 @@
 ﻿key,0,1
 #,,
 offset,0,4
-int32,str,str
+Int32,String,String
 0,TEXT_STMBDZ911_02867_SEQ_00,輻射村的艾博爾·安特正在等待摯友回來。
 1,TEXT_STMBDZ911_02867_SEQ_01,
 2,TEXT_STMBDZ911_02867_SEQ_02,

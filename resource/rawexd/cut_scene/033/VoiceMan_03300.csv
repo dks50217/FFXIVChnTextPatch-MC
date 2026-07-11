@@ -1,7 +1,7 @@
 ﻿key,0,1
 #,,
 offset,0,4
-int32,str,str
+Int32,String,String
 0,TEXT_VOICEMAN_03300_000010_ALPHINAUD,抱歉，等很久了吧？
 1,TEXT_VOICEMAN_03300_000020_KRILE,沒關係。<hex:02100103>我們正在品嘗店老闆推薦的香葡萄酒呢，<hex:02100103>其實你應該來得更晚一點才好。
 2,TEXT_VOICEMAN_03300_000030_TATARU,吉布里隆先生這裡的香葡萄酒不光美味，<hex:02100103>還有一定的藥效，<hex:02100103>喝下去整個身子都暖呼呼的！

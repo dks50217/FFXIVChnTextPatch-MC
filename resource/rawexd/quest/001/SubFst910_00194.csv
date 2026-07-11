@@ -1,7 +1,7 @@
 ﻿key,0,1
 #,,
 offset,0,4
-int32,str,str
+Int32,String,String
 0,TEXT_SUBFST910_00194_SEQ_00,幻術師公會的柏蕾雅有件事想要委託給冒險者。
 1,TEXT_SUBFST910_00194_SEQ_01,接受了柏蕾雅的委託。用治療為北部林區秋瓜浮村的受傷的珍獸療傷。
 2,TEXT_SUBFST910_00194_SEQ_02,治好了受傷的珍獸。向格里達尼亞幻術師公會的柏蕾雅報告。

@@ -1,7 +1,7 @@
 ﻿key,0,1
 #,,
 offset,0,4
-int32,str,str
+Int32,String,String
 0,TEXT_VOICEMAN_07004_000010_SYSTEM_NONE_VOICE,與此同時 永護塔某處
 1,TEXT_VOICEMAN_07004_000020_ZORAALJA,你與烏克·拉瑪特那些人接觸上了。
 2,TEXT_VOICEMAN_07004_000030_ZORAALJA,不過無所謂。<hex:02100103>我對你的打算沒什麼興趣……

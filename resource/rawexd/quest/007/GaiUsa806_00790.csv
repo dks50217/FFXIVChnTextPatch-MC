@@ -1,7 +1,7 @@
 ﻿key,0,1
 #,,
 offset,0,4
-int32,str,str
+Int32,String,String
 0,TEXT_GAIUSA806_00790_SEQ_00,弗洛朗泰爾哨塔的鬼哭隊士兵奧莉亞娜好像很在意周邊的樹木。
 1,TEXT_GAIUSA806_00790_SEQ_01,奧莉亞娜很擔心<hex:02280DFF09>BNpcName<hex:290103>對樹木造成危害。對3處<hex:02280CFF05>EObj<hex:F61E8C460103>使用<hex:022811FF0A>EventItem<hex:F61E86EC0103>，驅逐隨之出現的<hex:02280DFF09>BNpcName<hex:290103>。
 2,TEXT_GAIUSA806_00790_SEQ_02,驅逐了所有的<hex:02280DFF09>BNpcName<hex:290103>。向弗洛朗泰爾哨塔的奧莉亞娜報告。

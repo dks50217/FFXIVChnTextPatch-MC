@@ -1,7 +1,7 @@
 ﻿key,0,1
 #,,
 offset,0,4
-int32,str,str
+Int32,String,String
 0,TEXT_AKTKMG113_04462_SEQ_00,斯提格瑪一的阿爾菲諾似乎下定了決心。
 1,TEXT_AKTKMG113_04462_SEQ_01,
 2,TEXT_AKTKMG113_04462_SEQ_02,

@@ -1,7 +1,7 @@
 ﻿key,0,1
 #,,
 offset,0,4
-int32,str,str
+Int32,String,String
 0,TEXT_CTSWKSEMERGENCYTRANSPORT_00958_TALK_000_000,我負責緊急情況時的人員運輸。<hex:02100103>情況發生時，我會按照模擬演練的流程召集參與者，<hex:02100103>你能先去和查明威談談嗎？
 1,TEXT_CTSWKSEMERGENCYTRANSPORT_00958_TALK_010_000,我叫蕾芙蕾達，請多指教。<hex:02100103>我平時負責在緊急情況發生時進行人員運輸。
 2,TEXT_CTSWKSEMERGENCYTRANSPORT_00958_TALK_010_005,憧憬灣的環境相對穩定，<hex:02100103>不過，偶爾會產生磁暴和孢子霧，<hex:02100103>另外，有時也會落下隕石。
@@ -17,3 +17,6 @@ int32,str,str
 12,TEXT_CTSWKSEMERGENCYTRANSPORT_00958_TALK_030_020,感謝你願意提供幫助。<hex:02100103>下次再發生緊急情況時，還請再來幫忙。
 13,TEXT_CTSWKSEMERGENCYTRANSPORT_00958_TALK_040_000,哎呀……任務地點發來了通告！<hex:02100103>發生的問題已經有了解決的眉目。<hex:02100103>所以已經不需要你趕往現場了。
 14,TEXT_CTSWKSEMERGENCYTRANSPORT_00958_TALK_040_010,感謝你願意提供幫助。<hex:02100103>下次再發生緊急情況時，還請再來幫忙。
+15,TEXT_CTSWKSEMERGENCYTRANSPORT_00958_TALK_030_020,感謝你願意提供幫助。<hex:02100103>下次再發生緊急情況時，還請再來幫忙。
+16,TEXT_CTSWKSEMERGENCYTRANSPORT_00958_TALK_040_000,哎呀……任務地點發來了通告！<hex:02100103>發生的問題已經有了解決的眉目。<hex:02100103>所以已經不需要你趕往現場了。
+17,TEXT_CTSWKSEMERGENCYTRANSPORT_00958_TALK_040_010,感謝你願意提供幫助。<hex:02100103>下次再發生緊急情況時，還請再來幫忙。

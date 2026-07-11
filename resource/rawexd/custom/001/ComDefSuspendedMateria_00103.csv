@@ -1,7 +1,7 @@
 ﻿key,0,1
 #,,
 offset,0,4
-int32,str,str
+Int32,String,String
 0,TEXT_COMDEFSUSPENDEDMATERIA_00103_SUSPENDEDMATERIA_000_000,魔晶石是凝結了使用者意念的結晶。<hex:02100103>因此，當魔晶石長時間被放置的話，會漸漸失去光輝。<hex:02100103>我們將這種失去光輝的魔晶石稱為「惰性魔晶石」。
 1,TEXT_COMDEFSUSPENDEDMATERIA_00103_SUSPENDEDMATERIA_000_001,如果你有惰性魔晶石的話，我可以幫你復原。<hex:02100103>要是有不想要的東西，也可以找我。
 2,TEXT_COMDEFSUSPENDEDMATERIA_00103_SUSPENDEDMATERIA_000_Q,要做什麼？

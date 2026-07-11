@@ -1,7 +1,7 @@
 ﻿key,0,1
 #,,
 offset,0,4
-int32,str,str
+Int32,String,String
 0,TEXT_REGSAKPRESERVATIONLABOCOMMON_00949_SYSTEM_000_000,似乎是為新人準備的入職指南。<hex:02100103>有許多小項，要先看哪一項呢？
 1,TEXT_REGSAKPRESERVATIONLABOCOMMON_00949_Q1_000_000,要閱讀哪一項？
 2,TEXT_REGSAKPRESERVATIONLABOCOMMON_00949_A1_000_001,工作規定
@@ -14,3 +14,7 @@ int32,str,str
 9,TEXT_REGSAKPRESERVATIONLABOCOMMON_00949_SYSTEM_000_013,(-工作規定-)研究人員嚴禁摘下調魂器。<hex:02100103>另外，本設施包含研究內容在內的一切資訊均屬機密事項，<hex:02100103>研究人員對自身記憶的所有權與修改權均歸保全院所有。
 10,TEXT_REGSAKPRESERVATIONLABOCOMMON_00949_SYSTEM_000_020,(-研究目的-)許可權不足。<hex:02100103>請使用研究人員賬號登入。
 11,TEXT_REGSAKPRESERVATIONLABOCOMMON_00949_SYSTEM_000_030,(-負責人一覽-)研究所所長：迪米特裡厄斯<hex:02100103>第一實驗室主任：厄俄斯福洛<hex:02100103>第二實驗室主任：已刪除
+12,TEXT_REGSAKPRESERVATIONLABOCOMMON_00949_SYSTEM_000_025,(-研究目的-)倉庫棟10-29的研究<hex:02100103>是為了讓永久人能長期維持自身存在。
+13,TEXT_REGSAKPRESERVATIONLABOCOMMON_00949_SYSTEM_000_026,(-研究目的-)提升魂籠、調魂器的效能，<hex:02100103>可以輔助活著的記憶的管理者——永久人斯菲因。<hex:02100103>同時，我們也在推進永久人計劃，致力解決所有困難。
+14,TEXT_REGSAKPRESERVATIONLABOCOMMON_00949_SYSTEM_000_027,(-研究目的-)目前最重要的課題，則是確立控制「鑰匙」的方法。<hex:02100103>只有從映象世界回收生命乙太，<hex:02100103>才能完成我們最終的目的。
+15,TEXT_REGSAKPRESERVATIONLABOCOMMON_00949_SYSTEM_000_030,(-負責人一覽-)研究所所長：迪米特里厄斯<hex:02100103>第一實驗室主任：厄俄斯福洛<hex:02100103>第二實驗室主任：已刪除

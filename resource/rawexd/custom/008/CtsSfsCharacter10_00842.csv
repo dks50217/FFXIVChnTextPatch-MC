@@ -1,7 +1,7 @@
 ﻿key,0,1
 #,,
 offset,0,4
-int32,str,str
+Int32,String,String
 0,TEXT_CTSSFSCHARACTER10_00842_GREETING_MARGRAT_000_000,謝謝你願意幫忙，你真是個好人啊。<hex:02100103>桌子和椅子的品質越好，價格也會跟著水漲船高，<hex:02100103>即使是向資材院提出要求也很難改變現有的工作環境……
 1,TEXT_CTSSFSCHARACTER10_00842_GREETING_MARGRAT_000_001,你好呀，我的拾穗人朋友！<hex:02100103>你有沒有找到羅靈·斯普靈要求的，<hex:02100103>能把貓咪迷得神魂顛倒的物品？
 2,TEXT_CTSSFSCHARACTER10_00842_GREETING_MARGRAT_000_002,我等你很久了！<hex:02100103>趁著伊吹還沒有去找霍吉抱怨，<hex:02100103>讓我們趕快多做幾個立體模型將她圍起來吧！

@@ -1,7 +1,7 @@
 ﻿key,0,1
 #,,
 offset,0,4
-int32,str,str
+Int32,String,String
 0,TEXT_VOICEMAN_04501_000000_ULTIMA,「你們可是我的眷屬？<hex:02100103>亦或是匍匐於此的無能之徒？」
 1,TEXT_VOICEMAN_04501_000010_ULTIMA,「無論何人，我皆一視同仁。<hex:02100103>足下之石，可實現你們的願望。」
 2,TEXT_VOICEMAN_04501_000020_ULTIMA,「拿起石頭離開這煉獄吧……<hex:02100103>不要干擾我的聖行……」

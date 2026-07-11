@@ -1,7 +1,7 @@
 ﻿key,0,1
 #,,
 offset,0,4
-int32,str,str
+Int32,String,String
 0,TEXT_AKTKMC107_04405_SEQ_00,最偉大的森林的桑克瑞德發現了什麼。
 1,TEXT_AKTKMC107_04405_SEQ_01,桑克瑞德讓冒險者去尋找於里昂熱。在最佳威兔洞乙太之光附近的<hex:02280CFF05>EObj<hex:F61EB4180103>進行張望。
 2,TEXT_AKTKMC107_04405_SEQ_02,發現於里昂熱前往了出入口方向。在最佳威兔洞出口的<hex:02280CFF05>EObj<hex:F61EB4190103>進行張望。

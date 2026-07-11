@@ -1,7 +1,7 @@
 ﻿key,0,1
 #,,
 offset,0,4
-int32,str,str
+Int32,String,String
 0,TEXT_GAIUSA107_00721_SEQ_00,妖精族的拉琪西奧正在尋找可以教訓血蚤的人。
 1,TEXT_GAIUSA107_00721_SEQ_01,妖精暫留地外面的血蚤會把妖精族誤認成食物而發起襲擊。前往指定地點，妖精正在曬太陽，將靠近他們的<hex:02280FFF09>BNpcName<hex:F2024B0103>打倒。
 2,TEXT_GAIUSA107_00721_SEQ_02,成功打倒了<hex:02280FFF09>BNpcName<hex:F2024B0103>。向妖精暫留地的拉琪西奧報告。

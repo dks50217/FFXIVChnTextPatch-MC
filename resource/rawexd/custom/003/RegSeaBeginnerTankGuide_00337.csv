@@ -1,7 +1,7 @@
 ﻿key,0,1
 #,,
 offset,0,4
-int32,str,str
+Int32,String,String
 0,TEXT_REGSEABEGINNERTANKGUIDE_00337_TANKCOACH00337_000_000,這裡是冒險者公會的初學者學堂！<hex:02100103>會教授如何與同伴共同戰鬥等知識……<hex:02100103>不過你需要積累些經驗再來。
 1,TEXT_REGSEABEGINNERTANKGUIDE_00337_SYSTEM_000_001,只有15級以上的戰鬥菁英或魔法導師<hex:02100103>才能接受初學者學堂的訓練。
 2,TEXT_REGSEABEGINNERTANKGUIDE_00337_TANKCOACH00337_000_010,這裡是冒險者公會的初學者學堂！<hex:02100103>如果想學習如何與同伴共同戰鬥，<hex:02100103>可以去找裡面的冒險者指導教官。

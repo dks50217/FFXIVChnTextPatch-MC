@@ -1,7 +1,7 @@
 ﻿key,0,1
 #,,
 offset,0,4
-int32,str,str
+Int32,String,String
 0,TEXT_AKTKYR204_04179_SEQ_00,舊薩雷安的諾爾拖塔對冒險者的成績感到驚嘆。
 1,TEXT_AKTKYR204_04179_SEQ_01,
 2,TEXT_AKTKYR204_04179_SEQ_02,

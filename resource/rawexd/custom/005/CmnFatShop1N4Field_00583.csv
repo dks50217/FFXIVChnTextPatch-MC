@@ -1,7 +1,7 @@
 ﻿key,0,1
 #,,
 offset,0,4
-int32,str,str
+Int32,String,String
 0,TEXT_CMNFATSHOP1N4FIELD_00583_SIULMET_000_001,不好意思，現在還在開店準備中。<hex:02100103>我們的貨有些延誤，一直沒送到。<hex:02100103>歡迎正式開店後再來光臨。
 1,TEXT_CMNFATSHOP1N4FIELD_00583_SYSTEM_000_002,需要將「暗影之逆焰主線任務」推進到特定的階段<hex:02100103>才能開始與當前地區的廣域交易商進行交易。
 2,TEXT_CMNFATSHOP1N4FIELD_00583_SIULMET_001_001,我是廣域交易商，手上有雷克蘭德的各種特產，<hex:02100103>不過需要你用雙色寶石進行交換。

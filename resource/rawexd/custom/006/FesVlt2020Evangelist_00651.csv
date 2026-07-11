@@ -1,7 +1,7 @@
 ﻿key,0,1
 #,,
 offset,0,4
-int32,str,str
+Int32,String,String
 0,TEXT_FESVLT2020EVANGELIST_00651_ASTRID_000_000,感謝你為我投票！<hex:02100103>希望其他人也可以支持我……
 1,TEXT_FESVLT2020EVANGELIST_00651_BERT_000_001,雖然沒能得到你的支持有些不甘，<hex:02100103>不過即便如此我依然對自己的方案很有信心！
 2,TEXT_FESVLT2020EVANGELIST_00651_RODRIGAULT_000_002,其他候選人的方案我也已經了解過了，<hex:02100103>果然還是覺得我的方案最可行。<hex:02100103>可惜似乎沒能讓您滿意……

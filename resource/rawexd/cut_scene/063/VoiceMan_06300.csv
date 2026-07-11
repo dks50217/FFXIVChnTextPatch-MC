@@ -1,7 +1,7 @@
 ﻿key,0,1
 #,,
 offset,0,4
-int32,str,str
+Int32,String,String
 0,TEXT_VOICEMAN_06300_000010_MYSTERIOUSPERSON,這裡的人還是活得那麼自由自在。
 1,TEXT_VOICEMAN_06300_000020_MYSTERIOUSPERSON,明明一個個都那麼脆弱，<hex:02100103>甚至只用一隻手就能輕易擊潰，<hex:02100103>但在我眼裡卻是無比的耀眼……
 2,TEXT_VOICEMAN_06300_000030_MYSTERIOUSPERSON,我們早已失去了這種活力……<hex:02100103>失去了夢想，失去了希望，甚至失去了死後的解脫，<hex:02100103>留給我們的只有飢餓與進食的無盡循環。

@@ -1,7 +1,7 @@
 ﻿key,0,1
 #,,
 offset,0,4
-int32,str,str
+Int32,String,String
 0,TEXT_GAIUSA912_00807_SEQ_00,鄧斯坦哨塔的馬爾塞特又想找冒險者來協助研究。
 1,TEXT_GAIUSA912_00807_SEQ_01,這次的工作是調查套索花的生態。使用<hex:022811FF0A>EventItem<hex:F61E883E0103>，打倒<hex:02280FFF09>BNpcName<hex:F208090103>，獲取<hex:022811FF0A>EventItem<hex:F61E87DE0103>。
 2,TEXT_GAIUSA912_00807_SEQ_02,獲得了<hex:022811FF0A>EventItem<hex:F61E87DE0103>。將<hex:022811FF0A>EventItem<hex:F61E87DE0103>交給鄧斯坦哨塔的馬爾塞特。
@@ -56,7 +56,7 @@ int32,str,str
 51,TEXT_GAIUSA912_00807_MARCETTE_000_003,要挑戰<hex:02280FFF09>BNpcName<hex:F208090103>的話，<hex:02100103>就使用這個<hex:022811FF0A>EventItem<hex:F61E883E0103>吧。<hex:02100103>死了的話還要給你下葬，太麻煩了，所以你一定要記得用哦！
 52,TEXT_GAIUSA912_00807_DUMMY_000_000,//使用<hex:022811FF0A>EventItem<hex:F61E883E0103> 討伐 Bnpc_GaiUsa912_00
 53,TEXT_GAIUSA912_00807_SYSTEM_000_000,
-54,TEXT_GAIUSA912_00807_SYSTEM_000_002,
+54,TEXT_GAIUSA912_00807_SYSTEM_000_002,無
 55,TEXT_GAIUSA912_00807_MARCETTE_000_010,我已經等不及要看<hex:022811FF0A>EventItem<hex:F61E87DE0103>裡面的東西了！<hex:02100103>快，第……呃，第十三助手吧？<hex:02100103>總之，馬上來解剖吧！
 56,TEXT_GAIUSA912_00807_MARCETTE_000_011,……果然，有很多毒蟾魔菇的殘骸！<hex:02100103>靈災後套索花的數量激增，<hex:02100103>原因果然在於毒蟾魔菇啊！
 57,TEXT_GAIUSA912_00807_MARCETTE_000_012,套索花攝食毒蟾魔菇，在體內產生有毒氣體……<hex:02100103>再以這個為武器來捕食獵物。<hex:02100103>這正是食物鏈！必須得趕快寫稿子了……

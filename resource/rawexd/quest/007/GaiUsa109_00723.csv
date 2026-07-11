@@ -1,7 +1,7 @@
 ﻿key,0,1
 #,,
 offset,0,4
-int32,str,str
+Int32,String,String
 0,TEXT_GAIUSA109_00723_SEQ_00,妖精暫留地的阿密希亞又有事情想委託給冒險者。
 1,TEXT_GAIUSA109_00723_SEQ_01,前往荊棘森，撿回3份阿密希亞丟失的<hex:022811FF0A>EventItem<hex:F61E86C30103>。
 2,TEXT_GAIUSA109_00723_SEQ_02,將<hex:022811FF0A>EventItem<hex:F61E86C30103>交給妖精暫留地的阿密希亞。

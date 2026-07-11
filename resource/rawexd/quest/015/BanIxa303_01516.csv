@@ -1,7 +1,7 @@
 ﻿key,0,1
 #,,
 offset,0,4
-int32,str,str
+Int32,String,String
 0,TEXT_BANIXA303_01516_SEQ_00,<hex:024804F201FC03><hex:024904F201FD03>特殊規則： 等級調整<hex:0249020103><hex:0248020103><hex:02100103>※本任務的推薦等級為：<hex:02100103>　製作職業6級以上、戰鬥職業45級以上。<hex:02100103><hex:02100103>長風實驗場的財務官羅佐爾·卡特蘭，想委託冒險者一件麻煩的工作。
 1,TEXT_BANIXA303_01516_SEQ_01,※本任務為<hex:024804F201FC03><hex:024904F201FD03><hex:0249020103><hex:0248020103> 等級調整任務。<hex:02100103><hex:02100103>接受了財務官羅佐爾·卡特蘭的委託，去製作<hex:022813FF07>ItemHQ<hex:FF08>　8102<hex:0103>。前往庫爾札斯中央高地的阿德內爾占星台，從酒保商人迪維庫魯瓦那裡領取<hex:022811FF0A>EventItem<hex:F61E89F90103>。前往天火要塞群，對<hex:022814FF09>BNpcName<hex:FF07>　784<hex:0103>使用<hex:022811FF0A>EventItem<hex:F61E89FB0103>，獲取<hex:022811FF0A>EventItem<hex:F61E89FA0103>。
 2,TEXT_BANIXA303_01516_SEQ_02,獲得了禮品和材料。將<hex:022811FF0A>EventItem<hex:F61E89F90103>和<hex:022811FF0A>EventItem<hex:F61E89FA0103>交給阿德內爾占星台的坦普爾頓，並獲取製作設施的使用權。

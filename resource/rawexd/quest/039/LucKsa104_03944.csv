@@ -1,7 +1,7 @@
 ﻿key,0,1
 #,,
 offset,0,4
-int32,str,str
+Int32,String,String
 0,TEXT_LUCKSA104_03944_SEQ_00,烏特亞前哨的德米塔爾想要對失傳技能進行說明。
 1,TEXT_LUCKSA104_03944_SEQ_01,
 2,TEXT_LUCKSA104_03944_SEQ_02,

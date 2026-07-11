@@ -1,7 +1,7 @@
 ﻿key,0,1
 #,,
 offset,0,4
-int32,str,str
+Int32,String,String
 0,TEXT_REGULWHISTORY4_00895_SYSTEM_000_000,記載了米拉拉族的歷史。
 1,TEXT_REGULWHISTORY4_00895_SYSTEM_000_010,(-肆之章-)使用雷轉質的特殊技術廣受好評，<hex:02100103>米拉拉族因此備受各國王公貴族重用。
 2,TEXT_REGULWHISTORY4_00895_SYSTEM_000_011,(-肆之章-)其中一些人試圖再次用秘寶的力量重返故鄉，<hex:02100103>但奇蹟並未眷顧他們。<hex:02100103>幫助先祖逃離險境的那條金色的路，再也沒有出現過。

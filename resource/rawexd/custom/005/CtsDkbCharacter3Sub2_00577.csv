@@ -1,7 +1,7 @@
 ﻿key,0,1
 #,,
 offset,0,4
-int32,str,str
+Int32,String,String
 0,TEXT_CTSDKBCHARACTER3SUB2_00577_KNEMCHELEIMIN_000_000,你來得正好。<hex:02100103>真可憐啊……因為中毒呼吸也很急促，看起來它很痛苦。<hex:02100103>我們也會傾盡全力的，請你和貝斯里克一起治療它吧。
 1,TEXT_CTSDKBCHARACTER3SUB2_00577_KNEMCHELEIMIN_000_050,多虧了<hex:022903EB0203>製作的解毒藥餌，<hex:02100103>它的身體漸漸恢復過來了。
 2,TEXT_CTSDKBCHARACTER3SUB2_00577_KNEMCHELEIMIN_000_100,多虧了有<hex:022903EB0203>的幫助，<hex:02100103>跳跳體內的毒素好像已經全都排出來了。<hex:02100103>謝謝你。

@@ -1,7 +1,7 @@
 ﻿key,0,1
 #,,
 offset,0,4
-int32,str,str
+Int32,String,String
 0,TEXT_CLSTAN005_00051_SEQ_00,製革匠公會的蓋娃，不知為何，好像十分焦躁……
 1,TEXT_CLSTAN005_00051_SEQ_01,令蓋娃憤怒的原因是有人將做工粗糙的巨蟾蜍革帶到了公會。籌備1張<hex:02280DFF07>ItemHQ<hex:F214A00103>，將成品交給在製革匠公會的蓋娃看看。
 2,TEXT_CLSTAN005_00051_SEQ_02,在蓋娃處得到了首肯。將<hex:02280DFF07>ItemHQ<hex:F214A00103>交給魔女咖啡館中的商人艾馬。

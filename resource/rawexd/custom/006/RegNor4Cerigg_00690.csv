@@ -1,7 +1,7 @@
 ﻿key,0,1
 #,,
 offset,0,4
-int32,str,str
+Int32,String,String
 0,TEXT_REGNOR4CERIGG_00690_CERIGG_000_000,在荒野中徘徊的獨行食罪靈——「智德」……<hex:02100103>光憑我一個人沒法封住它的那種特殊能力，<hex:02100103>要是有厲害的魔法師的話……
 1,TEXT_REGNOR4CERIGG_00690_CERIGG_000_010,你的報酬，就由我親自掏腰包付吧。 
 2,TEXT_REGNOR4CERIGG_00690_CERIGG_000_020,緹納認真起來真是不得了，<hex:02100103>很快就改正了我胡亂花錢的毛病，<hex:02100103>只不過……嚴重剋扣了我每天的酒錢。

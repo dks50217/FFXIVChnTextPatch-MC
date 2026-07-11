@@ -1,7 +1,7 @@
 ﻿key,0,1
 #,,
 offset,0,4
-int32,str,str
+Int32,String,String
 0,TEXT_SUBFST055_00161_SEQ_00,彎枝牧場的呂凱洛，希望冒險者去尋找消失的陸行鳥蛋。
 1,TEXT_SUBFST055_00161_SEQ_01,消失的陸行鳥蛋對呂凱洛來說十分重要。為了尋找線索，詢問一下彎枝牧場的人。
 2,TEXT_SUBFST055_00161_SEQ_02,詢問完了牧場的人。向呂凱洛報告。

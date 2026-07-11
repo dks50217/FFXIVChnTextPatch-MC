@@ -1,7 +1,7 @@
 ﻿key,0,1
 #,,
 offset,0,4
-int32,str,str
+Int32,String,String
 0,TEXT_STMBDZ922_02878_SEQ_00,天營門的當圖紐埃爾有任務想委託聲名遠揚的冒險者。
 1,TEXT_STMBDZ922_02878_SEQ_01,
 2,TEXT_STMBDZ922_02878_SEQ_02,

@@ -15,7 +15,35 @@ FFXIV 國際服的中文漢化器。以 C#/.NET 10（WPF + Blazor Hybrid）重�
 - `resource/rawexd/` 翻譯資料部分合併自 [Souma-Sumire/FFXIVChnTextPatch-Souma](https://github.com/Souma-Sumire/FFXIVChnTextPatch-Souma)（GPL-3.0，簡體），**並非直接沿用其 CSV**：合併時經簡轉繁與台灣用語轉換（含 FFXIV 專屬詞彙校訂），並持續由本專案人工編輯、修訂為適合台灣玩家的漢化用字；既有的本地翻譯在更新時一律保留。
 - `resource/opencc/` 字典檔取自 [OpenCC](https://github.com/BYVoid/OpenCC)（Apache-2.0）；其中 `GPPhrases.txt` 是 GP 版的 FFXIV 簡繁例外詞彙表，轉自本 repo git 歷史中的 `resource/nlpcn/traditional.txt`（GPLv3）。
 
-## 使用
+## 發佈檔案
+
+每個 [Release](https://github.com/dks50217/FFXIVChnTextPatch-MC/releases) 會有三個檔案：
+
+| 檔案 | 內容 | 給誰用 |
+|------|------|--------|
+| `FFXIVChnTextPatch.exe` | 單檔執行檔（自帶 .NET Runtime），自己漢化用 | 想自己備份、隨時還原、之後用「更新翻譯 CSV」的人 |
+| `rawexd-opencc.zip` | 翻譯文本（`resource/rawexd` CSV）＋ 簡繁字典（`resource/opencc`） | 配合上面的 exe；缺翻譯檔時 exe 會提示自動下載這包 |
+| `YYYYMMDDXX_CHT.zip` | **已漢化完成的六個 index/dat 檔** | 只想直接玩、不想跑漢化流程的人 |
+
+兩種使用方式，擇一即可：
+
+### A. 用 exe 自己漢化（可還原、可更新翻譯）
+
+`FFXIVChnTextPatch.exe` 是單檔、直接下載即可執行（需 Windows + WebView2 Runtime）。首次執行若偵測不到翻譯 CSV，會跳出提示，一鍵下載 `rawexd-opencc.zip` 並解壓到 `resource/`（不需 git）。
+
+> 字體檔（`resource/font`，約 248MB）太大不含在自動下載內。要「替換字體」請自行到本 repo 下載字體檔放進 `resource/font`；設置頁勾了替換字體但缺檔時會有提示。
+
+### B. 直接套用漢化好的檔案（最快、不能用工具還原）
+
+下載 `YYYYMMDDXX_CHT.zip`（`YYYYMMDDXX` 是遊戲版本號，`_CHT` 表繁中），解壓後把裡面的六個檔案覆蓋到遊戲目錄：
+
+```
+<遊戲根目錄>\game\sqpack\ffxiv\
+```
+
+覆蓋前建議自行備份那六個檔。這種方式沒有經過工具備份，**不能用程式的「還原」還原**；遊戲改版後直接刪掉覆蓋的檔、讓官方更新即可，或改用方式 A。
+
+## 使用（方式 A 詳細步驟）
 
 從本專案的 [Releases](https://github.com/dks50217/FFXIVChnTextPatch-MC/releases) 下載，或自行編譯。需要 Windows + WebView2 Runtime。
 
@@ -49,7 +77,7 @@ dotnet run
 dotnet publish -c Release -r win-x64 --self-contained -p:PublishSingleFile=true -p:IncludeNativeLibrariesForSelfExtract=true
 ```
 
-產出的 `FFXIVChnTextPatch.exe` 與 `wwwroot/` 須連同 `conf/`、`resource/` 一起發佈。
+`wwwroot`（UI）已內嵌進 exe，發佈只需 `FFXIVChnTextPatch.exe` 單檔即可執行。`conf/`、`resource/` 為外部檔：`conf/global.properties` 首次執行會自動建立，翻譯檔可由程式提示下載（見上方「發佈檔案」）。
 
 舊 Java 版的編譯筆記可參考[這裡](https://hackmd.io/@GpointChen/SJi_gv-ad)（原始碼在 git 歷史中）。
 

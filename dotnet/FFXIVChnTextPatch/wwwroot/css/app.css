@@ -148,6 +148,15 @@ progress::-webkit-progress-value {
 .form input[readonly] { color: var(--text-dim); }
 .form .fixed-value { font-size: 13px; color: var(--text-dim); }
 
+.hint {
+    margin: -8px 0 14px; padding: 9px 12px;
+    font-size: 12px; line-height: 1.6; color: var(--text-dim);
+    background: var(--panel); border: 1px solid var(--line);
+    border-left: 3px solid var(--gold); border-radius: 8px;
+}
+.hint b { color: var(--gold-hi); font-weight: normal; word-break: break-all; user-select: text; }
+.modal-note b { user-select: text; word-break: break-all; }
+
 /* 跳過清單 */
 .skip {
     margin: 6px 0 16px; border: 1px solid var(--line);

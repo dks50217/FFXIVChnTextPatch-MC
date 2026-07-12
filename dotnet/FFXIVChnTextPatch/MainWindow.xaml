@@ -1,8 +1,8 @@
 <Window x:Class="FFXIVChnTextPatch.MainWindow"
         xmlns="http://schemas.microsoft.com/winfx/2006/xaml/presentation"
         xmlns:x="http://schemas.microsoft.com/winfx/2006/xaml"
-        xmlns:blazor="clr-namespace:Microsoft.AspNetCore.Components.WebView.Wpf;assembly=Microsoft.AspNetCore.Components.WebView.Wpf"
+        xmlns:local="clr-namespace:FFXIVChnTextPatch"
         Title="FFXIVChnTextPatch" Height="500" Width="540"
         ResizeMode="CanMinimize" Background="#14161C" Icon="appicon.ico">
-    <blazor:BlazorWebView x:Name="blazorWebView" HostPage="wwwroot\index.html" />
+    <local:EmbeddedBlazorWebView x:Name="blazorWebView" HostPage="wwwroot/index.html" />
 </Window>

@@ -31,6 +31,12 @@
             <label><input type="checkbox" @bind="_replaceText" /> 替換文本</label>
         </div>
 
+        @if (_replaceFont && !ResourceBootstrap.HasFont())
+        {
+            <div class="hint">找不到字體檔（resource/font）。字體檔較大未隨 exe 附帶，需替換字體請自行到
+                <b>@ResourceBootstrap.RepoUrl</b> 下載後放入 resource/font。</div>
+        }
+
         <details class="skip">
             <summary>跳過的資料表（已勾選 @_skip.Count 項）</summary>
             <input class="skip-search" placeholder="搜尋表名或說明…" @bind="_skipFilter" @bind:event="oninput" />
@@ -89,6 +95,31 @@ else
     }
 }
 
+@if (_showResourcePrompt)
+{
+    <div class="modal-backdrop">
+        <div class="modal">
+            <div class="modal-title">缺少翻譯檔</div>
+            @if (_downloadingRes)
+            {
+                <div class="modal-note">@_action@_detail（@((_percent * 100).ToString("0"))%）</div>
+                <progress max="1" value="@_percent"></progress>
+            }
+            else
+            {
+                <div class="modal-note">
+                    偵測不到翻譯 CSV（resource/rawexd）。是否從 GitHub 下載最新翻譯檔？<br />
+                    字體檔太大不含在內，需替換字體請自行到 <b>@ResourceBootstrap.RepoUrl</b> 下載。
+                </div>
+                <div class="modal-buttons">
+                    <button @onclick="() => _showResourcePrompt = false">稍後</button>
+                    <button class="primary" @onclick="DownloadResources">下載</button>
+                </div>
+            }
+        </div>
+    </div>
+}
+
 @if (_pending is { } pend)
 {
     <div class="modal-backdrop" @onclick="() => _pending = null">
@@ -112,6 +143,8 @@ else
 
     private bool _showConfig;
     private bool _busy;
+    private bool _showResourcePrompt;
+    private bool _downloadingRes;
     private (string Label, string Note, Func<Task> Run)? _pending;
     private double _percent;
     private string _action = "";
@@ -134,7 +167,30 @@ else
     protected override void OnInitialized()
     {
         _showConfig = !PatchService.IsFFXIVFolder(Config.Get("GamePath"));
+        _showResourcePrompt = ResourceBootstrap.NeedsCsv();
         LoadConfigForm();
+    }
+
+    private async Task DownloadResources()
+    {
+        _downloadingRes = true;
+        _percent = 0;
+        _action = "準備下載……";
+        _detail = "";
+        var progress = new Progress<PatchProgress>(p =>
+        {
+            _percent = p.Percent;
+            _action = p.Action;
+            _detail = p.Detail;
+            InvokeAsync(StateHasChanged);
+        });
+        var (ok, message) = await ResourceBootstrap.DownloadAsync(progress);
+        _downloadingRes = false;
+        _showResourcePrompt = false;
+        _isError = !ok;
+        _message = message;
+        if (ok) _skipEntries = BuildSkipEntries(); // rawexd 現在有檔了，重建跳過清單
+        StateHasChanged();
     }
 
     private void LoadConfigForm()

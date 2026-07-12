@@ -11,10 +11,28 @@
     <ApplicationIcon>appicon.ico</ApplicationIcon>
   </PropertyGroup>
 
+  <PropertyGroup>
+    <!-- 讓 ManifestEmbeddedFileProvider 能依原始路徑（wwwroot/…）找到內嵌檔 -->
+    <GenerateEmbeddedFilesManifest>true</GenerateEmbeddedFilesManifest>
+  </PropertyGroup>
+
   <ItemGroup>
     <Resource Include="appicon.ico" />
     <Using Include="System.IO" />
     <PackageReference Include="Microsoft.AspNetCore.Components.WebView.Wpf" Version="10.0.80" />
+    <PackageReference Include="Microsoft.Extensions.FileProviders.Embedded" Version="10.0.0" />
   </ItemGroup>
+
+  <ItemGroup>
+    <!-- wwwroot 改成內嵌進 exe（取代預設的 static web assets 落地） -->
+    <Content Remove="wwwroot\**" />
+    <EmbeddedResource Include="wwwroot\**" />
+  </ItemGroup>
+
+  <!-- wwwroot 已全部內嵌，publish 仍會落地一份多餘的 wwwroot（框架的 static web assets），
+       發佈後直接刪掉，讓產出真正是單檔 exe。 -->
+  <Target Name="RemoveRedundantWwwroot" AfterTargets="Publish">
+    <RemoveDir Directories="$(PublishDir)wwwroot" />
+  </Target>
 
 </Project>

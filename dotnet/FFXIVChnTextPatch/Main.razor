@@ -65,10 +65,11 @@ else
     <div class="status @(Status.Warn ? "warn" : "")">@Status.Text</div>
 
     <div class="actions">
-        <button class="big primary" disabled="@_busy" @onclick="Patch">漢化</button>
-        <button class="big" disabled="@_busy" @onclick="Rollback">還原</button>
-        <button class="big" disabled="@_busy" @onclick="() => { _message = null; _showConfig = true; }">設置</button>
+        <button class="big primary" disabled="@(_busy || _pending != null)" @onclick='() => AskConfirm("漢化", Patch)'>漢化</button>
+        <button class="big" disabled="@(_busy || _pending != null)" @onclick='() => AskConfirm("還原", Rollback)'>還原</button>
+        <button class="big" disabled="@(_busy || _pending != null)" @onclick="() => { _message = null; _showConfig = true; }">設置</button>
     </div>
+
 
     <div class="toolbar">
         <button class="small" disabled="@_busy" @onclick="Lint">檢查翻譯 CSV</button>
@@ -87,6 +88,23 @@ else
         <p class="message @(_isError ? "error" : "ok")">@_message</p>
     }
 }
+
+@if (_pending is { } pend)
+{
+    <div class="modal-backdrop" @onclick="() => _pending = null">
+        <div class="modal" @onclick:stopPropagation="true">
+            <div class="modal-title">確定要@(pend.Label)嗎？</div>
+            @if (pend.Note.Length > 0)
+            {
+                <div class="modal-note">@pend.Note</div>
+            }
+            <div class="modal-buttons">
+                <button @onclick="() => _pending = null">取消</button>
+                <button class="primary" @onclick="ConfirmPending">確定</button>
+            </div>
+        </div>
+    </div>
+}
 </div>
 
 @code {
@@ -94,6 +112,7 @@ else
 
     private bool _showConfig;
     private bool _busy;
+    private (string Label, string Note, Func<Task> Run)? _pending;
     private double _percent;
     private string _action = "";
     private string _detail = "";
@@ -200,6 +219,20 @@ else
         LoadConfigForm();
         _message = null;
         _showConfig = false;
+    }
+
+    private void AskConfirm(string label, Func<Task> run)
+    {
+        _message = null;
+        string note = label == "還原" ? "將把六個遊戲檔還原成漢化前的備份。" : "";
+        _pending = (label, note, run);
+    }
+
+    private async Task ConfirmPending()
+    {
+        if (_pending is not { } p) return;
+        _pending = null;
+        await p.Run();
     }
 
     private async Task Patch()

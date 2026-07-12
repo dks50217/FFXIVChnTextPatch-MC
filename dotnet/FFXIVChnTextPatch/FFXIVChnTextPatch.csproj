@@ -8,9 +8,11 @@
     <ImplicitUsings>enable</ImplicitUsings>
     <RootNamespace>FFXIVChnTextPatch</RootNamespace>
     <AssemblyName>FFXIVChnTextPatch</AssemblyName>
+    <ApplicationIcon>appicon.ico</ApplicationIcon>
   </PropertyGroup>
 
   <ItemGroup>
+    <Resource Include="appicon.ico" />
     <Using Include="System.IO" />
     <PackageReference Include="Microsoft.AspNetCore.Components.WebView.Wpf" Version="10.0.80" />
   </ItemGroup>

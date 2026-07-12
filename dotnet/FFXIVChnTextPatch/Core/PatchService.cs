@@ -64,6 +64,7 @@ public class PatchService
             await Task.Run(() =>
             {
                 Backup(resourceFolder);
+                Config.Set("BackupVersion", GameVersion() ?? "");
                 if (Config.Get("ReplaFont") == "1")
                     ReplaceFont(Path.Combine(resourceFolder, "000000.win32.index"), AppEnv.P("resource", "font"), progress);
                 else
@@ -107,6 +108,13 @@ public class PatchService
             return (false, "請選擇正確的遊戲根目錄（目錄內應有 game\\ffxiv_dx11.exe）");
         if (IsGameRunning())
             return (false, "偵測到 FFXIV 正在執行中，請先關閉遊戲再進行還原");
+        // 備份只對備份當下的遊戲版本有效。遊戲更新後那六個檔案已被改寫成新版內容，
+        // 還原舊備份會把遊戲更新蓋掉、倒退版本，因此版本不符時直接拒絕還原。
+        string? backupVer = Config.Get("BackupVersion");
+        string? gameVer = GameVersion();
+        if (!string.IsNullOrEmpty(backupVer) && gameVer != null && gameVer != backupVer)
+            return (false, $"備份是遊戲 {backupVer} 版的檔案，但目前遊戲已更新至 {gameVer}。" +
+                           "還原會把遊戲更新內容蓋掉，已取消。遊戲更新後漢化已自動失效，直接重新漢化即可。");
         string resourceFolder = SqpackFolder(gamePath!);
         try
         {

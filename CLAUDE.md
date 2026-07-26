@@ -47,6 +47,7 @@ The app locates its base directory (for `conf/`, `resource/`, `backup/`, `debug.
 - **Only CSV translation mode is supported** (`FLanguage=CSV`, reads `resource/rawexd/*.csv`). The legacy CN-client-file mode (EXDFUtil/JianFan/transtable) was deliberately not ported.
 - rawexd CSVs: lines starting with `#` are comments; effective row 1 (0-based) is the column-offset row, data starts at row 3. Empty CSV cells mean "keep original text".
 - Patching appends rebuilt blocks to the end of `.dat0` and repoints the `.index` entry offset (at entry position + 8) — original data is never modified in place. Backups of the six index/dat files go to `backup/` before patching.
+- International-server "say-to-do" quests: in `quest/*` CSVs, translate `*_SAYTODO_*` rows to English (the phrase the player must actually type — the intl client can't input Chinese), and in the paired `*_SYSTEM_*` prompt keep the Chinese but append the English in parentheses after the 「」quoted phrase.
 
 ## Configuration (`conf/global.properties`)
 

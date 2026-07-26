@@ -18,6 +18,7 @@ public static class LintTool
     public static LintResult Run(IProgress<PatchProgress>? progress = null)
     {
         var errors = new List<string>();
+        var sayTodoZh = new List<string>();
         var coverage = new List<(string Name, int Translated, int Total)>();
 
         // ── 1. 檢查所有 CSV ──
@@ -30,7 +31,7 @@ public static class LintTool
         {
             string name = Path.GetRelativePath(rawexd, csvFile).Replace('\\', '/');
             progress?.Report(new(++count / (double)csvFiles.Length * 0.7, "正在檢查：", name));
-            LintCsv(csvFile, name, errors, coverage);
+            LintCsv(csvFile, name, errors, sayTodoZh, coverage);
         }
 
         // ── 2. 缺少 CSV 的表（需要有效的遊戲路徑）──
@@ -69,6 +70,11 @@ public static class LintTool
         foreach (var error in errors) report.AppendLine(error);
         report.AppendLine();
 
+        report.AppendLine($"■ 說話任務仍是中文的 SAYTODO（{sayTodoZh.Count}）—— 國際服不建議打中文，需改成英文");
+        if (sayTodoZh.Count == 0) report.AppendLine("（無）");
+        foreach (var s in sayTodoZh) report.AppendLine(s);
+        report.AppendLine();
+
         report.AppendLine($"■ 遊戲中有字串欄位但缺少 CSV 的表（{missingSheets.Count}）—— 這些表會維持原文");
         if (missingNote != null) report.AppendLine(missingNote);
         else if (missingSheets.Count == 0) report.AppendLine("（無）");
@@ -90,7 +96,7 @@ public static class LintTool
     }
 
     private static void LintCsv(string path, string name, List<string> errors,
-        List<(string, int, int)> coverage)
+        List<string> sayTodoZh, List<(string, int, int)> coverage)
     {
         var rows = new List<string[]>();
         var lineNumbers = new List<long>();
@@ -144,6 +150,13 @@ public static class LintTool
             }
             if (row.Length < expectedWidth)
                 errors.Add($"{name} 第 {line} 行: 欄位數 {row.Length} 少於 offset 列的 {expectedWidth} → 漢化可能中斷");
+            // 說話任務：SAYTODO 是玩家實際要輸入的字，國際服不建議打中文，仍含中文就提醒改英文
+            if (row.Any(cell => cell.Contains("_SAYTODO_", StringComparison.OrdinalIgnoreCase)))
+            {
+                var zh = row.FirstOrDefault(cell => !cell.Contains("SAYTODO", StringComparison.OrdinalIgnoreCase) && HasCjk(cell));
+                if (zh != null)
+                    sayTodoZh.Add($"{name} 第 {line} 行: 「{Truncate(zh)}」");
+            }
             for (int c = 1; c < row.Length; c++)
             {
                 total++;
@@ -197,6 +210,13 @@ public static class LintTool
     }
 
     private static string Truncate(string s) => s.Length <= 40 ? s : s[..40] + "…";
+
+    private static bool HasCjk(string s)
+    {
+        foreach (char c in s)
+            if (c >= 0x4E00 && c <= 0x9FFF) return true;
+        return false;
+    }
 
     private static List<string> FindMissingSheets(string gamePath, string rawexd, IProgress<PatchProgress>? progress)
     {

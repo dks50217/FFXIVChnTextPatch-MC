@@ -2,6 +2,8 @@
 
 FFXIV 國際服的中文漢化器。以 C#/.NET 10（WPF + Blazor Hybrid）重寫，程式碼在 [`dotnet/`](dotnet/README.md)。
 
+![程式畫面](docs/app1.png)
+
 相較於上游原版：
 1. 針對 5.5X 以後版本修正中文字庫補丁。
 2. 使用 CSV（修改過的 SaintCoinach 輸出）進行漢化，**僅支援 CSV 模式**（中國服檔案 / 漢化覆蓋檔模式已移除）。

@@ -107,6 +107,9 @@ button.small { padding: 5px 12px; font-size: 13px; }
 @keyframes pop { from { opacity: 0; transform: translateY(6px) scale(.97); } }
 
 .toolbar { display: flex; justify-content: flex-end; gap: 10px; }
+.toolbar.advanced { margin-top: 8px; }
+button.small.gear { padding: 5px 9px; font-size: 15px; line-height: 1; }
+button.small.gear.on { border-color: var(--gold); color: var(--gold); }
 
 /* 進度 */
 .progress-area { margin-top: 14px; }

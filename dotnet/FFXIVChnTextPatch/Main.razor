@@ -80,7 +80,18 @@ else
     <div class="toolbar">
         <button class="small" disabled="@_busy" @onclick="Lint">檢查翻譯 CSV</button>
         <button class="small" disabled="@_busy" @onclick="UpdateRawexd" title="下載 Souma 上游翻譯 → 簡轉繁 → 合併（本地已有的翻譯不會被覆蓋）">更新翻譯 CSV</button>
+        <button class="small gear @(_showAdvanced ? "on" : "")" disabled="@_busy" @onclick="() => _showAdvanced = !_showAdvanced" title="進階功能">⚙</button>
     </div>
+
+    @if (_showAdvanced)
+    {
+        <div class="toolbar advanced">
+            <button class="small" disabled="@_busy" @onclick="HexTags"
+                    title="掃描所有翻譯 CSV 的 <hex:> 標籤，解成可讀名稱輸出 hextags-report.txt（給翻譯者對照，不修改任何檔案）">
+                hex 標籤對照表
+            </button>
+        </div>
+    }
 
     @if (_busy)
     {
@@ -142,6 +153,7 @@ else
     private static (string Text, bool Warn) Status => PatchService.PatchStatus();
 
     private bool _showConfig;
+    private bool _showAdvanced;
     private bool _busy;
     private bool _showResourcePrompt;
     private bool _downloadingRes;
@@ -324,6 +336,27 @@ else
         _busy = false;
         _isError = result.ErrorCount > 0;
         _message = result.Summary;
+        StateHasChanged();
+    }
+
+    private async Task HexTags()
+    {
+        _busy = true;
+        _message = null;
+        _percent = 0;
+        _action = "正在掃描 hex 標籤……";
+        _detail = "";
+        var progress = new Progress<PatchProgress>(p =>
+        {
+            _percent = p.Percent;
+            _action = p.Action;
+            _detail = p.Detail;
+            InvokeAsync(StateHasChanged);
+        });
+        var summary = await HexTagTool.RunAsync(progress);
+        _busy = false;
+        _isError = false;
+        _message = summary;
         StateHasChanged();
     }
 

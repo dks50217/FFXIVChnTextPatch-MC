@@ -13,6 +13,7 @@
 debug.*
 selftest.log
 lint-report.txt
+hextags-report.txt
 
 # Visual Studio
 .vs/

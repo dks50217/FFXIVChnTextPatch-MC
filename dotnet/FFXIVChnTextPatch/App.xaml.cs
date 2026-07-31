@@ -24,6 +24,13 @@ public partial class App : Application
             return;
         }
 
+        if (e.Args.Contains("--hextags"))
+        {
+            HexTagTool.Run();
+            Shutdown();
+            return;
+        }
+
         if (e.Args.Contains("--update"))
         {
             // CLI 版一鍵更新，階段進度與結果寫到 debug.log。

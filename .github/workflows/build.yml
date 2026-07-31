@@ -1,0 +1,39 @@
+name: build
+
+on:
+  push:
+  pull_request:
+
+jobs:
+  build-and-test:
+    runs-on: windows-latest   # WPF 目標，只能在 Windows 上建置
+    defaults:
+      run:
+        working-directory: dotnet/FFXIVChnTextPatch
+    steps:
+      - uses: actions/checkout@v4
+
+      - uses: actions/setup-dotnet@v4
+        with:
+          dotnet-version: '10.0.x'
+
+      - name: Build
+        run: dotnet build -c Release --nologo
+
+      # GUI(WinExe)不會把 stdout 接回 console，用 Start-Process -Wait -PassThru
+      # 等它跑完並取 ExitCode；log 檔寫在 repo 根目錄(BaseDir = conf/ 所在)。
+      - name: Self-test (binary-format checks)
+        shell: pwsh
+        run: |
+          $exe = Get-ChildItem -Recurse -Filter FFXIVChnTextPatch.exe bin/Release | Select-Object -First 1
+          $p = Start-Process $exe.FullName '--selftest' -Wait -PassThru
+          Get-Content "$env:GITHUB_WORKSPACE/selftest.log"
+          if ($p.ExitCode -ne 0) { throw "selftest: $($p.ExitCode) check(s) failed" }
+
+      - name: Lint translation CSVs
+        shell: pwsh
+        run: |
+          $exe = Get-ChildItem -Recurse -Filter FFXIVChnTextPatch.exe bin/Release | Select-Object -First 1
+          $p = Start-Process $exe.FullName '--lint' -Wait -PassThru
+          Get-Content "$env:GITHUB_WORKSPACE/lint-report.txt"
+          if ($p.ExitCode -ne 0) { throw "lint: $($p.ExitCode) error(s) that would break patching" }

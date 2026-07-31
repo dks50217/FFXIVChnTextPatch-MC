@@ -12,15 +12,15 @@ public partial class App : Application
 
         if (e.Args.Contains("--selftest"))
         {
-            SelfTest.Run();
-            Shutdown();
+            // exit code = 失敗數，CI 以 Start-Process -Wait -PassThru 讀 ExitCode 判定。
+            Shutdown(SelfTest.Run());
             return;
         }
 
         if (e.Args.Contains("--lint"))
         {
-            LintTool.Run();
-            Shutdown();
+            // exit code = 會中斷漢化的錯誤數（0 = 乾淨）。
+            Shutdown(LintTool.Run().ErrorCount);
             return;
         }
 

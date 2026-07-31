@@ -3,10 +3,11 @@ using FFXIVChnTextPatch.Core;
 
 namespace FFXIVChnTextPatch;
 
-/// <summary>`FFXIVChnTextPatch.exe --selftest`：核心二進位邏輯的最小驗證，結果寫到 selftest.log。</summary>
+/// <summary>`FFXIVChnTextPatch.exe --selftest`：核心二進位邏輯的最小驗證，結果寫到 selftest.log。
+/// 回傳失敗數，App 用它當 process exit code，CI 才能判定成敗。</summary>
 public static class SelfTest
 {
-    public static void Run()
+    public static int Run()
     {
         var log = new StringBuilder();
         int failed = 0;
@@ -127,6 +128,7 @@ public static class SelfTest
 
         log.AppendLine(failed == 0 ? "ALL PASSED" : $"{failed} FAILED");
         File.WriteAllText(Path.Combine(AppEnv.BaseDir, "selftest.log"), log.ToString());
+        return failed;
     }
 
     private static bool TestConfigUnescape(string escaped, string expected)

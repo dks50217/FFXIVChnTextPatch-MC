@@ -80,16 +80,7 @@ public static class RawexdUpdater
             }
 
             int driftKeys = drift.Sum(d => d.Keys.Count);
-            if (drift.Count > 0)
-            {
-                var sb = new System.Text.StringBuilder();
-                sb.AppendLine($"疑似錯位 key（上游該列全空、本地卻有翻譯）  {DateTime.Now:yyyy-MM-dd HH:mm:ss}");
-                sb.AppendLine("遊戲改版重新編號後，舊翻譯被釘在錯 key 的徵狀；請對照上游確認後再修。");
-                sb.AppendLine();
-                foreach (var (rel, keys) in drift.OrderByDescending(d => d.Keys.Count))
-                    sb.AppendLine($"{rel}（{keys.Count}）：{string.Join(", ", keys)}");
-                File.WriteAllText(AppEnv.P("rawexd-drift.txt"), sb.ToString(), new System.Text.UTF8Encoding(false));
-            }
+            WriteDriftReport(drift);
 
             string msg = $"更新完成：{changed} 檔更新（補 {filled} 格、新增 {newRows} 列）、{newFiles} 個新檔" +
                          (failed > 0 ? $"、{failed} 檔失敗（見 debug.log）" : "") +
@@ -107,6 +98,65 @@ public static class RawexdUpdater
         {
             try { DeleteDir(tmp); } catch { /* 暫存目錄清不掉不影響結果 */ }
         }
+    }
+
+    /// <summary>
+    /// CI/CLI 漂移檢查（--driftcheck）：sparse-clone 上游 → 簡轉繁 → 逐檔跟本地比對 →
+    /// 寫 rawexd-drift.txt。DetectDrift 要判斷「本地翻譯是否在上游別處出現」，字串得對得起來，
+    /// 所以上游得先 ZhConvert（不能跳）。回傳有漂移的檔數（0 = 乾淨；-1 = clone/上游失敗，呼叫端當 warn-only）。
+    /// </summary>
+    public static Task<int> DriftCheckAsync(IProgress<PatchProgress> progress) =>
+        Task.Run(() => DriftCheckCore(progress));
+
+    private static async Task<int> DriftCheckCore(IProgress<PatchProgress> progress)
+    {
+        string repo = Config.Get("UpstreamRepo") ?? DefaultRepo;
+        string localDir = AppEnv.P("resource", "rawexd");
+        string tmp = Path.Combine(Path.GetTempPath(), "ffxiv-rawexd-driftcheck");
+        try
+        {
+            DeleteDir(tmp);
+            await RunGit($"clone --depth 1 --filter=blob:none --sparse --progress {repo} \"{tmp}\"",
+                progress, 0.02, 0.55, "正在下載上游翻譯……");
+            await RunGit($"-C \"{tmp}\" sparse-checkout set resource/rawexd",
+                progress, 0.55, 0.8, "正在下載上游翻譯……");
+            string upDir = Path.Combine(tmp, "resource", "rawexd");
+            if (!Directory.Exists(upDir)) { AppEnv.Log("漂移檢查：上游 repo 裡找不到 resource/rawexd"); return -1; }
+
+            var files = Directory.GetFiles(upDir, "*.csv", SearchOption.AllDirectories);
+            var drift = new List<(string Rel, List<int> Keys)>();
+            for (int i = 0; i < files.Length; i++)
+            {
+                string rel = Path.GetRelativePath(upDir, files[i]).Replace('\\', '/');
+                progress.Report(new(0.8 + 0.2 * i / files.Length, "正在比對漂移……", rel));
+                string localPath = Path.Combine(localDir, rel);
+                if (!File.Exists(localPath)) continue;           // 上游新檔、本地還沒有，不算漂移
+                var suspects = LintTool.DetectDrift(ReadLocal(localPath, out _), ZhConvert.S2Tw(File.ReadAllText(files[i])));
+                if (suspects.Count > 0) drift.Add((rel, suspects));
+            }
+
+            WriteDriftReport(drift);
+            int keys = drift.Sum(d => d.Keys.Count);
+            AppEnv.Log(drift.Count == 0 ? "漂移檢查：乾淨，無疑似錯位"
+                : $"漂移檢查：{drift.Count} 檔疑似錯位（{keys} 個 key，見 rawexd-drift.txt）");
+            return drift.Count;
+        }
+        catch (Exception ex) { AppEnv.Log("漂移檢查失敗: " + ex); return -1; }
+        finally { try { DeleteDir(tmp); } catch { /* 暫存清不掉不影響結果 */ } }
+    }
+
+    /// <summary>寫 rawexd-drift.txt；乾淨時刪掉舊報告，免得殘留誤導。</summary>
+    private static void WriteDriftReport(List<(string Rel, List<int> Keys)> drift)
+    {
+        string path = AppEnv.P("rawexd-drift.txt");
+        if (drift.Count == 0) { try { File.Delete(path); } catch { /* 沒有就算了 */ } return; }
+        var sb = new System.Text.StringBuilder();
+        sb.AppendLine($"疑似錯位 key（上游該列全空、本地卻有翻譯）  {DateTime.Now:yyyy-MM-dd HH:mm:ss}");
+        sb.AppendLine("遊戲改版重新編號後，舊翻譯被釘在錯 key 的徵狀；請對照上游確認後再修。");
+        sb.AppendLine();
+        foreach (var (rel, keys) in drift.OrderByDescending(d => d.Keys.Count))
+            sb.AppendLine($"{rel}（{keys.Count}）：{string.Join(", ", keys)}");
+        File.WriteAllText(path, sb.ToString(), new System.Text.UTF8Encoding(false));
     }
 
     /// <summary>跑 git 並把 stderr 的進度（"Receiving objects: 42%" 之類）映射到 from..to 區間。</summary>

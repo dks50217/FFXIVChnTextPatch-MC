@@ -96,26 +96,34 @@ public static class LintTool
     }
 
     /// <summary>
-    /// 漂移偵測：拿正確對齊的上游文字比對本地翻譯。回傳「上游同 key 該列全空、但本地非空」的 key
-    /// ——遊戲改版重新編號後，本地舊翻譯被 RawexdMerge「本地優先」釘在錯 key 的典型徵狀。
-    /// 只比對兩邊都有的 key（本地獨有列是刻意新增，不算漂移）。純字串比對，不需遊戲或網路。
+    /// 漂移偵測：拿對齊正確的上游比對本地。回傳疑似「錯位」的 key——本地該 key 有翻譯、
+    /// 上游同 key 卻整列全空，且該翻譯的內容在上游其實存在於「別的 key」（代表條目被搬走、
+    /// 本地舊翻譯被 RawexdMerge「本地優先」釘在原 key）。
+    ///
+    /// 「內容存在於上游別處」這條是關鍵：沒有它就會把「本地翻在上游前面」（fork 比上游完整、
+    /// 上游那格還空著）誤報成漂移。所以 upstreamText 必須是**已簡轉繁**的版本，字串才對得起來。
+    /// 純字串比對，不需遊戲或網路。
     /// </summary>
     public static List<int> DetectDrift(string localText, string upstreamText)
     {
-        static Dictionary<int, bool> DataRows(string text)
-        {
-            var rows = RawexdMerge.Parse(text).Where(r => r.Fields != null).Select(r => r.Fields!).ToList();
-            var map = new Dictionary<int, bool>();
-            for (int i = 3; i < rows.Count; i++)               // [0..2]=表頭，資料從第 4 列起
-                if (int.TryParse(rows[i][0], out int key))
-                    map[key] = rows[i].Skip(1).All(string.IsNullOrEmpty);  // 整列（key 以外）是否全空
-            return map;
-        }
+        static List<List<string>> Data(string text) =>
+            RawexdMerge.Parse(text).Where(r => r.Fields != null).Select(r => r.Fields!).Skip(3).ToList();
 
-        var up = DataRows(upstreamText);
+        var upEmpty = new Dictionary<int, bool>();   // 上游 key → 該列（key 以外）是否全空
+        var upVals = new HashSet<string>();          // 上游所有非空儲存格值（用來判斷「搬到別處」）
+        foreach (var row in Data(upstreamText))
+            if (int.TryParse(row[0], out int key))
+            {
+                var cells = row.Skip(1).ToList();
+                upEmpty[key] = cells.All(string.IsNullOrEmpty);
+                foreach (var c in cells) if (!string.IsNullOrEmpty(c)) upVals.Add(c);
+            }
+
         var suspects = new List<int>();
-        foreach (var (key, localAllEmpty) in DataRows(localText))
-            if (!localAllEmpty && up.TryGetValue(key, out bool upAllEmpty) && upAllEmpty)
+        foreach (var row in Data(localText))
+            if (int.TryParse(row[0], out int key)
+                && upEmpty.TryGetValue(key, out bool upAllEmpty) && upAllEmpty   // 上游同 key 全空
+                && row.Skip(1).Any(c => !string.IsNullOrEmpty(c) && upVals.Contains(c)))  // 本地翻譯在上游別處出現
                 suspects.Add(key);
         suspects.Sort();
         return suspects;

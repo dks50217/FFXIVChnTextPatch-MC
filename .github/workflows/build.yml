@@ -37,3 +37,15 @@ jobs:
           $p = Start-Process $exe.FullName '--lint' -Wait -PassThru
           Get-Content "$env:GITHUB_WORKSPACE/lint-report.txt"
           if ($p.ExitCode -ne 0) { throw "lint: $($p.ExitCode) error(s) that would break patching" }
+
+      # 漂移檢查：clone 上游、逐檔比對「上游空/本地有翻譯」的錯位。warn-only：
+      # 偶爾誤報（本地翻在上游前）或上游/網路問題只讓這一步紅燈，不擋整體 build。
+      - name: Drift check vs upstream (warn-only)
+        continue-on-error: true
+        shell: pwsh
+        run: |
+          $exe = Get-ChildItem -Recurse -Filter FFXIVChnTextPatch.exe bin/Release | Select-Object -First 1
+          $p = Start-Process $exe.FullName '--driftcheck' -Wait -PassThru
+          $report = "$env:GITHUB_WORKSPACE/rawexd-drift.txt"
+          if (Test-Path $report) { Get-Content $report } else { "乾淨，無疑似錯位。" }
+          if ($p.ExitCode -ne 0) { throw "drift: $($p.ExitCode) 檔疑似錯位（見上方報告）" }

@@ -31,6 +31,22 @@ public partial class App : Application
             return;
         }
 
+        if (e.Args.Contains("--driftcheck"))
+        {
+            // clone 上游比對漂移；exit code = 疑似錯位檔數（0 = 乾淨）。
+            // clone/上游失敗回 -1，這裡轉成 0——CI 當 warn-only，別讓網路問題誤報成漂移。
+            string lastAction = "";
+            var progress = new DirectProgress(p =>
+            {
+                if (p.Action == lastAction) return;
+                lastAction = p.Action;
+                AppEnv.Log(p.Action);
+            });
+            int drifted = RawexdUpdater.DriftCheckAsync(progress).GetAwaiter().GetResult();
+            Shutdown(drifted < 0 ? 0 : drifted);
+            return;
+        }
+
         if (e.Args.Contains("--update"))
         {
             // CLI 版一鍵更新，階段進度與結果寫到 debug.log。

@@ -114,11 +114,15 @@ public static class SelfTest
             "key,0,1,2\n#,A,New,B\noffset,0,2,4\nint32,str,str,str\n0,x,新欄,y\n", "\n");
         Check("Merge 跨版本 offset 欄位對齊", mrAlign.Merged.Contains("0,甲,新欄,乙") && mrAlign.HeadersChanged);
 
-        // 7b. 漂移偵測：上游該 key 全空、本地非空 → 疑似錯位；本地獨有列（上游沒有）不算
+        // 7b. 漂移偵測：上游該 key 全空、本地有翻譯、且該翻譯在上游別處出現 → 疑似錯位。
+        //     排除「本地翻在上游前面」（fork 比上游完整、值不在上游）與本地獨有列。
         string dUp = "key,0\n#,Name\noffset,0\nint32,str\n0,\n1,foo\n2,\n";
-        string dLo = "key,0\n#,Name\noffset,0\nint32,str\n0,\n1,foo\n2,錯位翻譯\n9,本地獨有\n";
+        string dLo = "key,0\n#,Name\noffset,0\nint32,str\n0,baz\n1,foo\n2,foo\n9,本地獨有\n";
         var drift = LintTool.DetectDrift(dLo, dUp);
-        Check("DetectDrift 抓上游空本地非空", drift.SequenceEqual(new[] { 2 }));
+        //  key2=foo：上游同 key 空、foo 在上游 key1 有 → 錯位 ✓
+        //  key0=baz：上游同 key 空，但 baz 不在上游任何處 → 翻在前面，不算 ✓
+        //  key9    ：上游沒這個 key → 本地獨有列，不算 ✓
+        Check("DetectDrift 內容搬到別處才算錯位", drift.SequenceEqual(new[] { 2 }));
 
         // 8. ZhConvert 簡轉繁（單字、詞級消歧義、台灣異體字，各走到不同字典）
         Check("ZhConvert 單字", ZhConvert.S2Tw("汉化") == "漢化");

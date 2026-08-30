@@ -114,6 +114,12 @@ public static class SelfTest
             "key,0,1,2\n#,A,New,B\noffset,0,2,4\nint32,str,str,str\n0,x,新欄,y\n", "\n");
         Check("Merge 跨版本 offset 欄位對齊", mrAlign.Merged.Contains("0,甲,新欄,乙") && mrAlign.HeadersChanged);
 
+        // 7b. 漂移偵測：上游該 key 全空、本地非空 → 疑似錯位；本地獨有列（上游沒有）不算
+        string dUp = "key,0\n#,Name\noffset,0\nint32,str\n0,\n1,foo\n2,\n";
+        string dLo = "key,0\n#,Name\noffset,0\nint32,str\n0,\n1,foo\n2,錯位翻譯\n9,本地獨有\n";
+        var drift = LintTool.DetectDrift(dLo, dUp);
+        Check("DetectDrift 抓上游空本地非空", drift.SequenceEqual(new[] { 2 }));
+
         // 8. ZhConvert 簡轉繁（單字、詞級消歧義、台灣異體字，各走到不同字典）
         Check("ZhConvert 單字", ZhConvert.S2Tw("汉化") == "漢化");
         Check("ZhConvert 詞級消歧義 (头发)", ZhConvert.S2Tw("头发") == "頭髮");

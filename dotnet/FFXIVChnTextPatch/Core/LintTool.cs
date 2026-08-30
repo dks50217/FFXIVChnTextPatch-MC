@@ -95,6 +95,32 @@ public static class LintTool
         return new LintResult(errors.Count, missingSheets.Count, summary);
     }
 
+    /// <summary>
+    /// 漂移偵測：拿正確對齊的上游文字比對本地翻譯。回傳「上游同 key 該列全空、但本地非空」的 key
+    /// ——遊戲改版重新編號後，本地舊翻譯被 RawexdMerge「本地優先」釘在錯 key 的典型徵狀。
+    /// 只比對兩邊都有的 key（本地獨有列是刻意新增，不算漂移）。純字串比對，不需遊戲或網路。
+    /// </summary>
+    public static List<int> DetectDrift(string localText, string upstreamText)
+    {
+        static Dictionary<int, bool> DataRows(string text)
+        {
+            var rows = RawexdMerge.Parse(text).Where(r => r.Fields != null).Select(r => r.Fields!).ToList();
+            var map = new Dictionary<int, bool>();
+            for (int i = 3; i < rows.Count; i++)               // [0..2]=表頭，資料從第 4 列起
+                if (int.TryParse(rows[i][0], out int key))
+                    map[key] = rows[i].Skip(1).All(string.IsNullOrEmpty);  // 整列（key 以外）是否全空
+            return map;
+        }
+
+        var up = DataRows(upstreamText);
+        var suspects = new List<int>();
+        foreach (var (key, localAllEmpty) in DataRows(localText))
+            if (!localAllEmpty && up.TryGetValue(key, out bool upAllEmpty) && upAllEmpty)
+                suspects.Add(key);
+        suspects.Sort();
+        return suspects;
+    }
+
     private static void LintCsv(string path, string name, List<string> errors,
         List<string> sayTodoZh, List<(string, int, int)> coverage)
     {

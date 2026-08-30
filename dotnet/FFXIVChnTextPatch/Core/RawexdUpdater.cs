@@ -43,6 +43,7 @@ public static class RawexdUpdater
             // 3. 逐檔簡轉繁 + 合併
             var files = Directory.GetFiles(upDir, "*.csv", SearchOption.AllDirectories);
             int filled = 0, newRows = 0, changed = 0, newFiles = 0, failed = 0;
+            var drift = new List<(string Rel, List<int> Keys)>();
             for (int i = 0; i < files.Length; i++)
             {
                 string rel = Path.GetRelativePath(upDir, files[i]);
@@ -59,6 +60,9 @@ public static class RawexdUpdater
                         continue;
                     }
                     string localText = ReadLocal(localPath, out bool wasBig5);
+                    // 上游剛下載＋轉好、就在手上，順手做漂移偵測（不需額外下載）
+                    var suspects = LintTool.DetectDrift(localText, upText);
+                    if (suspects.Count > 0) drift.Add((rel.Replace('\\', '/'), suspects));
                     var r = RawexdMerge.Merge(localText, upText, localText.Contains("\r\n") ? "\r\n" : "\n");
                     if (r.Filled > 0 || r.NewRows > 0 || r.HeadersChanged || wasBig5)
                     {
@@ -75,8 +79,21 @@ public static class RawexdUpdater
                 }
             }
 
+            int driftKeys = drift.Sum(d => d.Keys.Count);
+            if (drift.Count > 0)
+            {
+                var sb = new System.Text.StringBuilder();
+                sb.AppendLine($"疑似錯位 key（上游該列全空、本地卻有翻譯）  {DateTime.Now:yyyy-MM-dd HH:mm:ss}");
+                sb.AppendLine("遊戲改版重新編號後，舊翻譯被釘在錯 key 的徵狀；請對照上游確認後再修。");
+                sb.AppendLine();
+                foreach (var (rel, keys) in drift.OrderByDescending(d => d.Keys.Count))
+                    sb.AppendLine($"{rel}（{keys.Count}）：{string.Join(", ", keys)}");
+                File.WriteAllText(AppEnv.P("rawexd-drift.txt"), sb.ToString(), new System.Text.UTF8Encoding(false));
+            }
+
             string msg = $"更新完成：{changed} 檔更新（補 {filled} 格、新增 {newRows} 列）、{newFiles} 個新檔" +
                          (failed > 0 ? $"、{failed} 檔失敗（見 debug.log）" : "") +
+                         (drift.Count > 0 ? $"、{drift.Count} 檔疑似錯位（{driftKeys} 個 key，見 rawexd-drift.txt）" : "") +
                          "。原檔已備份至 backup/rawexd-before-update.zip";
             AppEnv.Log(msg);
             return (failed == 0, msg);

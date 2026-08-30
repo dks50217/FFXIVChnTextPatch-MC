@@ -96,34 +96,57 @@ public static class LintTool
     }
 
     /// <summary>
-    /// 漂移偵測：拿對齊正確的上游比對本地。回傳疑似「錯位」的 key——本地該 key 有翻譯、
-    /// 上游同 key 卻整列全空，且該翻譯的內容在上游其實存在於「別的 key」（代表條目被搬走、
-    /// 本地舊翻譯被 RawexdMerge「本地優先」釘在原 key）。
+    /// 漂移偵測：拿對齊正確的上游比對本地，回傳疑似「錯位」的 key。三個條件都成立才算：
+    ///   1. 上游同 key 整列全空、本地該 key 有翻譯；
+    ///   2. 本地那句話在上游別處出現過（代表條目被搬走，而非 fork 翻在上游前面）；
+    ///   3. 該 key 上下最近的「兩邊都有值」錨點沒對齊（真的整塊位移，而非孤立補白）。
     ///
-    /// 「內容存在於上游別處」這條是關鍵：沒有它就會把「本地翻在上游前面」（fork 比上游完整、
-    /// 上游那格還空著）誤報成漂移。所以 upstreamText 必須是**已簡轉繁**的版本，字串才對得起來。
-    /// 純字串比對，不需遊戲或網路。
+    /// 第 3 條專門排掉「常見/重複字串，上游留白、本地補上」的合理情況（如 NPC 反覆喊同一句、
+    /// 一排都叫「攻擊」）：那種上下鄰列 local 跟 upstream 仍對得齊。upstreamText 必須是**已簡轉繁**
+    /// 的版本，字串才對得起來。純字串比對，不需遊戲或網路。
     /// </summary>
     public static List<int> DetectDrift(string localText, string upstreamText)
     {
-        static List<List<string>> Data(string text) =>
-            RawexdMerge.Parse(text).Where(r => r.Fields != null).Select(r => r.Fields!).Skip(3).ToList();
+        // key → 代表值（該列第一個非空儲存格；整列全空則 null）
+        static SortedDictionary<int, string?> Rep(string text)
+        {
+            var m = new SortedDictionary<int, string?>();
+            foreach (var r in RawexdMerge.Parse(text).Where(r => r.Fields != null).Select(r => r.Fields!).Skip(3))
+                if (int.TryParse(r[0], out int key))
+                    m[key] = r.Skip(1).FirstOrDefault(c => !string.IsNullOrEmpty(c));
+            return m;
+        }
 
-        var upEmpty = new Dictionary<int, bool>();   // 上游 key → 該列（key 以外）是否全空
-        var upVals = new HashSet<string>();          // 上游所有非空儲存格值（用來判斷「搬到別處」）
-        foreach (var row in Data(upstreamText))
-            if (int.TryParse(row[0], out int key))
+        var up = Rep(upstreamText);
+        var lo = Rep(localText);
+        var upVals = new HashSet<string>(up.Values.Where(v => v != null)!);
+
+        // 錨點：兩邊該 key 都有值；aligned = 兩邊值相同（沒位移）。up 已排序，故 anchorKeys 遞增。
+        var anchorKeys = new List<int>();
+        var aligned = new Dictionary<int, bool>();
+        foreach (var (k, uv) in up)
+            if (uv != null && lo.TryGetValue(k, out var lv) && lv != null)
             {
-                var cells = row.Skip(1).ToList();
-                upEmpty[key] = cells.All(string.IsNullOrEmpty);
-                foreach (var c in cells) if (!string.IsNullOrEmpty(c)) upVals.Add(c);
+                anchorKeys.Add(k);
+                aligned[k] = lv == uv;
             }
 
+        // 上下最近的錨點是否都對齊 → 是的話代表這裡沒位移，只是孤立補白
+        bool NeighborsAligned(int key)
+        {
+            int i = anchorKeys.BinarySearch(key);
+            if (i < 0) i = ~i;                       // 插入點 = 第一個 > key 的錨點
+            bool prevOk = i - 1 >= 0 && aligned[anchorKeys[i - 1]];
+            bool nextOk = i < anchorKeys.Count && aligned[anchorKeys[i]];
+            return prevOk && nextOk;
+        }
+
         var suspects = new List<int>();
-        foreach (var row in Data(localText))
-            if (int.TryParse(row[0], out int key)
-                && upEmpty.TryGetValue(key, out bool upAllEmpty) && upAllEmpty   // 上游同 key 全空
-                && row.Skip(1).Any(c => !string.IsNullOrEmpty(c) && upVals.Contains(c)))  // 本地翻譯在上游別處出現
+        foreach (var (key, lv) in lo)
+            if (lv != null
+                && up.TryGetValue(key, out var uv) && uv == null   // 上游同 key 全空
+                && upVals.Contains(lv)                             // 本地值在上游別處出現
+                && !NeighborsAligned(key))                         // 上下未對齊 → 真的位移
                 suspects.Add(key);
         suspects.Sort();
         return suspects;

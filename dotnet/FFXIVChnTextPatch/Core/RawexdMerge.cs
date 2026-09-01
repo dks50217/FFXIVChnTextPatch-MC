@@ -23,8 +23,17 @@ public static class RawexdMerge
         var loOff = new Dictionary<string, int>();
         for (int j = 1; j < loRows[1].Count; j++) loOff[loRows[1][j]] = j;
 
+        // 配對鍵：offset-0 欄若是穩定 id（CtsWks 的 TEXT_… 這種）就用它，否則退回位序 key（fields[0]）。
+        // 用位序配對時，上游在中間插一列會讓之後每列的序號整條位移，本地譯文就被貼到錯的列上（含
+        // TEXT-id 欄被覆蓋）——這正是 009 那批 CtsWks 漂移的成因。改按 id 配對即免疫插列/重排。
+        // 但不是每張表都有 id 欄：有些表的 offset-0 是空的、或本身就是被翻譯的文字，那類仍走位序。
+        int loIdCol = KeyColumn(loRows), upIdCol = KeyColumn(upRows);
+        bool byId = loIdCol > 0 && upIdCol > 0 && QualifiesAsId(loRows, upRows, loIdCol, upIdCol);
+        string LoKey(List<string> r) => byId && r.Count > loIdCol ? r[loIdCol] : r[0];
+        string UpKey(List<string> r) => byId && r.Count > upIdCol ? r[upIdCol] : r[0];
+
         var loData = new Dictionary<string, List<string>>();
-        for (int i = 3; i < loRows.Count; i++) loData[loRows[i][0]] = loRows[i];
+        for (int i = 3; i < loRows.Count; i++) loData[LoKey(loRows[i])] = loRows[i];
 
         bool headersChanged = Enumerable.Range(0, 3).Any(i => !loRows[i].SequenceEqual(upRows[i]));
         int filled = 0, newRows = 0, upRowIdx = 0;
@@ -36,7 +45,7 @@ public static class RawexdMerge
             if (comment != null) { sb.Append(comment).Append(nl); continue; }
             if (upRowIdx++ < 3 || fields!.Count == 0) { WriteRow(sb, fields!, nl); continue; }
 
-            string key = fields[0];
+            string key = UpKey(fields!);
             seen.Add(key);
             if (loData.TryGetValue(key, out var lrow))
             {
@@ -61,7 +70,7 @@ public static class RawexdMerge
         // 本地獨有的列: 依 offset 重排進上游欄位配置後附加在檔尾
         for (int i = 3; i < loRows.Count; i++)
         {
-            if (seen.Contains(loRows[i][0])) continue;
+            if (seen.Contains(LoKey(loRows[i]))) continue;
             var row = new List<string> { loRows[i][0] };
             for (int j = 1; j < upRows[1].Count; j++)
                 row.Add(loOff.TryGetValue(upRows[1][j], out int lj) && lj < loRows[i].Count ? loRows[i][lj] : "");
@@ -69,6 +78,36 @@ public static class RawexdMerge
         }
 
         return (sb.ToString(), filled, newRows, headersChanged);
+    }
+
+    /// <summary>第一個 offset 值為 "0" 的資料欄（慣例上緊接 key）；找不到回 -1。</summary>
+    internal static int KeyColumn(List<List<string>> rows)
+    {
+        var off = rows[1];
+        for (int j = 1; j < off.Count; j++) if (off[j] == "0") return j;
+        return -1;
+    }
+
+    /// <summary>
+    /// offset-0 欄能否當配對鍵：上游該欄每列都非空且唯一（是個真 key，排除 offset-0 為空的表），
+    /// 且值在本地/上游間過半重疊（語言無關的 id；若該欄本身是被翻譯的文字，簡繁兩邊對不上、
+    /// 重疊近 0，就會落回位序）。
+    /// </summary>
+    internal static bool QualifiesAsId(List<List<string>> loRows, List<List<string>> upRows, int loIdCol, int upIdCol)
+    {
+        var up = new HashSet<string>();
+        for (int i = 3; i < upRows.Count; i++)
+        {
+            var r = upRows[i];
+            if (upIdCol >= r.Count || r[upIdCol] == "" || !up.Add(r[upIdCol])) return false; // 空或重複 → 不是 key
+        }
+        int loCount = loRows.Count - 3, overlap = 0;
+        for (int i = 3; i < loRows.Count; i++)
+        {
+            var r = loRows[i];
+            if (loIdCol < r.Count && up.Contains(r[loIdCol])) overlap++;
+        }
+        return up.Count > 0 && overlap * 2 >= Math.Min(up.Count, loCount); // 過半對得上 → 語言無關 id
     }
 
     private static void WriteRow(StringBuilder sb, List<string> fields, string nl) =>

@@ -61,7 +61,8 @@ public static class RawexdUpdater
                     }
                     string localText = ReadLocal(localPath, out bool wasBig5);
                     // 上游剛下載＋轉好、就在手上，順手做漂移偵測（不需額外下載）
-                    var suspects = LintTool.DetectDrift(localText, upText);
+                    var suspects = LintTool.DetectDrift(localText, upText)
+                        .Union(LintTool.DetectIdDrift(localText, upText)).OrderBy(k => k).ToList();
                     if (suspects.Count > 0) drift.Add((rel.Replace('\\', '/'), suspects));
                     var r = RawexdMerge.Merge(localText, upText, localText.Contains("\r\n") ? "\r\n" : "\n");
                     if (r.Filled > 0 || r.NewRows > 0 || r.HeadersChanged || wasBig5)
@@ -131,7 +132,9 @@ public static class RawexdUpdater
                 progress.Report(new(0.8 + 0.2 * i / files.Length, "正在比對漂移……", rel));
                 string localPath = Path.Combine(localDir, rel);
                 if (!File.Exists(localPath)) continue;           // 上游新檔、本地還沒有，不算漂移
-                var suspects = LintTool.DetectDrift(ReadLocal(localPath, out _), ZhConvert.S2Tw(File.ReadAllText(files[i])));
+                string loText = ReadLocal(localPath, out _), upConv = ZhConvert.S2Tw(File.ReadAllText(files[i]));
+                var suspects = LintTool.DetectDrift(loText, upConv)
+                    .Union(LintTool.DetectIdDrift(loText, upConv)).OrderBy(k => k).ToList();
                 if (suspects.Count > 0) drift.Add((rel, suspects));
             }
 

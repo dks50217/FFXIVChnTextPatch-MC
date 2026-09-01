@@ -152,6 +152,33 @@ public static class LintTool
         return suspects;
     }
 
+    /// <summary>
+    /// id-bearing 表的精確漂移檢查（上游為準）：比對本地與上游的 key(RowId)→TEXT-id 對照，
+    /// 回傳 TEXT-id 不一致的 key——那些列的譯文會顯示在錯的遊戲列上。TEXT-id 語言無關，故不需
+    /// ZhConvert、零翻譯誤報，也不受 DetectDrift「上游該格需為空」盲點限制。無 id 欄的表回空
+    /// （交給 DetectDrift 的內容啟發式）。本地獨有列（key 不在上游）不算漂移。
+    /// </summary>
+    public static List<int> DetectIdDrift(string localText, string upstreamText)
+    {
+        var lo = RawexdMerge.Parse(localText).Where(r => r.Fields != null).Select(r => r.Fields!).ToList();
+        var up = RawexdMerge.Parse(upstreamText).Where(r => r.Fields != null).Select(r => r.Fields!).ToList();
+        if (lo.Count < 4 || up.Count < 4) return new();
+        int loIdCol = RawexdMerge.KeyColumn(lo), upIdCol = RawexdMerge.KeyColumn(up);
+        if (loIdCol <= 0 || upIdCol <= 0 || !RawexdMerge.QualifiesAsId(lo, up, loIdCol, upIdCol)) return new();
+
+        var upById = new Dictionary<int, string>();
+        for (int i = 3; i < up.Count; i++)
+            if (upIdCol < up[i].Count && int.TryParse(up[i][0], out int k)) upById[k] = up[i][upIdCol];
+
+        var bad = new List<int>();
+        for (int i = 3; i < lo.Count; i++)
+            if (loIdCol < lo[i].Count && int.TryParse(lo[i][0], out int k)
+                && upById.TryGetValue(k, out var upId) && lo[i][loIdCol] != upId)
+                bad.Add(k);                                   // 本地此 RowId 的 TEXT-id ≠ 上游 → 漂移
+        bad.Sort();
+        return bad;
+    }
+
     private static void LintCsv(string path, string name, List<string> errors,
         List<string> sayTodoZh, List<(string, int, int)> coverage)
     {

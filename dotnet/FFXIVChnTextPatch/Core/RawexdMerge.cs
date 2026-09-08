@@ -1,4 +1,4 @@
-using System.Text;
+﻿using System.Text;
 
 namespace FFXIVChnTextPatch.Core;
 
@@ -99,7 +99,9 @@ public static class RawexdMerge
         for (int i = 3; i < upRows.Count; i++)
         {
             var r = upRows[i];
-            if (upIdCol >= r.Count || r[upIdCol] == "" || !up.Add(r[upIdCol])) return false; // 空或重複 → 不是 key
+            // 空/重複/含非 ASCII → 不是 id。真 id（TEXT_…）全是 ASCII；offset-0 若是被翻譯的中文欄，
+            // 簡繁兩邊高度重疊會騙過下面的重疊檢查，把譯文差一字的列判成「本地獨有」重複附在檔尾。
+            if (upIdCol >= r.Count || r[upIdCol] == "" || r[upIdCol].Any(c => c > '~') || !up.Add(r[upIdCol])) return false;
         }
         int loCount = loRows.Count - 3, overlap = 0;
         for (int i = 3; i < loRows.Count; i++)

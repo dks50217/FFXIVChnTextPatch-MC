@@ -1,4 +1,4 @@
-using System.Text;
+﻿using System.Text;
 using FFXIVChnTextPatch.Core;
 
 namespace FFXIVChnTextPatch;
@@ -128,6 +128,14 @@ public static class SelfTest
             "key,0\n#,Name\noffset,0\nInt32,String\n0,\n1,本地\n",
             "key,0\n#,Name\noffset,0\nInt32,String\n0,\n1,上游\n", "\n");
         Check("Merge 無 id 欄退回位序", mrNoId.Merged.Contains("1,本地"));
+
+        // 7a″. offset-0 本身就是被翻譯的中文欄（MateAuthorityCategory 這種）→ 不可當 id，
+        //      否則跟上游只差一字的譯文會配不上，被當「本地獨有」重複附在檔尾。
+        var mrTextCol = RawexdMerge.Merge(
+            "key,0\n#,Name\noffset,0\nInt32,String\n1,甲\n2,管弦樂琴\n",
+            "key,0\n#,Name\noffset,0\nInt32,String\n1,甲\n2,管絃樂琴\n", "\n");
+        Check("Merge 中文欄不當 id（不重複附加列）",
+            mrTextCol.Merged.Contains("2,管弦樂琴") && !mrTextCol.Merged.Contains("管絃"));
 
         // 7b. 漂移偵測：上游該 key 全空、本地有翻譯、該翻譯在上游別處出現、且上下鄰列未對齊 → 疑似錯位。
         string dUp = "key,0\n#,Name\noffset,0\nint32,str\n0,甲\n1,乙\n2,\n3,丙\n10,\n11,壬\n";

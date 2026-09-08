@@ -151,6 +151,12 @@ public static class SelfTest
         string idLo2 = "key,0,1\n#,,\noffset,0,4\nInt32,String,String\n0,ID_A,甲\n1,ID_B,乙\n2,ID_C,丙\n";
         Check("DetectIdDrift 抓 TEXT-id 對不上的 key", LintTool.DetectIdDrift(idLo2, idUp2).SequenceEqual(new[] { 1, 2 }));
         Check("DetectIdDrift 對齊時不誤報", LintTool.DetectIdDrift(idUp2, idUp2).Count == 0);
+
+        // 7d. 重複 RowId：上游刪掉 TEXT_B 後，本地那列以舊 RowId 1 附在檔尾，跟上游的 key 1 撞號。
+        Check("DuplicateKeys 抓撞號的 key", LintTool.DuplicateKeys(
+            "key,0,1\n#,,\noffset,0,4\nInt32,String,String\n0,ID_A,甲\n1,ID_C,丙\n1,ID_B,乙\n")
+            .SequenceEqual(new[] { 1 }));
+        Check("DuplicateKeys 乾淨時回空", LintTool.DuplicateKeys(idUp2).Count == 0);
         // 無 id 欄的表不歸它管，回空
         Check("DetectIdDrift 無 id 欄回空",
             LintTool.DetectIdDrift("key,0\n#,Name\noffset,0\nInt32,String\n0,\n1,本地\n",

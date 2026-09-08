@@ -179,6 +179,23 @@ public static class LintTool
         return bad;
     }
 
+    /// <summary>
+    /// 同一個 RowId 出現多次的 key。撞號的來源是 RawexdMerge 的檔尾附加：本地列在上游配不到
+    /// （id 被上游刪/改名，或配對鍵誤判成翻譯欄）就以本地舊 RowId 附在檔尾。套用時
+    /// <c>PatchService.LoadCsv</c> 的 dataMap 後蓋前，檔尾那列會蓋掉正確的列。
+    /// </summary>
+    public static List<int> DuplicateKeys(string csvText)
+    {
+        var rows = RawexdMerge.Parse(csvText).Where(r => r.Fields != null).Select(r => r.Fields!).ToList();
+        var seen = new HashSet<string>();
+        var dup = new List<int>();
+        for (int i = 3; i < rows.Count; i++)
+            if (rows[i].Count > 0 && !seen.Add(rows[i][0]) && int.TryParse(rows[i][0], out int k) && !dup.Contains(k))
+                dup.Add(k);
+        dup.Sort();
+        return dup;
+    }
+
     private static void LintCsv(string path, string name, List<string> errors,
         List<string> sayTodoZh, List<(string, int, int)> coverage)
     {

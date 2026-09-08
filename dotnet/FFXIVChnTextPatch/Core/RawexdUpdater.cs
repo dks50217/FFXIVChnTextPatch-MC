@@ -81,11 +81,13 @@ public static class RawexdUpdater
             }
 
             int driftKeys = drift.Sum(d => d.Keys.Count);
-            WriteDriftReport(drift);
+            var dupes = ScanDuplicateKeys();
+            WriteDriftReport(drift, dupes);
 
             string msg = $"更新完成：{changed} 檔更新（補 {filled} 格、新增 {newRows} 列）、{newFiles} 個新檔" +
                          (failed > 0 ? $"、{failed} 檔失敗（見 debug.log）" : "") +
                          (drift.Count > 0 ? $"、{drift.Count} 檔疑似錯位（{driftKeys} 個 key，見 rawexd-drift.txt）" : "") +
+                         (dupes.Count > 0 ? $"、{dupes.Count} 檔有重複 RowId（見 rawexd-drift.txt）" : "") +
                          "。原檔已備份至 backup/rawexd-before-update.zip";
             AppEnv.Log(msg);
             return (failed == 0, msg);
@@ -138,27 +140,59 @@ public static class RawexdUpdater
                 if (suspects.Count > 0) drift.Add((rel, suspects));
             }
 
-            WriteDriftReport(drift);
+            var dupes = ScanDuplicateKeys();
+            WriteDriftReport(drift, dupes);
             int keys = drift.Sum(d => d.Keys.Count);
-            AppEnv.Log(drift.Count == 0 ? "漂移檢查：乾淨，無疑似錯位"
-                : $"漂移檢查：{drift.Count} 檔疑似錯位（{keys} 個 key，見 rawexd-drift.txt）");
-            return drift.Count;
+            AppEnv.Log(drift.Count == 0 && dupes.Count == 0 ? "漂移檢查：乾淨，無疑似錯位"
+                : $"漂移檢查：{drift.Count} 檔疑似錯位（{keys} 個 key）、{dupes.Count} 檔重複 RowId，見 rawexd-drift.txt");
+            return drift.Count + dupes.Count;
         }
         catch (Exception ex) { AppEnv.Log("漂移檢查失敗: " + ex); return -1; }
         finally { try { DeleteDir(tmp); } catch { /* 暫存清不掉不影響結果 */ } }
     }
 
+    /// <summary>掃 resource/rawexd 找重複 RowId（不需上游，本地自己就看得出來）。</summary>
+    private static List<(string Rel, List<int> Keys)> ScanDuplicateKeys()
+    {
+        string localDir = AppEnv.P("resource", "rawexd");
+        var hits = new List<(string, List<int>)>();
+        if (!Directory.Exists(localDir)) return hits;
+        foreach (string p in Directory.GetFiles(localDir, "*.csv", SearchOption.AllDirectories))
+        {
+            try
+            {
+                var dup = LintTool.DuplicateKeys(ReadLocal(p, out _));
+                if (dup.Count > 0) hits.Add((Path.GetRelativePath(localDir, p).Replace('\\', '/'), dup));
+            }
+            catch (Exception ex) { AppEnv.Log($"重複 RowId 檢查失敗 {p}: {ex.Message}"); }
+        }
+        return hits;
+    }
+
     /// <summary>寫 rawexd-drift.txt；乾淨時刪掉舊報告，免得殘留誤導。</summary>
-    private static void WriteDriftReport(List<(string Rel, List<int> Keys)> drift)
+    private static void WriteDriftReport(List<(string Rel, List<int> Keys)> drift,
+        List<(string Rel, List<int> Keys)> dupes)
     {
         string path = AppEnv.P("rawexd-drift.txt");
-        if (drift.Count == 0) { try { File.Delete(path); } catch { /* 沒有就算了 */ } return; }
+        if (drift.Count == 0 && dupes.Count == 0) { try { File.Delete(path); } catch { /* 沒有就算了 */ } return; }
         var sb = new System.Text.StringBuilder();
-        sb.AppendLine($"疑似錯位 key（上游該列全空、本地卻有翻譯）  {DateTime.Now:yyyy-MM-dd HH:mm:ss}");
-        sb.AppendLine("遊戲改版重新編號後，舊翻譯被釘在錯 key 的徵狀；請對照上游確認後再修。");
-        sb.AppendLine();
-        foreach (var (rel, keys) in drift.OrderByDescending(d => d.Keys.Count))
-            sb.AppendLine($"{rel}（{keys.Count}）：{string.Join(", ", keys)}");
+        sb.AppendLine($"rawexd 檢查報告  {DateTime.Now:yyyy-MM-dd HH:mm:ss}");
+        if (drift.Count > 0)
+        {
+            sb.AppendLine();
+            sb.AppendLine("【疑似錯位 key】上游該列全空、本地卻有翻譯。");
+            sb.AppendLine("遊戲改版重新編號後，舊翻譯被釘在錯 key 的徵狀；請對照上游確認後再修。");
+            foreach (var (rel, keys) in drift.OrderByDescending(d => d.Keys.Count))
+                sb.AppendLine($"{rel}（{keys.Count}）：{string.Join(", ", keys)}");
+        }
+        if (dupes.Count > 0)
+        {
+            sb.AppendLine();
+            sb.AppendLine("【重複 RowId】同一個 key 出現多次，套用時後面那列會蓋掉前面那列。");
+            sb.AppendLine("多半是 merge 檔尾附加造成的（上游刪/改名了該列的 TEXT-id）；留一列、把譯文併回去。");
+            foreach (var (rel, keys) in dupes.OrderByDescending(d => d.Keys.Count))
+                sb.AppendLine($"{rel}（{keys.Count}）：{string.Join(", ", keys)}");
+        }
         File.WriteAllText(path, sb.ToString(), new System.Text.UTF8Encoding(false));
     }
 

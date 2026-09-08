@@ -1,5 +1,5 @@
 ﻿key,0,1,2
-#,,,
+#,DisplayName,AddonName,
 offset,0,4,8
 Int32,String,String,String
 0,熱鍵欄1,Hotbar1,hot1
@@ -112,5 +112,5 @@ Int32,String,String,String
 107,調色量譜,,
 108,紛爭前線：戰況情報,Frontline:CampaignInfo,
 109,宇宙探索：情報,CosmoExplorer:Info,
-110,,,
-111,,,
+110,技力量譜,,
+111,協作量譜,,

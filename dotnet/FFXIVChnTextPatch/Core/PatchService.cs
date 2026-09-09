@@ -38,7 +38,28 @@ public class PatchService
         catch { return null; }
     }
 
-    /// <summary>主畫面顯示的漢化狀態（依據上次漢化時記下的遊戲版本）。</summary>
+    /// <summary>
+    /// 六個資源檔的「檔案大小+修改時間」指紋，用來偵測漢化後檔案是否被換掉。
+    /// ponytail: 不做內容雜湊 — dat0 有數 GB，每次開畫面都算不划算；
+    /// 手動覆蓋／官方修復一定會改到大小或修改時間，這個粒度就夠。
+    /// </summary>
+    private static string FileStamp()
+    {
+        var gamePath = Config.Get("GamePath");
+        if (!IsFFXIVFolder(gamePath)) return "";
+        var folder = SqpackFolder(gamePath!);
+        try
+        {
+            return string.Join("|", ResourceNames.Select(n =>
+            {
+                var f = new FileInfo(Path.Combine(folder, n));
+                return f.Exists ? $"{f.Length}:{f.LastWriteTimeUtc.Ticks}" : "-";
+            }));
+        }
+        catch { return ""; }
+    }
+
+    /// <summary>主畫面顯示的漢化狀態（依據上次漢化時記下的遊戲版本與檔案指紋）。</summary>
     public static (string Text, bool Warn) PatchStatus()
     {
         string? patched = Config.Get("PatchedVersion");
@@ -46,6 +67,10 @@ public class PatchService
         string? game = GameVersion();
         if (game != null && game != patched)
             return ($"⚠ 遊戲已從 {patched} 更新至 {game}，漢化已被覆蓋，請重新漢化", true);
+        string? stamp = Config.Get("PatchedStamp");
+        string now = FileStamp();
+        if (!string.IsNullOrEmpty(stamp) && now.Length > 0 && stamp != now)
+            return ("⚠ 遊戲資源檔在漢化後被更動過（手動替換或官方修復？），漢化可能已失效，請重新漢化", true);
         return ($"目前狀態：已漢化（遊戲版本 {patched}）", false);
     }
 
@@ -90,6 +115,7 @@ public class PatchService
             });
             AppEnv.Log("Patch finished. " + summary);
             Config.Set("PatchedVersion", GameVersion() ?? "");
+            Config.Set("PatchedStamp", FileStamp());
             Config.Save();
             return (true, summary);
         }
@@ -135,6 +161,7 @@ public class PatchService
                 AppEnv.Log("[Rollback] Rollback completed.");
             });
             Config.Set("PatchedVersion", "");
+            Config.Set("PatchedStamp", "");
             Config.Save();
             return (true, "還原完畢");
         }

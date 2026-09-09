@@ -67,7 +67,11 @@ Diagnosis is empirical; static analysis of `<hex:>` tags alone produces too many
 4. Blank those cells (empty = keep original text), re-patch, then halve until one row is left.
 5. Fix by re-translating the row to the JA tag structure, not by leaving it blank — **`--update` refills empty cells from upstream**, so a blanked workaround silently comes back.
 
-Observed: *missing* tags relative to the original are harmless (the graphics-settings rows drop conditionals with no ill effect). Row-id drift was ruled out here — sheet rows aligned one-to-one with the JA export.
+Observed in the one case diagnosed so far (Moogle guidebook, `Addon`): two rows that drop tags relative to the JA original — 15949 and 15955 — were excluded by bisection, so dropping a tag did not trigger *that* crash. This is not a general rule: it holds for those two rows only. Treat every row whose tag sequence differs from the JA original as a candidate, whichever direction it differs in, until re-patching rules it out.
+
+Compare full chunk sequences, not tag counts. The five rows that survived bisection all carry the *same* data-tag counts as the JA original and differ only in parameter bytes or ordering — a count-based check would have cleared every one of them.
+
+Row-id drift was ruled out in that case: rows aligned one-to-one with the JA export.
 
 ## Key constraints
 

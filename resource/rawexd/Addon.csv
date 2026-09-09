@@ -15921,7 +15921,7 @@ Int32,String
 15916,<hex:02082DE1E80401FF19><hex:022815FF10>InstanceContent<hex:E8060403><hex:FF0D>？？？？<hex:03><hex:02100103><hex:022003E80803>級 <hex:020829E1E80201FF15><hex:022811FF0C>ContentType<hex:E8030103><hex:FF0D>？？？？<hex:03>
 15917,<hex:02280AFF05>Item<hex:E8020103>
 15918,<hex:022003E80203>級<hex:022903EA0303>
-15919,<hex:02282BFF10>CSBonusTextData<hex:FF17><hex:022813FF0E>CSBonusSeason<hex:E8020B03><hex:0103> <hex:02282BFF10>CSBonusTextData<hex:FF17><hex:022813FF0E>CSBonusSeason<hex:E8020C03><hex:0103>結束前
+15919,
 15920,<hex:020703E80203><hex:022002DF03>/<hex:022002DE03>/<hex:022002DC03> <hex:022002DB03>:<hex:022402DA03>
 15921,？？？？
 15922,突破<hex:022815FF10>InstanceContent<hex:E8060403>。
@@ -15929,13 +15929,13 @@ Int32,String
 15924,在任意<hex:022811FF0C>ContentType<hex:E8030103>中獲得金碟幣。
 15925,1次<hex:022811FF0C>ContentType<hex:E8030103>中合計漁分達到<hex:020815E1E80801FF07><hex:022003E80803><hex:FF07><hex:022003E80903><hex:03>以上。
 15926,完成任務「<hex:02280BFF06>Quest<hex:E8020103>」<hex:02100103>或「<hex:02280BFF06>Quest<hex:E8030103>」<hex:02100103>或「<hex:02280BFF06>Quest<hex:E8040103>」後開放。
-15927,<hex:0208F0DBE4E80503FF83>合計完成<hex:022825FF0A>PlaceName<hex:FF17><hex:022813FF0E>TerritoryType<hex:E8060603><hex:0103>或<hex:022825FF0A>PlaceName<hex:FF17><hex:022813FF0E>TerritoryType<hex:E8070603><hex:0103>的<hex:022811FF0C>ContentType<hex:E8030103><hex:022003E80903>次。<hex:FF52>完成<hex:022825FF0A>PlaceName<hex:FF17><hex:022813FF0E>TerritoryType<hex:E8060603><hex:0103>的<hex:022811FF0C>ContentType<hex:E8030103><hex:022003E80903>次。<hex:03>
+15927,
 15928,以<hex:022811FF0C>ContentType<hex:E8030103>戰勝<hex:022833FF0A>PlaceName<hex:FF25><hex:022821FF0E>TerritoryType<hex:FF0F><hex:02280BFF06>Level<hex:E80B0A03><hex:0603><hex:0103>的<hex:022812FF0D>ENpcResident<hex:E8060103>。
 15929,完成<hex:022828FF0A>EventItem<hex:FF1A><hex:022816FF11>MobHuntOrderType<hex:E8060303><hex:0103>。
 15930,釣上<hex:022820FF05>Item<hex:FF17><hex:022813FF0E>FishParameter<hex:E8060503><hex:0103>。
-15931,突破<hex:02285CFF0A>PlaceName<hex:FF4E><hex:02284AFF0E>TerritoryType<hex:FF38><hex:022834FF17>ContentFinderCondition<hex:FF19><hex:022815FF10>InstanceContent<hex:E8060903><hex:0203><hex:0603><hex:0103>的<hex:02081BE4E80F01FF0D>地下<hex:022003E80D03><hex:FF07><hex:022003E80D03><hex:03>層。
+15931,
 15932,完成任務「<hex:02280BFF06>Quest<hex:E8020103>」後開放。
-15933,<hex:02087EE4E80503FF3A>抵達<hex:02280FFF0A>PlaceName<hex:E8060103>或<hex:02280FFF0A>PlaceName<hex:E8070103>後開放。<hex:FF3D>抵達<hex:020827E1E80401FF13><hex:02280FFF0A>PlaceName<hex:E8060103><hex:FF0D>？？？？<hex:03>後開放。<hex:03>
+15933,
 15934,勝敗會影響獎勵量。
 15935,各種機遇任務給予的獎勵數量不同。<hex:02100103>詳情可打開「確認獎勵詳情」查看。
 15936,獲得了莫古莫古指南書。<hex:02100103>請問要打開說明嗎？<hex:02100103><hex:02100103><hex:024804F201FA03><hex:024904F201FB03>※通過介面左下的問號圖標可隨時打開說明。<hex:0249020103><hex:0248020103>
@@ -15945,7 +15945,7 @@ Int32,String
 15940,分類
 15941,前往官方網站
 15942,概要
-15943,挑戰<hex:022003E80903>次通過尋寶傳送魔紋進入的寶物庫<hex:02100103>※中途退出寶物庫時不會計入挑戰次數
+15943,
 15944,尋寶：寶物庫
 15945,尋寶：寶物庫<hex:02100103><hex:022003E80803>級
 15946,解讀任意陳舊的地圖，開啟寶箱。

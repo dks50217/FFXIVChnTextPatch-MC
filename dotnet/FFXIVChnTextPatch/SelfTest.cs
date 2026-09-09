@@ -7,11 +7,13 @@ namespace FFXIVChnTextPatch;
 /// 回傳失敗數，App 用它當 process exit code，CI 才能判定成敗。</summary>
 public static class SelfTest
 {
+    /// <summary>執行核心二進位邏輯的自我測試，並回傳失敗項目數。</summary>
     public static int Run()
     {
         var log = new StringBuilder();
         int failed = 0;
 
+        /// <summary>記錄單一測試結果，並累計失敗項目。</summary>
         void Check(string name, bool ok)
         {
             log.AppendLine($"{(ok ? "PASS" : "FAIL")}  {name}");
@@ -183,6 +185,7 @@ public static class SelfTest
         return failed;
     }
 
+    /// <summary>驗證設定值儲存後可完整重新載入。</summary>
     private static bool TestConfigRoundTrip(string value)
     {
         var tmp = Path.Combine(Path.GetTempPath(), "ffxivpatch-selftest-rt.properties");
@@ -202,6 +205,7 @@ public static class SelfTest
         }
     }
 
+    /// <summary>驗證 properties 格式的跳脫字元可還原為預期設定值。</summary>
     private static bool TestConfigUnescape(string escaped, string expected)
     {
         var tmp = Path.Combine(Path.GetTempPath(), "ffxivpatch-selftest.properties");

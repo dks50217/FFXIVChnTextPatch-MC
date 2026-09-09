@@ -87,6 +87,10 @@ public static class SelfTest
             TestConfigUnescape(@"D\:\\FF14\\SquareEnix\\FINAL FANTASY XIV - A Realm Reborn",
                 @"D:\FF14\SquareEnix\FINAL FANTASY XIV - A Realm Reborn"));
 
+        // PatchedStamp 這種含 : 和 | 的值必須存得回來，否則狀態列會永遠誤報「檔案被更動」
+        Check("Config 存檔 round-trip（含 : 與 |）",
+            TestConfigRoundTrip("123456:638900000000000000|789:638900000000000001"));
+
         // 6. exd-names.csv 載入與各種表名形式的查詢
         Check("ExdNames lookup (Item)", ExdNames.Describe("Item") == "道具");
         Check("ExdNames lookup (EXD/Item.EXH)", ExdNames.Describe("EXD/Item.EXH") == "道具");
@@ -177,6 +181,25 @@ public static class SelfTest
         log.AppendLine(failed == 0 ? "ALL PASSED" : $"{failed} FAILED");
         File.WriteAllText(Path.Combine(AppEnv.BaseDir, "selftest.log"), log.ToString());
         return failed;
+    }
+
+    private static bool TestConfigRoundTrip(string value)
+    {
+        var tmp = Path.Combine(Path.GetTempPath(), "ffxivpatch-selftest-rt.properties");
+        try
+        {
+            File.WriteAllText(tmp, "#comment\n");
+            Config.Load(tmp);
+            Config.Set("PatchedStamp", value);
+            Config.Save();
+            Config.Load(tmp);
+            return Config.Get("PatchedStamp") == value;
+        }
+        finally
+        {
+            File.Delete(tmp);
+            Config.Load(AppEnv.P("conf", "global.properties")); // 還原正式設定
+        }
     }
 
     private static bool TestConfigUnescape(string escaped, string expected)

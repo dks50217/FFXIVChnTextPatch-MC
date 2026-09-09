@@ -27,6 +27,19 @@ Note: the exe is a GUI app — invoking `--selftest` from a shell returns immedi
 
 The app locates its base directory (for `conf/`, `resource/`, `backup/`, `debug.log`) by walking up from the exe until it finds `conf/global.properties`.
 
+## Validation before reporting done
+
+Run what the change touched, and say what passed. This is the same set `.github/workflows/build.yml` runs on every push and PR, so running it locally first just saves a red CI:
+
+| Changed | Run |
+|---------|-----|
+| any C# | `dotnet build` |
+| binary format, CSV merge, ZhConvert, Config | + `--selftest` (exit code = failure count) |
+| `resource/rawexd/*.csv` | + `--lint` (exit code = errors that would break patching) |
+| after `--update` | + `--driftcheck` (warn-only in CI) |
+
+New non-trivial logic leaves one `--selftest` check behind — the smallest assertion that fails if it breaks. No test framework; `SelfTest.cs` is the whole harness.
+
 ## Architecture (`dotnet/FFXIVChnTextPatch/`)
 
 - `Core/PatchService.cs` — orchestrates backup → font replace → CSV text replace, and rollback. Progress via `IProgress<PatchProgress>`.
@@ -41,6 +54,20 @@ The app locates its base directory (for `conf/`, `resource/`, `backup/`, `debug.
 - `Core/ZhConvert.cs` — simplified→traditional with Taiwan vocabulary (OpenCC s2twp equivalent plus FFXIV-specific fixes) via longest-forward-match over TSV dictionaries in `resource/opencc/`: GPPhrases+STPhrases+STCharacters → TWPhrases → TWVariants. `GPPhrases.txt` is the FFXIV exception glossary inherited from the Java GP version (converted from `resource/nlpcn/traditional.txt` in git history; includes quote rules and English-name protection entries). `UserPhrases.txt` is the user-editable override list, loaded ahead of rounds 1 and 2 so it beats everything; simplified or traditional keys both work.
 - `Main.razor` + `wwwroot/` — UI (main panel + settings) hosted in a WPF `BlazorWebView` (`MainWindow.xaml`).
 - `SelfTest.cs` — run with `--selftest`; keep it passing when touching any binary-format code.
+
+## When the game crashes after patching
+
+A crash confined to one UI is almost always a translated cell whose SeString control tags don't match what the international client's original string has — the CN client's phrasing carries a different tag structure, and the UI reads a parameter that was never passed. Text content itself never causes this.
+
+Diagnosis is empirical; static analysis of `<hex:>` tags alone produces too many false positives to name a row (parameter bytes routinely contain `02 XX` sequences that look like tag starts).
+
+1. Bisect by sheet with `SkipFiles` (`exd/<lowercase name>`, pipe-separated) until one sheet is confirmed.
+2. Export the same game version's JA rawexd with SaintCoinach (`SaintCoinach.Cmd`, output under `<version>/rawexd/`). Same exporter, so `<hex:>` chunking is identical and chunk sequences can be compared literally — this is the only reliable comparison.
+3. In the affected row range, list rows whose tag chunk sequence differs from the JA original. That candidate set contains the culprit.
+4. Blank those cells (empty = keep original text), re-patch, then halve until one row is left.
+5. Fix by re-translating the row to the JA tag structure, not by leaving it blank — **`--update` refills empty cells from upstream**, so a blanked workaround silently comes back.
+
+Observed: *missing* tags relative to the original are harmless (the graphics-settings rows drop conditionals with no ill effect). Row-id drift was ruled out here — sheet rows aligned one-to-one with the JA export.
 
 ## Key constraints
 

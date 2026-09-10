@@ -34,8 +34,19 @@ public partial class App : Application
                 Shutdown(2);
                 return;
             }
-            AppEnv.Log(SheetSig.Generate(e.Args[i + 1]));
-            Shutdown();
+            bool ok;
+            try
+            {
+                var (generated, message) = SheetSig.Generate(e.Args[i + 1]);
+                AppEnv.Log(message);
+                ok = generated;
+            }
+            catch (Exception ex)
+            {
+                AppEnv.Log("產生參照檔失敗：" + ex);
+                ok = false;
+            }
+            Shutdown(ok ? 0 : 2);
             return;
         }
 

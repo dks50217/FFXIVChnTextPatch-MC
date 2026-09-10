@@ -58,13 +58,11 @@ public static class SheetSig
 
     // ── 產生參照檔 ──
 
-    public static Task<string> GenerateAsync(string jaDir, IProgress<PatchProgress>? progress = null) =>
-        Task.Run(() => Generate(jaDir, progress));
-
-    public static string Generate(string jaDir, IProgress<PatchProgress>? progress = null)
+    /// <summary>Ok=false 時 Message 是錯誤訊息，呼叫端要以非 0 結束。</summary>
+    public static (bool Ok, string Message) Generate(string jaDir, IProgress<PatchProgress>? progress = null)
     {
         if (!Directory.Exists(jaDir))
-            return $"找不到日文匯出目錄：{jaDir}";
+            return (false, $"找不到日文匯出目錄：{jaDir}");
 
         // SaintCoinach 輸出在 <版本>/rawexd 底下
         string version = new DirectoryInfo(jaDir).Parent?.Name ?? "unknown";
@@ -100,7 +98,7 @@ public static class SheetSig
 
         long kb = new FileInfo(outPath).Length / 1024;
         AppEnv.Log($"[SheetSig] {cells} 格、{kb}KB → {outPath}");
-        return $"完成：{cells} 格含 Sheet 標籤，{kb}KB → resource/{RefName}（遊戲版本 {version}）";
+        return (true, $"完成：{cells} 格含 Sheet 標籤，{kb}KB → resource/{RefName}（遊戲版本 {version}）");
     }
 
     // ── 檢查 ──
@@ -129,9 +127,6 @@ public static class SheetSig
         }
         return (version, sigs);
     }
-
-    public static Task<int> CheckAsync(string? baseRef = null, IProgress<PatchProgress>? progress = null) =>
-        Task.Run(() => Check(baseRef, progress));
 
     /// <summary>baseRef 有給就只檢查相對該 ref 有變動的格子，沒給就掃全部。回傳被標記的格數。</summary>
     public static int Check(string? baseRef = null, IProgress<PatchProgress>? progress = null)

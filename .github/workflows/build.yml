@@ -48,9 +48,12 @@ jobs:
         if: github.event_name == 'pull_request'
         continue-on-error: true
         shell: pwsh
+        env:
+          # 走環境變數而不是直接插進腳本，分支名才不會被當成 PowerShell 語法執行
+          BASE_REF: ${{ github.base_ref }}
         run: |
           $exe = Get-ChildItem -Recurse -Filter FFXIVChnTextPatch.exe bin/Release | Select-Object -First 1
-          $p = Start-Process $exe.FullName "--sheetsig origin/${{ github.base_ref }}" -Wait -PassThru
+          $p = Start-Process $exe.FullName -ArgumentList '--sheetsig', "origin/$env:BASE_REF" -Wait -PassThru
           Get-Content "$env:GITHUB_WORKSPACE/sheetsig-report.txt"
           if ($p.ExitCode -ne 0) { throw "sheetsig: $($p.ExitCode) 格的 Sheet 參照與日文原文不符" }
 

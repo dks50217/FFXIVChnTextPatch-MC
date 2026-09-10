@@ -8,7 +8,7 @@ FFXIV 國際服的中文漢化器。以 C#/.NET 10（WPF + Blazor Hybrid）重�
 1. 針對 5.5X 以後版本修正中文字庫補丁。
 2. 使用 CSV（修改過的 SaintCoinach 輸出）進行漢化，**僅支援 CSV 模式**（中國服檔案 / 漢化覆蓋檔模式已移除）。
 3. 刪除原版 exe 中與 teemo 連線的部分。
-4. 以 C#/.NET 重寫，含 `--selftest` 二進位格式自檢與翻譯 CSV 檢查工具。
+4. 以 C#/.NET 重寫，含 `--selftest` 二進位格式自檢、翻譯 CSV 檢查與控制碼參照檢查工具。
 
 ## 授權與溯源
 
@@ -89,6 +89,7 @@ dotnet publish -c Release -r win-x64 --self-contained -p:PublishSingleFile=true 
 - `resource/font/` — 替換字體（`.fdt` + `.tex`）。
 - 設置頁的「跳過的資料表」可勾選漢化時要跳過的表（含中文說明、可搜尋），也可直接編輯 `conf/global.properties` 的 `SkipFiles`（`|` 分隔，格式如 `exd/quest`）。
 - `conf/exd-names.csv` — 表名對應遊戲內文本位置的說明檔，用於設置頁清單、漢化進度與檢查報告。
+- `resource/ja-sheetsig.txt.gz` — 日文原文的 `Sheet` 標籤參照表（約 137KB）。譯文裡 `Sheet` 標籤的參數決定遊戲「去哪張表、讀第幾欄」，陸版客戶端的欄位配置跟國際服不一定相同，照陸版的參數翻過來會讓那個介面閃退（2026-09 的莫古莫古指南書就是這樣）。`FFXIVChnTextPatch.exe --sheetsig` 掃全部翻譯、`--sheetsig <base-ref>` 只看該 ref 之後改動到的儲存格（PR 上由 CI 自動跑），報告寫到 `sheetsig-report.txt`。參照表由 `--gensheetsig <SaintCoinach 日文匯出的 rawexd 目錄>` 產生，需要本機有遊戲，遊戲改版後要重產。
 
 ## 免責聲明（沿自原項目）
 

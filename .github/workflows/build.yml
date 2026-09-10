@@ -12,6 +12,8 @@ jobs:
         working-directory: dotnet/FFXIVChnTextPatch
     steps:
       - uses: actions/checkout@v4
+        with:
+          fetch-depth: 0   # Sheet 參照檢查要 merge-base，淺 clone 抓不到 base 分支
 
       - uses: actions/setup-dotnet@v4
         with:
@@ -37,6 +39,20 @@ jobs:
           $p = Start-Process $exe.FullName '--lint' -Wait -PassThru
           Get-Content "$env:GITHUB_WORKSPACE/lint-report.txt"
           if ($p.ExitCode -ne 0) { throw "lint: $($p.ExitCode) error(s) that would break patching" }
+
+      # Sheet 標籤參照檢查：譯文裡 Sheet 標籤的參數（去哪張表、讀第幾欄）必須跟日文原文
+      # 一致，照陸版的欄號翻過來會讓該介面閃退。只比對這個 PR 改動到的儲存格；
+      # 參照資料是 resource/ja-sheetsig.txt.gz，所以 CI 不需要遊戲也不需要 SaintCoinach。
+      # warn-only：全庫有 1173 筆歷史差異且絕大多數無害，參照不符 ≠ 一定閃退，只是請人看一眼。
+      - name: Sheet tag reference check (warn-only)
+        if: github.event_name == 'pull_request'
+        continue-on-error: true
+        shell: pwsh
+        run: |
+          $exe = Get-ChildItem -Recurse -Filter FFXIVChnTextPatch.exe bin/Release | Select-Object -First 1
+          $p = Start-Process $exe.FullName "--sheetsig origin/${{ github.base_ref }}" -Wait -PassThru
+          Get-Content "$env:GITHUB_WORKSPACE/sheetsig-report.txt"
+          if ($p.ExitCode -ne 0) { throw "sheetsig: $($p.ExitCode) 格的 Sheet 參照與日文原文不符" }
 
       # 漂移檢查：clone 上游、逐檔比對「上游空/本地有翻譯」的錯位。warn-only：
       # 偶爾誤報（本地翻在上游前）或上游/網路問題只讓這一步紅燈，不擋整體 build。

@@ -24,6 +24,31 @@ public partial class App : Application
             return;
         }
 
+        if (e.Args.Contains("--gensheetsig"))
+        {
+            // 本機用：--gensheetsig <SaintCoinach 日文匯出的 rawexd 目錄>
+            int i = Array.IndexOf(e.Args, "--gensheetsig");
+            if (i + 1 >= e.Args.Length || e.Args[i + 1].StartsWith("--"))
+            {
+                AppEnv.Log("用法：--gensheetsig <SaintCoinach 日文匯出的 rawexd 目錄>");
+                Shutdown(2);
+                return;
+            }
+            AppEnv.Log(SheetSig.Generate(e.Args[i + 1]));
+            Shutdown();
+            return;
+        }
+
+        if (e.Args.Contains("--sheetsig"))
+        {
+            // Sheet 參照檢查；exit code = 不符的儲存格數（0 = 乾淨）。
+            // 給 base ref 就只檢查有變動的格子（CI/PR），不給就掃全部（本機 triage）。
+            int i = Array.IndexOf(e.Args, "--sheetsig");
+            string? baseRef = i + 1 < e.Args.Length && !e.Args[i + 1].StartsWith("--") ? e.Args[i + 1] : null;
+            Shutdown(SheetSig.Check(baseRef));
+            return;
+        }
+
         if (e.Args.Contains("--hextags"))
         {
             HexTagTool.Run();

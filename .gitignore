@@ -15,6 +15,7 @@ selftest.log
 lint-report.txt
 hextags-report.txt
 rawexd-drift.txt
+sheetsig-report.txt
 
 # Visual Studio
 .vs/

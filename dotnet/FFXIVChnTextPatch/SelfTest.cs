@@ -91,6 +91,20 @@ public static class SelfTest
         Check("Config 存檔 round-trip（含 : 與 |）",
             TestConfigRoundTrip("123456:638900000000000000|789:638900000000000001"));
 
+        // SheetSig：只收 Sheet 標籤的參數，排版與 If 分支長度的變動不能影響簽章
+        const string sheetJa = "<hex:02282BFF10>CSBonusTextData<hex:FF17><hex:022813FF0E>CSBonusSeason<hex:E8021003><hex:0103>終了まで";
+        const string sheetCn = "<hex:02282BFF10>CSBonusTextData<hex:FF17><hex:022813FF0E>CSBonusSeason<hex:E8020B03><hex:0103>結束前";
+        Check("SheetSig 取出 Sheet 參照",
+            SheetSig.Of(sheetJa) == "02282BFF10|FF17|022813FF0E|E8021003|0103");
+        Check("SheetSig 抓到欄號被改掉（Addon 15919 的實際 bug）",
+            SheetSig.Of(sheetJa) != SheetSig.Of(sheetCn));
+        // If 的分支長度（FF46/FF3A、90/7E）本來就會隨譯文長度變，不該進簽章
+        Check("SheetSig 忽略 If 分支長度與純文字",
+            SheetSig.Of("<hex:020890E4E80503FF46>到達で開放<hex:02280FFF0A>PlaceName<hex:E8060103>")
+            == SheetSig.Of("<hex:02087EE4E80503FF3A>抵達後開放<hex:02280FFF0A>PlaceName<hex:E8060103>"));
+        Check("SheetSig 無 Sheet 標籤回空字串",
+            SheetSig.Of("純文字<hex:02100103>換行") == "");
+
         // 6. exd-names.csv 載入與各種表名形式的查詢
         Check("ExdNames lookup (Item)", ExdNames.Describe("Item") == "道具");
         Check("ExdNames lookup (EXD/Item.EXH)", ExdNames.Describe("EXD/Item.EXH") == "道具");

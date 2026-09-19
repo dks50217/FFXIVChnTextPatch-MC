@@ -1,0 +1,13 @@
+# CodeRabbit PR review config. https://docs.coderabbit.ai/guides/configure-coderabbit
+language: en-US
+reviews:
+  auto_review:
+    enabled: true
+  # resource/rawexd holds 7000+ translation CSVs; one --update sync is a
+  # multi-thousand-file diff. That is data, not code -- correctness is already
+  # gated by --lint and --driftcheck in CI, so it needs no line-by-line review.
+  path_filters:
+    - "!resource/**"
+    - "!**/*.log"
+    - "!*-report.txt"
+    - "!rawexd-drift.txt"

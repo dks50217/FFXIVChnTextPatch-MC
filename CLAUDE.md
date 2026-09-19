@@ -35,7 +35,7 @@ Run what the change touched, and say what passed. This is the same set `.github/
 |---------|-----|
 | any C# | `dotnet build` |
 | binary format, CSV merge, ZhConvert, Config | + `--selftest` (exit code = failure count) |
-| `resource/rawexd/*.csv` | + `--lint` (exit code = errors that would break patching) |
+| `resource/rawexd/*.csv` | + `--lint` (exit code = errors that would break patching), + `--sheetsig <base-ref>` |
 | after `--update` | + `--driftcheck` (warn-only in CI) |
 
 New non-trivial logic leaves one `--selftest` check behind — the smallest assertion that fails if it breaks. No test framework; `SelfTest.cs` is the whole harness.
@@ -53,6 +53,7 @@ New non-trivial logic leaves one `--selftest` check behind — the smallest asse
 - `Core/RawexdMerge.cs` — cell-level rawexd CSV merge: non-empty local cells always win; empty cells / missing rows / missing files are filled from upstream; columns aligned by the offset row (survives cross-version column changes); local-only rows appended at EOF.
 - `Core/ZhConvert.cs` — simplified→traditional with Taiwan vocabulary (OpenCC s2twp equivalent plus FFXIV-specific fixes) via longest-forward-match over TSV dictionaries in `resource/opencc/`: GPPhrases+STPhrases+STCharacters → TWPhrases → TWVariants. `GPPhrases.txt` is the FFXIV exception glossary inherited from the Java GP version (converted from `resource/nlpcn/traditional.txt` in git history; includes quote rules and English-name protection entries). `UserPhrases.txt` is the user-editable override list, loaded ahead of rounds 1 and 2 so it beats everything; simplified or traditional keys both work.
 - `Main.razor` + `wwwroot/` — UI (main panel + settings) hosted in a WPF `BlazorWebView` (`MainWindow.xaml`).
+- `Core/SheetSig.cs` — `Sheet` tag reference check. A `Sheet` tag's parameter bytes say which sheet and column the game reads; the CN client's column layout differs from the international one, so a translation that carries the CN parameters makes the game read the wrong column and crash that UI. `--gensheetsig <SaintCoinach JA rawexd dir>` builds `resource/ja-sheetsig.txt.gz` (~137KB, 25k cells, game version in the header) — needs the game locally, regenerate per game version. `--sheetsig [base-ref]` compares against it: with a base ref only the cells changed since its merge-base (working tree, so it runs before committing too), without one every translated cell. CI runs the diff-scoped form and needs neither the game nor SaintCoinach.
 - `SelfTest.cs` — run with `--selftest`; keep it passing when touching any binary-format code.
 
 ## When the game crashes after patching
@@ -61,6 +62,7 @@ A crash confined to one UI is almost always a translated cell whose SeString con
 
 Diagnosis is empirical; static analysis of `<hex:>` tags alone produces too many false positives to name a row (parameter bytes routinely contain `02 XX` sequences that look like tag starts).
 
+0. Run `--sheetsig` (no base ref) first — a whole-repo scan takes about two minutes and, if the crash is a `Sheet` reference, names the row outright. It reported 1173 differences repo-wide as of 2026-09, so it narrows rather than answers; steps 1-5 still settle it.
 1. Bisect by sheet with `SkipFiles` (`exd/<lowercase name>`, pipe-separated) until one sheet is confirmed.
 2. Export the same game version's JA rawexd with SaintCoinach (`SaintCoinach.Cmd`, output under `<version>/rawexd/`). Same exporter, so `<hex:>` chunking is identical and chunk sequences can be compared literally — this is the only reliable comparison.
 3. In the affected row range, list rows whose tag chunk sequence differs from the JA original. That candidate set contains the culprit.

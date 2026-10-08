@@ -1,6 +1,6 @@
 # FFXIV Translation Patch Tool
 
-FFXIV 國際服的中文漢化器。以 C#/.NET 10（WPF + Blazor Hybrid）重寫，程式碼在 [`dotnet/`](dotnet/README.md)。
+FFXIV 國際服的中文漢化器。以 C#/.NET 10（WPF + Blazor Hybrid）重寫，程式碼在 [`csharp/`](csharp/README.md)。
 
 ![程式畫面](docs/app1.png)
 
@@ -65,10 +65,10 @@ FFXIV 國際服的中文漢化器。以 C#/.NET 10（WPF + Blazor Hybrid）重�
 
 ## 編譯
 
-需要 .NET 10 SDK（Windows），詳見 [`dotnet/README.md`](dotnet/README.md)。
+需要 .NET 10 SDK（Windows），詳見 [`csharp/README.md`](csharp/README.md)。
 
 ```bash
-cd dotnet/FFXIVChnTextPatch
+cd csharp/FFXIVChnTextPatch
 dotnet build
 dotnet run
 ```

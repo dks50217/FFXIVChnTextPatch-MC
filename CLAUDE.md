@@ -6,14 +6,14 @@ This file provides guidance to Claude Code (claude.ai/code) when working with co
 
 A tool that applies Chinese localization patches to the FFXIV (Final Fantasy XIV) international client. It reads FFXIV's proprietary SqPack binary format, replaces text content with Chinese translations from CSV files (SaintCoinach rawexd exports), and optionally replaces font files.
 
-The current implementation is **C#/.NET 10 WPF Blazor Hybrid** in `dotnet/FFXIVChnTextPatch/`. It was ported from a Java Swing app; the Java sources were removed from the working tree but remain in git history (and `docs/DOTNET_MIGRATION.md` documents the port).
+The current implementation is **C#/.NET 10 WPF Blazor Hybrid** in `csharp/FFXIVChnTextPatch/`. It was ported from a Java Swing app; the Java sources were removed from the working tree but remain in git history (and `docs/DOTNET_MIGRATION.md` documents the port).
 
 ## Build & Run
 
 Requires .NET 10 SDK (Windows) and WebView2 Runtime.
 
 ```bash
-cd dotnet/FFXIVChnTextPatch
+cd csharp/FFXIVChnTextPatch
 dotnet build
 dotnet run                                  # GUI
 ./bin/Debug/net10.0-windows10.0.17763.0/FFXIVChnTextPatch.exe --selftest
@@ -26,6 +26,19 @@ dotnet publish -c Release -r win-x64 --self-contained -p:PublishSingleFile=true 
 Note: the exe is a GUI app — invoking `--selftest` from a shell returns immediately; wait a moment before reading selftest.log.
 
 The app locates its base directory (for `conf/`, `resource/`, `backup/`, `debug.log`) by walking up from the exe until it finds `conf/global.properties`.
+
+### Rust port (`rust/`, in progress)
+
+CLI only, no UI yet; ported so far: CRC, Config, SqPack, EXD, patch/rollback. Shares `conf/` and `resource/` with the C# app.
+
+```bash
+cd rust
+cargo build --release
+./target/release/ffxiv_chn_text_patch.exe --selftest   # prints to stdout, exit code = failure count
+./target/release/ffxiv_chn_text_patch.exe --patch      # or --rollback
+```
+
+flate2 must use the `zlib-rs` backend: the default miniz_oxide at level 9 makes a full patch take ~58s instead of ~7s.
 
 ## Validation before reporting done
 
@@ -40,7 +53,7 @@ Run what the change touched, and say what passed. This is the same set `.github/
 
 New non-trivial logic leaves one `--selftest` check behind — the smallest assertion that fails if it breaks. No test framework; `SelfTest.cs` is the whole harness.
 
-## Architecture (`dotnet/FFXIVChnTextPatch/`)
+## Architecture (`csharp/FFXIVChnTextPatch/`)
 
 - `Core/PatchService.cs` — orchestrates backup → font replace → CSV text replace, and rollback. Progress via `IProgress<PatchProgress>`.
 - `Core/SqPack.cs` — SqPack `.index` parsing (CRC hash → offset map) and `.dat` extraction (content type 2 only; types 3/4 extraction intentionally not ported).

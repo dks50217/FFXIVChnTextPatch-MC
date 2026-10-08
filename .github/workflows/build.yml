@@ -9,7 +9,7 @@ jobs:
     runs-on: windows-latest   # WPF 目標，只能在 Windows 上建置
     defaults:
       run:
-        working-directory: dotnet/FFXIVChnTextPatch
+        working-directory: csharp/FFXIVChnTextPatch
     steps:
       - uses: actions/checkout@v4
         with:

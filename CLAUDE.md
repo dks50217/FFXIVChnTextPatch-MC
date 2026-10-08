@@ -42,16 +42,17 @@ flate2 must use the `zlib-rs` backend: the default miniz_oxide at level 9 makes 
 
 ## Validation before reporting done
 
-Run what the change touched, and say what passed. This is the same set `.github/workflows/build.yml` runs on every push and PR, so running it locally first just saves a red CI:
+Run what the change touched, and say what passed. CI (`.github/workflows/build.yml`) runs the checks with the **Rust** binary on Ubuntu, plus a Windows job that only runs `dotnet build`, so running them locally first just saves a red CI:
 
 | Changed | Run |
 |---------|-----|
 | any C# | `dotnet build` |
-| binary format, CSV merge, ZhConvert, Config | + `--selftest` (exit code = failure count) |
+| any Rust | `cargo build --release` + `--selftest` (exit code = failure count) |
+| binary format, CSV merge, ZhConvert, Config | `--selftest` in **both** apps (C# writes selftest.log, Rust prints) |
 | `resource/rawexd/*.csv` | + `--lint` (exit code = errors that would break patching), + `--sheetsig <base-ref>` |
 | after `--update` | + `--driftcheck` (warn-only in CI) |
 
-New non-trivial logic leaves one `--selftest` check behind — the smallest assertion that fails if it breaks. No test framework; `SelfTest.cs` is the whole harness.
+A change to shared logic is ported to both apps until C# is retired. New non-trivial logic leaves one selftest check behind — the smallest assertion that fails if it breaks. No test framework; `SelfTest.cs` / `rust/src/selftest.rs` are the whole harness.
 
 ## Architecture (`csharp/FFXIVChnTextPatch/`)
 

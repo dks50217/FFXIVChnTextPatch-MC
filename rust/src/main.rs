@@ -5,6 +5,7 @@ mod exd;
 mod patch;
 mod selftest;
 mod sqpack;
+mod zhconvert;
 
 use std::path::{Path, PathBuf};
 use std::sync::OnceLock;
@@ -42,8 +43,9 @@ fn main() {
         "--selftest" => selftest::run(),
         "--patch" => report(patch::patch(&mut cfg)),
         "--rollback" => report(patch::rollback(&mut cfg)),
+        "--s2tw" => report(std::env::args().nth(2).ok_or("用法：--s2tw <檔案>".into()).and_then(|f| Ok(zhconvert::s2tw(&std::fs::read_to_string(f)?)))),
         _ => {
-            eprintln!("用法：ffxiv_chn_text_patch --patch | --rollback | --selftest");
+            eprintln!("用法：ffxiv_chn_text_patch --patch | --rollback | --selftest | --s2tw <檔案>");
             2
         }
     };

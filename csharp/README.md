@@ -10,7 +10,7 @@ Java Swing 版的 C# 移植：WPF 視窗內嵌 `BlazorWebView`，UI 用 Razor �
 ## 建置與執行
 
 ```bash
-cd dotnet/FFXIVChnTextPatch
+cd csharp/FFXIVChnTextPatch
 dotnet build
 dotnet run          # 或直接執行 bin/Debug/net10.0-windows10.0.17763.0/FFXIVChnTextPatch.exe
 ```

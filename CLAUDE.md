@@ -29,7 +29,7 @@ The app locates its base directory (for `conf/`, `resource/`, `backup/`, `debug.
 
 ### Rust port (`rust/`, in progress)
 
-CLI only, no UI yet; ported so far: CRC, Config, SqPack, EXD, patch/rollback. Shares `conf/` and `resource/` with the C# app.
+CLI only, no UI yet; ported so far: CRC, Config, SqPack, EXD, patch/rollback, ZhConvert (`--s2tw <file>` prints the conversion; output verified identical to C# on every dictionary key). Shares `conf/` and `resource/` with the C# app.
 
 ```bash
 cd rust

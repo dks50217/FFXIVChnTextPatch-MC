@@ -2,7 +2,7 @@
 //! 對應 C# SelfTest.cs 第 1-5 項；SheetSig/ExdNames/Merge/Lint/ZhConvert 移植後再補。
 use crate::config::Config;
 use crate::crc::ffcrc;
-use crate::{exd, patch, sqpack};
+use crate::{exd, patch, sqpack, zhconvert};
 use std::collections::BTreeMap;
 
 pub fn run() -> i32 {
@@ -66,6 +66,22 @@ pub fn run() -> i32 {
     let ok = patch::append_csv_string(&mut out, "a<hex:0210 01 03>中>").is_ok();
     check("CSV <hex:> 轉二進位", ok && out == [b"a".as_slice(), &[2, 0x10, 1, 3], "中>".as_bytes()].concat());
     check("CSV 巢狀 <hex 報錯", patch::append_csv_string(&mut Vec::new(), "<hex:02<hex:03>").is_err());
+
+    // 7. ZhConvert 簡轉繁（單字、詞級消歧義、台灣異體字、GP 詞彙表，各走到不同字典）
+    for (input, expected, name) in [
+        ("汉化", "漢化", "單字"),
+        ("头发", "頭髮", "詞級消歧義"),
+        ("麪", "麵", "台灣異體字"),
+        ("服务器", "伺服器", "台灣用語"),
+        ("菜单", "選單", "台灣用語一對多取第一"),
+        ("激活", "啟動", "GP 詞彙表"),
+        ("几率", "機率", "GP 詞彙表"),
+        ("‘", "『", "GP 引號規則"),
+        ("L’Heritier", "L’Heritier", "GP 英文名保護"),
+        ("0,\"a\",汉", "0,\"a\",漢", "ASCII/CSV 結構字元不動"),
+    ] {
+        check(&format!("ZhConvert {name} ({input}→{expected})"), zhconvert::s2tw(input) == expected);
+    }
 
     println!("{}", if failed == 0 { "ALL PASSED".to_string() } else { format!("{failed} FAILED") });
     failed

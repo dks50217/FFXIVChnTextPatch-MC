@@ -164,6 +164,14 @@ pub fn run() -> i32 {
     );
     check("SheetSig 無 Sheet 標籤回空字串", sheetsig::of("純文字<hex:02100103>換行").is_empty());
 
+    // 12. 已漢化檢查：譯文已在 EXD 裡才算；原文、純英文譯文都不算
+    let exh = exd::Exh { chunk_size: 4, datasets: vec![(0, 0)], pages: vec![0], lang_count: 1 };
+    let row = |s: &str| [&[0u8, 0, 0, 0][..], s.as_bytes(), &[0]].concat(); // chunk 的字串 offset = 0
+    let rows: BTreeMap<i32, Vec<u8>> = [(1, row("攻擊")), (2, row("防御")), (3, row("Hello"))].into();
+    let offsets = [(0u16, 0usize)].into();
+    let csv = [(1, vec!["攻擊".to_string()]), (2, vec!["防禦".to_string()]), (3, vec!["Hello".to_string()])].into();
+    check("已漢化檢查：只抽含中文的譯文、逐格比對", patch::translated_cells_present(&rows, &exh, &offsets, &csv) == (2, 1));
+
     println!("{}", if failed == 0 { "ALL PASSED".to_string() } else { format!("{failed} FAILED") });
     failed
 }

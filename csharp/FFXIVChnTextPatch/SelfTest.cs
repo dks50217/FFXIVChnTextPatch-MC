@@ -192,6 +192,21 @@ public static class SelfTest
         Check("ZhConvert GP 英文名保護 (L’Heritier 不變)", ZhConvert.S2Tw("L’Heritier") == "L’Heritier");
         Check("ZhConvert ASCII/CSV 結構字元不動", ZhConvert.S2Tw("0,\"a\",汉") == "0,\"a\",漢");
 
+        // 9. 已漢化檢查：譯文已在 EXD 裡才算；原文、純英文譯文都不算（與 Rust selftest 同一組案例）
+        var exhBytes = new byte[32 + 4 + 8 + 2];
+        System.Buffers.Binary.BinaryPrimitives.WriteInt32BigEndian(exhBytes, 0x45584846); // "EXHF"
+        System.Buffers.Binary.BinaryPrimitives.WriteInt16BigEndian(exhBytes.AsSpan(4), 3);  // version
+        System.Buffers.Binary.BinaryPrimitives.WriteInt16BigEndian(exhBytes.AsSpan(6), 4);  // chunk size
+        System.Buffers.Binary.BinaryPrimitives.WriteInt16BigEndian(exhBytes.AsSpan(8), 1);  // 1 個字串欄位（type 0, offset 0）
+        System.Buffers.Binary.BinaryPrimitives.WriteInt16BigEndian(exhBytes.AsSpan(10), 1); // 1 頁
+        System.Buffers.Binary.BinaryPrimitives.WriteInt16BigEndian(exhBytes.AsSpan(12), 1); // 1 種語言
+        exhBytes[44] = 1;
+        static byte[] Row(string s) => [0, 0, 0, 0, .. Encoding.UTF8.GetBytes(s), 0]; // chunk 的字串 offset = 0
+        var guardRows = new Dictionary<int, byte[]> { [1] = Row("攻擊"), [2] = Row("防御"), [3] = Row("Hello") };
+        var guardCsv = new Dictionary<int, string[]> { [1] = ["攻擊"], [2] = ["防禦"], [3] = ["Hello"] };
+        Check("已漢化檢查：只抽含中文的譯文、逐格比對",
+            PatchService.TranslatedCellsPresent(guardRows, new EXHFFile(exhBytes), new() { [0] = 0 }, guardCsv) == (2, 1));
+
         log.AppendLine(failed == 0 ? "ALL PASSED" : $"{failed} FAILED");
         File.WriteAllText(Path.Combine(AppEnv.BaseDir, "selftest.log"), log.ToString());
         return failed;

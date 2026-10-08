@@ -68,6 +68,10 @@ fn check_game(cfg: &Config, action: &str) -> R<PathBuf> {
 
 pub fn patch(cfg: &mut Config) -> R<String> {
     let folder = check_game(cfg, "漢化")?;
+    // 在已漢化的檔案上再漢化，備份會被已漢化的檔案蓋掉，之後就還原不回原版
+    if is_patched(cfg, &folder.join("0a0000.win32.index"))? {
+        return Err(ALREADY_PATCHED.into());
+    }
     fs::create_dir_all(p("backup"))?;
     for n in RESOURCE_NAMES {
         if folder.join(n).is_file() {
@@ -116,6 +120,64 @@ pub fn rollback(cfg: &mut Config) -> R<String> {
     cfg.set("PatchedStamp", "");
     cfg.save()?;
     Ok("還原完畢".into())
+}
+
+const ALREADY_PATCHED: &str = "遊戲檔看起來已經漢化過（Addon 的譯文已經在遊戲檔裡）。直接再漢化會讓備份被已漢化的檔案蓋掉，之後就還原不回原版。\
+請先「還原」再漢化；如果遊戲更新過、還原被拒絕，請用官方啟動器的「檔案修復」取回原版檔案後再漢化。";
+
+/// 遊戲檔是否已漢化：抽 Addon 第一頁，看含中文的譯文是不是已經寫在遊戲檔裡。
+/// 不看 PatchedVersion/PatchedStamp：遊戲更新可能沒改到 0a0000 的 index（檔案仍是漢化過的），
+/// 版本號與修改時間卻都變了，靠它們判斷會放行。Addon.csv 不在或讀不到 Addon 時無從判斷，回 false。
+fn is_patched(cfg: &Config, index_path: &Path) -> R<bool> {
+    let csv_path = p("resource/rawexd/Addon.csv");
+    if !csv_path.is_file() {
+        return Ok(false);
+    }
+    let index_str = index_path.to_string_lossy().to_string();
+    let index = read_index(&index_str)?;
+    let mut dats = Dats::new(&index_str);
+    let Some(folder) = index.get(&ffcrc_lower("exd")) else { return Ok(false) };
+    let Some(exh_entry) = folder.get(&ffcrc_lower("addon.exh")) else { return Ok(false) };
+    let exh = exd::parse_exh(&dats.extract(exh_entry.data_offset)?)?;
+    let slang = cfg.get_or("SLanguage", "JA").to_ascii_lowercase();
+    let Some(page) = exh.pages.first() else { return Ok(false) };
+    let Some(exd_entry) = folder.get(&ffcrc_lower(&format!("addon_{page}_{slang}.exd"))) else { return Ok(false) };
+    let rows = exd::parse_exd(&dats.extract(exd_entry.data_offset)?)?;
+    let (offsets, csv) = load_csv(&csv_path)?;
+    let (seen, hit) = translated_cells_present(&rows, &exh, &offsets, &csv);
+    log(&format!("[Patch] 已漢化檢查：Addon 抽 {seen} 格中文譯文，{hit} 格已在遊戲檔裡"));
+    Ok(seen > 0 && hit * 2 > seen)
+}
+
+/// 最多抽 50 格含中文的譯文，回傳 (抽了幾格, 其中幾格的內容已經在這頁 EXD 裡)。
+/// 日文原文幾乎不可能剛好等於中文譯文，所以過半對得上就代表已漢化。
+pub fn translated_cells_present(
+    rows: &std::collections::BTreeMap<i32, Vec<u8>>,
+    exh: &exd::Exh,
+    offsets: &HashMap<u16, usize>,
+    csv: &HashMap<i32, Vec<String>>,
+) -> (usize, usize) {
+    let (mut seen, mut hit) = (0, 0);
+    for (row_id, raw) in rows {
+        let Some(cells) = csv.get(row_id) else { continue };
+        if raw.len() < exh.chunk_size {
+            continue;
+        }
+        for &(ty, off) in &exh.datasets {
+            let cell = offsets.get(&off).and_then(|&c| cells.get(c));
+            let Some(cell) = cell.filter(|s| ty == 0 && s.chars().any(|c| ('\u{4E00}'..='\u{9FFF}').contains(&c))) else { continue };
+            let mut want = Vec::new();
+            if append_csv_string(&mut want, cell).is_err() {
+                continue;
+            }
+            seen += 1;
+            hit += (exd::get_string(raw, exh.chunk_size, off as usize) == want) as usize;
+            if seen == 50 {
+                return (seen, hit);
+            }
+        }
+    }
+    (seen, hit)
 }
 
 // ponytail: 只看第一層；rawexd 根目錄一定有 Addon.csv 這類檔案

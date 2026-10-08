@@ -60,7 +60,7 @@ FFXIV 國際服的中文漢化器。以 C#/.NET 10（WPF + Blazor Hybrid）重�
 漢化前會自動備份六個 index/dat 檔到 `backup/`。注意事項：
 
 - 為避免遊戲更新時出問題，建議每次更新前先「還原」，更新完成後再重新漢化。
-- 程式會拒絕在已漢化的檔案上重複漢化（避免備份被已漢化的檔案覆蓋導致無法還原）。
+- 程式會拒絕在已漢化的檔案上重複漢化（避免備份被已漢化的檔案覆蓋導致無法還原）。判斷方式是抽查 Addon 表：中文譯文過半已經在遊戲檔裡，就視為已漢化。遊戲更新不一定會換掉漢化過的檔案，所以不能只看版本號。被拒絕時請先「還原」；如果遊戲更新過、還原也被拒絕，請用官方啟動器的「檔案修復」取回原版檔案後再漢化。
 - 主畫面的「檢查翻譯 CSV」可檢查 `resource/rawexd` 翻譯檔的格式與覆蓋率。
 - 主畫面的「更新翻譯 CSV」一鍵從 [Souma 上游](https://github.com/Souma-Sumire/FFXIVChnTextPatch-Souma) 下載最新翻譯（需要 git）、簡轉繁（含台灣用語，等同 OpenCC s2twp）後逐儲存格合併：**本地已有的翻譯永遠不會被覆蓋**，只補空格、新列與新檔。合併前會先備份到 `backup/rawexd-before-update.zip`。也可用 `FFXIVChnTextPatch.exe --update` 從命令列執行（進度見 `debug.log`）。
 - 用語轉換的例外與自訂譯法寫在 `resource/opencc/UserPhrases.txt`（格式見檔內說明，優先權最高），影響之後每次「更新翻譯 CSV」新補進來的文字。
@@ -87,25 +87,37 @@ dotnet publish -c Release -r win-x64 --self-contained -p:PublishSingleFile=true 
 
 ### Rust 版（移植中）
 
-需要 Rust stable（`rustup` 安裝）。和 C# 版共用同一份 `conf/` 與 `resource/`，一樣從執行檔位置往上找 `conf/global.properties` 決定基準目錄。
+需要 Rust stable（用 `rustup` 安裝）。建置：
 
 ```bash
 cd rust
 cargo build --release
-./target/release/ffxiv_chn_text_patch --selftest
 ```
 
-| 指令 | 作用 |
-|------|------|
-| `--patch` / `--rollback` | 漢化（含備份）／從 `backup/` 還原 |
-| `--update` | 一鍵更新翻譯 CSV（需要 git） |
-| `--lint` | 檢查翻譯 CSV，報告寫到 `lint-report.txt` |
-| `--sheetsig [base-ref]` | `Sheet` 標籤參照檢查，報告寫到 `sheetsig-report.txt` |
-| `--driftcheck` | 跟上游比對錯位，報告寫到 `rawexd-drift.txt` |
-| `--s2tw <檔案>` | 印出簡轉繁結果，方便試 `UserPhrases.txt` |
-| `--selftest` | 核心邏輯自檢，結果印在主控台 |
+產出的執行檔是 `rust\target\release\ffxiv_chn_text_patch.exe`。它是**命令列程式**，雙擊只會印出用法就關掉；請在 PowerShell 或命令提示字元裡加上指令執行：
 
-檢查類指令的結束碼是錯誤數（超過 255 以 255 計），訊息印在主控台，不寫 `debug.log`。
+```powershell
+.\rust\target\release\ffxiv_chn_text_patch.exe --selftest
+```
+
+它和 C# 版共用同一份 `conf/` 與 `resource/`：程式從執行檔位置往上找 `conf/global.properties` 來決定基準目錄，找不到才用目前目錄。所以 exe 留在 repo 裡、或搬到任何上層有 `conf/` 的資料夾都能用。
+
+Rust 版沒有設定畫面。`--patch` 需要的遊戲路徑、原始語言、要不要替換字體/文本、跳過的資料表，請先用 C# 版的「漢化設置」設好，或直接編輯 `conf/global.properties`（`GamePath`、`SLanguage`、`ReplaFont`、`ReplaText`、`SkipFiles`）。
+
+| 指令 | 作用 | 會改到的檔案 |
+|------|------|------|
+| `--patch` | 漢化（遊戲必須關閉） | 遊戲的六個 index/dat 檔；改之前先備份到 `backup/` |
+| `--rollback` | 從 `backup/` 還原 | 遊戲的六個 index/dat 檔 |
+| `--update` | 一鍵更新翻譯 CSV（需要 git） | `resource/rawexd`；改之前先備份到 `backup/rawexd-before-update.zip` |
+| `--lint` | 檢查翻譯 CSV | 只寫報告 `lint-report.txt` |
+| `--sheetsig [base-ref]` | `Sheet` 標籤參照檢查 | 只寫報告 `sheetsig-report.txt` |
+| `--driftcheck` | 跟上游比對錯位（需要 git） | 只寫報告 `rawexd-drift.txt` |
+| `--s2tw <檔案>` | 印出簡轉繁結果，方便試 `UserPhrases.txt` | 不改任何檔案 |
+| `--selftest` | 核心邏輯自檢 | 不改任何檔案 |
+
+C# 版和 Rust 版的漢化與還原可以混用，兩邊讀寫的是同一份 `backup/` 和 `conf/global.properties`。
+
+訊息都印在主控台，不寫 `debug.log`。檢查類指令的結束碼是錯誤數，超過 255 以 255 計。
 
 實測速度（同一台電腦）：
 

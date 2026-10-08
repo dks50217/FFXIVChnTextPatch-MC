@@ -2,7 +2,7 @@
 //! 對應 C# SelfTest.cs 第 1-5 項；SheetSig/ExdNames/Merge/Lint/ZhConvert 移植後再補。
 use crate::config::Config;
 use crate::crc::ffcrc;
-use crate::{exd, merge, patch, sqpack, zhconvert};
+use crate::{drift, exd, merge, patch, sqpack, zhconvert};
 use std::collections::BTreeMap;
 
 pub fn run() -> i32 {
@@ -119,6 +119,31 @@ pub fn run() -> i32 {
     // offset-0 本身是被翻譯的中文欄 → 不可當 id，否則差一字的譯文會被當本地獨有、重複附在檔尾
     let r = m("key,0\n#,Name\noffset,0\nInt32,String\n1,甲\n2,管弦樂琴\n", "key,0\n#,Name\noffset,0\nInt32,String\n1,甲\n2,管絃樂琴\n");
     check("Merge 中文欄不當 id（不重複附加列）", r.text.contains("2,管弦樂琴") && !r.text.contains("管絃"));
+
+    // 9. 漂移偵測（與 C# SelfTest 7b-7d 同一組案例）
+    //  key2=乙：上游空、乙在上游別處有，但上下(1,3)兩邊對齊 → 合理補白，不算
+    //  key10=壬：上游空、壬在上游 key11 有，且 key11 上下不對齊(壬≠癸) → 真的位移
+    check(
+        "DetectDrift 上下對齊排除、位移才算",
+        drift::detect_drift(
+            "key,0\n#,Name\noffset,0\nint32,str\n0,甲\n1,乙\n2,乙\n3,丙\n10,壬\n11,癸\n",
+            "key,0\n#,Name\noffset,0\nint32,str\n0,甲\n1,乙\n2,\n3,丙\n10,\n11,壬\n",
+        ) == [10],
+    );
+    let id_up = "key,0,1\n#,,\noffset,0,4\nInt32,String,String\n0,ID_A,a\n1,ID_NEW,n\n2,ID_B,b\n3,ID_C,c\n";
+    let id_lo = "key,0,1\n#,,\noffset,0,4\nInt32,String,String\n0,ID_A,甲\n1,ID_B,乙\n2,ID_C,丙\n";
+    check("DetectIdDrift 抓 TEXT-id 對不上的 key", drift::detect_id_drift(id_lo, id_up) == [1, 2]);
+    check("DetectIdDrift 對齊時不誤報", drift::detect_id_drift(id_up, id_up).is_empty());
+    check(
+        "DetectIdDrift 無 id 欄回空",
+        drift::detect_id_drift("key,0\n#,Name\noffset,0\nInt32,String\n0,\n1,本地\n", "key,0\n#,Name\noffset,0\nInt32,String\n0,\n1,上游\n")
+            .is_empty(),
+    );
+    check(
+        "DuplicateKeys 抓撞號的 key",
+        drift::duplicate_keys("key,0,1\n#,,\noffset,0,4\nInt32,String,String\n0,ID_A,甲\n1,ID_C,丙\n1,ID_B,乙\n") == [1],
+    );
+    check("DuplicateKeys 乾淨時回空", drift::duplicate_keys(id_up).is_empty());
 
     println!("{}", if failed == 0 { "ALL PASSED".to_string() } else { format!("{failed} FAILED") });
     failed

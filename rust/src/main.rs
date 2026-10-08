@@ -1,11 +1,13 @@
 //! FFXIVChnTextPatch 的 Rust 移植版（CLI，尚無介面）。對應 csharp/FFXIVChnTextPatch。
 mod config;
 mod crc;
+mod drift;
 mod exd;
 mod merge;
 mod patch;
 mod selftest;
 mod sqpack;
+mod update;
 mod zhconvert;
 
 use std::path::{Path, PathBuf};
@@ -44,9 +46,10 @@ fn main() {
         "--selftest" => selftest::run(),
         "--patch" => report(patch::patch(&mut cfg)),
         "--rollback" => report(patch::rollback(&mut cfg)),
+        "--update" => report(update::update(&cfg)),
         "--s2tw" => report(std::env::args().nth(2).ok_or("用法：--s2tw <檔案>".into()).and_then(|f| Ok(zhconvert::s2tw(&std::fs::read_to_string(f)?)))),
         _ => {
-            eprintln!("用法：ffxiv_chn_text_patch --patch | --rollback | --selftest | --s2tw <檔案>");
+            eprintln!("用法：ffxiv_chn_text_patch --patch | --rollback | --update | --selftest | --s2tw <檔案>");
             2
         }
     };

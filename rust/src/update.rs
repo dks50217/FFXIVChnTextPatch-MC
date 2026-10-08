@@ -17,9 +17,44 @@ pub fn update(cfg: &Config) -> R<String> {
     result
 }
 
-fn update_from(repo: &str, tmp: &Path) -> R<String> {
-    let local_dir = p("resource/rawexd");
-    // 1. 下載：sparse clone 只抓 resource/rawexd（約 100MB；整包 zip 近 900MB 不可行）
+/// CI/CLI 漂移檢查（--driftcheck）：clone 上游 → 簡轉繁 → 逐檔跟本地比對 → 寫 rawexd-drift.txt，不改任何翻譯檔。
+/// 回傳有問題的檔數（錯位 + 重複 RowId，0 = 乾淨）；clone/上游失敗回錯誤，呼叫端當 warn-only。
+pub fn drift_check(cfg: &Config) -> R<usize> {
+    let tmp = std::env::temp_dir().join("ffxiv-rawexd-driftcheck");
+    let result = (|| -> R<usize> {
+        let up_dir = clone_upstream(cfg.get_or("UpstreamRepo", DEFAULT_REPO), &tmp)?;
+        let local_dir = p("resource/rawexd");
+        log("正在比對漂移……");
+        let mut drifted = Vec::new();
+        for up_path in csv_files(&up_dir) {
+            let rel = up_path.strip_prefix(&up_dir)?.to_string_lossy().replace('\\', "/");
+            let local_path = local_dir.join(&rel);
+            if !local_path.is_file() {
+                continue; // 上游新檔、本地還沒有，不算漂移
+            }
+            let keys = read_utf8(&local_path).and_then(|(lo, _)| Ok(suspects(&lo, &zhconvert::s2tw(&read_utf8(&up_path)?.0))));
+            match keys {
+                Ok(keys) if !keys.is_empty() => drifted.push((rel, keys)),
+                Ok(_) => {}
+                Err(e) => log(&format!("漂移檢查失敗 {rel}: {e}")),
+            }
+        }
+        let dupes = scan_duplicate_keys(&local_dir);
+        write_drift_report(&drifted, &dupes)?;
+        let keys: usize = drifted.iter().map(|(_, k)| k.len()).sum();
+        log(&if drifted.is_empty() && dupes.is_empty() {
+            "漂移檢查：乾淨，無疑似錯位".to_string()
+        } else {
+            format!("漂移檢查：{} 檔疑似錯位（{keys} 個 key）、{} 檔重複 RowId，見 rawexd-drift.txt", drifted.len(), dupes.len())
+        });
+        Ok(drifted.len() + dupes.len())
+    })();
+    let _ = delete_dir(&tmp);
+    result
+}
+
+/// sparse clone 只抓 resource/rawexd（約 100MB；整包 zip 近 900MB 不可行），回傳上游 rawexd 目錄。
+fn clone_upstream(repo: &str, tmp: &Path) -> R<PathBuf> {
     delete_dir(tmp)?;
     log("正在下載上游翻譯……");
     git(&["clone", "--depth", "1", "--filter=blob:none", "--sparse", "--progress", repo, &tmp.to_string_lossy()])?;
@@ -28,6 +63,22 @@ fn update_from(repo: &str, tmp: &Path) -> R<String> {
     if !up_dir.is_dir() {
         return Err("上游 repo 裡找不到 resource/rawexd".into());
     }
+    Ok(up_dir)
+}
+
+/// 疑似錯位的 key：內容啟發式 ∪ TEXT-id 精確比對。upstream 須已簡轉繁。
+fn suspects(local: &str, upstream: &str) -> Vec<i32> {
+    let mut keys = drift::detect_drift(local, upstream);
+    keys.extend(drift::detect_id_drift(local, upstream));
+    keys.sort();
+    keys.dedup();
+    keys
+}
+
+fn update_from(repo: &str, tmp: &Path) -> R<String> {
+    let local_dir = p("resource/rawexd");
+    // 1. 下載
+    let up_dir = clone_upstream(repo, tmp)?;
 
     // 2. 備份本地翻譯
     log("正在備份本地翻譯……");
@@ -51,12 +102,9 @@ fn update_from(repo: &str, tmp: &Path) -> R<String> {
             }
             let (local_text, local_bom) = read_utf8(&local_path)?;
             // 上游剛下載、轉好就在手上，順手做漂移偵測
-            let mut suspects = drift::detect_drift(&local_text, &up_text);
-            suspects.extend(drift::detect_id_drift(&local_text, &up_text));
-            suspects.sort();
-            suspects.dedup();
-            if !suspects.is_empty() {
-                drifted.push((rel.clone(), suspects));
+            let keys = suspects(&local_text, &up_text);
+            if !keys.is_empty() {
+                drifted.push((rel.clone(), keys));
             }
             let nl = if local_text.contains("\r\n") { "\r\n" } else { "\n" };
             let m = merge::merge(&local_text, &up_text, nl)?;

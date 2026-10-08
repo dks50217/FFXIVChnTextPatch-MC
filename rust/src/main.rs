@@ -47,9 +47,11 @@ fn main() {
         "--patch" => report(patch::patch(&mut cfg)),
         "--rollback" => report(patch::rollback(&mut cfg)),
         "--update" => report(update::update(&cfg)),
+        // exit code = 有問題的檔數；clone/上游失敗回 0，CI 當 warn-only，別讓網路問題誤報成漂移
+        "--driftcheck" => update::drift_check(&cfg).map_or_else(|e| { eprintln!("漂移檢查失敗：{e}"); 0 }, |n| n as i32),
         "--s2tw" => report(std::env::args().nth(2).ok_or("用法：--s2tw <檔案>".into()).and_then(|f| Ok(zhconvert::s2tw(&std::fs::read_to_string(f)?)))),
         _ => {
-            eprintln!("用法：ffxiv_chn_text_patch --patch | --rollback | --update | --selftest | --s2tw <檔案>");
+            eprintln!("用法：ffxiv_chn_text_patch --patch | --rollback | --update | --driftcheck | --selftest | --s2tw <檔案>");
             2
         }
     };

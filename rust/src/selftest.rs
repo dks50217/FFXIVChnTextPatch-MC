@@ -2,7 +2,7 @@
 //! 對應 C# SelfTest.cs 第 1-5 項；SheetSig/ExdNames/Merge/Lint/ZhConvert 移植後再補。
 use crate::config::Config;
 use crate::crc::ffcrc;
-use crate::{exd, patch, sqpack, zhconvert};
+use crate::{exd, merge, patch, sqpack, zhconvert};
 use std::collections::BTreeMap;
 
 pub fn run() -> i32 {
@@ -82,6 +82,43 @@ pub fn run() -> i32 {
     ] {
         check(&format!("ZhConvert {name} ({input}→{expected})"), zhconvert::s2tw(input) == expected);
     }
+
+    // 8. RawexdMerge 逐格合併規則（與 C# SelfTest 第 7 項同一組案例）
+    let m = |lo: &str, up: &str| merge::merge(lo, up, "\n").unwrap();
+    let r = m(
+        "key,0,1\n#,Name,Desc\noffset,0,4\nint32,str,str\n0,已翻,\n1,,\n3,本地獨有,x\n",
+        "key,0,1\n#,Name,Desc\noffset,0,4\nint32,str,str\n0,上游改進,上游補\n1,新翻,\n2,新列,y\n",
+    );
+    check("Merge 本地非空保留 + 空格補上游", r.text.contains("0,已翻,上游補") && r.text.contains("1,新翻,"));
+    check("Merge 上游新列", r.text.contains("2,新列,y") && r.new_rows == 1);
+    check("Merge 本地獨有列附加檔尾", r.text.trim_end().ends_with("3,本地獨有,x"));
+    check("Merge 補格計數", r.filled == 2 && !r.headers_changed);
+    check("Merge 註解列原樣保留", r.text.contains("#,Name,Desc"));
+
+    let quoted = "key,0\n#,Name\noffset,0\nint32,str\n0,\"a,\"\"b\"\"\n\n換行\"\n";
+    let recs = merge::parse(&m(quoted, quoted).text);
+    check("Merge 引號欄位 round-trip（含欄內空行）", merge::rows(&recs).last().map(|f| f[1].as_str()) == Some("a,\"b\"\n\n換行"));
+
+    let r = m(
+        "key,0,1\n#,A,B\noffset,0,4\nint32,str,str\n0,甲,乙\n",
+        "key,0,1,2\n#,A,New,B\noffset,0,2,4\nint32,str,str,str\n0,x,新欄,y\n",
+    );
+    check("Merge 跨版本 offset 欄位對齊", r.text.contains("0,甲,新欄,乙") && r.headers_changed);
+
+    // 上游中間插列時按 offset-0 的 TEXT-id 配對，整條不位移（CtsWks 類漂移的根因防護）
+    let r = m(
+        "key,0,1\n#,,\noffset,0,4\nInt32,String,String\n0,ID_A,甲\n1,ID_B,乙\n2,ID_C,丙\n",
+        "key,0,1\n#,,\noffset,0,4\nInt32,String,String\n0,ID_A,a\n1,ID_NEW,n\n2,ID_B,b\n3,ID_C,c\n",
+    );
+    check(
+        "Merge 按 TEXT-id 配對（上游中間插列不位移）",
+        ["0,ID_A,甲", "1,ID_NEW,n", "2,ID_B,乙", "3,ID_C,丙"].iter().all(|s| r.text.contains(s)) && r.new_rows == 1,
+    );
+    let r = m("key,0\n#,Name\noffset,0\nInt32,String\n0,\n1,本地\n", "key,0\n#,Name\noffset,0\nInt32,String\n0,\n1,上游\n");
+    check("Merge 無 id 欄退回位序", r.text.contains("1,本地"));
+    // offset-0 本身是被翻譯的中文欄 → 不可當 id，否則差一字的譯文會被當本地獨有、重複附在檔尾
+    let r = m("key,0\n#,Name\noffset,0\nInt32,String\n1,甲\n2,管弦樂琴\n", "key,0\n#,Name\noffset,0\nInt32,String\n1,甲\n2,管絃樂琴\n");
+    check("Merge 中文欄不當 id（不重複附加列）", r.text.contains("2,管弦樂琴") && !r.text.contains("管絃"));
 
     println!("{}", if failed == 0 { "ALL PASSED".to_string() } else { format!("{failed} FAILED") });
     failed

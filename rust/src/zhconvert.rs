@@ -6,14 +6,20 @@
 //! UserPhrases.txt 掛在第 1、2 輪最前面，優先權最高。字典在 resource/opencc/。
 //! 長度以 Unicode 字元計（C# 版以 UTF-16 計，只在 CJK 擴展 B 以後的字才有差，且不會把代理對切半）。
 use crate::p;
-use std::collections::{HashMap, HashSet};
+use std::collections::HashMap;
 use std::sync::OnceLock;
 
 struct Round {
     dict: HashMap<String, String>,
     max_len: usize,
-    /// 所有 key 的首字元；不在裡面的字直接放行（GPPhrases 有引號、英文開頭的 key，不能只看是不是 CJK）
-    first_chars: HashSet<char>,
+    /// 首字元 → 以它開頭的 key 有哪些長度（見 len_bit）。不在表裡的字直接放行
+    /// （GPPhrases 有引號、英文開頭的 key，不能只看是不是 CJK）；在表裡的也只試存在的長度。
+    lengths: HashMap<char, u64>,
+}
+
+/// 長度 n 對應的位元；63 字以上共用 bit 0（目前最長 39 字，用不到）。
+fn len_bit(n: usize) -> u64 {
+    1 << if n < 64 { n } else { 0 }
 }
 
 fn load(files: &[&str]) -> Round {
@@ -33,11 +39,11 @@ fn load(files: &[&str]) -> Round {
             dict.entry(key.to_string()).or_insert_with(|| values.split(' ').next().unwrap_or("").to_string());
         }
     }
-    Round {
-        max_len: dict.keys().map(|k| k.chars().count()).max().unwrap_or(1),
-        first_chars: dict.keys().filter_map(|k| k.chars().next()).collect(),
-        dict,
+    let mut lengths = HashMap::new();
+    for k in dict.keys() {
+        *lengths.entry(k.chars().next().unwrap()).or_insert(0) |= len_bit(k.chars().count());
     }
+    Round { max_len: dict.keys().map(|k| k.chars().count()).max().unwrap_or(1), lengths, dict }
 }
 
 fn rounds() -> &'static [Round; 3] {
@@ -63,9 +69,10 @@ fn apply(s: &str, r: &Round) -> String {
     let mut i = 0;
     while i < chars {
         let here = &s[bounds[i]..bounds[i + 1]];
-        if r.first_chars.contains(&here.chars().next().unwrap()) {
+        if let Some(&mask) = r.lengths.get(&here.chars().next().unwrap()) {
             let hit = (1..=r.max_len.min(chars - i))
                 .rev()
+                .filter(|&len| mask & len_bit(len) != 0)
                 .find_map(|len| r.dict.get(&s[bounds[i]..bounds[i + len]]).map(|to| (len, to)));
             if let Some((len, to)) = hit {
                 out += to;

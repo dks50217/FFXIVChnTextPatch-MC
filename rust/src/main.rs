@@ -2,6 +2,7 @@
 mod config;
 mod crc;
 mod exd;
+mod merge;
 mod patch;
 mod selftest;
 mod sqpack;

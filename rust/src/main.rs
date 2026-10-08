@@ -8,6 +8,7 @@ mod lint;
 mod merge;
 mod patch;
 mod selftest;
+mod sheetsig;
 mod sqpack;
 mod update;
 mod zhconvert;
@@ -50,16 +51,19 @@ fn main() {
         "--rollback" => report(patch::rollback(&mut cfg)),
         "--update" => report(update::update(&cfg)),
         "--lint" => lint::run(&cfg) as i32, // exit code = 會中斷漢化的錯誤數
+        // exit code = 不符的格數；給 base ref 只查有變動的格子（CI/PR），不給就掃全部（本機 triage）
+        "--sheetsig" => sheetsig::check(&cfg, std::env::args().nth(2).filter(|a| !a.starts_with("--")).as_deref()) as i32,
         // exit code = 有問題的檔數；clone/上游失敗回 0，CI 當 warn-only，別讓網路問題誤報成漂移
         "--driftcheck" => update::drift_check(&cfg).map_or_else(|e| { eprintln!("漂移檢查失敗：{e}"); 0 }, |n| n as i32),
         "--s2tw" => report(std::env::args().nth(2).ok_or("用法：--s2tw <檔案>".into()).and_then(|f| Ok(zhconvert::s2tw(&std::fs::read_to_string(f)?)))),
         _ => {
-            eprintln!("用法：ffxiv_chn_text_patch --patch | --rollback | --update | --driftcheck | --lint | --selftest | --s2tw <檔案>");
+            eprintln!("用法：ffxiv_chn_text_patch --patch | --rollback | --update | --driftcheck | --lint | --sheetsig [base-ref] | --selftest | --s2tw <檔案>");
             2
         }
     };
     eprintln!("耗時 {:.2?}", start.elapsed());
-    std::process::exit(code);
+    // exit code 只有 8 位元（Linux/Git Bash 取 mod 256），計數超過 255 就封頂，免得剛好 256 個錯誤被讀成 0 = 通過
+    std::process::exit(code.clamp(0, 255));
 }
 
 fn report(r: R<String>) -> i32 {

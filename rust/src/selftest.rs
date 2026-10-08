@@ -2,7 +2,7 @@
 //! 對應 C# SelfTest.cs 第 1-5 項；SheetSig/ExdNames/Merge/Lint/ZhConvert 移植後再補。
 use crate::config::Config;
 use crate::crc::ffcrc;
-use crate::{drift, exd, exdnames, merge, patch, sqpack, zhconvert};
+use crate::{drift, exd, exdnames, merge, patch, sheetsig, sqpack, zhconvert};
 use std::collections::BTreeMap;
 
 pub fn run() -> i32 {
@@ -151,6 +151,18 @@ pub fn run() -> i32 {
     check("ExdNames folder fallback (quest/000/x)", exdnames::describe("quest/000/ClsArc011_00021") == Some("任務對話"));
     check("ExdNames folder/sheet name collision (Quest vs quest/)", exdnames::describe("Quest") == Some("任務"));
     check("ExdNames unknown passthrough", exdnames::label("NoSuchSheet") == "NoSuchSheet");
+
+    // 11. SheetSig：只收 Sheet 標籤的參數，排版與 If 分支長度的變動不能影響簽章
+    let sheet_ja = "<hex:02282BFF10>CSBonusTextData<hex:FF17><hex:022813FF0E>CSBonusSeason<hex:E8021003><hex:0103>終了まで";
+    let sheet_cn = "<hex:02282BFF10>CSBonusTextData<hex:FF17><hex:022813FF0E>CSBonusSeason<hex:E8020B03><hex:0103>結束前";
+    check("SheetSig 取出 Sheet 參照", sheetsig::of(sheet_ja) == "02282BFF10|FF17|022813FF0E|E8021003|0103");
+    check("SheetSig 抓到欄號被改掉（Addon 15919 的實際 bug）", sheetsig::of(sheet_ja) != sheetsig::of(sheet_cn));
+    check(
+        "SheetSig 忽略 If 分支長度與純文字",
+        sheetsig::of("<hex:020890E4E80503FF46>到達で開放<hex:02280FFF0A>PlaceName<hex:E8060103>")
+            == sheetsig::of("<hex:02087EE4E80503FF3A>抵達後開放<hex:02280FFF0A>PlaceName<hex:E8060103>"),
+    );
+    check("SheetSig 無 Sheet 標籤回空字串", sheetsig::of("純文字<hex:02100103>換行").is_empty());
 
     println!("{}", if failed == 0 { "ALL PASSED".to_string() } else { format!("{failed} FAILED") });
     failed

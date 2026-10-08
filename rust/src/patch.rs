@@ -278,7 +278,7 @@ fn replace_exdf(cfg: &Config, index_path: &Path) -> R<String> {
 }
 
 /// root.exl 列出所有資料表，回傳表名（不含 exd/ 與副檔名，例如 "quest/000/ClsArc011_00021"）。
-fn init_file_list(index: &crate::sqpack::Index, dats: &mut Dats) -> R<Vec<String>> {
+pub fn init_file_list(index: &crate::sqpack::Index, dats: &mut Dats) -> R<Vec<String>> {
     let root = index
         .get(&ffcrc_lower("exd"))
         .and_then(|f| f.get(&ffcrc_lower("root.exl")))
@@ -328,11 +328,11 @@ fn load_csv(path: &Path) -> R<(HashMap<u16, usize>, HashMap<i32, Vec<String>>)> 
     }
     let mut offsets = HashMap::new();
     for (col, v) in rows[1].iter().skip(1).enumerate() {
-        offsets.insert(v.parse()?, col);
+        offsets.insert(v.trim().parse()?, col);
     }
     let mut data = HashMap::new();
     for row in &rows[3..] {
-        data.insert(row[0].parse()?, row.iter().skip(1).map(str::to_string).collect());
+        data.insert(row[0].trim().parse()?, row.iter().skip(1).map(str::to_string).collect());
     }
     Ok((offsets, data))
 }

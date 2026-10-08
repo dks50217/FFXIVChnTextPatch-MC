@@ -179,20 +179,21 @@ fn write_csv(path: &Path, text: &str, bom: bool) -> std::io::Result<()> {
     fs::write(path, if bom { format!("{BOM}{text}") } else { text.to_string() })
 }
 
+/// 遞迴列出 CSV，順序跟 .NET Directory.GetFiles(AllDirectories) 一樣（同層照 NTFS 順序、子目錄排隊後處理），
+/// 報告裡同分的項目才會跟 C# 版排得一樣。
 pub fn csv_files(dir: &Path) -> Vec<PathBuf> {
     let mut out = Vec::new();
-    let mut stack = vec![dir.to_path_buf()];
-    while let Some(d) = stack.pop() {
+    let mut queue = std::collections::VecDeque::from([dir.to_path_buf()]);
+    while let Some(d) = queue.pop_front() {
         for e in fs::read_dir(&d).into_iter().flatten().flatten() {
             let path = e.path();
             if path.is_dir() {
-                stack.push(path);
+                queue.push_back(path);
             } else if path.extension().is_some_and(|x| x.eq_ignore_ascii_case("csv")) {
                 out.push(path);
             }
         }
     }
-    out.sort();
     out
 }
 

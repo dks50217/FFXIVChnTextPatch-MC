@@ -2,7 +2,7 @@
 //! 對應 C# SelfTest.cs 第 1-5 項；SheetSig/ExdNames/Merge/Lint/ZhConvert 移植後再補。
 use crate::config::Config;
 use crate::crc::ffcrc;
-use crate::{drift, exd, merge, patch, sqpack, zhconvert};
+use crate::{drift, exd, exdnames, merge, patch, sqpack, zhconvert};
 use std::collections::BTreeMap;
 
 pub fn run() -> i32 {
@@ -144,6 +144,13 @@ pub fn run() -> i32 {
         drift::duplicate_keys("key,0,1\n#,,\noffset,0,4\nInt32,String,String\n0,ID_A,甲\n1,ID_C,丙\n1,ID_B,乙\n") == [1],
     );
     check("DuplicateKeys 乾淨時回空", drift::duplicate_keys(id_up).is_empty());
+
+    // 10. exd-names.csv 載入與各種表名形式的查詢
+    check("ExdNames lookup (Item)", exdnames::describe("Item") == Some("道具"));
+    check("ExdNames lookup (EXD/Item.EXH)", exdnames::describe("EXD/Item.EXH") == Some("道具"));
+    check("ExdNames folder fallback (quest/000/x)", exdnames::describe("quest/000/ClsArc011_00021") == Some("任務對話"));
+    check("ExdNames folder/sheet name collision (Quest vs quest/)", exdnames::describe("Quest") == Some("任務"));
+    check("ExdNames unknown passthrough", exdnames::label("NoSuchSheet") == "NoSuchSheet");
 
     println!("{}", if failed == 0 { "ALL PASSED".to_string() } else { format!("{failed} FAILED") });
     failed

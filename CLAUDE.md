@@ -29,13 +29,13 @@ The app locates its base directory (for `conf/`, `resource/`, `backup/`, `debug.
 
 ### Rust port (`rust/`, in progress)
 
-CLI only, no UI yet; ported so far: CRC, Config, SqPack, EXD, patch/rollback, ZhConvert (`--s2tw <file>` prints the conversion), RawexdMerge, `--update` (needs git, backs up via Windows `tar.exe`), `--driftcheck` (exit code = files with drift or duplicate RowIds; clone failure exits 0). All verified byte-identical to C# on real data. Not yet: `--lint`, `--sheetsig`, Big5 repair, UI. Shares `conf/` and `resource/` with the C# app.
+CLI only, no UI yet; ported so far: CRC, Config, SqPack, EXD, patch/rollback, ZhConvert (`--s2tw <file>` prints the conversion), RawexdMerge, `--update` (needs git, backs up via Windows `tar.exe`), `--driftcheck` (exit code = files with drift or duplicate RowIds; clone failure exits 0), `--lint` (follows the stricter C# TextFieldParser rules, incl. its line numbering, so CI protects both apps). All verified byte-identical to C# on real data. Not yet: `--sheetsig`, `--gensheetsig`, `--hextags`, Big5 repair, UI. Shares `conf/` and `resource/` with the C# app.
 
 ```bash
 cd rust
 cargo build --release
 ./target/release/ffxiv_chn_text_patch.exe --selftest   # prints to stdout, exit code = failure count
-./target/release/ffxiv_chn_text_patch.exe --patch      # or --rollback, --update, --driftcheck
+./target/release/ffxiv_chn_text_patch.exe --patch      # or --rollback, --update, --driftcheck, --lint
 ```
 
 flate2 must use the `zlib-rs` backend: the default miniz_oxide at level 9 makes a full patch take ~58s instead of ~7s.

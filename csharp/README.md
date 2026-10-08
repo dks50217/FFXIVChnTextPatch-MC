@@ -42,4 +42,4 @@ FFXIVChnTextPatch.exe --lint       # 報告寫到 repo 根目錄 lint-report.txt
 - **僅支援 CSV 翻譯模式**（`FLanguage=CSV`，讀 `resource/rawexd/*.csv`）。舊的「CN 客戶端檔案」模式（`EXDFUtil`／`JianFan` 簡繁轉換／`transtable`／teemo.name 遠端下載）未移植，需要時再從 Java 版補。
 - SqPack 解壓只實作 content type 2（漢化流程只會解 EXH/EXD/root.exl）；type 3/4 解壓未移植（字體是「寫入」type 4，這部分有移植）。
 - zlib：Java 版用 jzlib 手動補 zlib header + Adler-32；.NET 的 `DeflateStream` 是 raw deflate，直接處理，行為等價。
-- CSV 解析改用內建 `TextFieldParser`（`#` 開頭視為註解列，對齊 univocity 預設行為）。
+- CSV 解析改用內建 `TextFieldParser`（`#` 開頭視為註解列，對齊 univocity 預設行為）。已知問題：它會把引號欄位裡的空行吃掉，寫進遊戲的譯文會少一行空行。Rust 版沒有這個問題。

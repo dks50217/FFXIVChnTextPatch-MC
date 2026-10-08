@@ -2,6 +2,8 @@
 
 FFXIV 國際服的中文漢化器。以 C#/.NET 10（WPF + Blazor Hybrid）重寫，程式碼在 [`csharp/`](csharp/README.md)。
 
+另有進行中的 Rust 移植版在 [`rust/`](#rust-版移植中)：目前只有命令列，沒有介面。漢化核心與翻譯維護工具都已移植，輸出經實測與 C# 版逐字相同，CI 的檢查也改由它執行。發行版仍是 C# 版。
+
 ![程式畫面](docs/app1.png)
 
 相較於上游原版：
@@ -82,6 +84,42 @@ dotnet publish -c Release -r win-x64 --self-contained -p:PublishSingleFile=true 
 `wwwroot`（UI）已內嵌進 exe，發佈只需 `FFXIVChnTextPatch.exe` 單檔即可執行。`conf/`、`resource/` 為外部檔：`conf/global.properties` 首次執行會自動建立，翻譯檔可由程式提示下載（見上方「發佈檔案」）。
 
 舊 Java 版的編譯筆記可參考[這裡](https://hackmd.io/@GpointChen/SJi_gv-ad)（原始碼在 git 歷史中）。
+
+### Rust 版（移植中）
+
+需要 Rust stable（`rustup` 安裝）。和 C# 版共用同一份 `conf/` 與 `resource/`，一樣從執行檔位置往上找 `conf/global.properties` 決定基準目錄。
+
+```bash
+cd rust
+cargo build --release
+./target/release/ffxiv_chn_text_patch --selftest
+```
+
+| 指令 | 作用 |
+|------|------|
+| `--patch` / `--rollback` | 漢化（含備份）／從 `backup/` 還原 |
+| `--update` | 一鍵更新翻譯 CSV（需要 git） |
+| `--lint` | 檢查翻譯 CSV，報告寫到 `lint-report.txt` |
+| `--sheetsig [base-ref]` | `Sheet` 標籤參照檢查，報告寫到 `sheetsig-report.txt` |
+| `--driftcheck` | 跟上游比對錯位，報告寫到 `rawexd-drift.txt` |
+| `--s2tw <檔案>` | 印出簡轉繁結果，方便試 `UserPhrases.txt` |
+| `--selftest` | 核心邏輯自檢，結果印在主控台 |
+
+檢查類指令的結束碼是錯誤數（超過 255 以 255 計），訊息印在主控台，不寫 `debug.log`。
+
+實測速度（同一台電腦）：
+
+| 工作 | C# | Rust |
+|------|----|------|
+| 漢化（7118 個資料表） | 約 32 秒 | 約 7 秒 |
+| 簡轉繁＋合併（上游全量） | 約 29 秒 | 約 12 秒 |
+| `--lint` | 約 8 秒 | 約 2 秒 |
+
+和 C# 版的差異：
+
+- 讀到非 UTF-8 的 CSV（舊工具產生的 Big5 檔）會回報失敗，不會自動轉成 UTF-8；這類檔案請先用 C# 版的 `--update` 修復。
+- CSV 引號欄位裡的空行會保留。C# 版的 `TextFieldParser` 會把這些空行吃掉，例如 Lobby 職業說明裡「開始地點」前面那行空行。
+- `--gensheetsig` 與 `--hextags` 尚未移植，仍請用 C# 版。
 
 ## 翻譯資源
 

@@ -103,6 +103,8 @@ cargo build --release
 .\rust\target\release\ffxiv_chn_text_patch.exe --selftest
 ```
 
+兩個都是單一 exe，不需要另外安裝任何 runtime：C runtime 已靜態連結（設定在 `rust/.cargo/config.toml`），只依賴 Windows 內建的 DLL。發佈給一般使用者只需要 `FFXIVChnTextPatch.exe`（約 8MB）。
+
 兩者和 C# 版共用同一份 `conf/` 與 `resource/`：程式從執行檔位置往上找 `conf/global.properties` 來決定基準目錄，找不到才用目前目錄。所以 exe 留在 repo 裡、或搬到任何上層有 `conf/` 的資料夾都能用。命令列沒有設定功能，`--patch` 用的設定請先在操作畫面（或 C# 版）的「設置」設好，或直接編輯 `conf/global.properties`。
 
 | 指令 | 作用 | 會改到的檔案 |

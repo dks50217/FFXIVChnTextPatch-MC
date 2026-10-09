@@ -66,7 +66,7 @@ public class PatchService
         if (string.IsNullOrEmpty(patched)) return ("目前狀態：未漢化", false);
         string? game = GameVersion();
         if (game != null && game != patched)
-            return ($"⚠ 遊戲已從 {patched} 更新至 {game}，漢化已被覆蓋，請重新漢化", true);
+            return ($"⚠ 遊戲已從 {patched} 更新至 {game}，漢化可能已被覆蓋，請重新漢化", true);
         string? stamp = Config.Get("PatchedStamp");
         string now = FileStamp();
         if (!string.IsNullOrEmpty(stamp) && now.Length > 0 && stamp != now)
@@ -143,7 +143,7 @@ public class PatchService
         string? gameVer = GameVersion();
         if (!string.IsNullOrEmpty(backupVer) && gameVer != null && gameVer != backupVer)
             return (false, $"備份是遊戲 {backupVer} 版的檔案，但目前遊戲已更新至 {gameVer}。" +
-                           "還原會把遊戲更新內容蓋掉，已取消。遊戲更新後漢化已自動失效，直接重新漢化即可。");
+                           "還原會把遊戲更新內容蓋掉，已取消。遊戲更新不一定會換掉漢化過的檔案；要重新漢化，請先用官方啟動器的「檔案修復」取回原版檔案。");
         string resourceFolder = SqpackFolder(gamePath!);
         try
         {

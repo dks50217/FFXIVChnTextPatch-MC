@@ -1,7 +1,7 @@
 //! 一鍵更新 rawexd 翻譯：git sparse clone 上游的 resource/rawexd → 簡轉繁 → 逐格合併（本地翻譯優先）。
 //! 合併前把整個 resource/rawexd 備份成 backup/rawexd-before-update.zip（只留最新一份）。對應 C# RawexdUpdater。
 use crate::config::Config;
-use crate::{drift, log, merge, p, zhconvert, R};
+use crate::{drift, log, merge, p, progress, zhconvert, R};
 use std::fs;
 use std::path::{Path, PathBuf};
 use std::process::Command;
@@ -56,6 +56,7 @@ pub fn drift_check(cfg: &Config) -> R<usize> {
 /// sparse clone 只抓 resource/rawexd（約 100MB；整包 zip 近 900MB 不可行），回傳上游 rawexd 目錄。
 fn clone_upstream(repo: &str, tmp: &Path) -> R<PathBuf> {
     delete_dir(tmp)?;
+    progress(0.02, "正在下載上游翻譯……", "");
     log("正在下載上游翻譯……");
     git(&["clone", "--depth", "1", "--filter=blob:none", "--sparse", "--progress", repo, &tmp.to_string_lossy()])?;
     git(&["-C", &tmp.to_string_lossy(), "sparse-checkout", "set", "resource/rawexd"])?;
@@ -81,6 +82,7 @@ fn update_from(repo: &str, tmp: &Path) -> R<String> {
     let up_dir = clone_upstream(repo, tmp)?;
 
     // 2. 備份本地翻譯
+    progress(0.45, "正在備份本地翻譯……", "");
     log("正在備份本地翻譯……");
     backup_zip(&local_dir, &p("backup/rawexd-before-update.zip"))?;
 
@@ -88,8 +90,10 @@ fn update_from(repo: &str, tmp: &Path) -> R<String> {
     log("正在合併翻譯……");
     let (mut filled, mut new_rows, mut changed, mut new_files, mut failed) = (0, 0, 0, 0, 0);
     let mut drifted: Vec<(String, Vec<i32>)> = Vec::new();
-    for up_path in csv_files(&up_dir) {
+    let files = csv_files(&up_dir);
+    for (i, up_path) in files.iter().enumerate() {
         let rel = up_path.strip_prefix(&up_dir)?.to_string_lossy().replace('\\', "/");
+        progress(0.5 + 0.5 * i as f32 / files.len() as f32, "正在合併翻譯：", &rel);
         let local_path = local_dir.join(&rel);
         let r = (|| -> R<()> {
             let (up_text, up_bom) = read_utf8(&up_path)?;

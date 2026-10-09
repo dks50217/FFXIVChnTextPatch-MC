@@ -3,8 +3,16 @@ name = "ffxiv_chn_text_patch"
 version = "0.1.0"
 edition = "2021"
 
-# See more keys and their definitions at https://doc.rust-lang.org/cargo/reference/manifest.html
-
 [dependencies]
 csv = "1.4.0"
 flate2 = { version = "1.1.10", default-features = false, features = ["zlib-rs"] }
+
+# 操作畫面只在 Windows 編；Linux（CI）上 FFXIVChnTextPatch 只是印一行提示的空殼，不用裝圖形套件
+[target."cfg(windows)".dependencies]
+eframe = { version = "0.36.2", default-features = false, features = ["accesskit", "default_fonts", "glow"] }
+rfd = "0.17.2"
+
+# 命令列 ffxiv_chn_text_patch 是 src/main.rs；操作畫面另一個執行檔，雙擊開視窗、不帶主控台
+[[bin]]
+name = "FFXIVChnTextPatch"
+path = "src/bin/gui.rs"

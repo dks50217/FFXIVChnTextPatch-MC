@@ -2,7 +2,7 @@
 
 FFXIV 國際服的中文漢化器。以 C#/.NET 10（WPF + Blazor Hybrid）重寫，程式碼在 [`csharp/`](csharp/README.md)。
 
-另有進行中的 Rust 移植版在 [`rust/`](#rust-版移植中)：目前只有命令列，沒有介面。漢化核心與翻譯維護工具都已移植，輸出經實測與 C# 版逐字相同，CI 的檢查也改由它執行。發行版仍是 C# 版。
+另有進行中的 Rust 移植版在 [`rust/`](#rust-版移植中)：有操作畫面（egui）和命令列兩個執行檔。漢化核心與翻譯維護工具都已移植，輸出經實測與 C# 版逐字相同，CI 的檢查也改由它執行。發行版仍是 C# 版。
 
 ![程式畫面](docs/app1.png)
 
@@ -94,15 +94,16 @@ cd rust
 cargo build --release
 ```
 
-產出的執行檔是 `rust\target\release\ffxiv_chn_text_patch.exe`。它是**命令列程式**，雙擊只會印出用法就關掉；請在 PowerShell 或命令提示字元裡加上指令執行：
+會產出兩個執行檔，都在 `rust\target\release\`：
+
+- **`FFXIVChnTextPatch.exe`：操作畫面**，雙擊就能開。功能同 C# 版主畫面：漢化、還原、設置（遊戲路徑、原始語言、替換字體/文本、跳過的資料表）、檢查翻譯 CSV、更新翻譯 CSV。只支援 Windows；中文字型用 Windows 內建的微軟正黑體。
+- **`ffxiv_chn_text_patch.exe`：命令列**，給腳本和 CI 用。雙擊只會印出用法就關掉，請在 PowerShell 或命令提示字元裡加上指令執行：
 
 ```powershell
 .\rust\target\release\ffxiv_chn_text_patch.exe --selftest
 ```
 
-它和 C# 版共用同一份 `conf/` 與 `resource/`：程式從執行檔位置往上找 `conf/global.properties` 來決定基準目錄，找不到才用目前目錄。所以 exe 留在 repo 裡、或搬到任何上層有 `conf/` 的資料夾都能用。
-
-Rust 版沒有設定畫面。`--patch` 需要的遊戲路徑、原始語言、要不要替換字體/文本、跳過的資料表，請先用 C# 版的「漢化設置」設好，或直接編輯 `conf/global.properties`（`GamePath`、`SLanguage`、`ReplaFont`、`ReplaText`、`SkipFiles`）。
+兩者和 C# 版共用同一份 `conf/` 與 `resource/`：程式從執行檔位置往上找 `conf/global.properties` 來決定基準目錄，找不到才用目前目錄。所以 exe 留在 repo 裡、或搬到任何上層有 `conf/` 的資料夾都能用。命令列沒有設定功能，`--patch` 用的設定請先在操作畫面（或 C# 版）的「設置」設好，或直接編輯 `conf/global.properties`。
 
 | 指令 | 作用 | 會改到的檔案 |
 |------|------|------|
@@ -132,6 +133,7 @@ C# 版和 Rust 版的漢化與還原可以混用，兩邊讀寫的是同一份 `
 - 讀到非 UTF-8 的 CSV（舊工具產生的 Big5 檔）會回報失敗，不會自動轉成 UTF-8；這類檔案請先用 C# 版的 `--update` 修復。
 - CSV 引號欄位裡的空行會保留。C# 版的 `TextFieldParser` 會把這些空行吃掉，例如 Lobby 職業說明裡「開始地點」前面那行空行。
 - `--gensheetsig` 與 `--hextags` 尚未移植，仍請用 C# 版。
+- 操作畫面沒有「缺翻譯檔時自動下載」與「hex 標籤對照表」：缺 `resource/rawexd` 時只會提示去 Releases 下載 `rawexd-opencc.zip`。
 
 ## 翻譯資源
 

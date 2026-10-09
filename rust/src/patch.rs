@@ -3,7 +3,7 @@
 use crate::config::Config;
 use crate::crc::ffcrc_lower;
 use crate::sqpack::{build_block, build_tex_block, read_index, Dats};
-use crate::{exd, log, p, R};
+use crate::{exd, exdnames, log, p, progress, R};
 use std::collections::HashMap;
 use std::fs::{self, OpenOptions};
 use std::io::{BufWriter, Write};
@@ -55,6 +55,23 @@ fn file_stamp(cfg: &Config) -> String {
         .join("|")
 }
 
+/// 主畫面顯示的漢化狀態（依上次漢化時記下的遊戲版本與檔案指紋）；bool = 要不要用警告色。
+pub fn patch_status(cfg: &Config) -> (String, bool) {
+    let patched = cfg.get_or("PatchedVersion", "");
+    if patched.is_empty() {
+        return ("目前狀態：未漢化".into(), false);
+    }
+    let game = game_version(cfg);
+    if !game.is_empty() && game != patched {
+        return (format!("⚠ 遊戲已從 {patched} 更新至 {game}，漢化可能已被覆蓋，請重新漢化"), true);
+    }
+    let (stamp, now) = (cfg.get_or("PatchedStamp", ""), file_stamp(cfg));
+    if !stamp.is_empty() && !now.is_empty() && stamp != now {
+        return ("⚠ 遊戲資源檔在漢化後被更動過（手動替換或官方修復？），漢化可能已失效，請重新漢化".into(), true);
+    }
+    (format!("目前狀態：已漢化（遊戲版本 {patched}）"), false)
+}
+
 fn check_game(cfg: &Config, action: &str) -> R<PathBuf> {
     let game = cfg.get_or("GamePath", "");
     if !is_ffxiv_folder(game) {
@@ -72,6 +89,7 @@ pub fn patch(cfg: &mut Config) -> R<String> {
     if is_patched(cfg, &folder.join("0a0000.win32.index"))? {
         return Err(ALREADY_PATCHED.into());
     }
+    progress(0.0, "正在備份遊戲檔……", "");
     fs::create_dir_all(p("backup"))?;
     for n in RESOURCE_NAMES {
         if folder.join(n).is_file() {
@@ -106,12 +124,13 @@ pub fn rollback(cfg: &mut Config) -> R<String> {
     let (backup, game) = (cfg.get_or("BackupVersion", "").to_string(), game_version(cfg));
     if !backup.is_empty() && !game.is_empty() && backup != game {
         return Err(format!(
-            "備份是遊戲 {backup} 版的檔案，但目前遊戲已更新至 {game}。還原會把遊戲更新內容蓋掉，已取消。遊戲更新後漢化已自動失效，直接重新漢化即可。"
+            "備份是遊戲 {backup} 版的檔案，但目前遊戲已更新至 {game}。還原會把遊戲更新內容蓋掉，已取消。遊戲更新不一定會換掉漢化過的檔案；要重新漢化，請先用官方啟動器的「檔案修復」取回原版檔案。"
         )
         .into());
     }
-    for n in RESOURCE_NAMES {
+    for (i, n) in RESOURCE_NAMES.iter().enumerate() {
         if p("backup").join(n).is_file() {
+            progress(i as f32 / RESOURCE_NAMES.len() as f32, "正在還原……", n);
             log(&format!("[Rollback] {n}"));
             fs::copy(p("backup").join(n), folder.join(n))?;
         }
@@ -181,7 +200,7 @@ pub fn translated_cells_present(
 }
 
 // ponytail: 只看第一層；rawexd 根目錄一定有 Addon.csv 這類檔案
-fn has_csv_files(dir: &Path) -> bool {
+pub fn has_csv_files(dir: &Path) -> bool {
     fs::read_dir(dir)
         .map(|it| it.flatten().any(|e| e.path().extension().is_some_and(|x| x.eq_ignore_ascii_case("csv"))))
         .unwrap_or(false)
@@ -226,6 +245,7 @@ fn replace_font(index_path: &Path, font_dir: &Path) -> R<()> {
     let folder = index.get(&ffcrc_lower("common/font")).ok_or("index 找不到 common/font")?;
     for file in files.flatten() {
         let name = file.file_name().to_string_lossy().to_string();
+        progress(0.0, "正在替換字體：", &name);
         log(&format!("Replace : {name}"));
         let data = fs::read(file.path())?;
         let block = if name.to_ascii_lowercase().ends_with(".tex") { build_tex_block(&data) } else { build_block(&data) };
@@ -249,6 +269,7 @@ fn replace_exdf(cfg: &Config, index_path: &Path) -> R<String> {
     let mut w = Writer::open(index_path)?;
 
     for (n, sheet) in file_list.iter().enumerate() {
+        progress(n as f32 / file_list.len() as f32, "正在替換文本：", &exdnames::label(sheet));
         if n % 500 == 0 {
             log(&format!("[{n}/{}] {sheet}", file_list.len()));
         }

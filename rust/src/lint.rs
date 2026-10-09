@@ -8,10 +8,11 @@ use crate::config::Config;
 use crate::crc::ffcrc_lower;
 use crate::sqpack::{read_index, Dats};
 use crate::update::csv_files;
-use crate::{exd, exdnames, log, p, patch, R};
+use crate::{exd, exdnames, log, p, patch, progress, R};
 use std::path::Path;
 
-pub fn run(cfg: &Config) -> usize {
+/// 回傳 (錯誤數, 一行摘要)。
+pub fn run(cfg: &Config) -> (usize, String) {
     let rawexd = p("resource/rawexd");
     let mut errors = Vec::new();
     let mut say_todo_zh = Vec::new();
@@ -19,8 +20,9 @@ pub fn run(cfg: &Config) -> usize {
 
     // 1. 檢查所有 CSV
     let files = csv_files(&rawexd);
-    for path in &files {
+    for (i, path) in files.iter().enumerate() {
         let name = path.strip_prefix(&rawexd).unwrap().to_string_lossy().replace('\\', "/");
+        progress(0.7 * i as f32 / files.len() as f32, "正在檢查：", &name);
         let text = String::from_utf8_lossy(&std::fs::read(path).unwrap_or_default()).into_owned();
         lint_csv(text.trim_start_matches('\u{feff}'), &name, &mut errors, &mut say_todo_zh, &mut coverage);
     }
@@ -65,8 +67,8 @@ pub fn run(cfg: &Config) -> usize {
     if let Err(e) = std::fs::write(p("lint-report.txt"), out) {
         log(&format!("寫入 lint-report.txt 失敗：{e}"));
     }
-    println!("檢查完成：{} 個錯誤、缺 {} 張表、覆蓋率 {}%（詳見 lint-report.txt）", errors.len(), missing.len(), f1(ratio));
-    errors.len()
+    let summary = format!("檢查完成：{} 個錯誤、缺 {} 張表、覆蓋率 {}%（詳見 lint-report.txt）", errors.len(), missing.len(), f1(ratio));
+    (errors.len(), summary)
 }
 
 /// 一位小數，四捨五入（.NET "0.0" 的 midpoint 是遠離零，Rust 的 {:.1} 是四捨六入五成雙）。
@@ -263,7 +265,9 @@ fn find_missing_sheets(game: &str, rawexd: &Path) -> R<Vec<String>> {
     let index = read_index(&index_path)?;
     let mut dats = Dats::new(&index_path);
     let mut missing = Vec::new();
-    for sheet in patch::init_file_list(&index, &mut dats)? {
+    let sheets = patch::init_file_list(&index, &mut dats)?;
+    for (i, sheet) in sheets.iter().enumerate() {
+        progress(0.7 + 0.3 * i as f32 / sheets.len() as f32, "正在比對遊戲資料表：", sheet);
         if rawexd.join(format!("{sheet}.csv")).is_file() {
             continue;
         }

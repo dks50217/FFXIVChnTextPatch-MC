@@ -85,8 +85,10 @@ public class PatchService
         string resourceFolder = SqpackFolder(gamePath!);
         try
         {
-            // 在已漢化的檔案上再漢化，備份會被已漢化的檔案蓋掉，之後就還原不回原版
-            if (await Task.Run(() => IsPatched(Path.Combine(resourceFolder, "0a0000.win32.index"))))
+            // 在已漢化的檔案上再漢化，備份會被已漢化的檔案蓋掉，之後就還原不回原版。
+            // 備份一律複製六個檔，所以不管這次勾了哪些項目，文本和字型都要檢查。
+            if (await Task.Run(() => IsPatched(Path.Combine(resourceFolder, "0a0000.win32.index"))
+                                     || FontsPatched(Path.Combine(resourceFolder, "000000.win32.index"))))
                 return (false, AlreadyPatched);
             string summary = "漢化完畢";
             await Task.Run(() =>
@@ -187,8 +189,29 @@ public class PatchService
     }
 
     private const string AlreadyPatched =
-        "遊戲檔看起來已經漢化過（Addon 的譯文已經在遊戲檔裡）。直接再漢化會讓備份被已漢化的檔案蓋掉，之後就還原不回原版。" +
+        "遊戲檔看起來已經漢化過（替換的字型或 Addon 的譯文已經在遊戲檔裡）。直接再漢化會讓備份被已漢化的檔案蓋掉，之後就還原不回原版。" +
         "請先「還原」再漢化；如果遊戲更新過、還原被拒絕，請用官方啟動器的「檔案修復」取回原版檔案後再漢化。";
+
+    /// <summary>
+    /// 字型是否已替換：取遊戲 common/font 裡跟 resource/font 同名的第一個 .fdt，內容一樣就是替換過。
+    /// 只比 .fdt：.tex 是 type 4，解出來沒移植。resource/font 不在時無從判斷，回 false。
+    /// </summary>
+    private static bool FontsPatched(string pathToIndex)
+    {
+        string fontDir = AppEnv.P("resource", "font");
+        if (!Directory.Exists(fontDir)) return false;
+        var index = new SqPackIndex(pathToIndex).ResolveIndex();
+        if (!index.TryGetValue(FFCRC.ComputeCRC(Encoding.UTF8.GetBytes("common/font")), out var folder)) return false;
+        foreach (var file in Directory.GetFiles(fontDir, "*.fdt"))
+        {
+            string name = Path.GetFileName(file);
+            if (!folder.Files.TryGetValue(FFCRC.ComputeCRC(Encoding.UTF8.GetBytes(name.ToLowerInvariant())), out var entry)) continue;
+            bool same = ExtractFile(pathToIndex, entry.DataOffset).AsSpan().SequenceEqual(File.ReadAllBytes(file));
+            AppEnv.Log($"[Patch] 字型檢查：{name} {(same ? "已是替換後的字型" : "是原版字型")}");
+            return same;
+        }
+        return false;
+    }
 
     /// <summary>
     /// 遊戲檔是否已漢化：抽 Addon 第一頁，看含中文的譯文是不是已經寫在遊戲檔裡。

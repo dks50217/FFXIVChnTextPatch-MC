@@ -85,8 +85,9 @@ fn check_game(cfg: &Config, action: &str) -> R<PathBuf> {
 
 pub fn patch(cfg: &mut Config) -> R<String> {
     let folder = check_game(cfg, "漢化")?;
-    // 在已漢化的檔案上再漢化，備份會被已漢化的檔案蓋掉，之後就還原不回原版
-    if is_patched(cfg, &folder.join("0a0000.win32.index"))? {
+    // 在已漢化的檔案上再漢化，備份會被已漢化的檔案蓋掉，之後就還原不回原版。
+    // 備份一律複製六個檔，所以不管這次勾了哪些項目，文本和字型都要檢查。
+    if is_patched(cfg, &folder.join("0a0000.win32.index"))? || fonts_patched(&folder.join("000000.win32.index"))? {
         return Err(ALREADY_PATCHED.into());
     }
     progress(0.0, "正在備份遊戲檔……", "");
@@ -141,8 +142,30 @@ pub fn rollback(cfg: &mut Config) -> R<String> {
     Ok("還原完畢".into())
 }
 
-const ALREADY_PATCHED: &str = "遊戲檔看起來已經漢化過（Addon 的譯文已經在遊戲檔裡）。直接再漢化會讓備份被已漢化的檔案蓋掉，之後就還原不回原版。\
+const ALREADY_PATCHED: &str = "遊戲檔看起來已經漢化過（替換的字型或 Addon 的譯文已經在遊戲檔裡）。直接再漢化會讓備份被已漢化的檔案蓋掉，之後就還原不回原版。\
 請先「還原」再漢化；如果遊戲更新過、還原被拒絕，請用官方啟動器的「檔案修復」取回原版檔案後再漢化。";
+
+/// 字型是否已替換：取遊戲 common/font 裡跟 resource/font 同名的第一個 .fdt，內容一樣就是替換過。
+/// 只比 .fdt：.tex 是 type 4，解出來沒移植。resource/font 不在時無從判斷，回 false。
+fn fonts_patched(index_path: &Path) -> R<bool> {
+    let Ok(entries) = fs::read_dir(p("resource/font")) else { return Ok(false) };
+    let index_str = index_path.to_string_lossy().to_string();
+    let index = read_index(&index_str)?;
+    let Some(folder) = index.get(&ffcrc_lower("common/font")) else { return Ok(false) };
+    let mut dats = Dats::new(&index_str);
+    for e in entries.flatten() {
+        let name = e.file_name().to_string_lossy().to_string();
+        if !name.to_ascii_lowercase().ends_with(".fdt") {
+            continue;
+        }
+        if let Some(entry) = folder.get(&ffcrc_lower(&name)) {
+            let same = dats.extract(entry.data_offset)? == fs::read(e.path())?;
+            log(&format!("[Patch] 字型檢查：{name} {}", if same { "已是替換後的字型" } else { "是原版字型" }));
+            return Ok(same);
+        }
+    }
+    Ok(false)
+}
 
 /// 遊戲檔是否已漢化：抽 Addon 第一頁，看含中文的譯文是不是已經寫在遊戲檔裡。
 /// 不看 PatchedVersion/PatchedStamp：遊戲更新可能沒改到 0a0000 的 index（檔案仍是漢化過的），

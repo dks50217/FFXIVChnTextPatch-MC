@@ -24,7 +24,7 @@ fn sqpack_folder(game_path: &str) -> PathBuf {
 }
 
 fn is_game_running() -> bool {
-    std::process::Command::new("tasklist")
+    crate::command(crate::system_tool("tasklist"))
         .args(["/FI", "IMAGENAME eq ffxiv_dx11.exe", "/NH"])
         .output()
         .map(|o| String::from_utf8_lossy(&o.stdout).contains("ffxiv_dx11.exe"))

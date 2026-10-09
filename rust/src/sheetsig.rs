@@ -8,7 +8,6 @@ use crate::{base_dir, log, p, patch::game_version, config::Config};
 use flate2::read::GzDecoder;
 use std::collections::HashMap;
 use std::io::Read;
-use std::process::Command;
 
 const REF_NAME: &str = "ja-sheetsig.txt.gz";
 
@@ -64,6 +63,45 @@ fn cells(csv: &str) -> Vec<((i32, usize), String)> {
     out
 }
 
+/// 從 SaintCoinach 日文匯出（<版本>/rawexd）產生 resource/ja-sheetsig.txt.gz。需要本機有遊戲，每個遊戲版本重產一次。
+pub fn generate(ja_dir: &std::path::Path) -> crate::R<String> {
+    use std::io::Write;
+    if !ja_dir.is_dir() {
+        return Err(format!("找不到日文匯出目錄：{}", ja_dir.display()).into());
+    }
+    // SaintCoinach 輸出在 <版本>/rawexd 底下
+    let ja_dir = ja_dir.canonicalize()?;
+    let version = ja_dir.parent().and_then(|d| d.file_name()).map_or("unknown".into(), |n| n.to_string_lossy().to_string());
+    let mut out = format!("# ja-sheetsig v1  game={version}  generated={}\n", &crate::now()[..10]);
+    out += "# <csv>,<row>,<col>,<Sheet 標籤與參數片段，以 | 分隔>\n";
+    let files = csv_files(&ja_dir);
+    let mut count = 0;
+    for (i, path) in files.iter().enumerate() {
+        let rel = path.strip_prefix(&ja_dir)?.to_string_lossy().replace('\\', "/");
+        crate::progress((i + 1) as f32 / files.len() as f32, "正在產生參照檔：", &rel);
+        let Ok(bytes) = std::fs::read(path) else {
+            log(&format!("[SheetSig] 讀取失敗 {rel}"));
+            continue;
+        };
+        let mut sigs = cells(&String::from_utf8_lossy(&bytes));
+        sigs.sort_by_key(|(key, _)| *key);
+        for ((row, col), cell) in sigs {
+            let sig = of(&cell);
+            if !sig.is_empty() {
+                out += &format!("{rel},{row},{col},{sig}\n");
+                count += 1;
+            }
+        }
+    }
+    let path = p("resource").join(REF_NAME);
+    let mut gz = flate2::write::GzEncoder::new(std::fs::File::create(&path)?, flate2::Compression::best());
+    gz.write_all(out.as_bytes())?;
+    gz.finish()?;
+    let kb = std::fs::metadata(&path)?.len() / 1024;
+    log(&format!("[SheetSig] {count} 格、{kb}KB → {}", path.display()));
+    Ok(format!("完成：{count} 格含 Sheet 標籤，{kb}KB → resource/{REF_NAME}（遊戲版本 {version}）"))
+}
+
 /// 讀參照檔：(遊戲版本, "<csv>,<row>,<col>" → 簽章)。
 fn load_ref() -> Option<(String, HashMap<String, String>)> {
     let mut text = String::new();
@@ -88,8 +126,7 @@ fn load_ref() -> Option<(String, HashMap<String, String>)> {
 
 /// base_ref 有給就只檢查相對它（的 merge-base）有變動的格子，沒給就掃全部。回傳不符的格數。
 pub fn check(cfg: &Config, base_ref: Option<&str>) -> usize {
-    // ponytail: 不寫產生時間（std 沒有本地時間），看檔案修改時間即可
-    let mut report = String::from("Sheet 標籤參照檢查\n");
+    let mut report = format!("Sheet 標籤參照檢查  {}\n", crate::now());
     let Some((ref_version, sigs)) = load_ref() else {
         report += &format!("找不到 resource/{REF_NAME}，略過檢查。\n");
         report += "請在本機用 C# 版 --gensheetsig <SaintCoinach 日文匯出的 rawexd 目錄> 產生後 commit。\n";
@@ -173,6 +210,6 @@ fn write(report: &str) {
 
 /// 在 repo 根目錄跑 git 拿 stdout，失敗回 None。
 fn git(args: &[&str]) -> Option<String> {
-    let out = Command::new("git").args(args).current_dir(base_dir()).output().ok()?;
+    let out = crate::command("git").args(args).current_dir(base_dir()).output().ok()?;
     out.status.success().then(|| String::from_utf8_lossy(&out.stdout).into_owned())
 }

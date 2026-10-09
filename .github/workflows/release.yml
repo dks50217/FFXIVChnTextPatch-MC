@@ -1,0 +1,41 @@
+name: release
+
+# 在 GitHub 網頁發佈 Release（照舊上傳 _CHT.zip）時，自動編譯 Rust 版操作畫面
+# FFXIVChnTextPatch.exe 並附到同一個 Release。也可以在 Actions 頁手動指定 tag 重跑。
+on:
+  release:
+    types: [published]
+  workflow_dispatch:
+    inputs:
+      tag:
+        description: '要附上 exe 的 Release tag（例如 v2026.10.09.01）'
+        required: true
+
+permissions:
+  contents: write   # 上傳 Release 資產
+
+jobs:
+  exe:
+    # rawexd-latest 只放翻譯檔下載用，不附 exe
+    if: github.event_name == 'workflow_dispatch' || github.event.release.tag_name != 'rawexd-latest'
+    runs-on: windows-latest
+    env:
+      TAG: ${{ github.event.release.tag_name || inputs.tag }}
+    steps:
+      - uses: actions/checkout@v4
+        with:
+          ref: ${{ env.TAG }}
+
+      - name: Build
+        working-directory: rust
+        run: cargo build --release --locked
+
+      # selftest 沒過就不發 exe
+      - name: Self-test
+        working-directory: rust
+        run: ./target/release/ffxiv_chn_text_patch.exe --selftest
+
+      - name: Upload FFXIVChnTextPatch.exe
+        env:
+          GH_TOKEN: ${{ github.token }}
+        run: gh release upload "$env:TAG" rust/target/release/FFXIVChnTextPatch.exe --clobber

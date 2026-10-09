@@ -48,8 +48,7 @@ pub fn run(cfg: &Config) -> (usize, String) {
     let ratio = if cells == 0 { 0.0 } else { translated as f64 * 100.0 / cells as f64 };
     let none = |v: &[String]| if v.is_empty() { "（無）\n".to_string() } else { v.iter().map(|s| format!("{s}\n")).collect() };
 
-    // ponytail: 不寫產生時間（std 沒有本地時間），看檔案修改時間即可
-    let mut out = format!("翻譯 CSV 檢查報告\nCSV 檔數：{}\n\n", files.len());
+    let mut out = format!("翻譯 CSV 檢查報告  {}\nCSV 檔數：{}\n\n", crate::now(), files.len());
     out += &format!("■ 錯誤（{}）—— 會中斷漢化流程或讓整檔被跳過\n{}\n", errors.len(), none(&errors));
     out += &format!("■ 說話任務仍是中文的 SAYTODO（{}）—— 國際服不建議打中文，需改成英文\n{}\n", say_todo_zh.len(), none(&say_todo_zh));
     out += &format!("■ 遊戲中有字串欄位但缺少 CSV 的表（{}）—— 這些表會維持原文\n", missing.len());

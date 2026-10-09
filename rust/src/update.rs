@@ -4,7 +4,6 @@ use crate::config::Config;
 use crate::{drift, log, merge, p, progress, zhconvert, R};
 use std::fs;
 use std::path::{Path, PathBuf};
-use std::process::Command;
 
 const DEFAULT_REPO: &str = "https://github.com/Souma-Sumire/FFXIVChnTextPatch-Souma";
 const BOM: &str = "\u{feff}";
@@ -145,7 +144,7 @@ fn update_from(repo: &str, tmp: &Path) -> R<String> {
 
 /// 跑 git，進度直接印在主控台（stderr 繼承）。
 fn git(args: &[&str]) -> R<()> {
-    let status = Command::new("git")
+    let status = crate::command("git")
         .args(args)
         .status()
         .map_err(|e| format!("無法執行 git，請先安裝 Git for Windows。{e}"))?;
@@ -156,12 +155,10 @@ fn git(args: &[&str]) -> R<()> {
 }
 
 /// 用 Windows 內建的 tar.exe（bsdtar，-a 依副檔名產 zip）打包；不另加 zip 套件。
-/// 指定 System32 的完整路徑，避免 PATH 裡 Git 附的 GNU tar（不支援 zip）被先找到。
 fn backup_zip(dir: &Path, zip: &Path) -> R<()> {
     fs::create_dir_all(zip.parent().unwrap())?;
     let _ = fs::remove_file(zip);
-    let tar = Path::new(&std::env::var("SystemRoot").unwrap_or("C:\\Windows".into())).join("System32\\tar.exe");
-    let status = Command::new(tar).arg("-a").arg("-cf").arg(zip).arg("-C").arg(dir).arg(".").status()?;
+    let status = crate::command(crate::system_tool("tar")).arg("-a").arg("-cf").arg(zip).arg("-C").arg(dir).arg(".").status()?;
     if !status.success() {
         return Err(format!("備份 resource/rawexd 失敗（tar {status}）").into());
     }
@@ -233,8 +230,7 @@ fn write_drift_report(drifted: &[(String, Vec<i32>)], dupes: &[(String, Vec<i32>
             *out += &format!("{rel}（{}）：{}\n", keys.len(), keys.join(", "));
         }
     };
-    // ponytail: 不寫產生時間（std 沒有本地時間），看檔案修改時間即可
-    let mut out = String::from("rawexd 檢查報告\n");
+    let mut out = format!("rawexd 檢查報告  {}\n", crate::now());
     if !drifted.is_empty() {
         out += "\n【疑似錯位 key】上游該列全空、本地卻有翻譯。\n遊戲改版重新編號後，舊翻譯被釘在錯 key 的徵狀；請對照上游確認後再修。\n";
         section(&mut out, drifted);

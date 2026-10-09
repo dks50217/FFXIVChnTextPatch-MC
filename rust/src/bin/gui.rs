@@ -19,7 +19,7 @@ fn main() -> eframe::Result {
 mod app {
     use eframe::egui::{self, Color32, RichText};
     use ffxiv_chn_text_patch::config::Config;
-    use ffxiv_chn_text_patch::{current_progress, exdnames, lint, p, patch, update};
+    use ffxiv_chn_text_patch::{bootstrap, current_progress, exdnames, hextags, lint, log, p, patch, update};
     use std::collections::BTreeSet;
     use std::sync::Arc;
     use std::thread::JoinHandle;
@@ -33,7 +33,8 @@ mod app {
             viewport: egui::ViewportBuilder::default()
                 .with_title("FFXIVChnTextPatch")
                 .with_inner_size([520.0, 440.0])
-                .with_min_inner_size([420.0, 320.0]),
+                .with_min_inner_size([420.0, 320.0])
+                .with_icon(eframe::icon_data::from_png_bytes(include_bytes!("../../assets/icon.png")).expect("assets/icon.png 不是有效的 PNG")),
             ..Default::default()
         };
         eframe::run_native("FFXIVChnTextPatch", options, Box::new(|cc| Ok(Box::new(App::new(&cc.egui_ctx)))))
@@ -61,6 +62,8 @@ mod app {
         Rollback,
         Update,
         Lint,
+        Download,
+        HexTags,
     }
 
     impl Job {
@@ -70,6 +73,8 @@ mod app {
                 Job::Rollback => "還原",
                 Job::Update => "更新翻譯",
                 Job::Lint => "檢查翻譯",
+                Job::Download => "下載翻譯檔",
+                Job::HexTags => "產生 hex 標籤對照表",
             }
         }
     }
@@ -119,8 +124,8 @@ mod app {
                 message: None,
             };
             app.load_form();
-            if !patch::has_csv_files(&p("resource/rawexd")) {
-                app.message = Some((true, "找不到翻譯 CSV（resource/rawexd）。請到 Releases 下載 rawexd-opencc.zip，解壓到程式旁的 resource/ 資料夾。".into()));
+            if bootstrap::needs_csv() {
+                app.confirm = Some(Job::Download); // 跟 C# 版一樣，首次執行缺翻譯檔就問要不要下載
             }
             app
         }
@@ -172,6 +177,8 @@ mod app {
                     Job::Patch => patch::patch(&mut cfg),
                     Job::Rollback => patch::rollback(&mut cfg),
                     Job::Update => update::update(&cfg),
+                    Job::Download => bootstrap::download(&cfg),
+                    Job::HexTags => return (true, hextags::run()),
                     Job::Lint => {
                         let (errors, summary) = lint::run(&cfg);
                         return (errors == 0, summary);
@@ -191,10 +198,11 @@ mod app {
             }
             let (job, handle) = self.running.take().unwrap();
             let (ok, msg) = handle.join().unwrap_or_else(|_| (false, format!("{}時發生未預期的錯誤", job.label())));
+            log(&msg);
             self.message = Some((!ok, msg));
             self.cfg = Config::load(&p("conf/global.properties"));
             self.status = patch::patch_status(&self.cfg);
-            if job == Job::Update {
+            if matches!(job, Job::Update | Job::Download) {
                 self.skip_entries = build_skip_entries(); // 可能多了新檔
             }
         }
@@ -233,15 +241,27 @@ mod app {
                 {
                     self.start(Job::Update);
                 }
+                if ui
+                    .add_enabled(!busy, egui::Button::new("hex 標籤對照表"))
+                    .on_hover_text("掃描所有翻譯 CSV 的 <hex:> 標籤，解成可讀名稱輸出 hextags-report.txt（給翻譯者對照，不修改任何檔案）")
+                    .clicked()
+                {
+                    self.start(Job::HexTags);
+                }
             });
 
-            if busy {
+            self.show_progress(ui);
+            self.show_message(ui);
+        }
+
+        /// 背景工作中就畫進度條。兩頁都會呼叫：首次執行還沒設遊戲路徑時停在設置頁，下載翻譯檔的進度要看得到。
+        fn show_progress(&self, ui: &mut egui::Ui) {
+            if self.running.is_some() {
                 ui.add_space(12.0);
                 let pr = current_progress();
                 ui.add(egui::ProgressBar::new(pr.percent).show_percentage());
                 ui.label(format!("{}{}", pr.action, pr.detail));
             }
-            self.show_message(ui);
         }
 
         fn config_page(&mut self, ui: &mut egui::Ui) {
@@ -283,8 +303,8 @@ mod app {
                 ui.checkbox(&mut self.replace_font, "替換字體");
                 ui.checkbox(&mut self.replace_text, "替換文本");
             });
-            if self.replace_font && !has_font() {
-                ui.label(RichText::new("找不到字體檔（resource/font）。字體檔較大未隨程式附帶，需替換字體請自行到本專案 GitHub 下載後放入 resource/font。").color(Color32::from_rgb(230, 140, 0)));
+            if self.replace_font && !bootstrap::has_font() {
+                ui.label(RichText::new(format!("找不到字體檔（resource/font）。字體檔較大未隨程式附帶，需替換字體請自行到 {} 下載後放入 resource/font。", bootstrap::REPO_URL)).color(Color32::from_rgb(230, 140, 0)));
             }
 
             egui::CollapsingHeader::new(format!("跳過的資料表（已勾選 {} 項）", self.skip.len())).show(ui, |ui| {
@@ -317,6 +337,7 @@ mod app {
                 });
             });
 
+            self.show_progress(ui);
             self.show_message(ui);
             ui.add_space(8.0);
             ui.horizontal(|ui| {
@@ -343,17 +364,28 @@ mod app {
         fn confirm_dialog(&mut self, ctx: &egui::Context) {
             let Some(job) = self.confirm else { return };
             let modal = egui::Modal::new(egui::Id::new("confirm")).show(ctx, |ui| {
-                ui.set_width(300.0);
-                ui.heading(format!("確定要{}嗎？", job.label()));
-                if job == Job::Rollback {
-                    ui.label("將把六個遊戲檔還原成漢化前的備份。");
+                ui.set_width(320.0);
+                let (title, note, cancel, ok) = match job {
+                    Job::Download => (
+                        "缺少翻譯檔".to_string(),
+                        format!("偵測不到翻譯 CSV（resource/rawexd）。是否從 GitHub 下載最新翻譯檔？
+字體檔太大不含在內，需替換字體請自行到 {} 下載。", bootstrap::REPO_URL),
+                        "稍後",
+                        "下載",
+                    ),
+                    Job::Rollback => (format!("確定要{}嗎？", job.label()), "將把六個遊戲檔還原成漢化前的備份。".into(), "取消", "確定"),
+                    _ => (format!("確定要{}嗎？", job.label()), String::new(), "取消", "確定"),
+                };
+                ui.heading(title);
+                if !note.is_empty() {
+                    ui.label(note);
                 }
                 ui.add_space(8.0);
                 ui.horizontal(|ui| {
-                    if ui.button("取消").clicked() {
+                    if ui.button(cancel).clicked() {
                         self.confirm = None;
                     }
-                    if ui.button(RichText::new("確定").strong()).clicked() {
+                    if ui.button(RichText::new(ok).strong()).clicked() {
                         self.confirm = None;
                         self.start(job);
                     }
@@ -383,10 +415,6 @@ mod app {
             let ctx = ui.ctx().clone();
             self.confirm_dialog(&ctx);
         }
-    }
-
-    fn has_font() -> bool {
-        std::fs::read_dir(p("resource/font")).is_ok_and(|mut it| it.next().is_some())
     }
 
     /// rawexd 頂層的子資料夾各一項（跳過整個資料夾），頂層 CSV 各一項；照名稱不分大小寫排序。

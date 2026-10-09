@@ -1,0 +1,43 @@
+name: rawexd asset
+
+# 首次執行缺翻譯檔時，程式會從固定網址下載：
+#   releases/download/rawexd-latest/rawexd-opencc.zip
+# 這裡在 master 的翻譯檔有變動時重新打包並覆蓋上去，所以下載到的永遠跟 master 一致，
+# 跟遊戲版本的發行（v* tag、_CHT.zip）無關。第一次或想強制更新時可在 Actions 頁手動執行。
+on:
+  push:
+    branches: [master]
+    paths:
+      - 'resource/rawexd/**'
+      - 'resource/opencc/**'
+  workflow_dispatch:
+
+permissions:
+  contents: write   # 建立/更新 Release 資產
+
+concurrency:
+  group: rawexd-asset
+  cancel-in-progress: true   # 連續 push 只要最後一次的結果
+
+jobs:
+  publish:
+    runs-on: ubuntu-latest
+    steps:
+      - uses: actions/checkout@v4
+
+      # 契約：zip 根目錄直接是 rawexd/ 與 opencc/，程式會解壓到 resource/ 底下
+      - name: Pack
+        run: cd resource && zip -qr ../rawexd-opencc.zip rawexd opencc
+
+      # --latest=false：這個 Release 只是放下載檔的地方，不能變成「最新版」擠掉正常發行的版本
+      - name: Publish to rawexd-latest
+        env:
+          GH_TOKEN: ${{ github.token }}
+        run: |
+          if ! gh release view rawexd-latest >/dev/null 2>&1; then
+            gh release create rawexd-latest --target "$GITHUB_SHA" --latest=false \
+              --title "翻譯檔（自動更新）" \
+              --notes "程式首次執行缺翻譯檔時會自動下載這裡的 rawexd-opencc.zip。master 的翻譯檔有變動時由 CI 自動更新，請勿手動刪除。"
+          fi
+          gh release upload rawexd-latest rawexd-opencc.zip --clobber
+          echo "已更新：$(du -h rawexd-opencc.zip | cut -f1)，commit $GITHUB_SHA"

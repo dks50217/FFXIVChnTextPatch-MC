@@ -2,7 +2,7 @@
 //! 對應 C# SelfTest.cs 第 1-5 項；SheetSig/ExdNames/Merge/Lint/ZhConvert 移植後再補。
 use crate::config::Config;
 use crate::crc::ffcrc;
-use crate::{drift, exd, exdnames, merge, patch, sheetsig, sqpack, zhconvert};
+use crate::{drift, exd, exdnames, hextags, merge, patch, sheetsig, sqpack, zhconvert};
 use std::collections::BTreeMap;
 
 pub fn run() -> i32 {
@@ -171,6 +171,24 @@ pub fn run() -> i32 {
     let offsets = [(0u16, 0usize)].into();
     let csv = [(1, vec!["攻擊".to_string()]), (2, vec!["防禦".to_string()]), (3, vec!["Hello".to_string()])].into();
     check("已漢化檢查：只抽含中文的譯文、逐格比對", patch::translated_cells_present(&rows, &exh, &offsets, &csv) == (2, 1));
+
+    // 13. Linux（CI）上報告時間戳用的 UTC 換算：紀元、閏年 2/29、年底
+    check(
+        "UTC 日期換算",
+        crate::utc_string(0) == "1970-01-01 00:00:00"
+            && crate::utc_string(1_709_208_000) == "2024-02-29 12:00:00"
+            && crate::utc_string(1_798_761_599) == "2026-12-31 23:59:59",
+    );
+
+    // 14. hex 標籤解碼：標籤名＋參數、結束碼、落單參數片段、壞掉的 hex
+    check(
+        "HexTags 解碼",
+        hextags::decode("02100103") == "[LineBreak 01]"
+            && hextags::decode("0248020103") == "[UIForeground 0201]"
+            && hextags::decode("03") == "[end]"
+            && hextags::decode("e8021003") == "E8021003"
+            && hextags::decode("123") == "(格式錯誤)",
+    );
 
     println!("{}", if failed == 0 { "ALL PASSED".to_string() } else { format!("{failed} FAILED") });
     failed

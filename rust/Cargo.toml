@@ -12,6 +12,9 @@ flate2 = { version = "1.1.10", default-features = false, features = ["zlib-rs"] 
 eframe = { version = "0.36.2", default-features = false, features = ["accesskit", "default_fonts", "glow"] }
 rfd = "0.17.2"
 
+[target."cfg(windows)".build-dependencies]
+winresource = "0.1.31"
+
 # 命令列 ffxiv_chn_text_patch 是 src/main.rs；操作畫面另一個執行檔，雙擊開視窗、不帶主控台
 [[bin]]
 name = "FFXIVChnTextPatch"

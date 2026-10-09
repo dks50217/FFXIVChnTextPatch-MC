@@ -6,14 +6,14 @@ This file provides guidance to Claude Code (claude.ai/code) when working with co
 
 A tool that applies Chinese localization patches to the FFXIV (Final Fantasy XIV) international client. It reads FFXIV's proprietary SqPack binary format, replaces text content with Chinese translations from CSV files (SaintCoinach rawexd exports), and optionally replaces font files.
 
-The current implementation is **C#/.NET 10 WPF Blazor Hybrid** in `dotnet/FFXIVChnTextPatch/`. It was ported from a Java Swing app; the Java sources were removed from the working tree but remain in git history (and `docs/DOTNET_MIGRATION.md` documents the port).
+The shipping implementation is **Rust** in `rust/` (egui UI + CLI). The previous **C#/.NET 10 WPF Blazor Hybrid** app in `csharp/FFXIVChnTextPatch/` is legacy: no longer released, kept compiling until it is deleted. Both were ported from a Java Swing app; the Java sources were removed from the working tree but remain in git history (and `docs/DOTNET_MIGRATION.md` documents the port).
 
 ## Build & Run
 
 Requires .NET 10 SDK (Windows) and WebView2 Runtime.
 
 ```bash
-cd dotnet/FFXIVChnTextPatch
+cd csharp/FFXIVChnTextPatch
 dotnet build
 dotnet run                                  # GUI
 ./bin/Debug/net10.0-windows10.0.17763.0/FFXIVChnTextPatch.exe --selftest
@@ -27,20 +27,36 @@ Note: the exe is a GUI app — invoking `--selftest` from a shell returns immedi
 
 The app locates its base directory (for `conf/`, `resource/`, `backup/`, `debug.log`) by walking up from the exe until it finds `conf/global.properties`.
 
+### Rust (`rust/`, shipping)
+
+Two binaries over one library (`src/lib.rs`): `FFXIVChnTextPatch.exe` (egui UI, `src/bin/gui.rs`, Windows-only — a stub on Linux so CI needs no GUI packages) and `ffxiv_chn_text_patch.exe` (CLI, `src/main.rs`). Long jobs run on a worker thread and report through `progress()` / `current_progress()` in lib.rs. Ported: CRC, Config, SqPack, EXD, patch/rollback, ZhConvert (`--s2tw <file>` prints the conversion), RawexdMerge, `--update` (needs git, backs up via Windows `tar.exe`), `--driftcheck` (exit code = files with drift or duplicate RowIds; clone failure exits 0), `--lint` (follows the stricter C# TextFieldParser rules, incl. its line numbering, so CI protects both apps), `--sheetsig [base-ref]`, `--gensheetsig <dir>`, `--hextags`, first-run download of `rawexd-opencc.zip` (`bootstrap.rs`, via Windows curl.exe/tar.exe). All verified byte-identical to C# on real data. Exit codes are capped at 255 (8-bit on Linux, so 256 errors must not read as 0). Not ported: Big5 repair (old ConvertZZ files; reported as a failure instead), git progress percentage during `--update`. `log()` appends to `debug.log` with local time (`GetLocalTime`; UTC on Linux). External programs go through `command()` so the UI doesn't flash console windows. Shares `conf/` and `resource/` with the C# app.
+
+```bash
+cd rust
+cargo build --release
+./target/release/ffxiv_chn_text_patch.exe --selftest   # prints to stdout, exit code = failure count
+./target/release/ffxiv_chn_text_patch.exe --patch      # or --rollback, --update, --driftcheck, --lint, --sheetsig [base-ref]
+```
+
+flate2 must use the `zlib-rs` backend: the default miniz_oxide at level 9 makes a full patch take ~58s instead of ~7s.
+
+Releases: `.github/workflows/release.yml` builds `FFXIVChnTextPatch.exe` and attaches it when a Release is published (the `_CHT.zip` is still uploaded by hand). `.github/workflows/rawexd-asset.yml` re-packs `rawexd-opencc.zip` onto the fixed `rawexd-latest` Release whenever `resource/rawexd` or `resource/opencc` changes on master — that is the URL the first-run download uses, so it never depends on which Release is "latest".
+
 ## Validation before reporting done
 
-Run what the change touched, and say what passed. This is the same set `.github/workflows/build.yml` runs on every push and PR, so running it locally first just saves a red CI:
+Run what the change touched, and say what passed. CI (`.github/workflows/build.yml`) runs the checks with the **Rust** binary on Ubuntu, plus a Windows job that only runs `dotnet build`, so running them locally first just saves a red CI:
 
 | Changed | Run |
 |---------|-----|
 | any C# | `dotnet build` |
-| binary format, CSV merge, ZhConvert, Config | + `--selftest` (exit code = failure count) |
+| any Rust | `cargo build --release` + `--selftest` (exit code = failure count) |
+| binary format, CSV merge, ZhConvert, Config | `--selftest` in **both** apps (C# writes selftest.log, Rust prints) |
 | `resource/rawexd/*.csv` | + `--lint` (exit code = errors that would break patching), + `--sheetsig <base-ref>` |
 | after `--update` | + `--driftcheck` (warn-only in CI) |
 
-New non-trivial logic leaves one `--selftest` check behind — the smallest assertion that fails if it breaks. No test framework; `SelfTest.cs` is the whole harness.
+A change to shared logic is ported to both apps until C# is retired. New non-trivial logic leaves one selftest check behind — the smallest assertion that fails if it breaks. No test framework; `SelfTest.cs` / `rust/src/selftest.rs` are the whole harness.
 
-## Architecture (`dotnet/FFXIVChnTextPatch/`)
+## Architecture (`csharp/FFXIVChnTextPatch/`)
 
 - `Core/PatchService.cs` — orchestrates backup → font replace → CSV text replace, and rollback. Progress via `IProgress<PatchProgress>`.
 - `Core/SqPack.cs` — SqPack `.index` parsing (CRC hash → offset map) and `.dat` extraction (content type 2 only; types 3/4 extraction intentionally not ported).

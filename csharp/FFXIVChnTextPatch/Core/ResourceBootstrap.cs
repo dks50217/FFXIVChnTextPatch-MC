@@ -12,7 +12,7 @@ namespace FFXIVChnTextPatch.Core;
 public static class ResourceBootstrap
 {
     private const string DefaultUrl =
-        "https://github.com/dks50217/FFXIVChnTextPatch-MC/releases/latest/download/rawexd-opencc.zip";
+        "https://github.com/dks50217/FFXIVChnTextPatch-MC/releases/download/rawexd-latest/rawexd-opencc.zip";
 
     public const string RepoUrl = "https://github.com/dks50217/FFXIVChnTextPatch-MC";
 

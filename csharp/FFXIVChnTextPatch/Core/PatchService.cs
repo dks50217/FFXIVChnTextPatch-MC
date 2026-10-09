@@ -66,7 +66,7 @@ public class PatchService
         if (string.IsNullOrEmpty(patched)) return ("目前狀態：未漢化", false);
         string? game = GameVersion();
         if (game != null && game != patched)
-            return ($"⚠ 遊戲已從 {patched} 更新至 {game}，漢化已被覆蓋，請重新漢化", true);
+            return ($"⚠ 遊戲已從 {patched} 更新至 {game}，漢化可能已被覆蓋，請重新漢化", true);
         string? stamp = Config.Get("PatchedStamp");
         string now = FileStamp();
         if (!string.IsNullOrEmpty(stamp) && now.Length > 0 && stamp != now)
@@ -85,6 +85,11 @@ public class PatchService
         string resourceFolder = SqpackFolder(gamePath!);
         try
         {
+            // 在已漢化的檔案上再漢化，備份會被已漢化的檔案蓋掉，之後就還原不回原版。
+            // 備份一律複製六個檔，所以不管這次勾了哪些項目，文本和字型都要檢查。
+            if (await Task.Run(() => IsPatched(Path.Combine(resourceFolder, "0a0000.win32.index"))
+                                     || FontsPatched(Path.Combine(resourceFolder, "000000.win32.index"))))
+                return (false, AlreadyPatched);
             string summary = "漢化完畢";
             await Task.Run(() =>
             {
@@ -140,7 +145,7 @@ public class PatchService
         string? gameVer = GameVersion();
         if (!string.IsNullOrEmpty(backupVer) && gameVer != null && gameVer != backupVer)
             return (false, $"備份是遊戲 {backupVer} 版的檔案，但目前遊戲已更新至 {gameVer}。" +
-                           "還原會把遊戲更新內容蓋掉，已取消。遊戲更新後漢化已自動失效，直接重新漢化即可。");
+                           "還原會把遊戲更新內容蓋掉，已取消。遊戲更新不一定會換掉漢化過的檔案；要重新漢化，請先用官方啟動器的「檔案修復」取回原版檔案。");
         string resourceFolder = SqpackFolder(gamePath!);
         try
         {
@@ -181,6 +186,81 @@ public class PatchService
             if (File.Exists(src))
                 File.Copy(src, AppEnv.P("backup", name), overwrite: true);
         }
+    }
+
+    private const string AlreadyPatched =
+        "遊戲檔看起來已經漢化過（替換的字型或 Addon 的譯文已經在遊戲檔裡）。直接再漢化會讓備份被已漢化的檔案蓋掉，之後就還原不回原版。" +
+        "請先「還原」再漢化；如果遊戲更新過、還原被拒絕，請用官方啟動器的「檔案修復」取回原版檔案後再漢化。";
+
+    /// <summary>
+    /// 字型是否已替換：取遊戲 common/font 裡跟 resource/font 同名的第一個 .fdt，內容一樣就是替換過。
+    /// 只比 .fdt：.tex 是 type 4，解出來沒移植。resource/font 不在時無從判斷，回 false。
+    /// </summary>
+    private static bool FontsPatched(string pathToIndex)
+    {
+        string fontDir = AppEnv.P("resource", "font");
+        if (!Directory.Exists(fontDir)) return false;
+        var index = new SqPackIndex(pathToIndex).ResolveIndex();
+        if (!index.TryGetValue(FFCRC.ComputeCRC(Encoding.UTF8.GetBytes("common/font")), out var folder)) return false;
+        foreach (var file in Directory.GetFiles(fontDir, "*.fdt"))
+        {
+            string name = Path.GetFileName(file);
+            if (!folder.Files.TryGetValue(FFCRC.ComputeCRC(Encoding.UTF8.GetBytes(name.ToLowerInvariant())), out var entry)) continue;
+            bool same = ExtractFile(pathToIndex, entry.DataOffset).AsSpan().SequenceEqual(File.ReadAllBytes(file));
+            AppEnv.Log($"[Patch] 字型檢查：{name} {(same ? "已是替換後的字型" : "是原版字型")}");
+            return same;
+        }
+        return false;
+    }
+
+    /// <summary>
+    /// 遊戲檔是否已漢化：抽 Addon 第一頁，看含中文的譯文是不是已經寫在遊戲檔裡。
+    /// 不看 PatchedVersion/PatchedStamp：遊戲更新可能沒改到 0a0000 的 index（檔案仍是漢化過的），
+    /// 版本號與修改時間卻都變了，靠它們判斷會放行。Addon.csv 不在或讀不到 Addon 時無從判斷，回 false。
+    /// </summary>
+    private static bool IsPatched(string pathToIndex)
+    {
+        string csvPath = AppEnv.P("resource", "rawexd", "Addon.csv");
+        if (!File.Exists(csvPath)) return false;
+        var index = new SqPackIndex(pathToIndex).ResolveIndex();
+        if (!index.TryGetValue(FFCRC.ComputeCRC(Encoding.UTF8.GetBytes("exd")), out var folder)) return false;
+        if (!folder.Files.TryGetValue(FFCRC.ComputeCRC(Encoding.UTF8.GetBytes("addon.exh")), out var exhFile)) return false;
+        var exh = new EXHFFile(ExtractFile(pathToIndex, exhFile.DataOffset));
+        if (exh.Pages.Length == 0) return false;
+        string slang = (Config.Get("SLanguage") ?? "JA").ToLowerInvariant();
+        string exdName = $"addon_{exh.Pages[0].PageNum}_{slang}.exd";
+        if (!folder.Files.TryGetValue(FFCRC.ComputeCRC(Encoding.UTF8.GetBytes(exdName)), out var exdFile)) return false;
+        var rows = new EXDFFile(ExtractFile(pathToIndex, exdFile.DataOffset)).Entries;
+        var (offsetMap, csvDataMap) = LoadCsv(csvPath);
+        var (seen, hit) = TranslatedCellsPresent(rows, exh, offsetMap, csvDataMap);
+        AppEnv.Log($"[Patch] 已漢化檢查：Addon 抽 {seen} 格中文譯文，{hit} 格已在遊戲檔裡");
+        return seen > 0 && hit * 2 > seen;
+    }
+
+    /// <summary>最多抽 50 格含中文的譯文，回傳（抽了幾格, 其中幾格的內容已經在這頁 EXD 裡）。
+    /// 日文原文幾乎不可能剛好等於中文譯文，所以過半對得上就代表已漢化。</summary>
+    internal static (int Seen, int Hit) TranslatedCellsPresent(Dictionary<int, byte[]> rows, EXHFFile exh,
+        Dictionary<int, int> offsetMap, Dictionary<int, string[]> csvDataMap)
+    {
+        int seen = 0, hit = 0;
+        foreach (var (rowId, raw) in rows.OrderBy(kv => kv.Key))
+        {
+            if (!csvDataMap.TryGetValue(rowId, out var cells) || raw.Length < exh.DatasetChunkSize) continue;
+            var entry = new EXDFEntry(raw, exh.DatasetChunkSize);
+            foreach (var dataset in exh.Datasets)
+            {
+                if (dataset.Type != 0 || !offsetMap.TryGetValue(dataset.Offset, out int col) || col >= cells.Length) continue;
+                string cell = cells[col];
+                if (!cell.Any(c => c >= 0x4E00 && c <= 0x9FFF)) continue;
+                var want = new MemoryStream();
+                try { AppendCsvString(want, cell); }
+                catch { continue; }
+                seen++;
+                if (entry.GetString(dataset.Offset).AsSpan().SequenceEqual(want.ToArray())) hit++;
+                if (seen == 50) return (seen, hit);
+            }
+        }
+        return (seen, hit);
     }
 
     public static bool HasCsvFiles(string directory) =>

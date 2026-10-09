@@ -1,0 +1,444 @@
+//! 漢化主流程：備份 → 字型替換 → CSV 文本替換，以及還原。對應 C# 的 PatchService。
+//! 只支援 CSV 翻譯來源（FLanguage=CSV）。
+use crate::config::Config;
+use crate::crc::ffcrc_lower;
+use crate::sqpack::{build_block, build_tex_block, read_index, Dats};
+use crate::{exd, exdnames, log, p, progress, R};
+use std::collections::HashMap;
+use std::fs::{self, OpenOptions};
+use std::io::{BufWriter, Write};
+use std::path::{Path, PathBuf};
+use std::time::UNIX_EPOCH;
+
+const RESOURCE_NAMES: [&str; 6] = [
+    "000000.win32.dat0", "000000.win32.index", "000000.win32.index2",
+    "0a0000.win32.dat0", "0a0000.win32.index", "0a0000.win32.index2",
+];
+
+pub fn is_ffxiv_folder(path: &str) -> bool {
+    !path.is_empty() && Path::new(path).join("game/ffxiv_dx11.exe").is_file()
+}
+
+fn sqpack_folder(game_path: &str) -> PathBuf {
+    Path::new(game_path).join("game/sqpack/ffxiv")
+}
+
+fn is_game_running() -> bool {
+    crate::command(crate::system_tool("tasklist"))
+        .args(["/FI", "IMAGENAME eq ffxiv_dx11.exe", "/NH"])
+        .output()
+        .map(|o| String::from_utf8_lossy(&o.stdout).contains("ffxiv_dx11.exe"))
+        .unwrap_or(false)
+}
+
+pub fn game_version(cfg: &Config) -> String {
+    let ver = Path::new(cfg.get_or("GamePath", "")).join("game/ffxivgame.ver");
+    fs::read_to_string(ver).map(|s| s.trim().to_string()).unwrap_or_default()
+}
+
+/// 六個資源檔的「大小:修改時間」指紋。時間用 .NET ticks，跟 C# 版寫進同一個 PatchedStamp 才比得起來。
+fn file_stamp(cfg: &Config) -> String {
+    let game = cfg.get_or("GamePath", "");
+    if !is_ffxiv_folder(game) {
+        return String::new();
+    }
+    RESOURCE_NAMES
+        .iter()
+        .map(|n| match fs::metadata(sqpack_folder(game).join(n)) {
+            Ok(m) => {
+                let since_epoch = m.modified().ok().and_then(|t| t.duration_since(UNIX_EPOCH).ok()).unwrap_or_default();
+                format!("{}:{}", m.len(), 621_355_968_000_000_000 + since_epoch.as_nanos() / 100)
+            }
+            Err(_) => "-".to_string(),
+        })
+        .collect::<Vec<_>>()
+        .join("|")
+}
+
+/// 主畫面顯示的漢化狀態（依上次漢化時記下的遊戲版本與檔案指紋）；bool = 要不要用警告色。
+pub fn patch_status(cfg: &Config) -> (String, bool) {
+    let patched = cfg.get_or("PatchedVersion", "");
+    if patched.is_empty() {
+        return ("目前狀態：未漢化".into(), false);
+    }
+    let game = game_version(cfg);
+    if !game.is_empty() && game != patched {
+        return (format!("⚠ 遊戲已從 {patched} 更新至 {game}，漢化可能已被覆蓋，請重新漢化"), true);
+    }
+    let (stamp, now) = (cfg.get_or("PatchedStamp", ""), file_stamp(cfg));
+    if !stamp.is_empty() && !now.is_empty() && stamp != now {
+        return ("⚠ 遊戲資源檔在漢化後被更動過（手動替換或官方修復？），漢化可能已失效，請重新漢化".into(), true);
+    }
+    (format!("目前狀態：已漢化（遊戲版本 {patched}）"), false)
+}
+
+fn check_game(cfg: &Config, action: &str) -> R<PathBuf> {
+    let game = cfg.get_or("GamePath", "");
+    if !is_ffxiv_folder(game) {
+        return Err("請選擇正確的遊戲根目錄（目錄內應有 game\\ffxiv_dx11.exe）".into());
+    }
+    if is_game_running() {
+        return Err(format!("偵測到 FFXIV 正在執行中，請先關閉遊戲再進行{action}").into());
+    }
+    Ok(sqpack_folder(game))
+}
+
+pub fn patch(cfg: &mut Config) -> R<String> {
+    let folder = check_game(cfg, "漢化")?;
+    // 在已漢化的檔案上再漢化，備份會被已漢化的檔案蓋掉，之後就還原不回原版。
+    // 備份一律複製六個檔，所以不管這次勾了哪些項目，文本和字型都要檢查。
+    if is_patched(cfg, &folder.join("0a0000.win32.index"))? || fonts_patched(&folder.join("000000.win32.index"))? {
+        return Err(ALREADY_PATCHED.into());
+    }
+    progress(0.0, "正在備份遊戲檔……", "");
+    fs::create_dir_all(p("backup"))?;
+    for n in RESOURCE_NAMES {
+        if folder.join(n).is_file() {
+            fs::copy(folder.join(n), p("backup").join(n))?;
+        }
+    }
+    cfg.set("BackupVersion", &game_version(cfg));
+
+    if cfg.get("ReplaFont") == Some("1") {
+        replace_font(&folder.join("000000.win32.index"), &p("resource/font"))?;
+    } else {
+        log("Skip replacing font files.");
+    }
+    let mut summary = "漢化完畢".to_string();
+    if cfg.get("ReplaText") == Some("1") {
+        if cfg.get("FLanguage") != Some("CSV") || !has_csv_files(&p("resource/rawexd")) {
+            return Err("找不到 CSV 翻譯檔（resource/rawexd），或 FLanguage 不是 CSV。此版本僅支援 CSV 模式。".into());
+        }
+        summary = replace_exdf(cfg, &folder.join("0a0000.win32.index"))?;
+    } else {
+        log("Skip replacing text.");
+    }
+    cfg.set("PatchedVersion", &game_version(cfg));
+    cfg.set("PatchedStamp", &file_stamp(cfg));
+    cfg.save()?;
+    Ok(summary)
+}
+
+pub fn rollback(cfg: &mut Config) -> R<String> {
+    let folder = check_game(cfg, "還原")?;
+    // 備份只對備份當下的遊戲版本有效；版本不符時還原會把遊戲更新蓋掉
+    let (backup, game) = (cfg.get_or("BackupVersion", "").to_string(), game_version(cfg));
+    if !backup.is_empty() && !game.is_empty() && backup != game {
+        return Err(format!(
+            "備份是遊戲 {backup} 版的檔案，但目前遊戲已更新至 {game}。還原會把遊戲更新內容蓋掉，已取消。遊戲更新不一定會換掉漢化過的檔案；要重新漢化，請先用官方啟動器的「檔案修復」取回原版檔案。"
+        )
+        .into());
+    }
+    for (i, n) in RESOURCE_NAMES.iter().enumerate() {
+        if p("backup").join(n).is_file() {
+            progress(i as f32 / RESOURCE_NAMES.len() as f32, "正在還原……", n);
+            log(&format!("[Rollback] {n}"));
+            fs::copy(p("backup").join(n), folder.join(n))?;
+        }
+    }
+    cfg.set("PatchedVersion", "");
+    cfg.set("PatchedStamp", "");
+    cfg.save()?;
+    Ok("還原完畢".into())
+}
+
+const ALREADY_PATCHED: &str = "遊戲檔看起來已經漢化過（替換的字型或 Addon 的譯文已經在遊戲檔裡）。直接再漢化會讓備份被已漢化的檔案蓋掉，之後就還原不回原版。\
+請先「還原」再漢化；如果遊戲更新過、還原被拒絕，請用官方啟動器的「檔案修復」取回原版檔案後再漢化。";
+
+/// 字型是否已替換：取遊戲 common/font 裡跟 resource/font 同名的第一個 .fdt，內容一樣就是替換過。
+/// 只比 .fdt：.tex 是 type 4，解出來沒移植。resource/font 不在時無從判斷，回 false。
+fn fonts_patched(index_path: &Path) -> R<bool> {
+    let Ok(entries) = fs::read_dir(p("resource/font")) else { return Ok(false) };
+    let index_str = index_path.to_string_lossy().to_string();
+    let index = read_index(&index_str)?;
+    let Some(folder) = index.get(&ffcrc_lower("common/font")) else { return Ok(false) };
+    let mut dats = Dats::new(&index_str);
+    for e in entries.flatten() {
+        let name = e.file_name().to_string_lossy().to_string();
+        if !name.to_ascii_lowercase().ends_with(".fdt") {
+            continue;
+        }
+        if let Some(entry) = folder.get(&ffcrc_lower(&name)) {
+            let same = dats.extract(entry.data_offset)? == fs::read(e.path())?;
+            log(&format!("[Patch] 字型檢查：{name} {}", if same { "已是替換後的字型" } else { "是原版字型" }));
+            return Ok(same);
+        }
+    }
+    Ok(false)
+}
+
+/// 遊戲檔是否已漢化：抽 Addon 第一頁，看含中文的譯文是不是已經寫在遊戲檔裡。
+/// 不看 PatchedVersion/PatchedStamp：遊戲更新可能沒改到 0a0000 的 index（檔案仍是漢化過的），
+/// 版本號與修改時間卻都變了，靠它們判斷會放行。Addon.csv 不在或讀不到 Addon 時無從判斷，回 false。
+fn is_patched(cfg: &Config, index_path: &Path) -> R<bool> {
+    let csv_path = p("resource/rawexd/Addon.csv");
+    if !csv_path.is_file() {
+        return Ok(false);
+    }
+    let index_str = index_path.to_string_lossy().to_string();
+    let index = read_index(&index_str)?;
+    let mut dats = Dats::new(&index_str);
+    let Some(folder) = index.get(&ffcrc_lower("exd")) else { return Ok(false) };
+    let Some(exh_entry) = folder.get(&ffcrc_lower("addon.exh")) else { return Ok(false) };
+    let exh = exd::parse_exh(&dats.extract(exh_entry.data_offset)?)?;
+    let slang = cfg.get_or("SLanguage", "JA").to_ascii_lowercase();
+    let Some(page) = exh.pages.first() else { return Ok(false) };
+    let Some(exd_entry) = folder.get(&ffcrc_lower(&format!("addon_{page}_{slang}.exd"))) else { return Ok(false) };
+    let rows = exd::parse_exd(&dats.extract(exd_entry.data_offset)?)?;
+    let (offsets, csv) = load_csv(&csv_path)?;
+    let (seen, hit) = translated_cells_present(&rows, &exh, &offsets, &csv);
+    log(&format!("[Patch] 已漢化檢查：Addon 抽 {seen} 格中文譯文，{hit} 格已在遊戲檔裡"));
+    Ok(seen > 0 && hit * 2 > seen)
+}
+
+/// 最多抽 50 格含中文的譯文，回傳 (抽了幾格, 其中幾格的內容已經在這頁 EXD 裡)。
+/// 日文原文幾乎不可能剛好等於中文譯文，所以過半對得上就代表已漢化。
+pub fn translated_cells_present(
+    rows: &std::collections::BTreeMap<i32, Vec<u8>>,
+    exh: &exd::Exh,
+    offsets: &HashMap<u16, usize>,
+    csv: &HashMap<i32, Vec<String>>,
+) -> (usize, usize) {
+    let (mut seen, mut hit) = (0, 0);
+    for (row_id, raw) in rows {
+        let Some(cells) = csv.get(row_id) else { continue };
+        if raw.len() < exh.chunk_size {
+            continue;
+        }
+        for &(ty, off) in &exh.datasets {
+            let cell = offsets.get(&off).and_then(|&c| cells.get(c));
+            let Some(cell) = cell.filter(|s| ty == 0 && s.chars().any(|c| ('\u{4E00}'..='\u{9FFF}').contains(&c))) else { continue };
+            let mut want = Vec::new();
+            if append_csv_string(&mut want, cell).is_err() {
+                continue;
+            }
+            seen += 1;
+            hit += (exd::get_string(raw, exh.chunk_size, off as usize) == want) as usize;
+            if seen == 50 {
+                return (seen, hit);
+            }
+        }
+    }
+    (seen, hit)
+}
+
+// ponytail: 只看第一層；rawexd 根目錄一定有 Addon.csv 這類檔案
+pub fn has_csv_files(dir: &Path) -> bool {
+    fs::read_dir(dir)
+        .map(|it| it.flatten().any(|e| e.path().extension().is_some_and(|x| x.eq_ignore_ascii_case("csv"))))
+        .unwrap_or(false)
+}
+
+/// 開 index 與 dat0：index 整份讀進記憶體改完再寫回，dat0 只追加。
+struct Writer {
+    index_path: PathBuf,
+    index: Vec<u8>,
+    dat: BufWriter<fs::File>,
+    dat_len: u64,
+}
+
+impl Writer {
+    fn open(index_path: &Path) -> R<Writer> {
+        let dat_path = index_path.to_string_lossy().replace("index", "dat0");
+        let dat = OpenOptions::new().append(true).open(dat_path)?;
+        let dat_len = dat.metadata()?.len();
+        Ok(Writer { index_path: index_path.into(), index: fs::read(index_path)?, dat: BufWriter::new(dat), dat_len })
+    }
+
+    /// 把 block 接到 dat0 尾端，index 該 entry 改指過去；回傳寫進 index 的原始 offset 值。
+    fn append(&mut self, entry_pt: usize, block: &[u8]) -> R<u32> {
+        let raw = (self.dat_len / 8) as u32;
+        self.index[entry_pt + 8..entry_pt + 12].copy_from_slice(&raw.to_le_bytes());
+        self.dat.write_all(block)?;
+        self.dat_len += block.len() as u64;
+        Ok(raw)
+    }
+
+    fn finish(mut self) -> R<()> {
+        self.dat.flush()?;
+        fs::write(&self.index_path, &self.index)?;
+        Ok(())
+    }
+}
+
+fn replace_font(index_path: &Path, font_dir: &Path) -> R<()> {
+    let index = read_index(&index_path.to_string_lossy())?;
+    let Ok(files) = fs::read_dir(font_dir) else { return Ok(()) };
+    let mut w = Writer::open(index_path)?;
+    let folder = index.get(&ffcrc_lower("common/font")).ok_or("index 找不到 common/font")?;
+    for file in files.flatten() {
+        let name = file.file_name().to_string_lossy().to_string();
+        progress(0.0, "正在替換字體：", &name);
+        log(&format!("Replace : {name}"));
+        let data = fs::read(file.path())?;
+        let block = if name.to_ascii_lowercase().ends_with(".tex") { build_tex_block(&data) } else { build_block(&data) };
+        let entry = folder.get(&ffcrc_lower(&name)).ok_or_else(|| format!("index 找不到字型 {name}"))?;
+        w.append(entry.pt, &block)?;
+    }
+    w.finish()
+}
+
+fn replace_exdf(cfg: &Config, index_path: &Path) -> R<String> {
+    let index_str = index_path.to_string_lossy().to_string();
+    let slang = cfg.get_or("SLanguage", "JA").to_ascii_lowercase();
+    let skip = cfg.get_or("SkipFiles", "").to_ascii_lowercase();
+    let skip: Vec<&str> = skip.split('|').filter(|s| !s.is_empty()).collect();
+    let (mut replaced, mut no_csv, mut failed) = (0, 0, 0);
+    let mut writes: Vec<(u32, Vec<u8>)> = Vec::new(); // 讀回驗證用，只留第一筆與最後一筆
+
+    let index = read_index(&index_str)?;
+    let mut dats = Dats::new(&index_str);
+    let file_list = init_file_list(&index, &mut dats)?;
+    let mut w = Writer::open(index_path)?;
+
+    for (n, sheet) in file_list.iter().enumerate() {
+        progress(n as f32 / file_list.len() as f32, "正在替換文本：", &exdnames::label(sheet));
+        if n % 500 == 0 {
+            log(&format!("[{n}/{}] {sheet}", file_list.len()));
+        }
+        let lower = format!("exd/{}", sheet.to_ascii_lowercase()); // SkipFiles 格式是 exd/<小寫表名>
+        if skip.iter().any(|k| lower == *k || lower.starts_with(&format!("{k}/"))) {
+            log(&format!("{lower} in skipFiles. Skip this part."));
+            continue;
+        }
+        let (dir, name) = sheet.rsplit_once('/').map_or(("exd".to_string(), sheet.as_str()), |(d, n)| (format!("exd/{d}"), n));
+        let Some(folder) = index.get(&ffcrc_lower(&dir)) else { continue };
+        let Some(exh_entry) = folder.get(&ffcrc_lower(&format!("{name}.exh"))) else { continue };
+        let exh = match dats.extract(exh_entry.data_offset).and_then(|d| exd::parse_exh(&d)) {
+            Ok(e) => e,
+            Err(e) => { log(&format!("EXH failed: {sheet}: {e}")); failed += 1; continue; }
+        };
+        if exh.lang_count == 0 {
+            continue;
+        }
+        let csv_path = p("resource/rawexd").join(format!("{sheet}.csv"));
+        if !csv_path.is_file() {
+            no_csv += 1;
+            continue;
+        }
+        let (offset_map, csv_rows) = match load_csv(&csv_path) {
+            Ok(x) => x,
+            Err(e) => { log(&format!("CSV Exception: {sheet}: {e}")); failed += 1; continue; }
+        };
+
+        let mut wrote = false;
+        for page in &exh.pages {
+            let Some(exd_entry) = folder.get(&ffcrc_lower(&format!("{name}_{page}_{slang}.exd"))) else { continue };
+            let Ok(mut rows) = dats.extract(exd_entry.data_offset).and_then(|d| exd::parse_exd(&d)) else { continue };
+            for (row_id, raw) in rows.iter_mut() {
+                if raw.is_empty() || raw.len() < exh.chunk_size {
+                    log("Data size was insufficient, bypass handling.");
+                    continue;
+                }
+                let mut chunk = raw[..exh.chunk_size].to_vec();
+                let mut strings = Vec::new();
+                for &(ty, offset) in &exh.datasets {
+                    if ty != 0 {
+                        continue; // 只處理字串欄位
+                    }
+                    let off = offset as usize;
+                    chunk[off..off + 4].copy_from_slice(&(strings.len() as u32).to_be_bytes());
+                    let translated = csv_rows
+                        .get(row_id)
+                        .zip(offset_map.get(&offset))
+                        .and_then(|(cells, &col)| cells.get(col))
+                        .filter(|s| !s.is_empty());
+                    match translated {
+                        Some(s) => append_csv_string(&mut strings, s)?,
+                        None => strings.extend_from_slice(exd::get_string(raw, exh.chunk_size, off)),
+                    }
+                    strings.push(0);
+                }
+                // 補到 4 bytes 對齊（剛好對齊時再補 4）
+                let len = chunk.len() + strings.len();
+                chunk.extend_from_slice(&strings);
+                chunk.resize(len + 4 - len % 4, 0);
+                *raw = chunk;
+            }
+            let exd_file = exd::build_exd(&rows);
+            let raw_offset = w.append(exd_entry.pt, &build_block(&exd_file))?;
+            if writes.len() == 2 {
+                writes.pop();
+            }
+            writes.push((raw_offset, exd_file));
+            wrote = true;
+        }
+        replaced += wrote as u32;
+    }
+    w.finish()?;
+    let summary = format!("漢化完畢：已替換 {replaced} 個資料表（無翻譯 CSV：{no_csv}，失敗：{failed}）");
+    log(&summary);
+    if replaced == 0 {
+        return Err(format!("沒有替換任何文本（失敗：{failed}，無 CSV：{no_csv}）").into());
+    }
+    // 讀回驗證：重新 extract 第一筆與最後一筆寫入，確保資料真的落地
+    for (offset, expected) in &writes {
+        match dats.extract(*offset) {
+            Ok(back) if back == *expected => {}
+            Ok(_) => return Err("漢化寫入驗證失敗（讀回資料與寫入不符），請執行還原".into()),
+            Err(e) => return Err(format!("漢化寫入驗證失敗（讀回時發生錯誤：{e}），請執行還原").into()),
+        }
+    }
+    log("Read-back verification passed.");
+    Ok(summary)
+}
+
+/// root.exl 列出所有資料表，回傳表名（不含 exd/ 與副檔名，例如 "quest/000/ClsArc011_00021"）。
+pub fn init_file_list(index: &crate::sqpack::Index, dats: &mut Dats) -> R<Vec<String>> {
+    let root = index
+        .get(&ffcrc_lower("exd"))
+        .and_then(|f| f.get(&ffcrc_lower("root.exl")))
+        .ok_or("index 找不到 exd/root.exl")?;
+    let text = String::from_utf8(dats.extract(root.data_offset)?)?;
+    Ok(text.lines().map(|l| l.split(',').next().unwrap_or(l).to_string()).filter(|s| !s.is_empty()).collect())
+}
+
+/// CSV 內容轉 EXD 位元組：<hex:...> 標籤轉回二進位，其他照 UTF-8。
+pub fn append_csv_string(out: &mut Vec<u8>, s: &str) -> R<()> {
+    let mut rest = s;
+    while let Some(start) = rest.find("<hex") {
+        out.extend_from_slice(rest[..start].as_bytes());
+        let Some(len) = rest[start..].find('>') else {
+            rest = &rest[start..]; // 沒有收尾的 '>'：當一般文字
+            break;
+        };
+        let hex = rest.get(start + 5..start + len).unwrap_or("");
+        if hex.contains("<hex") {
+            return Err(format!("TagInTagException!{s}").into());
+        }
+        let hex: String = hex.chars().filter(|&c| c != ' ').collect();
+        if hex.len() % 2 != 0 {
+            return Err(format!("hex 標籤長度不是偶數：{s}").into());
+        }
+        for i in (0..hex.len()).step_by(2) {
+            out.push(u8::from_str_radix(&hex[i..i + 2], 16).map_err(|_| format!("hex 標籤格式錯誤：{s}"))?);
+        }
+        rest = &rest[start + len + 1..];
+    }
+    out.extend_from_slice(rest.as_bytes());
+    Ok(())
+}
+
+/// 讀 SaintCoinach rawexd CSV。'#' 開頭是註解列；有效列 index 1 是 offset 列，資料從 index 3 開始。
+/// 回傳 (欄位 offset → 欄號, 列號 → 該列各欄文字)。
+fn load_csv(path: &Path) -> R<(HashMap<u16, usize>, HashMap<i32, Vec<String>>)> {
+    let text = fs::read_to_string(path)?;
+    let mut reader = csv::ReaderBuilder::new()
+        .has_headers(false)
+        .flexible(true)
+        .comment(Some(b'#'))
+        .from_reader(text.trim_start_matches('\u{feff}').as_bytes());
+    let rows: Vec<csv::StringRecord> = reader.records().collect::<Result<_, _>>()?;
+    if rows.len() < 3 {
+        return Err("CSV 列數不足".into());
+    }
+    let mut offsets = HashMap::new();
+    for (col, v) in rows[1].iter().skip(1).enumerate() {
+        offsets.insert(v.trim().parse()?, col);
+    }
+    let mut data = HashMap::new();
+    for row in &rows[3..] {
+        data.insert(row[0].trim().parse()?, row.iter().skip(1).map(str::to_string).collect());
+    }
+    Ok((offsets, data))
+}

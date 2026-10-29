@@ -1,0 +1,158 @@
+﻿# KTGTypeWordTextData 打字活動：英文版客戶端仍是日文的詞，由本專案自譯成英文（非官方）。
+# 國際服語言選日文時這些詞會出題。用英文版重新匯出該表後，把 en 欄填回 resource/rawexd/KTGTypeWordTextData.csv 第0欄；第1欄假名不動。
+key,ja,en,reading
+21,強気と馬鹿は紙一重,There's a fine line between bold and stupid,つよきとばかはかみひとえ
+22,がっかりさせんじゃねえぞ,Don't you dare disappoint me,がっかりさせんじゃねえぞ
+32,人生は戦いだ！,Life is a battle!,じんせいはたたかいだ
+33,なんでタークスの制服って黒なんですか！,Why do the Turks always wear black?!,なんでたーくすのせいふくってくろなんですか
+34,よろしゅう！,Nice to meetcha!,よろしゅう
+40,バスターソードちょうだい！,Gimme a Buster Sword!,ばすたーそーどちょうだい
+42,アサルトガンちょうだい！,Gimme an Assault Gun!,あさるとがんちょうだい
+43,ハートビートちょうだい！,Gimme a Heartbeat!,はーとびーとちょうだい
+44,ガードロッドちょうだい！,Gimme a Guard Stick!,がーどろっどちょうだい
+45,スターブレスちょうだい！,Gimme a Star Bracelet!,すたーぶれすちょうだい
+46,レザーガードちょうだい！,Gimme a Leather Guard!,れざーがーどちょうだい
+47,パワーリストちょうだい！,Gimme Power Wristguards!,ぱわーりすとちょうだい
+49,イヤリングちょうだい！,Gimme Earrings!,いやりんぐちょうだい
+50,マジックリングちょうだい！,Gimme a Magic Ring!,まじっくりんぐちょうだい
+54,金の針ちょうだい！,Gimme a Gold Needle!,きんのはりちょうだい
+55,ケアルちょうだい！,Gimme Cure!,けあるちょうだい
+56,リフレクちょうだい！,Gimme Reflect!,りふれくちょうだい
+57,エスナちょうだい！,Gimme Esuna!,えすなちょうだい
+58,リジェネちょうだい！,Gimme Regen!,りじぇねちょうだい
+59,クポチャームちょうだい！,Gimme a Kupo Charm!,くぽちゃーむちょうだい
+60,ミストシードちょうだい！,Gimme a Mist Seed!,みすとしーどちょうだい
+61,乙女のキッスちょうだい！,Gimme a Maiden's Kiss!,おとめのきっすちょうだい
+63,星の恵みちょうだい！,Gimme the Planet's Blessing!,ほしのめぐみちょうだい
+64,マテリアちょうだい！,Gimme Materia!,まてりあちょうだい
+65,クラフトチップちょうだい！,Gimme a Craft Chip!,くらふとちっぷちょうだい
+66,ミスリルカラーちょうだい！,Gimme a Mythril Collar!,みすりるからーちょうだい
+68,源氏の小手ちょうだい！,Gimme Genji Gloves!,げんじのこてちょうだい
+70,星の悲鳴が聞こえねえか、クラウドさんよ！,"Can't you hear the planet crying, Cloud?",ほしのひめいがきこえねえかくらうどさんよ
+86,脅しには屈しない,I won't give in to threats,おどしにはくっしない
+87,ハッ、上等だ！,"Ha, bring it on!",はっじょうとうだ
+89,ぜーんぶ、オレが背負ってやる,I'll carry it all myself,ぜーんぶおれがせおってやる
+90,アジトに帰るまでが作戦だ,The mission isn't over till we're back at the hideout,あじとにかえるまでがさくせんだ
+92,わたしたちの星が消えてしまうのだ,Our planet is dying,わたしたちのほしがきえてしまうのだ
+93,敷かれたレールには逆らえないんだ,No straying from the tracks laid for us,しかれたれーるにはさからえないんだ
+106,暴力はんた～い,Violence is baaad,ぼうりょくはんた～い
+108,当店名物コスモキャニオンでございます,"Cosmo Canyon, our house specialty",とうてんめいぶつこすもきゃにおんでございます
+112,マイフレンド,My friend,まいふれんど
+114,ハデにやってるじゃないか、マイフレンド！,"Quite the show you're putting on, my friend!",はでにやってるじゃないかまいふれんど
+115,このまま世界の果てまで一緒に走らないか？,Shall we ride together to the end of the world?,このまませかいのはてまでいっしょにはしらないか
+116,華麗な運転でわたしを酔わせてくれる？,Will you dazzle me with your driving?,かれいなうんてんでわたしをよわせてくれる
+118,ターゲットは伍番魔晄炉,Target: Mako Reactor 5,たーげっとはごばんまこうろ
+122,魔晄を浴びた者の目,Eyes bathed in Mako,まこうをあびたもののめ
+123,スマ～イルを、忘れるな？,Don't forget to smile!,すま～いるをわすれるな
+125,足りないと、嘆く者ほど浪費する,Those who cry scarcity waste the most,たりないとなげくものほどろうひする
+126,貴様らを即刻、粛清する！,You will be purged at once!,きさまらをそっこくしゅくせいする
+140,サム,Sam,さむ
+141,マム,Mam,まむ
+151,ほひ～！,Hohee!,ほひ～
+160,クラスファースト,First Class,くらすふぁーすと
+169,本当の美しさは心持ち次第,True beauty comes from within,ほんとうのうつくしさはこころもちしだい
+170,お前を最高の花嫁にしてやろう,I'll make you the finest bride,おまえをさいこうのはなよめにしてやろう
+173,感想はいらない、他に方法が無かった,"Spare me your opinion, there was no other way",かんそうはいらないほかにほうほうがなかった
+177,助けられて、助けて、また助けられてる,"Helped, then helping, then helped again",たすけられてたすけてまたたすけられてる
+184,ベティ,Betty,べてぃ
+185,狙ったエモノは必ず落とすの,I never miss my mark,ねらったえものはかならずおとすの
+188,とんだ3ギル芝居だぜ,What a three-gil act,とんだ3ぎるしばいだぜ
+189,でも家族がそろえば、そこがおうちだよ？,But home is wherever family is,でもかぞくがそろえばそこがおうちだよ
+196,でもね、好きにならないで,But don't fall for me,でもねすきにならないで
+198,情報屋キリエの大スクープだよっ！,A big scoop from Kyrie the info broker!,じょうほうやきりえのだいすくーぷだよっ
+219,星の開拓者,Pioneers of the Planet,ほしのかいたくしゃ
+223,そして、約束の地へ帰る,And return to the Promised Land,そしてやくそくのちへかえる
+224,わしとしたことが、ラードを切らすなんて,How could I run out of lard,わしとしたことがらーどをきらすなんて
+226,うちゅう、ふつう、ふちゅう、つらいぜこれは,"Universe, normal, abnormal, this is rough",うちゅうふつうふちゅうつらいぜこれは
+228,至上の幸福、星が与えし定めの地,"Supreme bliss, the land the Planet promised",しじょうのこうふくほしがあたえしさだめのち
+230,星より生まれ、星と語り、星を開く,"Born of the Planet, speak with the Planet, pioneer the Planet",ほしよりうまれほしとかたりほしをひらく
+231,星の未来,The Planet's future,ほしのみらい
+233,空、きらいだな,I don't like the sky,そらきらいだな
+235,感傷で曇った目には、なにも見えまい,Eyes clouded by sentiment see nothing,かんしょうでくもっためにはなにもみえまい
+237,未来はおまえ次第だ,The future is up to you,みらいはおまえしだいだ
+239,でも自由はこわいよね、まるで空みたい,"But freedom is scary, just like the sky",でもじゆうはこわいよねまるでそらみたい
+240,どんなときでもソルジャーの誇りは手放すな,Never let go of your SOLDIER pride,どんなときでもそるじゃーのほこりはてばなすな
+243,ゾンダー,Zonder,ぞんだー
+244,あとにはひけなかった,There was no turning back,あとにはひけなかった
+253,あいでー,ID,あいでー
+266,誰ですか、ボクの邪魔をするのは,Who dares get in my way?,だれですかぼくのじゃまをするのは
+308,すりつぶねじりキル,Grind Twist Kill,すりつぶねじりきる
+331,エアリス救出作戦,Operation Rescue Aerith,えありすきゅうしゅつさくせん
+332,ルーファウス社長就任,Rufus Takes Charge,るーふぁうすしゃちょうしゅうにん
+360,走れ走れ走れ！,"Run, run, run!",はしれはしれはしれ
+371,狙われた七番街,Sector 7 in Peril,ねらわれたななばんがい
+413,ペインリアリティマックス,Pain Reality Max,ぺいんりありてぃまっくす
+421,人生は終わりのない迷路だぜ,Life's an endless maze,じんせいはおわりのないめいろだぜ
+497,チョコボ・サム,Chocobo Sam,ちょこぼさむ
+594,モススラッシャー,Moth Slasher,もすすらっしゃー
+649,星降る峡谷,Canyon of Falling Stars,ほしふるきょうこく
+857,ヘルハーレー,Hell Harley,へるはーれー
+892,相棒の借り、返させてもらう,I'll pay you back for my partner,あいぼうのかりかえさせてもらう
+908,コスタ・デル・ソル,Costa del Sol,こすたでるそる
+938,谷を守る戦士,Guardian of the Canyon,たにをまもるせんし
+1164,ラグナロク,Ragnarok,らぐなろく
+1209,盗賊の小手,Thief's Gloves,とうぞくのこて
+1263,ほのお,Fire,ほのお
+1343,超とっしん,Mega Charge,ちょうとっしん
+1388,スレッドファング,Thread Fang,すれっどふぁんぐ
+1396,忍術変化,Ninjutsu Change,にんじゅつへんか
+1455,サボテンまばりあ,Cactuar Manawall,さぼてんまばりあ
+1462,オラオラオラ！,Ora ora ora!,おらおらおら
+1487,あんたみたいな、英雄になりたいのにさ,Even though I want to be a hero like you,あんたみたいなえいゆうになりたいのにさ
+1493,俺は特別な存在なんだと思っていた,I thought I was something special,おれはとくべつなそんざいなんだとおもっていた
+1497,時代は変わったぜ、クラウド,"Times have changed, Cloud",じだいはかわったぜくらうど
+1499,偉大な科学者の仕事を引き継いだ凡人,An ordinary man who inherited a great scientist's work,いだいなかかぐしゃのしごとをひきついだぼんじん
+1500,剣に祈るなら、いまのうちだ,"If you want to pray to your sword, now's the time",けんにいのるならいまのうちだ
+1504,いま、迎えにいくよ,I'm coming for you now,いまむかえにいくよ
+1506,やがて、星の支配者となる,Soon to be master of the Planet,やがてほしのしはいしゃとなる
+1530,社会の敵ども、成敗してくれる！,"Enemies of society, prepare for judgment!",しゃかいのてきどもせいばいしてくれる
+1531,レノ先輩の留守は、わたしが守る！,I'll hold the fort while Reno's away!,れのせんぱいのるすはわたしがまもる
+1539,シュシュシュ！,Shu shu shu!,しゅしゅしゅ
+1541,ありがっとね～！,Thanks a bunch!,ありがっとね～
+1543,次は、腹割って話そうぜ,"Next time, let's talk man to man",つぎははらわってはなそうぜ
+1544,腹筋なら負けない,Nobody beats my abs,ふっきんならまけない
+1550,ヒュージマテリアを巡る争い,The Fight Over Huge Materia,ひゅーじまてりあをめぐるあらそい
+1553,興味しんしん！,Totally intrigued!,きょうみしんしん
+1555,輝け磨けオレの太陽,"Shine bright, my sun",かがやけみがけおれのたいよう
+1566,毛皮をまといし者は、なめられたら終わりだ,"When you wear fur, never let them look down on you",けがわをまといしものはなめられたらおわりだ
+1570,コスタ,Costa,こすた
+1573,カードバウトだ！,It's a card battle!,かーどばうとだ
+1575,いっちょう、やりますか！,Let's do this!,いっちょうやりますか
+1579,二本足で立つのは難しいものだな,Standing on two legs is tough,にほんあしでたつのはむずかしいものだな
+1580,黒マント,Black Cloak,くろまんと
+1590,実験ショーの開幕だ！,Let the experiment show begin!,じっけんしょーのかいまくだ
+1596,ある時は、華麗なる暗殺者！,"One moment, a dazzling assassin!",あるときはかれいなるあんさつしゃ
+1597,ある時は、お助け美少女忍者！,"The next, a pretty ninja to the rescue!",あるときはおたすけびしょうじょにんじゃ
+1599,ツンツン頭,Spiky-head,つんつんあたま
+1604,アタシが勝ったら、アタシの手下になれ！,"If I win, you're my minion!",あたしがかったらあたしのてしたになれ
+1606,次はリベンジだぞ、と,"Next time it's payback, yo",つぎはりべんじだぞと
+1610,家族はいっしょがいちばんだ,Family's best when they're together,かぞくはいっしょがいちばんだ
+1631,若者よ、君が今宵のチャレンジャーだ！,"Young man, you are tonight's challenger!",わかものよきみがこよいのちゃれんじゃーだ
+1632,ようこそ、黄金の楽園、ゴールドソーサーへ,"Welcome to the golden paradise, the Gold Saucer",ようこそおうごんのらくえんごーるどそーさーへ
+1633,いまのうちだ、楽しめ、クラウド,"Enjoy it while you can, Cloud",いまのうちだたのしめくらうど
+1634,星の血,The Planet's blood,ほしのち
+1635,ヘイ・ユー！みなさんの未来占うで～！,Hey you! I'll tell all your fortunes!,へいゆーみなさんのみらいうらなうで～
+1636,えらい、すんません,Terribly sorry,えらいすんません
+1637,無駄な抵抗をやめ、ただちに投降せよ,Cease your futile resistance and surrender at once,むだなていこうをやめただちにとうこうせよ
+1640,カップルって、あのカップルか？,Couple? You mean that kind of couple?,かっぷるってあのかっぷるか
+1641,これはオレの、オレたちの問題だ,This is my problem. Our problem.,これはおれのおれたちのもんだいだ
+1642,俺の手は、もう血まみれじゃねえか！,My hands are already covered in blood!,おれのてはもうちまみれじゃねえか
+1643,うひょー、もうヤケクソだもんねー！,"Woohoo, I've got nothing left to lose!",うひょーもうやけくそだもんねー
+1649,ネコですう～,I'm a kitty,ねこですう～
+1653,きらいになる理由、ないもの,There's no reason to hate him,きらいになるりゆうないもの
+1666,神羅なんかクソ食らえってなもんだ！,Screw Shinra!,しんらなんかくそくらえってなもんだ
+1675,ホーホーホウ,Ho ho ho,ほーほーほう
+1682,シノビ,Shinobi,しのび
+1688,かつて英雄と呼ばれた男、セフィロス,"Sephiroth, the man once called a hero",かつてえいゆうとよばれたおとこせふぃろす
+1694,アイアイサー！,"Aye aye, sir!",あいあいさー
+1695,今日は残業なしだぞ、と,"No overtime today, yo",きょうはざんぎょうなしだぞと
+1698,タークス、舐めんなよ,Don't mess with the Turks,たーくすなめんなよ
+1699,てめえは一発、ぶん殴っておかねえとな,I owe you a punch,てめえはいっぱつぶんなぐっておかねえとな
+1703,悠久の時を超え、ここに立つ者たちよ,You who have crossed the ages to stand here,ゆうきゅうのときをこえここにたつものたちよ
+1706,悲しむことはない、星に帰るだけだ,"Do not grieve, they merely return to the Planet",かなしむことはないほしにかえるだけだ
+1707,いらっしゃいませ～！,Welcome!,いらっしゃいませ～
+1709,選んだら、新しい世界が広がる,"Choose, and a new world opens up",えらんだらあたらしいせかいがひろがる
+1711,このマテリアがきっと、世界を救う,This materia will surely save the world,このまてりあがきっとせかいをすくう
+1715,我々の世界に、リユニオンするのだ,We shall be Reunited in our world,われわれのせかいにりゆにおんするのだ
+1862,さあ子猫ちゃん、俺の胸へカモ～ン！,"Come here, kitten, into my arms!",さあこねこちゃんおれのむねへかも～ん
+1866,四番街プレート,Sector 4 Plate,よんばんがいぷれーと

@@ -10,3 +10,6 @@ Int32,String,String
 5,TEXT_CTSETCVOYAGERMOOGLE_00566_MOGGUIDEBOOK_00001,莫古特意為你準備了這本詳細記載著<hex:02100103>「莫古莫古★大收集」活動規則的「莫古莫古指南書」庫啵。<hex:02100103>裡面的內容通俗易懂，你就收下抽空看看吧庫啵。
 6,TEXT_CTSETCVOYAGERMOOGLE_00566_MOGGUIDEBOOK_00002,等到了舉辦莫古莫古★大收集活動的時期，<hex:02100103>你就參照著這本莫古莫古指南書，<hex:02100103>收集指定的稀少神典石吧庫啵！
 7,TEXT_CTSETCVOYAGERMOOGLE_00566_MOGGUIDEBOOK_00003,攢到足夠多的稀少神典石後，<hex:02100103>請拿到莫古這裡來庫啵。<hex:02100103>莫古會用珍藏的道具和你交換庫啵！
+8,TEXT_CTSETCVOYAGERMOOGLE_00566_VOYAGERMOOGLE_000_001,如果完成了<hex:020866E4E80202FF16>每週小莫古挑戰<hex:FF49><hex:020845E4E80203FF0D>每週任務<hex:FF31><hex:02082DE4E80204FF25>每週小莫古挑戰和每週任務<hex:FF01><hex:03><hex:03><hex:03>，<hex:02100103>可以通過莫古莫古指南書確認庫啵！
+9,TEXT_CTSETCVOYAGERMOOGLE_00566_SYSTEM_000_002,莫古莫古指南書中<hex:02100103>關於「莫古莫古★大收集 天文的行路 第1階段」的<hex:02100103>部分任務的完成期限與活動的終止日期出現了不一致的情況。
+10,TEXT_CTSETCVOYAGERMOOGLE_00566_SYSTEM_000_003,對於未能在活動終止日期前完成相關任務挑戰的各位玩家，<hex:02100103>作為補償，系統會自動達成任務目標。
